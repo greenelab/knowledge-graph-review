@@ -1,21 +1,25 @@
 ---
-title: "Manuscript Title"
+title: "Constructing Knowledge Graphs and Their Biomedical Applications"
 keywords:
-  - markdown
-  - publishing
-  - manubot
+  - knowledge-graphs
+  - network-embeddings
+  - text-mining
+  - natural-language-processing
+  - deep-learning
+  - machine-learning
+  - literature-review
 lang: en-US
 author_info:
   -
-    github: johndoe
-    name: John Doe
-    initials: JD
-    orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: johndoe
-    email: john.doe@something.com
+    github: danich1
+    name: David Nicholson
+    initials: DNN
+    orcid: 0000-0003-0002-5761
+    twitter: null
+    email: dnicholson329@gmail.com
     affiliations:
-      - Department of Something, University of Whatever
-    funders: Grant XXXXXXXX
+      - Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
+    funders: GBMF4552 and T32 HG000046
   -
     github: janeroe
     name: Jane Roe
