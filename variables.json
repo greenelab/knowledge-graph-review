@@ -1,17 +1,17 @@
 {
-  "date": "August 13, 2019",
+  "date": "August 16, 2019",
   "authors": [
     {
-      "github": "johndoe",
-      "name": "John Doe",
-      "initials": "JD",
-      "orcid": "XXXX-XXXX-XXXX-XXXX",
-      "twitter": "johndoe",
-      "email": "john.doe@something.com",
+      "github": "danich1",
+      "name": "David Nicholson",
+      "initials": "DNN",
+      "orcid": "0000-0003-0002-5761",
+      "twitter": null,
+      "email": "dnicholson329@gmail.com",
       "affiliations": [
-        "Department of Something, University of Whatever"
+        "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania"
       ],
-      "funders": "Grant XXXXXXXX",
+      "funders": "GBMF4552 and T32 HG000046",
       "affiliation_numbers": [
         1
       ]
@@ -27,31 +27,35 @@
         "Department of Whatever, University of Something"
       ],
       "affiliation_numbers": [
-        1,
-        2
+        2,
+        3
       ]
     }
   ],
   "affiliations": [
     {
-      "affiliation": "Department of Something, University of Whatever",
+      "affiliation": "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania",
       "affiliation_number": 1
     },
     {
-      "affiliation": "Department of Whatever, University of Something",
+      "affiliation": "Department of Something, University of Whatever",
       "affiliation_number": 2
+    },
+    {
+      "affiliation": "Department of Whatever, University of Something",
+      "affiliation_number": 3
     }
   ],
   "ci_source": {
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "eaf6b67810ede900ad2037c20030dbe25f35d140"
+    "commit": "b44f2c4d2336b1ec6125e34b6e3c5a699d174705"
   },
   "manuscript_stats": {
     "reference_counts": {
       "total": 0
     },
-    "word_count": 232
+    "word_count": 784
   }
 }
