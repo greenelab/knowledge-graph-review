@@ -18,5 +18,28 @@
       "family": "Himmelstein"
     }
   ]
-}
+},
+{
+    "author": [
+      {
+        "family": "Ehrlinger",
+        "given": "Lisa"
+      },
+      {
+        "family": "Wöß",
+        "given": "Wolfram"
+      }
+    ],
+    "container-title": "SEMANTiCS",
+    "id": "raw:KG_DEF",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "title": "Towards a definition of knowledge graphs",
+    "type": "paper-conference"
+  }
 ]
