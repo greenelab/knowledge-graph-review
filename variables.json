@@ -1,5 +1,5 @@
 {
-  "date": "August 16, 2019",
+  "date": "September 3, 2019",
   "authors": [
     {
       "github": "danich1",
@@ -50,12 +50,16 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "b44f2c4d2336b1ec6125e34b6e3c5a699d174705"
+    "commit": "d1ae25660c725a2cda327cc4b999d71f720a7594"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "total": 0
+      "arxiv": 2,
+      "doi": 15,
+      "pmid": 1,
+      "raw": 1,
+      "total": 19
     },
-    "word_count": 784
+    "word_count": 1163
   }
 }
