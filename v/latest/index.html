@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="David Nicholson" />
   <meta name="author" content="Jane Roe" />
-  <meta name="dcterms.date" content="2019-08-16" />
+  <meta name="dcterms.date" content="2019-09-03" />
   <meta name="keywords" content="knowledge-graphs, network-embeddings, text-mining, natural-language-processing, deep-learning, machine-learning, literature-review" />
   <title>Constructing Knowledge Graphs and Their Biomedical Applications</title>
   <style>
@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/b44f2c4d2336b1ec6125e34b6e3c5a699d174705/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/b44f2c4d2336b1ec6125e34b6e3c5a699d174705">greenelab/knowledge-graph-review@b44f2c4</a> on August 16, 2019. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/d1ae25660c725a2cda327cc4b999d71f720a7594/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/d1ae25660c725a2cda327cc4b999d71f720a7594">greenelab/knowledge-graph-review@d1ae256</a> on September 3, 2019. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -34,20 +34,13 @@
 <li>Give high level description of review as it pertains to knowledge graphs (creation and application)</li>
 </ol>
 <h2 id="introduction">Introduction</h2>
-<ol type="1">
-<li>Talk about knowledge graphs</li>
-<li>Define what they are</li>
-<li>Provide a diagram to orient the reader</li>
-<li>Mention how these graphs are constructed</li>
-<li>Mention some applications these graphs can be used for
-<ol type="1">
-<li>Biomedical setting</li>
-<li>Social Media</li>
-<li>Question and answering systems</li>
-<li>more if it comes to mind</li>
-</ol></li>
-<li>Conclude section by mentioning that this review dives deeper into approaches used for construction and applying these graphs to biomedical applications</li>
-</ol>
+<p>Knowledge graphs are a practical resource for many real world applications. They have been used in social medial mining to classify nodes <span class="citation" data-cites="IexVJgDF">[<a href="#ref-IexVJgDF" role="doc-biblioref">1</a>]</span> or to create a recommendation system <span class="citation" data-cites="Eqbsazq5">[<a href="#ref-Eqbsazq5" role="doc-biblioref">2</a>]</span>. Knowledge graphs have also been used to understand natural language via interpreting simple questions and using relational information to provide answers <span class="citation" data-cites="N0gUhlt9 s8ydThMc">[<a href="#ref-N0gUhlt9" role="doc-biblioref">3</a>,<a href="#ref-s8ydThMc" role="doc-biblioref">4</a>]</span>. In a biomedical setting these graphs have been used to prioritize genes relevant to disease <span class="citation" data-cites="GI2y7kMc Oi5yRd0v 15k4Xz0i3 1D9FTzRBg">[<a href="#ref-GI2y7kMc" role="doc-biblioref">5</a>,<a href="#ref-Oi5yRd0v" role="doc-biblioref">6</a>,<a href="#ref-15k4Xz0i3" role="doc-biblioref">7</a>,<a href="#ref-1D9FTzRBg" role="doc-biblioref">8</a>]</span>, perform drug repurposing <span class="citation" data-cites="O21tn8vf">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>]</span> and identify drug-target interactions <span class="citation" data-cites="15GxqZyO8">[<a href="#ref-15GxqZyO8" role="doc-biblioref">10</a>]</span>.</p>
+<p>Despite their utility, precisely defining a knowledge graph is a difficult task because there are multiple conflicting definitions <span class="citation" data-cites="V9M93in">[<a href="#ref-V9M93in" role="doc-biblioref">11</a>]</span>. For this review, we define a knowledge graph as the following: a resource that integrates single or multiple sources of information into the form of a graph. This graph allows for the capacity to make semantic interpretation, continuously incorporate new information and uncover novel hidden knowledge through computational techniques and algorithms. Based on this definition resources like Hetionet <span class="citation" data-cites="O21tn8vf">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>]</span> would be considered a knowledge graph. Hetionet integrates multiple sources of information into the form of a graph (example shown in Figure <a href="#fig:hetionet_schema">1</a>) and was used to derive novel information concerning unique drug treatments <span class="citation" data-cites="O21tn8vf">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>]</span>. We do not consider databases like DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and DrugBank <span class="citation" data-cites="1FI8iuYiQ">[<a href="#ref-1FI8iuYiQ" role="doc-biblioref">13</a>]</span> to be knowledge graphs. These resources contain essential information, but do not represent their data in graph form.</p>
+<p>Knowledge graphs are often constructed from manually curated databases <span class="citation" data-cites="O21tn8vf kBHNhSma tIGJl1ES BTEcMH0X">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>,<a href="#ref-kBHNhSma" role="doc-biblioref">14</a>,<a href="#ref-tIGJl1ES" role="doc-biblioref">15</a>,<a href="#ref-BTEcMH0X" role="doc-biblioref">16</a>]</span>. These sources provide previously established information that can be incorporated into a graph. For example, a graph using DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> as a resource would have genes and diseases as nodes, while edges would be added between nodes that have an association. This example shows a single type of relationship; however, there are graphs that use databases with multiple relationships. Other approaches have used natural language processing techniques to build knowledge graphs <span class="citation" data-cites="gddb9uXr rxaBUglG">[<a href="#ref-gddb9uXr" role="doc-biblioref">17</a>,<a href="#ref-rxaBUglG" role="doc-biblioref">18</a>]</span>. One example used a text mining system to extract sentences that indicated a protein interacting with another protein <span class="citation" data-cites="ibJfUvEe">[<a href="#ref-ibJfUvEe" role="doc-biblioref">19</a>]</span>. Once these sentences have been identified, they are incorporated as evidence for establishing edges in a knowledge graph.</p>
+<p>In this review we describe various approaches for constructing and applying knowledge graphs in a biomedical setting. We discuss the pros and cons of constructing a knowledge graph via manually curated databases and via text mining systems. We also compare assorted approaches for applying knowledge graphs to solve biomedical problems. Lastly, we conclude on the practicality of knowledge graphs and point out future applications that have yet to be explored.</p>
+<figure>
+<img src="https://raw.githubusercontent.com/dhimmel/rephetio/f02d44fde7eeef0ffdca0800e0b43c48d800c86d/figure/metagraph.png" alt="Figure 1: A metagraph (schema) of the heterogeneous network used in the Rephetio project [9]. This undirected network depicts pharmacological and biomedical information. The nodes (circles) represent entities and edges (lines) depict relational information between two entities." id="fig:hetionet_schema" /><figcaption><span>Figure 1:</span> A metagraph (schema) of the heterogeneous network used in the Rephetio project <span class="citation" data-cites="O21tn8vf">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>]</span>. This undirected network depicts pharmacological and biomedical information. The nodes (circles) represent entities and edges (lines) depict relational information between two entities.</figcaption>
+</figure>
 <h2 id="building-biomedical-knowledge-graphs">Building Biomedical Knowledge Graphs</h2>
 <ol type="1">
 <li>Set up the context for relationship extraction
@@ -167,7 +160,118 @@
 <h2 id="references" class="page_break_before">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" role="doc-bibliography">
-
+<div id="ref-IexVJgDF">
+<p>1. <strong>Node Classification in Social Networks</strong><br />
+Smriti Bhagat, Graham Cormode, S. Muthukrishnan<br />
+<em>arXiv</em> (2011-01-17) <a href="https://arxiv.org/abs/1101.3291v1">https://arxiv.org/abs/1101.3291v1</a><br />
+DOI: <a href="https://doi.org/10.1007/978-1-4419-8462-3_5">10.1007/978-1-4419-8462-3_5</a></p>
+</div>
+<div id="ref-Eqbsazq5">
+<p>2. <strong>Network Embedding Based Recommendation Method in Social Networks</strong><br />
+Yufei Wen, Lei Guo, Zhumin Chen, Jun Ma<br />
+<em>Companion of the The Web Conference 2018 on The Web Conference 2018 - WWW ’18</em> (2018) <a href="https://doi.org/gf6rtt">https://doi.org/gf6rtt</a><br />
+DOI: <a href="https://doi.org/10.1145/3184558.3186904">10.1145/3184558.3186904</a></p>
+</div>
+<div id="ref-N0gUhlt9">
+<p>3. <strong>Open Question Answering with Weakly Supervised Embedding Models</strong><br />
+Antoine Bordes, Jason Weston, Nicolas Usunier<br />
+<em>arXiv</em> (2014-04-16) <a href="https://arxiv.org/abs/1404.4326v1">https://arxiv.org/abs/1404.4326v1</a></p>
+</div>
+<div id="ref-s8ydThMc">
+<p>4. <strong>Neural Network-based Question Answering over Knowledge Graphs on Word and Character Level</strong><br />
+Denis Lukovnikov, Asja Fischer, Jens Lehmann, Sören Auer<br />
+<em>Proceedings of the 26th International Conference on World Wide Web - WWW ’17</em> (2017) <a href="https://doi.org/gfv8hp">https://doi.org/gfv8hp</a><br />
+DOI: <a href="https://doi.org/10.1145/3038912.3052675">10.1145/3038912.3052675</a></p>
+</div>
+<div id="ref-GI2y7kMc">
+<p>5. <strong>Towards integrative gene prioritization in Alzheimer’s disease.</strong><br />
+Jang H Lee, Graciela H Gonzalez<br />
+<em>Pacific Symposium on Biocomputing. Pacific Symposium on Biocomputing</em> (2011) <a href="https://www.ncbi.nlm.nih.gov/pubmed/21121028">https://www.ncbi.nlm.nih.gov/pubmed/21121028</a><br />
+PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/21121028">21121028</a></p>
+</div>
+<div id="ref-Oi5yRd0v">
+<p>6. <strong>PhenoGeneRanker: A Tool for Gene Prioritization Using Complete Multiplex Heterogeneous Networks</strong><br />
+Cagatay Dursun, Naoki Shimoyama, Mary Shimoyama, Michael Schläppi, Serdar Bozdag<br />
+<em>Cold Spring Harbor Laboratory</em> (2019-05-27) <a href="https://doi.org/gf6rtr">https://doi.org/gf6rtr</a><br />
+DOI: <a href="https://doi.org/10.1101/651000">10.1101/651000</a></p>
+</div>
+<div id="ref-15k4Xz0i3">
+<p>7. <strong>Biological Random Walks: Integrating heterogeneous data in disease gene prioritization</strong><br />
+Michele Gentili, Leonardo Martini, Manuela Petti, Lorenzo Farina, Luca Becchetti<br />
+<em>2019 IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB)</em> (2019-07) <a href="https://doi.org/gf6rts">https://doi.org/gf6rts</a><br />
+DOI: <a href="https://doi.org/10.1109/cibcb.2019.8791472">10.1109/cibcb.2019.8791472</a></p>
+</div>
+<div id="ref-1D9FTzRBg">
+<p>8. <strong>Semantic Disease Gene Embeddings (SmuDGE): phenotype-based disease gene prioritization without phenotypes</strong><br />
+Mona Alshahrani, Robert Hoehndorf<br />
+<em>Bioinformatics</em> (2018-09-01) <a href="https://doi.org/gd9k8n">https://doi.org/gd9k8n</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/bty559">10.1093/bioinformatics/bty559</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30423077">30423077</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6129260">PMC6129260</a></p>
+</div>
+<div id="ref-O21tn8vf">
+<p>9. <strong>Systematic integration of biomedical knowledge prioritizes drugs for repurposing</strong><br />
+Daniel Scott Himmelstein, Antoine Lizee, Christine Hessler, Leo Brueggeman, Sabrina L Chen, Dexter Hadley, Ari Green, Pouya Khankhanian, Sergio E Baranzini<br />
+<em>eLife</em> (2017-09-22) <a href="https://doi.org/cdfk">https://doi.org/cdfk</a><br />
+DOI: <a href="https://doi.org/10.7554/elife.26726">10.7554/elife.26726</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28936969">28936969</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5640425">PMC5640425</a></p>
+</div>
+<div id="ref-15GxqZyO8">
+<p>10. <strong>Assessing Drug Target Association Using Semantic Linked Data</strong><br />
+Bin Chen, Ying Ding, David J. Wild<br />
+<em>PLoS Computational Biology</em> (2012-07-05) <a href="https://doi.org/rn6">https://doi.org/rn6</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1002574">10.1371/journal.pcbi.1002574</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/22859915">22859915</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3390390">PMC3390390</a></p>
+</div>
+<div id="ref-V9M93in">
+<p>11. <strong>Towards a definition of knowledge graphs</strong><br />
+Lisa Ehrlinger, Wolfram Wöß<br />
+<em>SEMANTiCS</em> (2016)</p>
+</div>
+<div id="ref-5gG8hwv7">
+<p>12. <strong>DISEASES: Text mining and data integration of disease–gene associations</strong><br />
+Sune Pletscher-Frankild, Albert Pallejà, Kalliopi Tsafou, Janos X. Binder, Lars Juhl Jensen<br />
+<em>Methods</em> (2015-03) <a href="https://doi.org/f3mn6s">https://doi.org/f3mn6s</a><br />
+DOI: <a href="https://doi.org/10.1016/j.ymeth.2014.11.020">10.1016/j.ymeth.2014.11.020</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25484339">25484339</a></p>
+</div>
+<div id="ref-1FI8iuYiQ">
+<p>13. <strong>DrugBank 5.0: a major update to the DrugBank database for 2018</strong><br />
+David S Wishart, Yannick D Feunang, An C Guo, Elvis J Lo, Ana Marcu, Jason R Grant, Tanvir Sajed, Daniel Johnson, Carin Li, Zinat Sayeeda, … Michael Wilson<br />
+<em>Nucleic Acids Research</em> (2017-11-08) <a href="https://doi.org/gcwtzk">https://doi.org/gcwtzk</a><br />
+DOI: <a href="https://doi.org/10.1093/nar/gkx1037">10.1093/nar/gkx1037</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29126136">29126136</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5753335">PMC5753335</a></p>
+</div>
+<div id="ref-kBHNhSma">
+<p>14. <strong>A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information</strong><br />
+Yunan Luo, Xinbin Zhao, Jingtian Zhou, Jinglin Yang, Yanqing Zhang, Wenhua Kuang, Jian Peng, Ligong Chen, Jianyang Zeng<br />
+<em>Nature Communications</em> (2017-09-18) <a href="https://doi.org/gbxwrc">https://doi.org/gbxwrc</a><br />
+DOI: <a href="https://doi.org/10.1038/s41467-017-00680-8">10.1038/s41467-017-00680-8</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28924171">28924171</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5603535">PMC5603535</a></p>
+</div>
+<div id="ref-tIGJl1ES">
+<p>15. <strong>Inferring new indications for approved drugs via random walk on drug-disease heterogenous networks</strong><br />
+Hui Liu, Yinglong Song, Jihong Guan, Libo Luo, Ziheng Zhuang<br />
+<em>BMC Bioinformatics</em> (2016-12) <a href="https://doi.org/gf6v27">https://doi.org/gf6v27</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-016-1336-7">10.1186/s12859-016-1336-7</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28155639">28155639</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5259862">PMC5259862</a></p>
+</div>
+<div id="ref-BTEcMH0X">
+<p>16. <strong>Finding disease similarity based on implicit semantic similarity</strong><br />
+Sachin Mathur, Deendayal Dinakarpandian<br />
+<em>Journal of Biomedical Informatics</em> (2012-04) <a href="https://doi.org/b7b3tw">https://doi.org/b7b3tw</a><br />
+DOI: <a href="https://doi.org/10.1016/j.jbi.2011.11.017">10.1016/j.jbi.2011.11.017</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/22166490">22166490</a></p>
+</div>
+<div id="ref-gddb9uXr">
+<p>17. <strong>KnowLife: a versatile approach for constructing a large knowledge graph for biomedical sciences</strong><br />
+Patrick Ernst, Amy Siu, Gerhard Weikum<br />
+<em>BMC Bioinformatics</em> (2015-05-14) <a href="https://doi.org/gb8w8d">https://doi.org/gb8w8d</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-015-0549-5">10.1186/s12859-015-0549-5</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25971816">25971816</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4448285">PMC4448285</a></p>
+</div>
+<div id="ref-rxaBUglG">
+<p>18. <strong>Constructing biomedical domain-specific knowledge graph with minimum supervision</strong><br />
+Jianbo Yuan, Zhiwei Jin, Han Guo, Hongxia Jin, Xianchao Zhang, Tristram Smith, Jiebo Luo<br />
+<em>Knowledge and Information Systems</em> (2019-03-23) <a href="https://doi.org/gf6v26">https://doi.org/gf6v26</a><br />
+DOI: <a href="https://doi.org/10.1007/s10115-019-01351-4">10.1007/s10115-019-01351-4</a></p>
+</div>
+<div id="ref-ibJfUvEe">
+<p>19. <strong>Feature assisted stacked attentive shortest dependency path based Bi-LSTM model for protein–protein interaction</strong><br />
+Shweta Yadav, Asif Ekbal, Sriparna Saha, Ankit Kumar, Pushpak Bhattacharyya<br />
+<em>Knowledge-Based Systems</em> (2019-02) <a href="https://doi.org/gf4788">https://doi.org/gf4788</a><br />
+DOI: <a href="https://doi.org/10.1016/j.knosys.2018.11.020">10.1016/j.knosys.2018.11.020</a></p>
+</div>
 </div>
 <!-- default theme -->
 
