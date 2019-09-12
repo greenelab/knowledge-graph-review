@@ -19,6 +19,26 @@
       }
     ]
   },
+{
+    "id": "url:https://github.com/manubot/rootstock",
+    "type": "webpage",
+    "URL": "https://github.com/manubot/rootstock",
+    "title": "manubot/rootstock GitHub repository",
+    "container-title": "GitHub",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "author": [
+      {
+        "given": "Daniel",
+        "family": "Himmelstein"
+      }
+    ]
+  },
   {
     "author": [
       {
@@ -40,6 +60,177 @@
       ]
     },
     "title": "Towards a definition of knowledge graphs",
+    "type": "paper-conference"
+  },
+  {
+   "id": "raw:zhaoreplearn",
+    "author": [
+      {
+        "family": "Zhao",
+        "given": "Yu"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      }
+    ],
+    "container-title": "IJCAI",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "title": "Representation learning for measuring entity relatedness with rich information",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:yangreplearn",
+    "ISBN": "978-1-57735-738-4",
+    "URL": "http://dl.acm.org/citation.cfm?id=2832415.2832542",
+    "author": [
+      {
+        "family": "Yang",
+        "given": "Cheng"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Zhao",
+        "given": "Deli"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      },
+      {
+        "family": "Chang",
+        "given": "Edward Y."
+      }
+    ],
+    "collection-title": "IJCAI’15",
+    "container-title": "Proceedings of the 24th international conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "page": "2111-2117",
+    "publisher": "AAAI Press",
+    "publisher-place": "Buenos Aires, Argentina",
+    "title": "Network representation learning with rich text information",
+    "type": "paper-conference"
+  },
+   {
+    "id": "raw:tureplearn",
+    "ISBN": "978-1-57735-770-4",
+    "URL": "http://dl.acm.org/citation.cfm?id=3061053.3061163",
+    "author": [
+      {
+        "family": "Tu",
+        "given": "Cunchao"
+      },
+      {
+        "family": "Zhang",
+        "given": "Weicheng"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      }
+    ],
+    "collection-title": "IJCAI’16",
+    "container-title": "Proceedings of the twenty-fifth international joint conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "3889-3895",
+    "publisher": "AAAI Press",
+    "publisher-place": "New York, New York, USA",
+    "title": "Max-margin deepwalk: Discriminative learning of network representation",
+    "title-short": "Max-margin deepwalk",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:hanreplearn",
+    "ISBN": "978-1-57735-770-4",
+    "URL": "http://dl.acm.org/citation.cfm?id=3060832.3060837",
+    "author": [
+      {
+        "family": "Han",
+        "given": "Yufei"
+      },
+      {
+        "family": "Shen",
+        "given": "Yun"
+      }
+    ],
+    "collection-title": "IJCAI’16",
+    "container-title": "Proceedings of the twenty-fifth international joint conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "1548-1554",
+    "publisher": "AAAI Press",
+    "publisher-place": "New York, New York, USA",
+    "title": "Partially supervised graph embedding for positive unlabelled feature selection",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:gongreplearn",
+    "URL": "http://dl.acm.org/citation.cfm?id=2892753.2892809",
+    "author": [
+      {
+        "family": "Gong",
+        "given": "Chen"
+      },
+      {
+        "family": "Tao",
+        "given": "Dacheng"
+      },
+      {
+        "family": "Yang",
+        "given": "Jie"
+      },
+      {
+        "family": "Fu",
+        "given": "Keren"
+      }
+    ],
+    "collection-title": "AAAI’14",
+    "container-title": "Proceedings of the twenty-eighth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "1847-1853",
+    "publisher": "AAAI Press",
+    "publisher-place": "Qu&\\#233;bec City, Qu&\\#233;bec, Canada",
+    "title": "Signed laplacian embedding for supervised dimension reduction",
     "type": "paper-conference"
   }
 ]
