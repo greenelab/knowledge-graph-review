@@ -41,5 +41,117 @@
     },
     "title": "Towards a definition of knowledge graphs",
     "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Bordes",
+        "given": "Antoine"
+      },
+      {
+        "family": "Usunier",
+        "given": "Nicolas"
+      },
+      {
+        "family": "García-Durán",
+        "given": "Alberto"
+      },
+      {
+        "family": "Weston",
+        "given": "Jason"
+      },
+      {
+        "family": "Yakhnenko",
+        "given": "Oksana"
+      }
+    ],
+    "container-title": "NIPS",
+    "id": "raw:bordestranse",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "title": "Translating embeddings for modeling multi-relational data",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:wangtransH",
+    "URL": "http://dl.acm.org/citation.cfm?id=2893873.2894046",
+    "author": [
+      {
+        "family": "Wang",
+        "given": "Zhen"
+      },
+      {
+        "family": "Zhang",
+        "given": "Jianwen"
+      },
+      {
+        "family": "Feng",
+        "given": "Jianlin"
+      },
+      {
+        "family": "Chen",
+        "given": "Zheng"
+      }
+    ],
+    "collection-title": "AAAI’14",
+    "container-title": "Proceedings of the twenty-eighth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "1112-1119",
+    "publisher": "AAAI Press",
+    "publisher-place": "Qu&\\#233;bec City, Qu&\\#233;bec, Canada",
+    "title": "Knowledge graph embedding by translating on hyperplanes",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:lintransR",
+    "ISBN": "0-262-51129-0",
+    "URL": "http://dl.acm.org/citation.cfm?id=2886521.2886624",
+    "author": [
+      {
+        "family": "Lin",
+        "given": "Yankai"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      },
+      {
+        "family": "Liu",
+        "given": "Yang"
+      },
+      {
+        "family": "Zhu",
+        "given": "Xuan"
+      }
+    ],
+    "collection-title": "AAAI’15",
+    "container-title": "Proceedings of the twenty-ninth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "page": "2181-2187",
+    "publisher": "AAAI Press",
+    "publisher-place": "Austin, Texas",
+    "title": "Learning entity and relation embeddings for knowledge graph completion",
+    "type": "paper-conference"
   }
 ]
