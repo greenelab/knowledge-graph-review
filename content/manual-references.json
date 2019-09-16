@@ -1,25 +1,25 @@
 [
-{
-  "id": "url:https://github.com/manubot/rootstock",
-  "type": "webpage",
-  "URL": "https://github.com/manubot/rootstock",
-  "title": "manubot/rootstock GitHub repository",
-  "container-title": "GitHub",
-  "issued": {
-    "date-parts": [
-      [
-        2019
+  {
+    "id": "url:https://github.com/manubot/rootstock",
+    "type": "webpage",
+    "URL": "https://github.com/manubot/rootstock",
+    "title": "manubot/rootstock GitHub repository",
+    "container-title": "GitHub",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
       ]
+    },
+    "author": [
+      {
+        "given": "Daniel",
+        "family": "Himmelstein"
+      }
     ]
   },
-  "author": [
-    {
-      "given": "Daniel",
-      "family": "Himmelstein"
-    }
-  ]
-},
-{
+  {
     "author": [
       {
         "family": "Ehrlinger",
