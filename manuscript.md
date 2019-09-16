@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2019-09-03'
+date-meta: '2019-09-16'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/d1ae25660c725a2cda327cc4b999d71f720a7594/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/e0a2cb3a7059fc665e89e2c8f117db8a1a8a3b33/))
 was automatically generated
-from [greenelab/knowledge-graph-review@d1ae256](https://github.com/greenelab/knowledge-graph-review/tree/d1ae25660c725a2cda327cc4b999d71f720a7594)
-on September 3, 2019.
+from [greenelab/knowledge-graph-review@e0a2cb3](https://github.com/greenelab/knowledge-graph-review/tree/e0a2cb3a7059fc665e89e2c8f117db8a1a8a3b33)
+on September 16, 2019.
 </em></small>
 
 ## Authors
@@ -95,10 +95,13 @@ The nodes (circles) represent entities and edges (lines) depict  relational info
 
 ## Building Biomedical Knowledge Graphs
 
-1. Set up the context for relationship extraction
-	1. Define the problem
-	2. Talk about the importance of the problem (filling knowledge bases -> point researchers to relevant papers)
-2. Give overview towards taxonomy of approaches (hand written rules, unsupervised machine learning, supervised machine learning etc.)
+Knowledge graphs can be constructed in many ways using resources such as text or pre-existing databases. 
+Usually, knowledge graphs are constructed using pre-existing databases.
+These databases are constructed by domain experts using approaches ranging from manual curation to automated techniques, such as text mining systems.
+Manual curation is a process that involves extensive use of domain experts to read papers and detect sentences that assert a relationship.
+Automated approaches involve the use of machine learning or natural language processing techniques to rapidly detect sentences of interest.
+We categorize these automated approaches into the following groups: rule-based extraction, unsupervised machine learning, and supervised machine learning.
+We discuss examples of each type of approach and synthesize the strengths and weaknesses of each.
 
 ### Constructing Databases and Manual Curation
 
