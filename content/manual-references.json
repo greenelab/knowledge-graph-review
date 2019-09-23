@@ -1,22 +1,137 @@
 [
-{
-  "id": "url:https://github.com/manubot/rootstock",
-  "type": "webpage",
-  "URL": "https://github.com/manubot/rootstock",
-  "title": "manubot/rootstock GitHub repository",
-  "container-title": "GitHub",
-  "issued": {
-    "date-parts": [
-      [
-        2019
+  {
+    "id": "url:https://github.com/manubot/rootstock",
+    "type": "webpage",
+    "URL": "https://github.com/manubot/rootstock",
+    "title": "manubot/rootstock GitHub repository",
+    "container-title": "GitHub",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
       ]
+    },
+    "author": [
+      {
+        "given": "Daniel",
+        "family": "Himmelstein"
+      }
     ]
   },
-  "author": [
+  {
+      "id": "raw:biocreative/chemprot",
+      "URL": "https://www.semanticscholar.org/paper/Overview-of-the-BioCreative-VI-chemical-protein-Krallinger-Rabal/eed781f498b563df5a9e8a241c67d63dd1d92ad5",
+      "author": [
+        {
+          "family": "Krallinger",
+          "given": "Martin"
+        },
+        {
+          "family": "Rabal",
+          "given": "Obdulia"
+        },
+        {
+          "family": "Akhondi",
+          "given": "Saber A"
+        },
+        {
+          "literal": "others"
+        }
+      ],
+      "container-title": "Proceedings of the sixth biocreative challenge evaluation workshop",
+      "issued": {
+        "date-parts": [
+          [
+            2017
+          ]
+        ]
+      },
+      "page": "141-146",
+      "title": "Overview of the biocreative vi chemical-protein interaction track",
+      "type": "paper-conference",
+      "volume": "1"
+    },
     {
-      "given": "Daniel",
-      "family": "Himmelstein"
-    }
-  ]
-}
+      "id": "raw:LLL",
+      "author": [
+        {
+          "family": "Nédellec",
+          "given": "C."
+        }
+      ],
+      "container-title": "Proceedings of the learning language in logic 2005 workshop at the international conference on machine learning",
+      "issued": {
+        "date-parts": [
+          [
+            2005
+          ]
+        ]
+      },
+      "title": "Learning language in logic - genic interaction extraction challenge",
+      "type": "paper-conference"
+    },
+    {
+      "id": "raw:IEPA",
+      "URL": "http://helix-web.stanford.edu/psb02/ding.pdf",
+      "author": [
+        {
+          "family": "Ding",
+          "given": "Jing"
+        },
+        {
+          "family": "Berleant",
+          "given": "Daniel"
+        },
+        {
+          "family": "Nettleton",
+          "given": "Dan"
+        },
+        {
+          "family": "Wurtele",
+          "given": "Eve Syrkin"
+        }
+      ],
+      "container-title": "Pacific symposium on biocomputing",
+      "issued": {
+        "date-parts": [
+          [
+            2002
+          ]
+        ]
+      },
+      "keyword": "CAT CAT-REL-COOR CAT-REL-granularity levels",
+      "page": "326-337",
+      "title": "Mining medline: Abstracts, sentences, or phrases?",
+      "title-short": "Mining medline",
+      "type": "paper-conference"
+    },
+    {
+      "id": "raw:GoodfellowDL",
+      "ISBN": "0262035618, 9780262035613",
+      "author": [
+        {
+          "family": "Goodfellow",
+          "given": "Ian"
+        },
+        {
+          "family": "Bengio",
+          "given": "Yoshua"
+        },
+        {
+          "family": "Courville",
+          "given": "Aaron"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            2016
+          ]
+        ]
+      },
+      "publisher": "The MIT Press",
+      "title": "Deep learning",
+      "type": "book"
+  }
 ]
