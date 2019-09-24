@@ -19,49 +19,6 @@
       }
     ]
   },
-{
-    "id": "url:https://github.com/manubot/rootstock",
-    "type": "webpage",
-    "URL": "https://github.com/manubot/rootstock",
-    "title": "manubot/rootstock GitHub repository",
-    "container-title": "GitHub",
-    "issued": {
-      "date-parts": [
-        [
-          2019
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "Daniel",
-        "family": "Himmelstein"
-      }
-    ]
-  },
-  {
-    "author": [
-      {
-        "family": "Ehrlinger",
-        "given": "Lisa"
-      },
-      {
-        "family": "Wöß",
-        "given": "Wolfram"
-      }
-    ],
-    "container-title": "SEMANTiCS",
-    "id": "raw:KG_DEF",
-    "issued": {
-      "date-parts": [
-        [
-          2016
-        ]
-      ]
-    },
-    "title": "Towards a definition of knowledge graphs",
-    "type": "paper-conference"
-  },
   {
    "id": "raw:zhaoreplearn",
     "author": [
