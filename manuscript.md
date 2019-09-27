@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2019-09-16'
+date-meta: '2019-09-27'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/e0a2cb3a7059fc665e89e2c8f117db8a1a8a3b33/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/e15d016d867796f969a35dbfd36bd477bd215513/))
 was automatically generated
-from [greenelab/knowledge-graph-review@e0a2cb3](https://github.com/greenelab/knowledge-graph-review/tree/e0a2cb3a7059fc665e89e2c8f117db8a1a8a3b33)
-on September 16, 2019.
+from [greenelab/knowledge-graph-review@e15d016](https://github.com/greenelab/knowledge-graph-review/tree/e15d016d867796f969a35dbfd36bd477bd215513)
+on September 27, 2019.
 </em></small>
 
 ## Authors
@@ -114,10 +114,52 @@ We discuss examples of each type of approach and synthesize the strengths and we
 
 1. Mention papers on hand written rules and expressions
 
-#### Unsupervised Machine Learning
+#### Extracting Relationships Without Labels
 
-1. Mention Clustering Analysis
-2. Mention Co-Occurrence approaches
+Unsupervised methods of extraction involve drawing inferences from data without the use of labels.
+These methods involve some form of clustering or statistical calculations.
+In this section we discuss methods that use unsupervised learning to detect relationship asserting sentences from text.
+
+An unsupervised method to extract relationships exploits the fact that two entities can appear together in text. 
+This kind of event is called co-occurrence and studies that use this phenomenon can be found in table {@tbl:unsupervised-methods-text-mining}.
+Two databases DISEASES [@5gG8hwv7] and STRING [@iihNCsNX] were populated using a co-occurrence scoring method on PubMed abstracts.
+Both databases used the same scoring method that measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves.
+This method assumes independence between each individual occurrence.
+Under this assumption mention pairs that occur more than expected were presumed to indicate the presence of an association or interaction.
+This approach was able to identify 543,405 disease gene associations [@5gG8hwv7] and 792,730 high confidence protein protein interactions [@iihNCsNX], but is limited to only using PubMed abstracts.
+
+Full text articles are able to drastically amplify text mining power to detect relationships [@DGlWGDEt; @pLAIFXqP].
+Westergaard et al. used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
+The authors discovered that full text provided better prediction power than using abstracts alone.
+This improvement suggests that future text mining approaches should consider using full text to increase detection power.
+
+Unsupervised methods have been focused on treating multiple biomedical relationships as multiple isolated problems.
+These methods repeatedly use the same model for each biomedical relationship type.
+An alternative to this persepctive is to capture all different relationship types at once.
+Clustering is an approach that accomplish this concept of simultaneous extraction.
+Percha et al. used a biclustering algorithm on generated dependency parse trees to group PubMed abstract sentences [@CSiMoOrI].
+Each cluster was manually curated to determine which relationship they represented.
+This approach captured 4,451,661 dependency paths for 36 different groups [@CSiMoOrI].
+Despite the success, this approach suffered from technical issues such as dependency tree parsing errors.
+This type of error resulted in sentences not being grouped by the clustering algorithm [@CSiMoOrI].
+Future clustering approaches should consider simplifying sentences to prevent this type of issue.
+
+Overall unsupervised methods provide a means to rapidly find relationship asserting sentences without the need of annotated text.
+Approaches in this category range from using co-occurrence scores to clustering sentences.
+These methods provide a generalizable framework that can be used on large repositories of text.
+Future methods can improve detection power by considering the use of  methods that simplify sentences and use datasets that include full text articles.
+
+| Study | Relationship of Interest | 
+| --- | --- | 
+| [@IGXdryzB] | Protein-Protein Interactions, Disease-Gene and Tissue-Gene Associations |
+| [@ETC6lm7S] | Drug Disease Treatments |
+| [@AdKPf5EO] | Drug, Gene and Disease interactions |
+| [@DGlWGDEt]| Protein-Protein Interactions |
+| [@5gG8hwv7] | Disease-Gene associations|
+| [@q9Fhy8eq]| Protein-Protein Interactions |
+| [@10tWTMIaV] | Genotype-Phenotype Relationships |
+
+Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupervised-methods-text-mining}
 
 #### Supervised Machine Learning
 
