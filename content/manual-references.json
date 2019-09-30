@@ -47,6 +47,29 @@
     "type": "paper-conference"
   },
   {
+    "id": "raw:KG_DEF",
+    "author": [
+      {
+        "family": "Ehrlinger",
+        "given": "Lisa"
+      },
+      {
+        "family": "Wöß",
+        "given": "Wolfram"
+      }
+    ],
+    "container-title": "SEMANTiCS",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "title": "Towards a definition of knowledge graphs",
+    "type": "paper-conference"
+  },
+  {
     "id": "raw:yangreplearn",
     "ISBN": "978-1-57735-738-4",
     "URL": "http://dl.acm.org/citation.cfm?id=2832415.2832542",
