@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2019-09-27'
+date-meta: '2019-12-26'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/e15d016d867796f969a35dbfd36bd477bd215513/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/d1d51c8c00e0d61240e8ecd0a715144c67763e76/))
 was automatically generated
-from [greenelab/knowledge-graph-review@e15d016](https://github.com/greenelab/knowledge-graph-review/tree/e15d016d867796f969a35dbfd36bd477bd215513)
-on September 27, 2019.
+from [greenelab/knowledge-graph-review@d1d51c8](https://github.com/greenelab/knowledge-graph-review/tree/d1d51c8c00e0d61240e8ecd0a715144c67763e76)
+on December 26, 2019.
 </em></small>
 
 ## Authors
@@ -105,8 +105,52 @@ We discuss examples of each type of approach and synthesize the strengths and we
 
 ### Constructing Databases and Manual Curation
 
-1. Talk about papers that construct knowledge graphs without text mining approaches
-2. Discuss the positives and negatives for these methods
+Database construction can date back all the way to 1956 where the first database contained a protein sequence of the insulin molecule [@GjM2NbnC].
+This process involves gathering relevant text such as journal articles, abstracts, or web-based text.
+At this point curators can read gathered text and detect relationship asserting sentences (i.e. relationship extraction).
+An alternative to use a text mining system to filter out extraneous sentences, then incorporate curators to perfect the system's findings. 
+This semi-automatic approach is way to augment curators throughout the curation process.
+We discuss the pros and cons of using manual curation for relationship extraction and mention databases that use this method to populate their fields.
+
+Notable databases have been constructed via manual curation (Table {@tbl:manual-curated-databases}).
+For example, COSMIC [@pfquADl5] was constructed via a group of domain experts scanning the literature for key cancer related genes.
+This database has reached close to 35M entries in 2016 [@pfquADl5] and grew to a total of 45M entiries in 2019 [@1E72FZcIm].
+Studies have shown that these databases contain relatively precise data, but in low quantities [@5TLcy6Yl; @1BnoByjXH; @OELNNm08; @yjdNa04s; @d3rG3TXb; @16P0HRKom; @UdzvLgBM].
+This happens because the high publication rate is too much for curators to keep up [@vYYWSlK2].
+This findings highlight a critical need for future approaches to be fast enough to compete with an increasing publication rate.
+
+Semi-automatic methods are a way to augment curators during the curation process [@17LLVYRDg; @iJxqfYog; @us6gXxVp; @kHKmKy23; @17KVV4Pum; @d3rG3TXb; @SHPz84Z7].
+First step in this context is to use an automatic system to initally extract sentences from text.
+This process filters out irrelevant sentences, which means less text for  curators to sift through.
+After the pre-filtering step curators can approve or remove the identified sentences.
+This semi-automatic process was found to speed up the curation process compared to manual approach [@17LLVYRDg; @KX7N360G]. 
+Curators in [@KX7N360G] saved an average of 2.8 hours of overall time while curators in [@17LLVYRDg] saved about the same amount of time (2 hours). 
+Despite the speed up, this process is prone to produce bias results.
+As automated systems excel in identifying sentences for commonly occurring relationships, they miss out on lessor known relationships [@17LLVYRDg].
+Plus, these systems have a hard time parsing ambiguous sentences that naturally occur in text.
+This complication results in curators have a difficult time correcting these systems [@17LLVYRDg].
+Given these caveats, a future direction would be using or creating approaches that can mitigate the relationship bias.
+Furthermore, future approaches should look into using techniques that simplify sentences to solve the ambiguity issue [@umenx8Nh; @aJL1tPyy].
+
+Despite the negatives of manual curation, it is still an essential process for relationship extraction approaches.
+This process can be used to generate gold standard datasets that automated systems use for validation [@Y2DcwTrA; @YWh6tPj].
+Furthermore, manual curation can be used during the training process of  automated systems (i.e. active learning) [@MTIt6gSA].
+It is important to remember that manual curation alone is precise, but results in low recall rates [@UdzvLgBM].
+Future databases should consider initially relying on automated methods to obtain sentences at an acceptable recall level, then incorporate manual curation as a way to fix or remove irrelevant results.
+
+| Database [Reference] | Short Description | Number of Entries | Entity  Types | Relationship Types | Method of Population |
+| --- | --- | --- | --- | --- | --- |
+| Entrez-Gene [@u7vVtngU] | NCBI's Gene annotation database that contains information pertaining to genes, gene's organism source, phenotypes etc. | 7,883,114 | Genes, Species and Phenotypes | Gene-Phenotypes and Genes-Species mappings | Semi-automated curation |
+| UniProt [@1ZE22clL] | A protein protein interaction database that contains proteomic information. | 560,823 | Proteins, Protein sequences | Protein-Protein interactions | Manual and Automated Curation | 
+| PharmGKB [@qbo1ouMs] | A database that contains genetic, phenotypic, and clinical information related to pharmacogenomic studies. | 43,112 | Drugs, Genes, Phenotypes, Variants, Pathways | Gene-Phenotypes, Pathway-Drugs, Gene-Variants, Gene-Pathways | Manual Curation and Automated Methods |
+| COSMIC [@pfquADl5] | A database that contains high resolution human cancer genetic information. | 35,946,704 | Genes, Variants, Tumor Types| Gene-Variant Mappings | Manual Curation | 
+| BioGrid [@kFAyvOpe] | A database for major model organisms. It contains genetic and proteomic information.| 572,084 | Genes, Proteins| Protein-Protein interactions | Semi-automatic methods |
+| Comparative Toxicogenomics Database [@axd6eJec] | A database that contains manually curated chemical-gene-disease interactions and  relationships. | 2,429,689 | Chemicals (Drugs), Genes, Diseases | Drug-Genes, Drug-Disease, Disease-Gene mappings | Manual curation and Automated systems |
+| Comprehensive Antibiotic Resistance Database [@1ByMfX8Y1] | Manually curated database that contains information about the molecular basis of antimicrobial resistance. | 174,443 | Drugs, Genes, Variants | Drug-Gene, Drug-Variant mappings | Manual curation |
+| OMIM [@1FZWpEoss] | A database that contains phenotype and genotype information | 25,153 | Genes, Phenotypes | Gene-Phenotype mappings | Manual Curation |
+Table. A table of databases that used a form of manual curation to populate entries. 
+Reported number of entities and relationships are relative to time of publication.
+{#tbl:manual-curated-databases}
 
 ### Text Mining for Relationship Extraction
 
