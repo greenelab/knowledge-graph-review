@@ -18,5 +18,54 @@
       "family": "Himmelstein"
     }
   ]
-}
+},
+{
+   "id": "eisenbach2006phpsyntaxtree",
+    "author": [
+      {
+        "family": "Eisenbach",
+        "given": "A"
+      },
+      {
+        "family": "Eisenbach",
+        "given": "M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "title": "PhpSyntaxTree tool",
+    "type": "no-type"
+  },
+  {
+    "id": "honnibal2017spacy",
+    "author": [
+      {
+        "family": "Honnibal",
+        "given": "Matthew"
+      },
+      {
+        "family": "Montani",
+        "given": "Ines"
+      }
+    ],
+    "container-title": "To appear",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "title": "Spacy 2: Natural language understanding with bloom embeddings, convolutional neural networks and incremental parsing",
+    "title-short": "Spacy 2",
+    "type": "article-journal",
+    "volume": "7"
+  }
+
 ]
