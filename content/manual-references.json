@@ -1,15 +1,22 @@
 [
-{
-  "id": "url:https://github.com/manubot/rootstock",
-  "type": "webpage",
-  "URL": "https://github.com/manubot/rootstock",
-  "title": "manubot/rootstock GitHub repository",
-  "container-title": "GitHub",
-  "issued": {
-    "date-parts": [
-      [
-        2019
+  {
+    "id": "url:https://github.com/manubot/rootstock",
+    "type": "webpage",
+    "URL": "https://github.com/manubot/rootstock",
+    "title": "manubot/rootstock GitHub repository",
+    "container-title": "GitHub",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
       ]
+    },
+    "author": [
+      {
+        "given": "Daniel",
+        "family": "Himmelstein"
+      }
     ]
   },
   "author": [
@@ -20,7 +27,7 @@
   ]
 },
 {
-   "id": "eisenbach2006phpsyntaxtree",
+    "id": "eisenbach2006phpsyntaxtree",
     "author": [
       {
         "family": "Eisenbach",
@@ -40,8 +47,8 @@
     },
     "title": "PhpSyntaxTree tool",
     "type": "no-type"
-  },
-  {
+},
+{
     "id": "honnibal2017spacy",
     "author": [
       {
@@ -66,6 +73,28 @@
     "title-short": "Spacy 2",
     "type": "article-journal",
     "volume": "7"
-  }
-
+},
+{
+    "author": [
+      {
+        "family": "Ehrlinger",
+        "given": "Lisa"
+      },
+      {
+        "family": "Wöß",
+        "given": "Wolfram"
+      }
+    ],
+    "container-title": "SEMANTiCS",
+    "id": "raw:KG_DEF",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "title": "Towards a definition of knowledge graphs",
+    "type": "paper-conference"
+}
 ]
