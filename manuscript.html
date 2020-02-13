@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="David Nicholson" />
   <meta name="author" content="Jane Roe" />
-  <meta name="dcterms.date" content="2019-12-26" />
+  <meta name="dcterms.date" content="2020-02-13" />
   <meta name="keywords" content="knowledge-graphs, network-embeddings, text-mining, natural-language-processing, deep-learning, machine-learning, literature-review" />
   <title>Constructing Knowledge Graphs and Their Biomedical Applications</title>
   <style>
@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/d1d51c8c00e0d61240e8ecd0a715144c67763e76/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/d1d51c8c00e0d61240e8ecd0a715144c67763e76">greenelab/knowledge-graph-review@d1d51c8</a> on December 26, 2019. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/43604c74b814c58c4b92b9e22eae582025630329/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/43604c74b814c58c4b92b9e22eae582025630329">greenelab/knowledge-graph-review@43604c7</a> on February 13, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -136,15 +136,22 @@
 </table>
 <p>Table. A table of databases that used a form of manual curation to populate entries. Reported number of entities and relationships are relative to time of publication. {#tbl:manual-curated-databases}</p>
 <h3 id="text-mining-for-relationship-extraction">Text Mining for Relationship Extraction</h3>
-<h4 id="rule-based-natural-language-processing">Rule-Based Natural Language Processing</h4>
-<ol type="1">
-<li>Mention papers on hand written rules and expressions</li>
-</ol>
+<h4 id="rule-based-relationship-extraction">Rule-Based Relationship Extraction</h4>
+<p>Rule-based extraction consists of identifying sentences that contain important keywords or grammatical patterns that allude to relationships of interest. Keywords are established via expert knowledge or though the use of pre-existing ontologies. Grammatical patterns are constructed via experts curating parse trees, which are tree data structures that depict a sentence’s grammatical structure. Parse trees come into two forms a constituency parse tree and a dependency parse trees. Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc, for construction. A constituency parse trees breaks a sentence down into a subphrases (Figure <a href="#fig:constituency-parse-tree-example">3</a>) while dependency path trees analyzes the grammatical structure of a sentence (Figure <a href="#fig:dependency-parse-tree-example">2</a>). Many text mining approaches <span class="citation" data-cites="i7KpvzCo 3j1T67vB iiQkIqUX">[<a href="#ref-i7KpvzCo" role="doc-biblioref">50</a>,<a href="#ref-3j1T67vB" role="doc-biblioref">51</a>,<a href="#ref-iiQkIqUX" role="doc-biblioref">52</a>]</span> use such trees to generate features for machine learning algorithms. These approaches are discussed in later sections. For this section we focus on approaches that mainly use rule based extraction to detect sentences that assert a relationship.</p>
+<p>Grammatical patterns can simplify sentences for easy extraction <span class="citation" data-cites="aJL1tPyy 66vfJAIo">[<a href="#ref-aJL1tPyy" role="doc-biblioref">39</a>,<a href="#ref-66vfJAIo" role="doc-biblioref">53</a>]</span>. Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions <span class="citation" data-cites="aJL1tPyy">[<a href="#ref-aJL1tPyy" role="doc-biblioref">39</a>]</span>. These simplified versions were manually curated to determine the presence of a relationship. By simplyfing sentences this approach achieved high recall, but had low precision <span class="citation" data-cites="aJL1tPyy">[<a href="#ref-aJL1tPyy" role="doc-biblioref">39</a>]</span>. Other approach used simplification techniques to make extraction easier <span class="citation" data-cites="15I4QE3J 7PCrlbDi J0VF6x1n 1HnOwZ1Xq">[<a href="#ref-15I4QE3J" role="doc-biblioref">54</a>,<a href="#ref-7PCrlbDi" role="doc-biblioref">55</a>,<a href="#ref-J0VF6x1n" role="doc-biblioref">56</a>,<a href="#ref-1HnOwZ1Xq" role="doc-biblioref">57</a>]</span>. Tudor et al., simplified sentences to detect protein phosphorylation events <span class="citation" data-cites="J0VF6x1n">[<a href="#ref-J0VF6x1n" role="doc-biblioref">56</a>]</span>. The sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event. By breaking these sentences down the authors were able to increase their recall. However, sentences that contained ambigious directionality or multiple phosphroylation events were too complex for the simplifier. As a consequence the simplifier produced errors in recall <span class="citation" data-cites="J0VF6x1n">[<a href="#ref-J0VF6x1n" role="doc-biblioref">56</a>]</span>. These errors highlight a crucial need for future algorithms to be generalizable enough to handle various forms of complex sentences.</p>
+<p>Pattern matching is a fundamental approach used to detect relationship asserting sentences. In this context patterns can consist of phrases from constituency trees, a set of keywords or some combination of both to detect sentences <span class="citation" data-cites="OnvaFHG9 d3rG3TXb dRQuIwpJ 23i6gRBE 1avvFjJ9 KEkjqdB0">[<a href="#ref-d3rG3TXb" role="doc-biblioref">27</a>,<a href="#ref-OnvaFHG9" role="doc-biblioref">58</a>,<a href="#ref-dRQuIwpJ" role="doc-biblioref">59</a>,<a href="#ref-23i6gRBE" role="doc-biblioref">60</a>,<a href="#ref-1avvFjJ9" role="doc-biblioref">61</a>,<a href="#ref-KEkjqdB0" role="doc-biblioref">62</a>]</span>. Xu et al. designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments <span class="citation" data-cites="1avvFjJ9">[<a href="#ref-1avvFjJ9" role="doc-biblioref">61</a>]</span>. This system matched drug-disease pairs from clinicaltrails.gov to drug-disease pairs mentioned in abstracts. This matching process aided the authors in identifying sentences that were used to create simple patterns, such as “Drug in the treatment of Disease” <span class="citation" data-cites="1avvFjJ9">[<a href="#ref-1avvFjJ9" role="doc-biblioref">61</a>]</span>, to match sentences in a wide variety of abstracts. The authors hand curated two datasets for evalution and achieved a high precision score of 0.904 and a low recall score of 0.131 <span class="citation" data-cites="1avvFjJ9">[<a href="#ref-1avvFjJ9" role="doc-biblioref">61</a>]</span>. This low recall score was based on constructed patterns being very specific to top occurring drug paris. This flaw resulted in rarely occurring pairs having a high likelihood of being missed. Following approaches using constituency trees, some approaches used dependency trees to construct patterns <span class="citation" data-cites="jg0TGCov i7KpvzCo">[<a href="#ref-i7KpvzCo" role="doc-biblioref">50</a>,<a href="#ref-jg0TGCov" role="doc-biblioref">63</a>]</span>. Depending upon the nature of the algorithm, dependency trees could be more appropiate than constituency trees and vise versa. The performance difference between the two approaches still remains as an open question for future exploration.</p>
+<p>Rules based methods provide a basis for many relationship extraction systems. Approaches in this category range from simplifing sentences for easy extraction to identifing sentences based on matched key phrases or grammatical patterns. Both require a significant amount of manual effort and expert knowledge to perform well. A future direction is to develop ways to automatically construct these hand-crafted patterns, which would accelerate the process of creating new rule-based systems.</p>
+<figure>
+<img src="images/dependency_parse_example.png" alt="Figure 2: A visualization of a dependency parse tree using the following sentence as in example: “BRCA1 is associated with breast cancer” [64]. For these type of trees the root begins at the main verb of a sentence. Each arrows depicts the dependency shared between two words. For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject. This means that BRCA1 is the subject of the sentneces and it is being referred to by the word associated." id="fig:dependency-parse-tree-example" /><figcaption><span>Figure 2:</span> A visualization of a dependency parse tree using the following sentence as in example: “BRCA1 is associated with breast cancer” <span class="citation" data-cites="10i1qMFbL">[<a href="#ref-10i1qMFbL" role="doc-biblioref">64</a>]</span>. For these type of trees the root begins at the main verb of a sentence. Each arrows depicts the dependency shared between two words. For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject. This means that BRCA1 is the subject of the sentneces and it is being referred to by the word associated.</figcaption>
+</figure>
+<figure>
+<img src="images/constituency_parse_tree_example.png" alt="Figure 3: A visualization of a constituency parse tree using the following sentence: “BRCA1 is associated with breast cancer” [65]. This type of tree has the root beginning at the start of the sentence. Each word is grouped into subphrases depending on the part of speech tags of a word. For example, the word “associated” is a past particple verb (VBN) that belongs to the verb phrase (VP) subgroup." id="fig:constituency-parse-tree-example" /><figcaption><span>Figure 3:</span> A visualization of a constituency parse tree using the following sentence: “BRCA1 is associated with breast cancer” <span class="citation" data-cites="1EvoylLWK">[<a href="#ref-1EvoylLWK" role="doc-biblioref">65</a>]</span>. This type of tree has the root beginning at the start of the sentence. Each word is grouped into subphrases depending on the part of speech tags of a word. For example, the word “associated” is a past particple verb (VBN) that belongs to the verb phrase (VP) subgroup.</figcaption>
+</figure>
 <h4 id="extracting-relationships-without-labels">Extracting Relationships Without Labels</h4>
 <p>Unsupervised methods of extraction involve drawing inferences from data without the use of labels. These methods involve some form of clustering or statistical calculations. In this section we discuss methods that use unsupervised learning to detect relationship asserting sentences from text.</p>
-<p>An unsupervised method to extract relationships exploits the fact that two entities can appear together in text. This kind of event is called co-occurrence and studies that use this phenomenon can be found in table <a href="#tbl:unsupervised-methods-text-mining">1</a>. Two databases DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and STRING <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">50</a>]</span> were populated using a co-occurrence scoring method on PubMed abstracts. Both databases used the same scoring method that measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves. This method assumes independence between each individual occurrence. Under this assumption mention pairs that occur more than expected were presumed to indicate the presence of an association or interaction. This approach was able to identify 543,405 disease gene associations <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and 792,730 high confidence protein protein interactions <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">50</a>]</span>, but is limited to only using PubMed abstracts.</p>
-<p>Full text articles are able to drastically amplify text mining power to detect relationships <span class="citation" data-cites="DGlWGDEt pLAIFXqP">[<a href="#ref-DGlWGDEt" role="doc-biblioref">51</a>,<a href="#ref-pLAIFXqP" role="doc-biblioref">52</a>]</span>. Westergaard et al. used a co-occurrence approach, similar to DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and STRING <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">50</a>]</span>, to mine full articles for protein-protein interactions and other protein related information <span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">51</a>]</span>. The authors discovered that full text provided better prediction power than using abstracts alone. This improvement suggests that future text mining approaches should consider using full text to increase detection power.</p>
-<p>Unsupervised methods have been focused on treating multiple biomedical relationships as multiple isolated problems. These methods repeatedly use the same model for each biomedical relationship type. An alternative to this persepctive is to capture all different relationship types at once. Clustering is an approach that accomplish this concept of simultaneous extraction. Percha et al. used a biclustering algorithm on generated dependency parse trees to group PubMed abstract sentences <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">53</a>]</span>. Each cluster was manually curated to determine which relationship they represented. This approach captured 4,451,661 dependency paths for 36 different groups <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">53</a>]</span>. Despite the success, this approach suffered from technical issues such as dependency tree parsing errors. This type of error resulted in sentences not being grouped by the clustering algorithm <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">53</a>]</span>. Future clustering approaches should consider simplifying sentences to prevent this type of issue.</p>
+<p>An unsupervised method to extract relationships exploits the fact that two entities can appear together in text. This kind of event is called co-occurrence and studies that use this phenomenon can be found in table <a href="#tbl:unsupervised-methods-text-mining">1</a>. Two databases DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and STRING <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">66</a>]</span> were populated using a co-occurrence scoring method on PubMed abstracts. Both databases used the same scoring method that measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves. This method assumes independence between each individual occurrence. Under this assumption mention pairs that occur more than expected were presumed to indicate the presence of an association or interaction. This approach was able to identify 543,405 disease gene associations <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and 792,730 high confidence protein protein interactions <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">66</a>]</span>, but is limited to only using PubMed abstracts.</p>
+<p>Full text articles are able to drastically amplify text mining power to detect relationships <span class="citation" data-cites="DGlWGDEt pLAIFXqP">[<a href="#ref-DGlWGDEt" role="doc-biblioref">67</a>,<a href="#ref-pLAIFXqP" role="doc-biblioref">68</a>]</span>. Westergaard et al. used a co-occurrence approach, similar to DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span> and STRING <span class="citation" data-cites="iihNCsNX">[<a href="#ref-iihNCsNX" role="doc-biblioref">66</a>]</span>, to mine full articles for protein-protein interactions and other protein related information <span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">67</a>]</span>. The authors discovered that full text provided better prediction power than using abstracts alone. This improvement suggests that future text mining approaches should consider using full text to increase detection power.</p>
+<p>Unsupervised methods have been focused on treating multiple biomedical relationships as multiple isolated problems. These methods repeatedly use the same model for each biomedical relationship type. An alternative to this persepctive is to capture all different relationship types at once. Clustering is an approach that accomplish this concept of simultaneous extraction. Percha et al. used a biclustering algorithm on generated dependency parse trees to group PubMed abstract sentences <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">69</a>]</span>. Each cluster was manually curated to determine which relationship they represented. This approach captured 4,451,661 dependency paths for 36 different groups <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">69</a>]</span>. Despite the success, this approach suffered from technical issues such as dependency tree parsing errors. This type of error resulted in sentences not being grouped by the clustering algorithm <span class="citation" data-cites="CSiMoOrI">[<a href="#ref-CSiMoOrI" role="doc-biblioref">69</a>]</span>. Future clustering approaches should consider simplifying sentences to prevent this type of issue.</p>
 <p>Overall unsupervised methods provide a means to rapidly find relationship asserting sentences without the need of annotated text. Approaches in this category range from using co-occurrence scores to clustering sentences. These methods provide a generalizable framework that can be used on large repositories of text. Future methods can improve detection power by considering the use of methods that simplify sentences and use datasets that include full text articles.</p>
 <a name="tbl:unsupervised-methods-text-mining"></a>
 <table>
@@ -161,19 +168,19 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="citation" data-cites="IGXdryzB">[<a href="#ref-IGXdryzB" role="doc-biblioref">54</a>]</span></td>
+<td><span class="citation" data-cites="IGXdryzB">[<a href="#ref-IGXdryzB" role="doc-biblioref">70</a>]</span></td>
 <td>Protein-Protein Interactions, Disease-Gene and Tissue-Gene Associations</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="ETC6lm7S">[<a href="#ref-ETC6lm7S" role="doc-biblioref">55</a>]</span></td>
+<td><span class="citation" data-cites="ETC6lm7S">[<a href="#ref-ETC6lm7S" role="doc-biblioref">71</a>]</span></td>
 <td>Drug Disease Treatments</td>
 </tr>
 <tr class="odd">
-<td><span class="citation" data-cites="AdKPf5EO">[<a href="#ref-AdKPf5EO" role="doc-biblioref">56</a>]</span></td>
+<td><span class="citation" data-cites="AdKPf5EO">[<a href="#ref-AdKPf5EO" role="doc-biblioref">72</a>]</span></td>
 <td>Drug, Gene and Disease interactions</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">51</a>]</span></td>
+<td><span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">67</a>]</span></td>
 <td>Protein-Protein Interactions</td>
 </tr>
 <tr class="odd">
@@ -181,11 +188,11 @@
 <td>Disease-Gene associations</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="q9Fhy8eq">[<a href="#ref-q9Fhy8eq" role="doc-biblioref">57</a>]</span></td>
+<td><span class="citation" data-cites="q9Fhy8eq">[<a href="#ref-q9Fhy8eq" role="doc-biblioref">73</a>]</span></td>
 <td>Protein-Protein Interactions</td>
 </tr>
 <tr class="odd">
-<td><span class="citation" data-cites="10tWTMIaV">[<a href="#ref-10tWTMIaV" role="doc-biblioref">58</a>]</span></td>
+<td><span class="citation" data-cites="10tWTMIaV">[<a href="#ref-10tWTMIaV" role="doc-biblioref">74</a>]</span></td>
 <td>Genotype-Phenotype Relationships</td>
 </tr>
 </tbody>
@@ -575,56 +582,150 @@ Joanna S Amberger, Carol A Bocchini, Alan F Scott, Ada Hamosh<br />
 <em>Nucleic acids research</em> (2019-01-08) <a href="https://www.ncbi.nlm.nih.gov/pubmed/30445645">https://www.ncbi.nlm.nih.gov/pubmed/30445645</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gky1151">10.1093/nar/gky1151</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30445645">30445645</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6323937">PMC6323937</a></p>
 </div>
+<div id="ref-i7KpvzCo">
+<p>50. <strong>LPTK: a linguistic pattern-aware dependency tree kernel approach for the BioCreative VI CHEMPROT task</strong><br />
+Neha Warikoo, Yung-Chun Chang, Wen-Lian Hsu<br />
+<em>Database</em> (2018-01-01) <a href="https://doi.org/gfhjr6">https://doi.org/gfhjr6</a><br />
+DOI: <a href="https://doi.org/10.1093/database/bay108">10.1093/database/bay108</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30346607">30346607</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6196310">PMC6196310</a></p>
+</div>
+<div id="ref-3j1T67vB">
+<p>51. <strong>DTMiner: identification of potential disease targets through biomedical literature mining</strong><br />
+Dong Xu, Meizhuo Zhang, Yanping Xie, Fan Wang, Ming Chen, Kenny Q. Zhu, Jia Wei<br />
+<em>Bioinformatics</em> (2016-08-09) <a href="https://doi.org/f9nw36">https://doi.org/f9nw36</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btw503">10.1093/bioinformatics/btw503</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27506226">27506226</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5181534">PMC5181534</a></p>
+</div>
+<div id="ref-iiQkIqUX">
+<p>52. <strong>Exploiting graph kernels for high performance biomedical relation extraction</strong><br />
+Nagesh C. Panyam, Karin Verspoor, Trevor Cohn, Kotagiri Ramamohanarao<br />
+<em>Journal of Biomedical Semantics</em> (2018-01-30) <a href="https://doi.org/gf49nn">https://doi.org/gf49nn</a><br />
+DOI: <a href="https://doi.org/10.1186/s13326-017-0168-3">10.1186/s13326-017-0168-3</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29382397">29382397</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5791373">PMC5791373</a></p>
+</div>
+<div id="ref-66vfJAIo">
+<p>53. <strong>iSimp in BioC standard format: enhancing the interoperability of a sentence simplification system.</strong><br />
+Yifan Peng, Catalina O Tudor, Manabu Torii, Cathy H Wu, K Vijay-Shanker<br />
+<em>Database : the journal of biological databases and curation</em> (2014-05-21) <a href="https://www.ncbi.nlm.nih.gov/pubmed/24850848">https://www.ncbi.nlm.nih.gov/pubmed/24850848</a><br />
+DOI: <a href="https://doi.org/10.1093/database/bau038">10.1093/database/bau038</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24850848">24850848</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4028706">PMC4028706</a></p>
+</div>
+<div id="ref-15I4QE3J">
+<p>54. <strong>BELMiner: adapting a rule-based relation extraction system to extract biological expression language statements from bio-medical literature evidence sentences</strong><br />
+K. E. Ravikumar, Majid Rastegar-Mojarad, Hongfang Liu<br />
+<em>Database</em> (2017-01-01) <a href="https://doi.org/gf7rbx">https://doi.org/gf7rbx</a><br />
+DOI: <a href="https://doi.org/10.1093/database/baw156">10.1093/database/baw156</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28365720">28365720</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5467463">PMC5467463</a></p>
+</div>
+<div id="ref-7PCrlbDi">
+<p>55. <strong>A generalizable NLP framework for fast development of pattern-based biomedical relation extraction systems</strong><br />
+Yifan Peng, Manabu Torii, Cathy H Wu, K Vijay-Shanker<br />
+<em>BMC Bioinformatics</em> (2014-08-23) <a href="https://doi.org/f6rndz">https://doi.org/f6rndz</a><br />
+DOI: <a href="https://doi.org/10.1186/1471-2105-15-285">10.1186/1471-2105-15-285</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25149151">25149151</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4262219">PMC4262219</a></p>
+</div>
+<div id="ref-J0VF6x1n">
+<p>56. <strong>Construction of phosphorylation interaction networks by text mining of full-length articles using the eFIP system</strong><br />
+Catalina O. Tudor, Karen E. Ross, Gang Li, K. Vijay-Shanker, Cathy H. Wu, Cecilia N. Arighi<br />
+<em>Database</em> (2015-01-01) <a href="https://doi.org/gf8fpt">https://doi.org/gf8fpt</a><br />
+DOI: <a href="https://doi.org/10.1093/database/bav020">10.1093/database/bav020</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25833953">25833953</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4381107">PMC4381107</a></p>
+</div>
+<div id="ref-1HnOwZ1Xq">
+<p>57. <strong>miRTex: A Text Mining System for miRNA-Gene Relation Extraction</strong><br />
+Gang Li, Karen E. Ross, Cecilia N. Arighi, Yifan Peng, Cathy H. Wu, K. Vijay-Shanker<br />
+<em>PLOS Computational Biology</em> (2015-09-25) <a href="https://doi.org/f75mwb">https://doi.org/f75mwb</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004391">10.1371/journal.pcbi.1004391</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26407127">26407127</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4583433">PMC4583433</a></p>
+</div>
+<div id="ref-OnvaFHG9">
+<p>58. <strong>LimTox: a web tool for applied text mining of adverse event and toxicity associations of compounds, drugs and genes</strong><br />
+Andres Cañada, Salvador Capella-Gutierrez, Obdulia Rabal, Julen Oyarzabal, Alfonso Valencia, Martin Krallinger<br />
+<em>Nucleic Acids Research</em> (2017-05-22) <a href="https://doi.org/gf479h">https://doi.org/gf479h</a><br />
+DOI: <a href="https://doi.org/10.1093/nar/gkx462">10.1093/nar/gkx462</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28531339">28531339</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5570141">PMC5570141</a></p>
+</div>
+<div id="ref-dRQuIwpJ">
+<p>59. <strong>DiMeX: A Text Mining System for Mutation-Disease Association Extraction</strong><br />
+A. S. M. Ashique Mahmood, Tsung-Jung Wu, Raja Mazumder, K. Vijay-Shanker<br />
+<em>PLOS ONE</em> (2016-04-13) <a href="https://doi.org/f8xktj">https://doi.org/f8xktj</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pone.0152725">10.1371/journal.pone.0152725</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27073839">27073839</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4830514">PMC4830514</a></p>
+</div>
+<div id="ref-23i6gRBE">
+<p>60. <strong>Automated extraction of mutation data from the literature: application of MuteXt to G protein-coupled receptors and nuclear hormone receptors</strong><br />
+F. Horn, A. L. Lau, F. E. Cohen<br />
+<em>Bioinformatics</em> (2004-01-22) <a href="https://doi.org/d7cjgj">https://doi.org/d7cjgj</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btg449">10.1093/bioinformatics/btg449</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/14990452">14990452</a></p>
+</div>
+<div id="ref-1avvFjJ9">
+<p>61. <strong>Large-scale extraction of accurate drug-disease treatment pairs from biomedical literature for drug repurposing</strong><br />
+Rong Xu, QuanQiu Wang<br />
+<em>BMC Bioinformatics</em> (2013-06-06) <a href="https://doi.org/gb8v3k">https://doi.org/gb8v3k</a><br />
+DOI: <a href="https://doi.org/10.1186/1471-2105-14-181">10.1186/1471-2105-14-181</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23742147">23742147</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3702428">PMC3702428</a></p>
+</div>
+<div id="ref-KEkjqdB0">
+<p>62. <strong>RLIMS-P 2.0: A Generalizable Rule-Based Information Extraction System for Literature Mining of Protein Phosphorylation Information</strong><br />
+Manabu Torii, Cecilia N. Arighi, Gang Li, Qinghua Wang, Cathy H. Wu, K. Vijay-Shanker<br />
+<em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2015-01-01) <a href="https://doi.org/gf8fpv">https://doi.org/gf8fpv</a><br />
+DOI: <a href="https://doi.org/10.1109/tcbb.2014.2372765">10.1109/tcbb.2014.2372765</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26357075">26357075</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4568560">PMC4568560</a></p>
+</div>
+<div id="ref-jg0TGCov">
+<p>63. <strong>PKDE4J: Entity and relation extraction for public knowledge discovery</strong><br />
+Min Song, Won Chul Kim, Dahee Lee, Go Eun Heo, Keun Young Kang<br />
+<em>Journal of Biomedical Informatics</em> (2015-10) <a href="https://doi.org/f7v7jj">https://doi.org/f7v7jj</a><br />
+DOI: <a href="https://doi.org/10.1016/j.jbi.2015.08.008">10.1016/j.jbi.2015.08.008</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26277115">26277115</a></p>
+</div>
+<div id="ref-10i1qMFbL">
+<p>64. <strong>Spacy 2: Natural language understanding with bloom embeddings, convolutional neural networks and incremental parsing</strong><br />
+Matthew Honnibal, Ines Montani<br />
+<em>To appear</em> (2017)</p>
+</div>
+<div id="ref-1EvoylLWK">
+<p>65. <strong>PhpSyntaxTree tool</strong><br />
+A Eisenbach, M Eisenbach<br />
+(2006)</p>
+</div>
 <div id="ref-iihNCsNX">
-<p>50. <strong>STRING v9.1: protein-protein interaction networks, with increased coverage and integration</strong><br />
+<p>66. <strong>STRING v9.1: protein-protein interaction networks, with increased coverage and integration</strong><br />
 Andrea Franceschini, Damian Szklarczyk, Sune Frankild, Michael Kuhn, Milan Simonovic, Alexander Roth, Jianyi Lin, Pablo Minguez, Peer Bork, Christian von Mering, Lars J. Jensen<br />
 <em>Nucleic Acids Research</em> (2012-11-29) <a href="https://doi.org/gf5kcd">https://doi.org/gf5kcd</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gks1094">10.1093/nar/gks1094</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23203871">23203871</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531103">PMC3531103</a></p>
 </div>
 <div id="ref-DGlWGDEt">
-<p>51. <strong>A comprehensive and quantitative comparison of text-mining in 15 million full-text articles versus their corresponding abstracts</strong><br />
+<p>67. <strong>A comprehensive and quantitative comparison of text-mining in 15 million full-text articles versus their corresponding abstracts</strong><br />
 David Westergaard, Hans-Henrik Stærfeldt, Christian Tønsberg, Lars Juhl Jensen, Søren Brunak<br />
 <em>PLOS Computational Biology</em> (2018-02-15) <a href="https://doi.org/gcx747">https://doi.org/gcx747</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005962">10.1371/journal.pcbi.1005962</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29447159">29447159</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5831415">PMC5831415</a></p>
 </div>
 <div id="ref-pLAIFXqP">
-<p>52. <strong>STITCH 4: integration of protein–chemical interactions with user data</strong><br />
+<p>68. <strong>STITCH 4: integration of protein–chemical interactions with user data</strong><br />
 Michael Kuhn, Damian Szklarczyk, Sune Pletscher-Frankild, Thomas H. Blicher, Christian von Mering, Lars J. Jensen, Peer Bork<br />
 <em>Nucleic Acids Research</em> (2013-11-28) <a href="https://doi.org/f5shb4">https://doi.org/f5shb4</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gkt1207">10.1093/nar/gkt1207</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24293645">24293645</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3964996">PMC3964996</a></p>
 </div>
 <div id="ref-CSiMoOrI">
-<p>53. <strong>A global network of biomedical relationships derived from text</strong><br />
+<p>69. <strong>A global network of biomedical relationships derived from text</strong><br />
 Bethany Percha, Russ B Altman<br />
 <em>Bioinformatics</em> (2018-02-27) <a href="https://doi.org/gc3ndk">https://doi.org/gc3ndk</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/bty114">10.1093/bioinformatics/bty114</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29490008">29490008</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6061699">PMC6061699</a></p>
 </div>
 <div id="ref-IGXdryzB">
-<p>54. <strong>CoCoScore: context-aware co-occurrence scoring for text mining applications using distant supervision</strong><br />
+<p>70. <strong>CoCoScore: context-aware co-occurrence scoring for text mining applications using distant supervision</strong><br />
 Alexander Junge, Lars Juhl Jensen<br />
 <em>Bioinformatics</em> (2019-06-14) <a href="https://doi.org/gf4789">https://doi.org/gf4789</a><br />
-DOI: <a href="https://doi.org/10.1093/bioinformatics/btz490">10.1093/bioinformatics/btz490</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31199464">31199464</a></p>
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btz490">10.1093/bioinformatics/btz490</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31199464">31199464</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6956794">PMC6956794</a></p>
 </div>
 <div id="ref-ETC6lm7S">
-<p>55. <strong>A new method for prioritizing drug repositioning candidates extracted by literature-based discovery</strong><br />
+<p>71. <strong>A new method for prioritizing drug repositioning candidates extracted by literature-based discovery</strong><br />
 Majid Rastegar-Mojarad, Ravikumar Komandur Elayavilli, Dingcheng Li, Rashmi Prasad, Hongfang Liu<br />
 <em>2015 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</em> (2015-11) <a href="https://doi.org/gf479j">https://doi.org/gf479j</a><br />
 DOI: <a href="https://doi.org/10.1109/bibm.2015.7359766">10.1109/bibm.2015.7359766</a></p>
 </div>
 <div id="ref-AdKPf5EO">
-<p>56. <strong>Literature Mining for the Discovery of Hidden Connections between Drugs, Genes and Diseases</strong><br />
+<p>72. <strong>Literature Mining for the Discovery of Hidden Connections between Drugs, Genes and Diseases</strong><br />
 Raoul Frijters, Marianne van Vugt, Ruben Smeets, René van Schaik, Jacob de Vlieg, Wynand Alkema<br />
 <em>PLoS Computational Biology</em> (2010-09-23) <a href="https://doi.org/bhrw7x">https://doi.org/bhrw7x</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1000943">10.1371/journal.pcbi.1000943</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/20885778">20885778</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2944780">PMC2944780</a></p>
 </div>
 <div id="ref-q9Fhy8eq">
-<p>57. <strong>STRING v10: protein–protein interaction networks, integrated over the tree of life</strong><br />
+<p>73. <strong>STRING v10: protein–protein interaction networks, integrated over the tree of life</strong><br />
 Damian Szklarczyk, Andrea Franceschini, Stefan Wyder, Kristoffer Forslund, Davide Heller, Jaime Huerta-Cepas, Milan Simonovic, Alexander Roth, Alberto Santos, Kalliopi P. Tsafou, … Christian von Mering<br />
 <em>Nucleic Acids Research</em> (2014-10-28) <a href="https://doi.org/f64rfn">https://doi.org/f64rfn</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gku1003">10.1093/nar/gku1003</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25352553">25352553</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4383874">PMC4383874</a></p>
 </div>
 <div id="ref-10tWTMIaV">
-<p>58. <strong>Text Mining Genotype-Phenotype Relationships from Biomedical Literature for Database Curation and Precision Medicine</strong><br />
+<p>74. <strong>Text Mining Genotype-Phenotype Relationships from Biomedical Literature for Database Curation and Precision Medicine</strong><br />
 Ayush Singhal, Michael Simmons, Zhiyong Lu<br />
 <em>PLOS Computational Biology</em> (2016-11-30) <a href="https://doi.org/f9gz4b">https://doi.org/f9gz4b</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005017">10.1371/journal.pcbi.1005017</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27902695">27902695</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5130168">PMC5130168</a></p>

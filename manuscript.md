@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2019-12-26'
+date-meta: '2020-02-13'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/d1d51c8c00e0d61240e8ecd0a715144c67763e76/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/43604c74b814c58c4b92b9e22eae582025630329/))
 was automatically generated
-from [greenelab/knowledge-graph-review@d1d51c8](https://github.com/greenelab/knowledge-graph-review/tree/d1d51c8c00e0d61240e8ecd0a715144c67763e76)
-on December 26, 2019.
+from [greenelab/knowledge-graph-review@43604c7](https://github.com/greenelab/knowledge-graph-review/tree/43604c74b814c58c4b92b9e22eae582025630329)
+on February 13, 2020.
 </em></small>
 
 ## Authors
@@ -154,9 +154,61 @@ Reported number of entities and relationships are relative to time of publicatio
 
 ### Text Mining for Relationship Extraction
 
-#### Rule-Based Natural Language Processing
+#### Rule-Based Relationship Extraction
 
-1. Mention papers on hand written rules and expressions
+Rule-based extraction consists of identifying sentences that contain important keywords or grammatical patterns that allude to relationships of interest. 
+Keywords are established via expert knowledge or though the use of pre-existing ontologies.
+Grammatical patterns are constructed via experts curating parse trees, which are tree data structures that depict a sentence's grammatical structure.
+Parse trees come into two forms a constituency parse tree and a dependency parse trees.
+Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc, for construction.
+A constituency parse trees breaks a sentence down into a subphrases (Figure {@fig:constituency-parse-tree-example}) while dependency path trees analyzes the grammatical structure of a sentence (Figure {@fig:dependency-parse-tree-example}).
+Many text mining approaches [@i7KpvzCo; @3j1T67vB; @iiQkIqUX] use such trees to generate features for machine learning algorithms.
+These approaches are discussed in later sections.
+For this section we focus on approaches that mainly use rule based extraction to detect sentences that assert a relationship.
+
+Grammatical patterns can simplify sentences for easy extraction [@aJL1tPyy; @66vfJAIo].
+Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions [@aJL1tPyy].
+These simplified versions were manually curated to determine the presence of a relationship.
+By simplyfing sentences this approach achieved high recall, but had low precision [@aJL1tPyy].
+Other approach used simplification techniques to make extraction easier [@15I4QE3J; @7PCrlbDi; @J0VF6x1n; @1HnOwZ1Xq].
+Tudor et al., simplified sentences to detect protein phosphorylation events [@J0VF6x1n].
+The sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event.
+By breaking these sentences down the authors were able to increase their recall.
+However, sentences that contained ambigious directionality or multiple phosphroylation events were too complex for the simplifier.
+As a consequence the simplifier produced errors in recall [@J0VF6x1n].
+These errors highlight a crucial need for future algorithms to be generalizable enough to handle various forms of complex sentences.
+
+Pattern matching is a fundamental approach used to detect relationship asserting sentences.
+In this context patterns can consist of phrases from constituency trees, a set of keywords or some combination of both to detect sentences [@OnvaFHG9; @d3rG3TXb; @dRQuIwpJ; @23i6gRBE; @1avvFjJ9; @KEkjqdB0].
+Xu et al. designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments [@1avvFjJ9].
+This system matched drug-disease pairs from clinicaltrails.gov to drug-disease pairs mentioned in abstracts.
+This matching process aided the authors in identifying sentences that were used to create simple patterns, such as "Drug in the treatment of Disease" [@1avvFjJ9], to match sentences in a wide variety of abstracts.
+The authors hand curated two datasets for evalution and achieved a high precision score of 0.904 and a low recall score of 0.131 [@1avvFjJ9].
+This low recall score was based on constructed patterns being very specific to top occurring drug paris.
+This flaw resulted in rarely occurring pairs having a high likelihood of being missed.
+Following approaches using constituency trees, some approaches used dependency trees to construct patterns [@jg0TGCov; @i7KpvzCo].
+Depending upon the nature of the algorithm, dependency trees could be more appropiate than constituency trees and vise versa.
+The performance difference between the two approaches still remains as an open question for future exploration.
+
+Rules based methods provide a basis for many relationship extraction systems.
+Approaches in this category range from simplifing sentences for easy extraction to identifing sentences based on matched key phrases or grammatical patterns.
+Both require a significant amount of manual effort and expert knowledge to perform well.
+A future direction is to develop ways to automatically construct these hand-crafted patterns, which would accelerate the process of creating new rule-based systems.
+
+![
+A visualization of a dependency parse tree using the following sentence as in example: "BRCA1 is associated with breast cancer" [@10i1qMFbL].
+For these type of trees the root begins at the main verb of a sentence.
+Each arrows depicts the dependency shared between two words.
+For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject.
+This means that BRCA1 is the subject of the sentneces and it is being referred to by the word associated.
+](images/dependency_parse_example.png){#fig:dependency-parse-tree-example}
+
+![
+A visualization of a constituency parse tree using the following sentence: "BRCA1 is associated with breast cancer" [@1EvoylLWK].
+This type of tree has the root beginning at the start of the sentence.
+Each word is grouped into subphrases depending on the part of speech tags of a word.
+For example, the word "associated" is a past particple verb (VBN) that belongs to the verb phrase (VP) subgroup.
+](images/constituency_parse_tree_example.png){#fig:constituency-parse-tree-example}
 
 #### Extracting Relationships Without Labels
 
