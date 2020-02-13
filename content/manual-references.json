@@ -19,14 +19,7 @@
       }
     ]
   },
-  "author": [
-    {
-      "given": "Daniel",
-      "family": "Himmelstein"
-    }
-  ]
-},
-{
+  {
     "id": "eisenbach2006phpsyntaxtree",
     "author": [
       {
@@ -47,8 +40,8 @@
     },
     "title": "PhpSyntaxTree tool",
     "type": "no-type"
-},
-{
+  },
+  {
     "id": "honnibal2017spacy",
     "author": [
       {
@@ -73,8 +66,8 @@
     "title-short": "Spacy 2",
     "type": "article-journal",
     "volume": "7"
-},
-{
+  },
+  {
     "author": [
       {
         "family": "Ehrlinger",
@@ -96,5 +89,5 @@
     },
     "title": "Towards a definition of knowledge graphs",
     "type": "paper-conference"
-}
+  }
 ]
