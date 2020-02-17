@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/018b574dcb82996991eff7ad4aaa29873104ef3f/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/018b574dcb82996991eff7ad4aaa29873104ef3f">greenelab/knowledge-graph-review@018b574</a> on February 17, 2020. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849">greenelab/knowledge-graph-review@d790196</a> on February 17, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -246,9 +246,7 @@
 <li></li>
 </ol>
 <h3 id="unifying-techniques">Unifying Techniques</h3>
-<ol type="1">
-<li>Set up the problem that maps a knowledge graph into a low dimensional space</li>
-</ol>
+<p>Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span> and image analysis <span class="citation" data-cites="j7KrVyi8">[<a href="#ref-j7KrVyi8" role="doc-biblioref">77</a>]</span>. The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well <span class="citation" data-cites="DSiHGDz9">[<a href="#ref-DSiHGDz9" role="doc-biblioref">78</a>]</span>. Techniques that perform this projection often require information on how nodes are connected with one another <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq dylXYFm6 9F3iyg8e">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">79</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">80</a>,<a href="#ref-dylXYFm6" role="doc-biblioref">81</a>,<a href="#ref-9F3iyg8e" role="doc-biblioref">82</a>]</span>, while other approaches can work directly with the edges themselves <span class="citation" data-cites="E5xHFo4P">[<a href="#ref-E5xHFo4P" role="doc-biblioref">83</a>]</span>. We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning.</p>
 <h4 id="matrix-factorization">Matrix Factorization</h4>
 <ol type="1">
 <li>Mention techniques for these with some papers</li>
@@ -260,7 +258,7 @@
 <li>Talk about auto encoders random walk independent approaches</li>
 </ol>
 <h3 id="unifying-applications">Unifying Applications</h3>
-<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">75</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">76</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">77</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">78</a>]</span>. In this section we discuss how knowledge graphs are being applied in biomedical settings. We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
+<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">84</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">85</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">86</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">87</a>]</span>. In this section we discuss how knowledge graphs are being applied in biomedical settings. We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
 <h4 id="disease-and-gene-interactions">Disease and Gene Interactions</h4>
 <ol type="1">
 <li>Mention disease gene prioritization</li>
@@ -728,25 +726,73 @@ Ayush Singhal, Michael Simmons, Zhiyong Lu<br />
 <em>PLOS Computational Biology</em> (2016-11-30) <a href="https://doi.org/f9gz4b">https://doi.org/f9gz4b</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005017">10.1371/journal.pcbi.1005017</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27902695">27902695</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5130168">PMC5130168</a></p>
 </div>
+<div id="ref-1GhHIDxuW">
+<p>75. <strong>Efficient Estimation of Word Representations in Vector Space</strong><br />
+Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean<br />
+<em>arXiv</em> (2013-01-16) <a href="https://arxiv.org/abs/1301.3781v3">https://arxiv.org/abs/1301.3781v3</a></p>
+</div>
+<div id="ref-u5iJzbp9">
+<p>76. <strong>Distributed Representations of Words and Phrases and their Compositionality</strong><br />
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, Jeffrey Dean<br />
+<em>arXiv</em> (2013-10-16) <a href="https://arxiv.org/abs/1310.4546v1">https://arxiv.org/abs/1310.4546v1</a></p>
+</div>
+<div id="ref-j7KrVyi8">
+<p>77. <strong>Deep Residual Learning for Image Recognition</strong><br />
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun<br />
+<em>arXiv</em> (2015-12-10) <a href="https://arxiv.org/abs/1512.03385v1">https://arxiv.org/abs/1512.03385v1</a></p>
+</div>
+<div id="ref-DSiHGDz9">
+<p>78. <strong>Representation Learning on Graphs: Methods and Applications</strong><br />
+William L. Hamilton, Rex Ying, Jure Leskovec<br />
+<em>arXiv</em> (2017-09-17) <a href="https://arxiv.org/abs/1709.05584v3">https://arxiv.org/abs/1709.05584v3</a></p>
+</div>
+<div id="ref-18ZTxo1gJ">
+<p>79. <strong>Signed laplacian embedding for supervised dimension reduction</strong><br />
+Chen Gong, Dacheng Tao, Jie Yang, Keren Fu<br />
+<em>Proceedings of the twenty-eighth aaai conference on artificial intelligence</em> (2014) <a href="http://dl.acm.org/citation.cfm?id=2892753.2892809">http://dl.acm.org/citation.cfm?id=2892753.2892809</a></p>
+</div>
+<div id="ref-u6NlpEUq">
+<p>80. <strong>A Semi-NMF-PCA Unified Framework for Data Clustering</strong><br />
+Kais Allab, Lazhar Labiod, Mohamed Nadif<br />
+<em>IEEE Transactions on Knowledge and Data Engineering</em> (2017-01-01) <a href="https://doi.org/f9hm9g">https://doi.org/f9hm9g</a><br />
+DOI: <a href="https://doi.org/10.1109/tkde.2016.2606098">10.1109/tkde.2016.2606098</a></p>
+</div>
+<div id="ref-dylXYFm6">
+<p>81. <strong>Partially supervised graph embedding for positive unlabelled feature selection</strong><br />
+Yufei Han, Yun Shen<br />
+<em>Proceedings of the twenty-fifth international joint conference on artificial intelligence</em> (2016) <a href="http://dl.acm.org/citation.cfm?id=3060832.3060837">http://dl.acm.org/citation.cfm?id=3060832.3060837</a><br />
+ISBN: <a href="https://worldcat.org/isbn/978-1-57735-770-4">978-1-57735-770-4</a></p>
+</div>
+<div id="ref-9F3iyg8e">
+<p>82. <strong>GraRep</strong><br />
+Shaosheng Cao, Wei Lu, Qiongkai Xu<br />
+<em>Proceedings of the 24th ACM International on Conference on Information and Knowledge Management - CIKM ’15</em> (2015) <a href="https://doi.org/gf8rgf">https://doi.org/gf8rgf</a><br />
+DOI: <a href="https://doi.org/10.1145/2806416.2806512">10.1145/2806416.2806512</a></p>
+</div>
+<div id="ref-E5xHFo4P">
+<p>83. <strong>Improved Knowledge Base Completion by Path-Augmented TransR Model</strong><br />
+Wenhao Huang, Ge Li, Zhi Jin<br />
+<em>arXiv</em> (2016-10-06) <a href="https://arxiv.org/abs/1610.04073v1">https://arxiv.org/abs/1610.04073v1</a></p>
+</div>
 <div id="ref-1EP2NrAhl">
-<p>75. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
+<p>84. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
 Gamal Crichton, Yufan Guo, Sampo Pyysalo, Anna Korhonen<br />
 <em>BMC Bioinformatics</em> (2018-05-21) <a href="https://doi.org/ggkm7q">https://doi.org/ggkm7q</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-018-2163-9">10.1186/s12859-018-2163-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29783926">29783926</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5963080">PMC5963080</a></p>
 </div>
 <div id="ref-17R6q0KTd">
-<p>76. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
+<p>85. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
 Christos Dimitrakopoulos, Sravanth Kumar Hindupur, Luca Häfliger, Jonas Behr, Hesam Montazeri, Michael N Hall, Niko Beerenwinkel<br />
 <em>Bioinformatics</em> (2018-03-14) <a href="https://doi.org/gc6953">https://doi.org/gc6953</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/bty148">10.1093/bioinformatics/bty148</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29547932">29547932</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6041755">PMC6041755</a></p>
 </div>
 <div id="ref-aLsdEzlV">
-<p>77. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
+<p>86. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
 Meng Wang, Mengyue Liu, Jun Liu, Sen Wang, Guodong Long, Buyue Qian<br />
 <em>arXiv</em> (2017-10-16) <a href="https://arxiv.org/abs/1710.05980v2">https://arxiv.org/abs/1710.05980v2</a></p>
 </div>
 <div id="ref-8vj5v8un">
-<p>78. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
+<p>87. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
 Junyuan Shang, Cao Xiao, Tengfei Ma, Hongyan Li, Jimeng Sun<br />
 <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> (2019-07-17) <a href="https://doi.org/ggkm7r">https://doi.org/ggkm7r</a><br />
 DOI: <a href="https://doi.org/10.1609/aaai.v33i01.33011126">10.1609/aaai.v33i01.33011126</a></p>
