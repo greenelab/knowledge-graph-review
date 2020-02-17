@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2020-02-13'
+date-meta: '2020-02-17'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/43604c74b814c58c4b92b9e22eae582025630329/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/018b574dcb82996991eff7ad4aaa29873104ef3f/))
 was automatically generated
-from [greenelab/knowledge-graph-review@43604c7](https://github.com/greenelab/knowledge-graph-review/tree/43604c74b814c58c4b92b9e22eae582025630329)
-on February 13, 2020.
+from [greenelab/knowledge-graph-review@018b574](https://github.com/greenelab/knowledge-graph-review/tree/018b574dcb82996991eff7ad4aaa29873104ef3f)
+on February 17, 2020.
 </em></small>
 
 ## Authors
@@ -312,7 +312,9 @@ Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupe
 
 ### Unifying Applications
 
-1. Mention how the previous section is used in a biomedical setting
+Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un].
+In this section we discuss how knowledge graphs are being applied in biomedical settings. 
+We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.
 
 #### Disease and Gene Interactions
 
