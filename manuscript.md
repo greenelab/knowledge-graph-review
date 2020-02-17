@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/018b574dcb82996991eff7ad4aaa29873104ef3f/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849/))
 was automatically generated
-from [greenelab/knowledge-graph-review@018b574](https://github.com/greenelab/knowledge-graph-review/tree/018b574dcb82996991eff7ad4aaa29873104ef3f)
+from [greenelab/knowledge-graph-review@d790196](https://github.com/greenelab/knowledge-graph-review/tree/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849)
 on February 17, 2020.
 </em></small>
 
@@ -298,7 +298,10 @@ Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupe
 
 ### Unifying Techniques
 
-1. Set up the problem that maps a knowledge graph into a low dimensional space
+Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing [@1GhHIDxuW; @u5iJzbp9] and image analysis [@j7KrVyi8].
+The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well [@DSiHGDz9].
+Techniques that perform this projection often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
+We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning.
 
 #### Matrix Factorization
 
