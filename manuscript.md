@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2020-02-17'
+date-meta: '2020-02-18'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/8734c2381ea1f53a423f660a931a6ce8cefd2528/))
 was automatically generated
-from [greenelab/knowledge-graph-review@d790196](https://github.com/greenelab/knowledge-graph-review/tree/d7901967e8c6d5b8e30faae5a0ffeaeca3e75849)
-on February 17, 2020.
+from [greenelab/knowledge-graph-review@8734c23](https://github.com/greenelab/knowledge-graph-review/tree/8734c2381ea1f53a423f660a931a6ce8cefd2528)
+on February 18, 2020.
 </em></small>
 
 ## Authors
@@ -61,7 +61,7 @@ on February 17, 2020.
 ## Introduction
 
 Knowledge graphs are a practical resource for many real world applications.
-They have been used in social medial mining to classify nodes [@IexVJgDF] or to create a recommendation system [@Eqbsazq5].
+They have been used in social medial mining to classify nodes [@DjhSdWbc] or to create a recommendation system [@Eqbsazq5].
 Knowledge graphs have also been used to understand natural language via interpreting simple questions and using relational information to provide answers [@N0gUhlt9; @s8ydThMc].
 In a biomedical setting these graphs have been used to prioritize genes relevant to disease [@GI2y7kMc; @Oi5yRd0v; @15k4Xz0i3; @1D9FTzRBg], perform drug repurposing [@O21tn8vf] and identify drug-target interactions [@15GxqZyO8].
 
@@ -306,6 +306,23 @@ We group methods for producing low-dimensional representations of knowledge grap
 #### Matrix Factorization
 
 1. Mention techniques for these with some papers
+
+#### Translational Distance Models
+
+Translational distance models treat edges in a knowledge graph as linear transformations.
+As an example, one such algorithm, TransE [@mGBbZq62], treats every node-edge pair as a triplet with head nodes represented as $\textbf{h}$, edges represented as $\textbf{r}$, and tail nodes represented as $\textbf{t}$.
+These representations are combined into an equation that mimics the iconic word vectors translations ($\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}$) from the Word2vec model [@u5iJzbp9].
+The equation is shown as follows: $\textbf{h} + \textbf{r} \approx \textbf{t}$.
+Starting at the head node ($\textbf{h}$), add the edge vector ($\textbf{r}$) and the result should be the tail node ($\textbf{t}$).
+TransE optimizes embeddings for $\textbf{h}$, $\textbf{r}$, $\textbf{t}$, while guaranteeing the global equation ($\textbf{h} + \textbf{r} \approx \textbf{t}$) is satisfied [@mGBbZq62].
+A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.
+
+Wang et al. [@nprR5cVj] attempted to resolve the one to one mapping issue by developing the TransH model.
+TransH treats relations as hyperplanes rather than a regular vector and projects the head ($\textbf{h}$) and tail ($\textbf{t}$) nodes onto the hyperplane.
+Following this projection, a distance vector ($\textbf{d}_{r}$) is calculated between the projected head and tail nodes.
+Finally, each vector is optimized while preserving the global equation ($\textbf{h} + \textbf{d}_{r} \approx \textbf{t}$) [@nprR5cVj].
+Other approaches [@R8kotaKY, @E5xHFo4P; @BRGxlTb9] have built off of the TransE and TransH models. 
+In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.
 
 #### Deep Learning
 

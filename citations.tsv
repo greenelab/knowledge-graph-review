@@ -1,5 +1,4 @@
 manuscript_id	detagged_id	standard_id	short_id
-arxiv:1101.3291	arxiv:1101.3291	arxiv:1101.3291	IexVJgDF
 arxiv:1301.3781	arxiv:1301.3781	arxiv:1301.3781	1GhHIDxuW
 arxiv:1310.4546	arxiv:1310.4546	arxiv:1310.4546	u5iJzbp9
 arxiv:1404.4326	arxiv:1404.4326	arxiv:1404.4326	N0gUhlt9
@@ -7,6 +6,8 @@ arxiv:1512.03385	arxiv:1512.03385	arxiv:1512.03385	j7KrVyi8
 arxiv:1610.04073	arxiv:1610.04073	arxiv:1610.04073	E5xHFo4P
 arxiv:1709.05584	arxiv:1709.05584	arxiv:1709.05584	DSiHGDz9
 arxiv:1710.05980	arxiv:1710.05980	arxiv:1710.05980	aLsdEzlV
+arxiv:1909.00672	arxiv:1909.00672	arxiv:1909.00672	BRGxlTb9
+doi:10.1007/978-1-4419-8462-3_5	doi:10.1007/978-1-4419-8462-3_5	doi:10.1007/978-1-4419-8462-3_5	DjhSdWbc
 doi:10.1007/s10115-019-01351-4	doi:10.1007/s10115-019-01351-4	doi:10.1007/s10115-019-01351-4	rxaBUglG
 doi:10.1007/s11192-010-0202-z	doi:10.1007/s11192-010-0202-z	doi:10.1007/s11192-010-0202-z	vYYWSlK2
 doi:10.1007/s11390-012-1306-0	doi:10.1007/s11390-012-1306-0	doi:10.1007/s11390-012-1306-0	MTIt6gSA
@@ -82,7 +83,10 @@ pmid:21346999	pmid:21346999	pmid:21346999	aJL1tPyy
 pmid:24850848	pmid:24850848	pmid:24850848	66vfJAIo
 pmid:30445645	pmid:30445645	pmid:30445645	1FZWpEoss
 raw:KG_DEF	raw:KG_DEF	raw:KG_DEF	V9M93in
+raw:bordestranse	raw:bordestranse	raw:bordestranse	mGBbZq62
 raw:eisenbach2006phpsyntaxtree	raw:eisenbach2006phpsyntaxtree	raw:eisenbach2006phpsyntaxtree	1EvoylLWK
 raw:gongreplearn	raw:gongreplearn	raw:gongreplearn	18ZTxo1gJ
 raw:hanreplearn	raw:hanreplearn	raw:hanreplearn	dylXYFm6
 raw:honnibal2017spacy	raw:honnibal2017spacy	raw:honnibal2017spacy	10i1qMFbL
+raw:lintransR	raw:lintransR	raw:lintransR	R8kotaKY
+raw:wangtransH	raw:wangtransH	raw:wangtransH	nprR5cVj
