@@ -41,5 +41,28 @@
     },
     "title": "Towards a definition of knowledge graphs",
     "type": "paper-conference"
+  },
+   {
+    "id": "Baldi2011",
+    "author": [
+      {
+        "family": "Baldi",
+        "given": "Pierre"
+      }
+    ],
+    "collection-title": "UTLW’11",
+    "container-title": "Proceedings of the 2011 international conference on unsupervised and transfer learning workshop - volume 27",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "keyword": "hebbian learning, unsupervised learning, complexity, principal component analysis, clustering, deep architectures, compression, boolean, information theory, autoencoders",
+    "page": "37-50",
+    "publisher": "JMLR.org",
+    "title": "Autoencoders, unsupervised learning and deep architectures",
+    "type": "paper-conference"
   }
 ]
