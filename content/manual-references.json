@@ -156,6 +156,54 @@
     "type": "paper-conference"
   },
   {
+    "DOI": "10.1145/3159652.3159706",
+    "ISBN": "9781450355810",
+    "URL": "https://doi.org/10.1145/3159652.3159706",
+    "author": [
+      {
+        "family": "Qiu",
+        "given": "Jiezhong"
+      },
+      {
+        "family": "Dong",
+        "given": "Yuxiao"
+      },
+      {
+        "family": "Ma",
+        "given": "Hao"
+      },
+      {
+        "family": "Li",
+        "given": "Jian"
+      },
+      {
+        "family": "Wang",
+        "given": "Kuansan"
+      },
+      {
+        "family": "Tang",
+        "given": "Jie"
+      }
+    ],
+    "collection-title": "WSDM ’18",
+    "container-title": "Proceedings of the eleventh acm international conference on web search and data mining",
+    "id": "Jiezhon2018",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "keyword": "matrix factorization, network embedding, representation learning, social network, graph spectral",
+    "page": "459-467",
+    "publisher": "Association for Computing Machinery",
+    "publisher-place": "New York, NY, USA",
+    "title": "Network embedding as matrix factorization: Unifying deepwalk, line, pte, and node2vec",
+    "title-short": "Network embedding as matrix factorization",
+    "type": "paper-conference"
+  },
+  {
     "author": [
       {
         "family": "Bordes",
