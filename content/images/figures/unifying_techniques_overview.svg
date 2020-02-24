@@ -17,7 +17,7 @@
 
 	.node{
 		stroke: black;
-		stroke-width: 2;
+		stroke-width: 1;
 	}
 
 	.math_symbol{
@@ -32,7 +32,7 @@
 	}
 
 	.label_font {
-		font-size: 20px;
+		font-size: 17px;
 		font-weight: bold;
 		fill:black;
 	}
@@ -120,7 +120,7 @@
 	<circle cx="-86" cy="-50" r="10" class="disease node"/>
 </g>
 
-<rect x="300" y="130" width="400" height="150" fill="white" stroke="black"/>
+<rect x="300" y="130" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
 <g id="matrix_fact" transform="translate(370,160) scale(0.4)">
 
 	<rect x="0" y="0" width="200" height="200" fill="None" stroke="black"/>
@@ -190,7 +190,7 @@
 		d x N
 	</text>
 </g>
-<rect x="300" y="280" width="400" height="150" fill="white" stroke="black"/>
+<rect x="300" y="280" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
 <g id="translational_models" transform="translate(410,315) scale(0.4)">
 	<circle cx="0" cy="0" r="25" class="disease node"/>
 	<rect x="-50" y="35" width="100" height="200" fill="none" stroke="black"/>
@@ -202,7 +202,7 @@
 	+
 	</text>
 
-	<line x1="200" y1="0"  x2="255" y2="0" stroke="black"/>
+	<line x1="200" y1="0"  x2="255" y2="0" stroke="black" stroke-width="2"/>
 	<rect x="175" y="35" width="100" height="200" fill="none" stroke="black"/>
 	<text x="210" y="147" class="math_font">
 		r
@@ -218,7 +218,7 @@
 		t
 	</text>
 </g>
-<rect x="300" y="430" width="400" height="150" fill="white" stroke="black"/>
+<rect x="300" y="430" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
 <g id="deep_learning" transform="translate(350, 460) scale(0.4)">
 	<g id="CBOW">
 		<circle cx="50" cy="0" r="10" class="disease node"/>
@@ -413,12 +413,12 @@
 </text>
 <text x="805" y="480" class="label_font">
 	Low Dimensional
-	<tspan dy="25" dx="-145">
+	<tspan dy="25" dx="-120">
 		Representation
 	</tspan>
 </text>
-<text x="35" y="240" font-size="15px">
-	Biomedical Knowledge Graph
+<text x="65" y="240" font-size="15px">
+	Knowledge Graph
 </text>
 <text x="395" y="575" font-size="15px">
 	Node2vec
