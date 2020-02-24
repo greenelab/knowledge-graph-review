@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2020-02-18'
+date-meta: '2020-02-24'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/8734c2381ea1f53a423f660a931a6ce8cefd2528/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/1ba98f7561175dd5cceff3bfcecc085288db3d87/))
 was automatically generated
-from [greenelab/knowledge-graph-review@8734c23](https://github.com/greenelab/knowledge-graph-review/tree/8734c2381ea1f53a423f660a931a6ce8cefd2528)
-on February 18, 2020.
+from [greenelab/knowledge-graph-review@1ba98f7](https://github.com/greenelab/knowledge-graph-review/tree/1ba98f7561175dd5cceff3bfcecc085288db3d87)
+on February 24, 2020.
 </em></small>
 
 ## Authors
@@ -326,9 +326,34 @@ In the future, it may be beneficial for these models is to incorporate other typ
 
 #### Deep Learning
 
-1. Define node neighborhoods
-2. Talk about random walks 
-3. Talk about auto encoders random walk independent approaches 
+Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space.
+Many techniques that use deep learning for knowledge graphs are based on word2vec [@u5iJzbp9; @1GhHIDxuW], a set of approaches that are widely used for natural language processing.
+The goal of word2vec is to project words into a low dimensional space that preserves their semantic meaning.
+Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW).
+Both models are feed-forward neural networks, but CBOW models are trained to predict a word given it's context while skip-gram models are trained to predict the context given a word [@u5iJzbp9; @1GhHIDxuW].
+Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.
+
+Deepwalk [@7BUncUx3] is an early method designed to project a knowledge graph into a low dimensional space. 
+The first step of this method is to perform a random walk along a knowledge graph.
+During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec [@u5iJzbp9; @1GhHIDxuW].
+After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space [@7BUncUx3].
+A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached.
+Grover and Leskovec [@PD4udqRe] demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result.
+Node2vec [@PD4udqRe] operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes.
+A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type.
+Various approaches have evolved to fix this limitation by incorporating  node, edge and even path types when projecting nodes into a low dimensional space [@BatC4UOA; @1AeZs6xaT; @1G1nukcFt; @eSGflyQ5].
+These approaches primarily capture a network's local structure. 
+An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.
+
+Some deep learning approaches use an adjacency matrix as input [@u5iJzbp9; @1GhHIDxuW] instead of using the word2vec framing.
+Algorithms such as auto-encoders can also generate network embeddings [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
+Autoencoders [@DZT65ZRY; @1ErNQZjBt] are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input.
+The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
+Despite the high potential of this approach, this method relies on an adjacency matrix for input.
+If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. [@YVOAlp8C].
+Plus, Khosla et al.[@YVOAlp8C] discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification.
+Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph [@YVOAlp8C].
+Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
 
 ### Unifying Applications
 
