@@ -88,6 +88,34 @@
     "volume": "7"
   },
   {
+   "id": "raw:zhaoreplearn",
+    "author": [
+      {
+        "family": "Zhao",
+        "given": "Yu"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      }
+    ],
+    "container-title": "IJCAI",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "title": "Representation learning for measuring entity relatedness with rich information",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:KG_DEF",
     "author": [
       {
         "family": "Ehrlinger",
@@ -99,7 +127,6 @@
       }
     ],
     "container-title": "SEMANTiCS",
-    "id": "raw:KG_DEF",
     "issued": {
       "date-parts": [
         [
