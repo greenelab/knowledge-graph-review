@@ -271,6 +271,37 @@
       "type": "book"
   },
   {
+    "id": "Thomas2011LearningTE",
+    "author": [
+      {
+        "family": "Thomas",
+        "given": "Philippe"
+      },
+      {
+        "family": "Solt",
+        "given": "Illés"
+      },
+      {
+        "family": "Klinger",
+        "given": "Roman"
+      },
+      {
+        "family": "Leser",
+        "given": "Ulf"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          1
+        ]
+      ]
+    },
+    "title": "Learning protein protein interaction extraction using distant supervision",
+    "type": "paper-conference"
+  },
+  {
     "author": [
       {
         "family": "Bordes",
