@@ -20,6 +20,142 @@
     ]
   },
   {
+    "id": "eisenbach2006phpsyntaxtree",
+    "author": [
+      {
+        "family": "Eisenbach",
+        "given": "A"
+      },
+      {
+        "family": "Eisenbach",
+        "given": "M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "title": "PhpSyntaxTree tool",
+    "type": "no-type"
+  },
+  {
+    "id": "honnibal2017spacy",
+    "author": [
+      {
+        "family": "Honnibal",
+        "given": "Matthew"
+      },
+      {
+        "family": "Montani",
+        "given": "Ines"
+      }
+    ],
+    "container-title": "To appear",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "title": "Spacy 2: Natural language understanding with bloom embeddings, convolutional neural networks and incremental parsing",
+    "title-short": "Spacy 2",
+    "type": "article-journal",
+    "volume": "7"
+  },
+  {
+    "author": [
+      {
+        "family": "Ehrlinger",
+        "given": "Lisa"
+      },
+      {
+        "family": "Wöß",
+        "given": "Wolfram"
+      }
+    ],
+    "container-title": "SEMANTiCS",
+    "id": "raw:KG_DEF",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "title": "Towards a definition of knowledge graphs",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:hanreplearn",
+    "ISBN": "978-1-57735-770-4",
+    "URL": "http://dl.acm.org/citation.cfm?id=3060832.3060837",
+    "author": [
+      {
+        "family": "Han",
+        "given": "Yufei"
+      },
+      {
+        "family": "Shen",
+        "given": "Yun"
+      }
+    ],
+    "collection-title": "IJCAI’16",
+    "container-title": "Proceedings of the twenty-fifth international joint conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "1548-1554",
+    "publisher": "AAAI Press",
+    "publisher-place": "New York, New York, USA",
+    "title": "Partially supervised graph embedding for positive unlabelled feature selection",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:gongreplearn",
+    "URL": "http://dl.acm.org/citation.cfm?id=2892753.2892809",
+    "author": [
+      {
+        "family": "Gong",
+        "given": "Chen"
+      },
+      {
+        "family": "Tao",
+        "given": "Dacheng"
+      },
+      {
+        "family": "Yang",
+        "given": "Jie"
+      },
+      {
+        "family": "Fu",
+        "given": "Keren"
+      }
+    ],
+    "collection-title": "AAAI’14",
+    "container-title": "Proceedings of the twenty-eighth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "1847-1853",
+    "publisher": "AAAI Press",
+    "publisher-place": "Qu&\\#233;bec City, Qu&\\#233;bec, Canada",
+    "title": "Signed laplacian embedding for supervised dimension reduction",
+    "type": "paper-conference"
+  },
+  {
       "id": "raw:biocreative/chemprot",
       "URL": "https://www.semanticscholar.org/paper/Overview-of-the-BioCreative-VI-chemical-protein-Krallinger-Rabal/eed781f498b563df5a9e8a241c67d63dd1d92ad5",
       "author": [
@@ -133,5 +269,139 @@
       "publisher": "The MIT Press",
       "title": "Deep learning",
       "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bordes",
+        "given": "Antoine"
+      },
+      {
+        "family": "Usunier",
+        "given": "Nicolas"
+      },
+      {
+        "family": "García-Durán",
+        "given": "Alberto"
+      },
+      {
+        "family": "Weston",
+        "given": "Jason"
+      },
+      {
+        "family": "Yakhnenko",
+        "given": "Oksana"
+      }
+    ],
+    "container-title": "NIPS",
+    "id": "raw:bordestranse",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "title": "Translating embeddings for modeling multi-relational data",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:wangtransH",
+    "URL": "http://dl.acm.org/citation.cfm?id=2893873.2894046",
+    "author": [
+      {
+        "family": "Wang",
+        "given": "Zhen"
+      },
+      {
+        "family": "Zhang",
+        "given": "Jianwen"
+      },
+      {
+        "family": "Feng",
+        "given": "Jianlin"
+      },
+      {
+        "family": "Chen",
+        "given": "Zheng"
+      }
+    ],
+    "collection-title": "AAAI’14",
+    "container-title": "Proceedings of the twenty-eighth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "1112-1119",
+    "publisher": "AAAI Press",
+    "publisher-place": "Qu&\\#233;bec City, Qu&\\#233;bec, Canada",
+    "title": "Knowledge graph embedding by translating on hyperplanes",
+    "type": "paper-conference"
+  },
+  {
+    "id": "raw:lintransR",
+    "ISBN": "0-262-51129-0",
+    "URL": "http://dl.acm.org/citation.cfm?id=2886521.2886624",
+    "author": [
+      {
+        "family": "Lin",
+        "given": "Yankai"
+      },
+      {
+        "family": "Liu",
+        "given": "Zhiyuan"
+      },
+      {
+        "family": "Sun",
+        "given": "Maosong"
+      },
+      {
+        "family": "Liu",
+        "given": "Yang"
+      },
+      {
+        "family": "Zhu",
+        "given": "Xuan"
+      }
+    ],
+    "collection-title": "AAAI’15",
+    "container-title": "Proceedings of the twenty-ninth aaai conference on artificial intelligence",
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "page": "2181-2187",
+    "publisher": "AAAI Press",
+    "publisher-place": "Austin, Texas",
+    "title": "Learning entity and relation embeddings for knowledge graph completion"
+  },
+  {
+    "id": "Baldi2011",
+    "author": [
+      {
+        "family": "Baldi",
+        "given": "Pierre"
+      }
+    ],
+    "collection-title": "UTLW’11",
+    "container-title": "Proceedings of the 2011 international conference on unsupervised and transfer learning workshop - volume 27",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "keyword": "hebbian learning, unsupervised learning, complexity, principal component analysis, clustering, deep architectures, compression, boolean, information theory, autoencoders",
+    "page": "37-50",
+    "publisher": "JMLR.org",
+    "title": "Autoencoders, unsupervised learning and deep architectures",
+    "type": "paper-conference"
   }
 ]
