@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Jane Roe
-date-meta: '2020-02-24'
+date-meta: '2020-02-25'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/1ba98f7561175dd5cceff3bfcecc085288db3d87/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/7bb032daf9b96f78db2cc64c89b07a6ef95088f0/))
 was automatically generated
-from [greenelab/knowledge-graph-review@1ba98f7](https://github.com/greenelab/knowledge-graph-review/tree/1ba98f7561175dd5cceff3bfcecc085288db3d87)
-on February 24, 2020.
+from [greenelab/knowledge-graph-review@7bb032d](https://github.com/greenelab/knowledge-graph-review/tree/7bb032daf9b96f78db2cc64c89b07a6ef95088f0)
+on February 25, 2020.
 </em></small>
 
 ## Authors
@@ -257,37 +257,73 @@ Future methods can improve detection power by considering the use of  methods th
 
 Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupervised-methods-text-mining}
 
-#### Supervised Machine Learning
+#### Supervised Relationship Extraction
 
-1. Mention the availablility of publically available data
-	1. PPI - 5 datasets 
-	   1. 10.1016/j.artmed.2004.07.016 
-	   2. 10.1186/1471-2105-8-50 
-	   3. Learning language in logic - genic interaction extraction challenge
-	   4. 10.1093/bioinformatics/btl616 
-	   5. http://helix-web.stanford.edu/psb02/ding.pdf
-	2. DaG - 3 datasets
-	   1. 10.1016/j.jbi.2012.04.004 
-	   2. 10.1186/s12859-015-0472-9
-	   3. 10.1186/1471-2105-14-323 
-	   4. 10.1186/1471-2105-13-161
-	3. CiD 
-	  1. 10.1093/database/baw068 
-	4. CbG 
-	  1. Biocreative VI track 5 - raw citation
-	5. more if exists talk about deep learning methods
-2. Mention the use of Support Vector Machines and other non deep learning classifiers
-   1. Will have to mention that field has moved to deep learning.
-   2. 10.1186/s13326-017-0168-3
-   3. 10.1371/journal.pcbi.1004630
-3. Mention deep learning methods
-   1. 1901.06103v1
-   2. 10.1016/j.knosys.2018.11.020
-   3. 10.1177/0165551516673485
-   4. 1706.01556v2
-   5. ^^ A few papers here but a lot more will be put into place 
-   6. Mention caveat which is the need for large annotated datasets
-   7. Mention a direction the field is moving to which is weak supervision and more that info that will come in time.
+Supervised extraction uses labeled relationships to learn text patterns that correspond to positively labeled relationships instead of negative ones.
+Most of these approaches have flourished due to pre-labelled publicly available datasets (Table {@tbl:supervised-text-datasets}).
+These datasets were constructed by curators for shared open tasks [@16As8893j; @6wNuLZWb] or as a means to provide the scientific community with a gold standard [@L9IIm3Zd; @6wNuLZWb; @luGt8luc].
+Approaches that use these available datasets range from using support vector machines (SVMs) with custom kernels to deep learning with algorithms that can construct their own features.
+In the rest of this section we discuss approaches that use supervised methods to detect relationship-asserting sentences.
+
+Extracting relationships in a supervised setting can involve mapping textual input onto a high dimensional space.
+Support vector machines are a type of classifier that can accomplish this task with a mapping function called a kernel [@iiQkIqUX; @1B0lnkj35].
+These kernels take information such as a sentence's dependency tree [@i7KpvzCo; @3j1T67vB], part of speech tags [@iiQkIqUX] or even word counts [@1B0lnkj35] and map them onto a dense feature space.
+Within this space, the methods learn a hyperplane that separates sentences in the positive class (mentions a relationship) from the negative class (does not mention a relationship). 
+Kernels can be manually constructed or selected to cater to the relationship being extracted [@iiQkIqUX; @3j1T67vB;@1B0lnkj35; @1B0lnkj35].
+Determining the correct kernel requires expert knowledge to be successful and is a nontrivial task depending on the relationship.
+In addition to single kernel methods, a recent study used an ensemble of SVMs to extract disease-gene associations [@GeCe9qfW].
+The ensemble outperformed notable disease-gene association extractors [@jg0TGCov; @hbAqN08A] in terms of precision, recall and F1 score.
+Overall, SVMs have been shown to be beneficial in terms of relationship mining; however, major focus have shifted to utilizing deep learning techniques to extract relationships as these approaches can perform non-linear mappings of high dimensional data.
+
+Deep learning is an increasingly popular class of techniques that can construct their own features within a high dimensional space [@vDFZcSf9; @BeijBSRE].
+These methods use different forms of neural networks, such as recurrent or convolutional neural networks, to perform classification.
+
+Recurrent neural networks (RNN) are designed for sequential analysis that consist of using a repeatedly updating hidden state to make predictions.
+An example of a recurrent neural network is a long short term memory (LSTM) network [@x4dbEYer].
+Cocos et al [@kCSge2o8] used a LSTM to extract drug side effects from de-identified twitter posts, while Yadav et al. [@hEblZ1j5] used an LSTM to extract protein-protein interactions.
+Other works have used LSTMs to perform relationship extraction [@8lfvAUz7; @8NrcroGt; @k4sSP5gN; @1F5aZYjOB; @kCSge2o8]. 
+Despite the success of these networks, training can be difficult as these networks are highly susceptible to vanishing and exploding gradients [@YYBiIF26; @6PiFh6Y2].
+One solution to this problem is to clip the gradients while the neural network trains [@FoztezBR].
+Besides the gradient problem, these approaches peak in performance when the dataset reaches at least a tens of thousand of data points [@anpoBunY].
+
+Convolutional neural networks (CNNs), which are widely applied for image analysis, use multiple kernel filters to capture small subsets of an overall image [@BeijBSRE].
+In the context of text mining an image is replaced with words within a sentence mapped to dense vectors (i.e., word embeddings) [@1GhHIDxuW; @u5iJzbp9].
+Peng et al. [@TNHJioqT] used a CNN to extract sentences that mentioned protein-protein interactions and Zhou et al. [@HS4ARwmZ] used a CNN to extract chemical-disease relations.
+Other approaches have used CNNs and variants of CNNs to extract relationship-asserting sentences [@1H4LpFrU0; @5LOkzCNK; @19fr9ZRrA].
+Just like RNNs, these networks perform well when millions of labeled examples are present [@anpoBunY]. 
+Future approaches that use CNNs or RNNs should consider solutions to obtaining these large quantities of data through means such as weak supervision [@EHeTvZht], semi-supervised learning [@xWET58su] or using pre-trained networks via transfer learning [@12JtL2o6T; @YRDXK4f4].
+
+Semi-supervised learning [@xWET58su] and weak supervision [@EHeTvZht] are techniques that can construct large datasets for machine learning classifiers. 
+Semi-supervised learning consists of combining labeled data with unlabeled data to extract relationships.
+For example, one study used a variational auto encoder with a LSTM network to extract protein-protein interactions from pubmed abstracts and full text [@hNMqMImK].
+This is an elegant solution to handle the small dataset problem, but requires labeled data to start. 
+The dependency on labeled data makes finding under-studied relationships difficult as one would need to find or construct examples of the missing relationships in the beginning.
+
+Weak or distant supervision takes a different approach that uses noisy or even erroneous labels to train classifiers [@EHeTvZht; @WYud0jQT; @vzoBuh4l; @9Jo1af7Z].
+Under this paradigm sentences are labeled based on their mention pair being present (positive) or absent (negative) in a database.
+Once these labels are obtained a machine learning classifier can now be trained to predict sentences [@EHeTvZht].
+For example, Thomas et al. [@kvlZD1mv] used distant supervision to train a support vector machine to extract sentences mentioning protein-protein interactions (ppi). 
+Their SVM model achieved comparable performance against a baseline model; however, the noise generated via distant supervision was difficult to eradicate [@kvlZD1mv].
+A number of efforts have focused on combining distant supervision with other types of labeling strategies to reduce the negative impacts of noisy knowledge bases [@Kry87kzn; @M5UWoN93; @xy08BzDf].
+Nicholson et al. [@19fr9ZRrA] found that, in some circumstances, these strategies and rules can be reused across different types of biomedical edges to learn a heterogeneous knowledge graph if those edges describe similar physical concepts.
+This remains an active area of investigation with numerous associated challenges and opportunities.
+Overall, semi-supervised learning and weak supervision provide promising results in terms of relation extraction and future approaches should consider using those paradigms to train machine learning classifiers.
+
+| Dataset | Type of Sentences |
+| --- | --- |
+| AIMed [@YWh6tPj] | PPI |
+| BioInfer [@DWpAeBxB] | PPI | 
+| LLL [@szMMEMdC] | PPI |
+| IEPA [@115pgEuOr] | PPI |
+| HPRD5 [@L9IIm3Zd] | PPI |
+| EU-ADR [@Y2DcwTrA] | DaG |
+| BeFree [@hbAqN08A] | DaG |
+| CoMAGC [@luGt8luc] | DaG | 
+| CRAFT [@1Du6MinB8] | DaG |
+| Biocreative V CDR [@6wNuLZWb] | Compound induces Disease |
+| Biocreative IV ChemProt [@16As8893j] | CbG |
+
+Table: A set of publicly available datasets for supervised text mining. {#tbl:supervised-text-datasets}
 
 
 ## Applying Knowledge Graphs to Biomedical Challenges

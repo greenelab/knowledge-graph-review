@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="David Nicholson" />
   <meta name="author" content="Jane Roe" />
-  <meta name="dcterms.date" content="2020-02-24" />
+  <meta name="dcterms.date" content="2020-02-25" />
   <meta name="keywords" content="knowledge-graphs, network-embeddings, text-mining, natural-language-processing, deep-learning, machine-learning, literature-review" />
   <title>Constructing Knowledge Graphs and Their Biomedical Applications</title>
   <style>
@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/1ba98f7561175dd5cceff3bfcecc085288db3d87/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/1ba98f7561175dd5cceff3bfcecc085288db3d87">greenelab/knowledge-graph-review@1ba98f7</a> on February 24, 2020. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/7bb032daf9b96f78db2cc64c89b07a6ef95088f0/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/7bb032daf9b96f78db2cc64c89b07a6ef95088f0">greenelab/knowledge-graph-review@7bb032d</a> on February 25, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -197,48 +197,70 @@
 </tr>
 </tbody>
 </table>
-<h4 id="supervised-machine-learning">Supervised Machine Learning</h4>
-<ol type="1">
-<li>Mention the availablility of publically available data
-<ol type="1">
-<li>PPI - 5 datasets
-<ol type="1">
-<li>10.1016/j.artmed.2004.07.016</li>
-<li>10.1186/1471-2105-8-50</li>
-<li>Learning language in logic - genic interaction extraction challenge</li>
-<li>10.1093/bioinformatics/btl616</li>
-<li>http://helix-web.stanford.edu/psb02/ding.pdf</li>
-</ol></li>
-<li>DaG - 3 datasets
-<ol type="1">
-<li>10.1016/j.jbi.2012.04.004</li>
-<li>10.1186/s12859-015-0472-9</li>
-<li>10.1186/1471-2105-14-323</li>
-<li>10.1186/1471-2105-13-161</li>
-</ol></li>
-<li>CiD</li>
-<li>10.1093/database/baw068</li>
-<li>CbG</li>
-<li>Biocreative VI track 5 - raw citation</li>
-<li>more if exists talk about deep learning methods</li>
-</ol></li>
-<li>Mention the use of Support Vector Machines and other non deep learning classifiers
-<ol type="1">
-<li>Will have to mention that field has moved to deep learning.</li>
-<li>10.1186/s13326-017-0168-3</li>
-<li>10.1371/journal.pcbi.1004630</li>
-</ol></li>
-<li>Mention deep learning methods
-<ol type="1">
-<li>1901.06103v1</li>
-<li>10.1016/j.knosys.2018.11.020</li>
-<li>10.1177/0165551516673485</li>
-<li>1706.01556v2</li>
-<li>^^ A few papers here but a lot more will be put into place</li>
-<li>Mention caveat which is the need for large annotated datasets</li>
-<li>Mention a direction the field is moving to which is weak supervision and more that info that will come in time.</li>
-</ol></li>
-</ol>
+<h4 id="supervised-relationship-extraction">Supervised Relationship Extraction</h4>
+<p>Supervised extraction uses labeled relationships to learn text patterns that correspond to positively labeled relationships instead of negative ones. Most of these approaches have flourished due to pre-labelled publicly available datasets (Table <a href="#tbl:supervised-text-datasets">2</a>). These datasets were constructed by curators for shared open tasks <span class="citation" data-cites="16As8893j 6wNuLZWb">[<a href="#ref-16As8893j" role="doc-biblioref">75</a>,<a href="#ref-6wNuLZWb" role="doc-biblioref">76</a>]</span> or as a means to provide the scientific community with a gold standard <span class="citation" data-cites="L9IIm3Zd 6wNuLZWb luGt8luc">[<a href="#ref-6wNuLZWb" role="doc-biblioref">76</a>,<a href="#ref-L9IIm3Zd" role="doc-biblioref">77</a>,<a href="#ref-luGt8luc" role="doc-biblioref">78</a>]</span>. Approaches that use these available datasets range from using support vector machines (SVMs) with custom kernels to deep learning with algorithms that can construct their own features. In the rest of this section we discuss approaches that use supervised methods to detect relationship-asserting sentences.</p>
+<p>Extracting relationships in a supervised setting can involve mapping textual input onto a high dimensional space. Support vector machines are a type of classifier that can accomplish this task with a mapping function called a kernel <span class="citation" data-cites="iiQkIqUX 1B0lnkj35">[<a href="#ref-iiQkIqUX" role="doc-biblioref">52</a>,<a href="#ref-1B0lnkj35" role="doc-biblioref">79</a>]</span>. These kernels take information such as a sentence’s dependency tree <span class="citation" data-cites="i7KpvzCo 3j1T67vB">[<a href="#ref-i7KpvzCo" role="doc-biblioref">50</a>,<a href="#ref-3j1T67vB" role="doc-biblioref">51</a>]</span>, part of speech tags <span class="citation" data-cites="iiQkIqUX">[<a href="#ref-iiQkIqUX" role="doc-biblioref">52</a>]</span> or even word counts <span class="citation" data-cites="1B0lnkj35">[<a href="#ref-1B0lnkj35" role="doc-biblioref">79</a>]</span> and map them onto a dense feature space. Within this space, the methods learn a hyperplane that separates sentences in the positive class (mentions a relationship) from the negative class (does not mention a relationship). Kernels can be manually constructed or selected to cater to the relationship being extracted <span class="citation" data-cites="iiQkIqUX 3j1T67vB 1B0lnkj35 1B0lnkj35">[<a href="#ref-3j1T67vB" role="doc-biblioref">51</a>,<a href="#ref-iiQkIqUX" role="doc-biblioref">52</a>,<a href="#ref-1B0lnkj35" role="doc-biblioref">79</a>,<a href="#ref-1B0lnkj35" role="doc-biblioref">79</a>]</span>. Determining the correct kernel requires expert knowledge to be successful and is a nontrivial task depending on the relationship. In addition to single kernel methods, a recent study used an ensemble of SVMs to extract disease-gene associations <span class="citation" data-cites="GeCe9qfW">[<a href="#ref-GeCe9qfW" role="doc-biblioref">80</a>]</span>. The ensemble outperformed notable disease-gene association extractors <span class="citation" data-cites="jg0TGCov hbAqN08A">[<a href="#ref-jg0TGCov" role="doc-biblioref">63</a>,<a href="#ref-hbAqN08A" role="doc-biblioref">81</a>]</span> in terms of precision, recall and F1 score. Overall, SVMs have been shown to be beneficial in terms of relationship mining; however, major focus have shifted to utilizing deep learning techniques to extract relationships as these approaches can perform non-linear mappings of high dimensional data.</p>
+<p>Deep learning is an increasingly popular class of techniques that can construct their own features within a high dimensional space <span class="citation" data-cites="vDFZcSf9 BeijBSRE">[<a href="#ref-vDFZcSf9" role="doc-biblioref">82</a>,<a href="#ref-BeijBSRE" role="doc-biblioref">83</a>]</span>. These methods use different forms of neural networks, such as recurrent or convolutional neural networks, to perform classification.</p>
+<p>Recurrent neural networks (RNN) are designed for sequential analysis that consist of using a repeatedly updating hidden state to make predictions. An example of a recurrent neural network is a long short term memory (LSTM) network <span class="citation" data-cites="x4dbEYer">[<a href="#ref-x4dbEYer" role="doc-biblioref">84</a>]</span>. Cocos et al <span class="citation" data-cites="kCSge2o8">[<a href="#ref-kCSge2o8" role="doc-biblioref">85</a>]</span> used a LSTM to extract drug side effects from de-identified twitter posts, while Yadav et al. <span class="citation" data-cites="hEblZ1j5">[<a href="#ref-hEblZ1j5" role="doc-biblioref">86</a>]</span> used an LSTM to extract protein-protein interactions. Other works have used LSTMs to perform relationship extraction <span class="citation" data-cites="8lfvAUz7 8NrcroGt k4sSP5gN 1F5aZYjOB kCSge2o8">[<a href="#ref-kCSge2o8" role="doc-biblioref">85</a>,<a href="#ref-8lfvAUz7" role="doc-biblioref">87</a>,<a href="#ref-8NrcroGt" role="doc-biblioref">88</a>,<a href="#ref-k4sSP5gN" role="doc-biblioref">89</a>,<a href="#ref-1F5aZYjOB" role="doc-biblioref">90</a>]</span>. Despite the success of these networks, training can be difficult as these networks are highly susceptible to vanishing and exploding gradients <span class="citation" data-cites="YYBiIF26 6PiFh6Y2">[<a href="#ref-YYBiIF26" role="doc-biblioref">91</a>,<a href="#ref-6PiFh6Y2" role="doc-biblioref">92</a>]</span>. One solution to this problem is to clip the gradients while the neural network trains <span class="citation" data-cites="FoztezBR">[<a href="#ref-FoztezBR" role="doc-biblioref">93</a>]</span>. Besides the gradient problem, these approaches peak in performance when the dataset reaches at least a tens of thousand of data points <span class="citation" data-cites="anpoBunY">[<a href="#ref-anpoBunY" role="doc-biblioref">94</a>]</span>.</p>
+<p>Convolutional neural networks (CNNs), which are widely applied for image analysis, use multiple kernel filters to capture small subsets of an overall image <span class="citation" data-cites="BeijBSRE">[<a href="#ref-BeijBSRE" role="doc-biblioref">83</a>]</span>. In the context of text mining an image is replaced with words within a sentence mapped to dense vectors (i.e., word embeddings) <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. Peng et al. <span class="citation" data-cites="TNHJioqT">[<a href="#ref-TNHJioqT" role="doc-biblioref">97</a>]</span> used a CNN to extract sentences that mentioned protein-protein interactions and Zhou et al. <span class="citation" data-cites="HS4ARwmZ">[<a href="#ref-HS4ARwmZ" role="doc-biblioref">98</a>]</span> used a CNN to extract chemical-disease relations. Other approaches have used CNNs and variants of CNNs to extract relationship-asserting sentences <span class="citation" data-cites="1H4LpFrU0 5LOkzCNK 19fr9ZRrA">[<a href="#ref-5LOkzCNK" role="doc-biblioref">100</a>,<a href="#ref-19fr9ZRrA" role="doc-biblioref">101</a>,<a href="#ref-1H4LpFrU0" role="doc-biblioref">99</a>]</span>. Just like RNNs, these networks perform well when millions of labeled examples are present <span class="citation" data-cites="anpoBunY">[<a href="#ref-anpoBunY" role="doc-biblioref">94</a>]</span>. Future approaches that use CNNs or RNNs should consider solutions to obtaining these large quantities of data through means such as weak supervision <span class="citation" data-cites="EHeTvZht">[<a href="#ref-EHeTvZht" role="doc-biblioref">102</a>]</span>, semi-supervised learning <span class="citation" data-cites="xWET58su">[<a href="#ref-xWET58su" role="doc-biblioref">103</a>]</span> or using pre-trained networks via transfer learning <span class="citation" data-cites="12JtL2o6T YRDXK4f4">[<a href="#ref-12JtL2o6T" role="doc-biblioref">104</a>,<a href="#ref-YRDXK4f4" role="doc-biblioref">105</a>]</span>.</p>
+<p>Semi-supervised learning <span class="citation" data-cites="xWET58su">[<a href="#ref-xWET58su" role="doc-biblioref">103</a>]</span> and weak supervision <span class="citation" data-cites="EHeTvZht">[<a href="#ref-EHeTvZht" role="doc-biblioref">102</a>]</span> are techniques that can construct large datasets for machine learning classifiers. Semi-supervised learning consists of combining labeled data with unlabeled data to extract relationships. For example, one study used a variational auto encoder with a LSTM network to extract protein-protein interactions from pubmed abstracts and full text <span class="citation" data-cites="hNMqMImK">[<a href="#ref-hNMqMImK" role="doc-biblioref">106</a>]</span>. This is an elegant solution to handle the small dataset problem, but requires labeled data to start. The dependency on labeled data makes finding under-studied relationships difficult as one would need to find or construct examples of the missing relationships in the beginning.</p>
+<p>Weak or distant supervision takes a different approach that uses noisy or even erroneous labels to train classifiers <span class="citation" data-cites="EHeTvZht WYud0jQT vzoBuh4l 9Jo1af7Z">[<a href="#ref-EHeTvZht" role="doc-biblioref">102</a>,<a href="#ref-WYud0jQT" role="doc-biblioref">107</a>,<a href="#ref-vzoBuh4l" role="doc-biblioref">108</a>,<a href="#ref-9Jo1af7Z" role="doc-biblioref">109</a>]</span>. Under this paradigm sentences are labeled based on their mention pair being present (positive) or absent (negative) in a database. Once these labels are obtained a machine learning classifier can now be trained to predict sentences <span class="citation" data-cites="EHeTvZht">[<a href="#ref-EHeTvZht" role="doc-biblioref">102</a>]</span>. For example, Thomas et al. <span class="citation" data-cites="kvlZD1mv">[<a href="#ref-kvlZD1mv" role="doc-biblioref">110</a>]</span> used distant supervision to train a support vector machine to extract sentences mentioning protein-protein interactions (ppi). Their SVM model achieved comparable performance against a baseline model; however, the noise generated via distant supervision was difficult to eradicate <span class="citation" data-cites="kvlZD1mv">[<a href="#ref-kvlZD1mv" role="doc-biblioref">110</a>]</span>. A number of efforts have focused on combining distant supervision with other types of labeling strategies to reduce the negative impacts of noisy knowledge bases <span class="citation" data-cites="Kry87kzn M5UWoN93 xy08BzDf">[<a href="#ref-Kry87kzn" role="doc-biblioref">111</a>,<a href="#ref-M5UWoN93" role="doc-biblioref">112</a>,<a href="#ref-xy08BzDf" role="doc-biblioref">113</a>]</span>. Nicholson et al. <span class="citation" data-cites="19fr9ZRrA">[<a href="#ref-19fr9ZRrA" role="doc-biblioref">101</a>]</span> found that, in some circumstances, these strategies and rules can be reused across different types of biomedical edges to learn a heterogeneous knowledge graph if those edges describe similar physical concepts. This remains an active area of investigation with numerous associated challenges and opportunities. Overall, semi-supervised learning and weak supervision provide promising results in terms of relation extraction and future approaches should consider using those paradigms to train machine learning classifiers.</p>
+<a name="tbl:supervised-text-datasets"></a>
+<table>
+<caption><span>Table 2:</span> A set of publicly available datasets for supervised text mining. </caption>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>Type of Sentences</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AIMed <span class="citation" data-cites="YWh6tPj">[<a href="#ref-YWh6tPj" role="doc-biblioref">41</a>]</span></td>
+<td>PPI</td>
+</tr>
+<tr class="even">
+<td>BioInfer <span class="citation" data-cites="DWpAeBxB">[<a href="#ref-DWpAeBxB" role="doc-biblioref">114</a>]</span></td>
+<td>PPI</td>
+</tr>
+<tr class="odd">
+<td>LLL <span class="citation" data-cites="szMMEMdC">[<a href="#ref-szMMEMdC" role="doc-biblioref">115</a>]</span></td>
+<td>PPI</td>
+</tr>
+<tr class="even">
+<td>IEPA <span class="citation" data-cites="115pgEuOr">[<a href="#ref-115pgEuOr" role="doc-biblioref">116</a>]</span></td>
+<td>PPI</td>
+</tr>
+<tr class="odd">
+<td>HPRD5 <span class="citation" data-cites="L9IIm3Zd">[<a href="#ref-L9IIm3Zd" role="doc-biblioref">77</a>]</span></td>
+<td>PPI</td>
+</tr>
+<tr class="even">
+<td>EU-ADR <span class="citation" data-cites="Y2DcwTrA">[<a href="#ref-Y2DcwTrA" role="doc-biblioref">40</a>]</span></td>
+<td>DaG</td>
+</tr>
+<tr class="odd">
+<td>BeFree <span class="citation" data-cites="hbAqN08A">[<a href="#ref-hbAqN08A" role="doc-biblioref">81</a>]</span></td>
+<td>DaG</td>
+</tr>
+<tr class="even">
+<td>CoMAGC <span class="citation" data-cites="luGt8luc">[<a href="#ref-luGt8luc" role="doc-biblioref">78</a>]</span></td>
+<td>DaG</td>
+</tr>
+<tr class="odd">
+<td>CRAFT <span class="citation" data-cites="1Du6MinB8">[<a href="#ref-1Du6MinB8" role="doc-biblioref">117</a>]</span></td>
+<td>DaG</td>
+</tr>
+<tr class="even">
+<td>Biocreative V CDR <span class="citation" data-cites="6wNuLZWb">[<a href="#ref-6wNuLZWb" role="doc-biblioref">76</a>]</span></td>
+<td>Compound induces Disease</td>
+</tr>
+<tr class="odd">
+<td>Biocreative IV ChemProt <span class="citation" data-cites="16As8893j">[<a href="#ref-16As8893j" role="doc-biblioref">75</a>]</span></td>
+<td>CbG</td>
+</tr>
+</tbody>
+</table>
 <h2 id="applying-knowledge-graphs-to-biomedical-challenges">Applying Knowledge Graphs to Biomedical Challenges</h2>
 <ol type="1">
 <li>Mention that these graphs can be used for discovery</li>
@@ -246,20 +268,20 @@
 <li></li>
 </ol>
 <h3 id="unifying-techniques">Unifying Techniques</h3>
-<p>Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span> and image analysis <span class="citation" data-cites="j7KrVyi8">[<a href="#ref-j7KrVyi8" role="doc-biblioref">77</a>]</span>. The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well <span class="citation" data-cites="DSiHGDz9">[<a href="#ref-DSiHGDz9" role="doc-biblioref">78</a>]</span>. Techniques that perform this projection often require information on how nodes are connected with one another <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq dylXYFm6 9F3iyg8e">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">79</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">80</a>,<a href="#ref-dylXYFm6" role="doc-biblioref">81</a>,<a href="#ref-9F3iyg8e" role="doc-biblioref">82</a>]</span>, while other approaches can work directly with the edges themselves <span class="citation" data-cites="E5xHFo4P">[<a href="#ref-E5xHFo4P" role="doc-biblioref">83</a>]</span>. We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning.</p>
+<p>Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> and image analysis <span class="citation" data-cites="j7KrVyi8">[<a href="#ref-j7KrVyi8" role="doc-biblioref">118</a>]</span>. The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well <span class="citation" data-cites="DSiHGDz9">[<a href="#ref-DSiHGDz9" role="doc-biblioref">119</a>]</span>. Techniques that perform this projection often require information on how nodes are connected with one another <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq dylXYFm6 9F3iyg8e">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">120</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">121</a>,<a href="#ref-dylXYFm6" role="doc-biblioref">122</a>,<a href="#ref-9F3iyg8e" role="doc-biblioref">123</a>]</span>, while other approaches can work directly with the edges themselves <span class="citation" data-cites="E5xHFo4P">[<a href="#ref-E5xHFo4P" role="doc-biblioref">124</a>]</span>. We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning.</p>
 <h4 id="matrix-factorization">Matrix Factorization</h4>
 <ol type="1">
 <li>Mention techniques for these with some papers</li>
 </ol>
 <h4 id="translational-distance-models">Translational Distance Models</h4>
-<p>Translational distance models treat edges in a knowledge graph as linear transformations. As an example, one such algorithm, TransE <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">84</a>]</span>, treats every node-edge pair as a triplet with head nodes represented as <span class="math inline">\(\textbf{h}\)</span>, edges represented as <span class="math inline">\(\textbf{r}\)</span>, and tail nodes represented as <span class="math inline">\(\textbf{t}\)</span>. These representations are combined into an equation that mimics the iconic word vectors translations (<span class="math inline">\(\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}\)</span>) from the Word2vec model <span class="citation" data-cites="u5iJzbp9">[<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span>. The equation is shown as follows: <span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>. Starting at the head node (<span class="math inline">\(\textbf{h}\)</span>), add the edge vector (<span class="math inline">\(\textbf{r}\)</span>) and the result should be the tail node (<span class="math inline">\(\textbf{t}\)</span>). TransE optimizes embeddings for <span class="math inline">\(\textbf{h}\)</span>, <span class="math inline">\(\textbf{r}\)</span>, <span class="math inline">\(\textbf{t}\)</span>, while guaranteeing the global equation (<span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>) is satisfied <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">84</a>]</span>. A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.</p>
-<p>Wang et al. <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">85</a>]</span> attempted to resolve the one to one mapping issue by developing the TransH model. TransH treats relations as hyperplanes rather than a regular vector and projects the head (<span class="math inline">\(\textbf{h}\)</span>) and tail (<span class="math inline">\(\textbf{t}\)</span>) nodes onto the hyperplane. Following this projection, a distance vector (<span class="math inline">\(\textbf{d}_{r}\)</span>) is calculated between the projected head and tail nodes. Finally, each vector is optimized while preserving the global equation (<span class="math inline">\(\textbf{h} + \textbf{d}_{r} \approx \textbf{t}\)</span>) <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">85</a>]</span>. Other approaches <span class="citation" data-cites="R8kotaKY BRGxlTb9">[<a href="#ref-R8kotaKY" role="doc-biblioref">86</a>,<a href="#ref-BRGxlTb9" role="doc-biblioref">87</a>]</span> have built off of the TransE and TransH models. In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.</p>
+<p>Translational distance models treat edges in a knowledge graph as linear transformations. As an example, one such algorithm, TransE <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">125</a>]</span>, treats every node-edge pair as a triplet with head nodes represented as <span class="math inline">\(\textbf{h}\)</span>, edges represented as <span class="math inline">\(\textbf{r}\)</span>, and tail nodes represented as <span class="math inline">\(\textbf{t}\)</span>. These representations are combined into an equation that mimics the iconic word vectors translations (<span class="math inline">\(\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}\)</span>) from the Word2vec model <span class="citation" data-cites="u5iJzbp9">[<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. The equation is shown as follows: <span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>. Starting at the head node (<span class="math inline">\(\textbf{h}\)</span>), add the edge vector (<span class="math inline">\(\textbf{r}\)</span>) and the result should be the tail node (<span class="math inline">\(\textbf{t}\)</span>). TransE optimizes embeddings for <span class="math inline">\(\textbf{h}\)</span>, <span class="math inline">\(\textbf{r}\)</span>, <span class="math inline">\(\textbf{t}\)</span>, while guaranteeing the global equation (<span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>) is satisfied <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">125</a>]</span>. A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.</p>
+<p>Wang et al. <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">126</a>]</span> attempted to resolve the one to one mapping issue by developing the TransH model. TransH treats relations as hyperplanes rather than a regular vector and projects the head (<span class="math inline">\(\textbf{h}\)</span>) and tail (<span class="math inline">\(\textbf{t}\)</span>) nodes onto the hyperplane. Following this projection, a distance vector (<span class="math inline">\(\textbf{d}_{r}\)</span>) is calculated between the projected head and tail nodes. Finally, each vector is optimized while preserving the global equation (<span class="math inline">\(\textbf{h} + \textbf{d}_{r} \approx \textbf{t}\)</span>) <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">126</a>]</span>. Other approaches <span class="citation" data-cites="R8kotaKY BRGxlTb9">[<a href="#ref-R8kotaKY" role="doc-biblioref">127</a>,<a href="#ref-BRGxlTb9" role="doc-biblioref">128</a>]</span> have built off of the TransE and TransH models. In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.</p>
 <h4 id="deep-learning">Deep Learning</h4>
-<p>Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space. Many techniques that use deep learning for knowledge graphs are based on word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span>, a set of approaches that are widely used for natural language processing. The goal of word2vec is to project words into a low dimensional space that preserves their semantic meaning. Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW). Both models are feed-forward neural networks, but CBOW models are trained to predict a word given it’s context while skip-gram models are trained to predict the context given a word <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span>. Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.</p>
-<p>Deepwalk <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">88</a>]</span> is an early method designed to project a knowledge graph into a low dimensional space. The first step of this method is to perform a random walk along a knowledge graph. During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span>. After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">88</a>]</span>. A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached. Grover and Leskovec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">89</a>]</span> demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result. Node2vec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">89</a>]</span> operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes. A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type. Various approaches have evolved to fix this limitation by incorporating node, edge and even path types when projecting nodes into a low dimensional space <span class="citation" data-cites="BatC4UOA 1AeZs6xaT 1G1nukcFt eSGflyQ5">[<a href="#ref-BatC4UOA" role="doc-biblioref">90</a>,<a href="#ref-1AeZs6xaT" role="doc-biblioref">91</a>,<a href="#ref-1G1nukcFt" role="doc-biblioref">92</a>,<a href="#ref-eSGflyQ5" role="doc-biblioref">93</a>]</span>. These approaches primarily capture a network’s local structure. An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.</p>
-<p>Some deep learning approaches use an adjacency matrix as input <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">75</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">76</a>]</span> instead of using the word2vec framing. Algorithms such as auto-encoders can also generate network embeddings <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">94</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">95</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">96</a>]</span>. Autoencoders <span class="citation" data-cites="DZT65ZRY 1ErNQZjBt">[<a href="#ref-DZT65ZRY" role="doc-biblioref">97</a>,<a href="#ref-1ErNQZjBt" role="doc-biblioref">98</a>]</span> are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input. The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">94</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">95</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">96</a>]</span>. Despite the high potential of this approach, this method relies on an adjacency matrix for input. If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">99</a>]</span>. Plus, Khosla et al.<span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">99</a>]</span> discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification. Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">99</a>]</span>. Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.</p>
+<p>Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space. Many techniques that use deep learning for knowledge graphs are based on word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>, a set of approaches that are widely used for natural language processing. The goal of word2vec is to project words into a low dimensional space that preserves their semantic meaning. Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW). Both models are feed-forward neural networks, but CBOW models are trained to predict a word given it’s context while skip-gram models are trained to predict the context given a word <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.</p>
+<p>Deepwalk <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">129</a>]</span> is an early method designed to project a knowledge graph into a low dimensional space. The first step of this method is to perform a random walk along a knowledge graph. During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">129</a>]</span>. A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached. Grover and Leskovec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">130</a>]</span> demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result. Node2vec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">130</a>]</span> operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes. A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type. Various approaches have evolved to fix this limitation by incorporating node, edge and even path types when projecting nodes into a low dimensional space <span class="citation" data-cites="BatC4UOA 1AeZs6xaT 1G1nukcFt eSGflyQ5">[<a href="#ref-BatC4UOA" role="doc-biblioref">131</a>,<a href="#ref-1AeZs6xaT" role="doc-biblioref">132</a>,<a href="#ref-1G1nukcFt" role="doc-biblioref">133</a>,<a href="#ref-eSGflyQ5" role="doc-biblioref">134</a>]</span>. These approaches primarily capture a network’s local structure. An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.</p>
+<p>Some deep learning approaches use an adjacency matrix as input <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> instead of using the word2vec framing. Algorithms such as auto-encoders can also generate network embeddings <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">135</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">136</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">137</a>]</span>. Autoencoders <span class="citation" data-cites="DZT65ZRY 1ErNQZjBt">[<a href="#ref-DZT65ZRY" role="doc-biblioref">138</a>,<a href="#ref-1ErNQZjBt" role="doc-biblioref">139</a>]</span> are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input. The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">135</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">136</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">137</a>]</span>. Despite the high potential of this approach, this method relies on an adjacency matrix for input. If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">140</a>]</span>. Plus, Khosla et al.<span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">140</a>]</span> discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification. Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">140</a>]</span>. Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.</p>
 <h3 id="unifying-applications">Unifying Applications</h3>
-<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">100</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">101</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">102</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">103</a>]</span>. In this section we discuss how knowledge graphs are being applied in biomedical settings. We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
+<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">141</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">142</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">143</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">144</a>]</span>. In this section we discuss how knowledge graphs are being applied in biomedical settings. We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
 <h4 id="disease-and-gene-interactions">Disease and Gene Interactions</h4>
 <ol type="1">
 <li>Mention disease gene prioritization</li>
@@ -727,160 +749,394 @@ Ayush Singhal, Michael Simmons, Zhiyong Lu<br />
 <em>PLOS Computational Biology</em> (2016-11-30) <a href="https://doi.org/f9gz4b">https://doi.org/f9gz4b</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005017">10.1371/journal.pcbi.1005017</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27902695">27902695</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5130168">PMC5130168</a></p>
 </div>
+<div id="ref-16As8893j">
+<p>75. <strong>Overview of the biocreative vi chemical-protein interaction track</strong><br />
+Martin Krallinger, Obdulia Rabal, Saber A Akhondi, others<br />
+<em>Proceedings of the sixth biocreative challenge evaluation workshop</em> (2017) <a href="https://www.semanticscholar.org/paper/Overview-of-the-BioCreative-VI-chemical-protein-Krallinger-Rabal/eed781f498b563df5a9e8a241c67d63dd1d92ad5">https://www.semanticscholar.org/paper/Overview-of-the-BioCreative-VI-chemical-protein-Krallinger-Rabal/eed781f498b563df5a9e8a241c67d63dd1d92ad5</a></p>
+</div>
+<div id="ref-6wNuLZWb">
+<p>76. <strong>BioCreative V CDR task corpus: a resource for chemical disease relation extraction</strong><br />
+Jiao Li, Yueping Sun, Robin J. Johnson, Daniela Sciaky, Chih-Hsuan Wei, Robert Leaman, Allan Peter Davis, Carolyn J. Mattingly, Thomas C. Wiegers, Zhiyong Lu<br />
+<em>Database</em> (2016) <a href="https://doi.org/gf5hfw">https://doi.org/gf5hfw</a><br />
+DOI: <a href="https://doi.org/10.1093/database/baw068">10.1093/database/baw068</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27161011">27161011</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4860626">PMC4860626</a></p>
+</div>
+<div id="ref-L9IIm3Zd">
+<p>77. <strong>RelEx–Relation extraction using dependency parse trees</strong><br />
+K. Fundel, R. Kuffner, R. Zimmer<br />
+<em>Bioinformatics</em> (2006-12-01) <a href="https://doi.org/cz7q4d">https://doi.org/cz7q4d</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btl616">10.1093/bioinformatics/btl616</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17142812">17142812</a></p>
+</div>
+<div id="ref-luGt8luc">
+<p>78. <strong>CoMAGC: a corpus with multi-faceted annotations of gene-cancer relations</strong><br />
+Hee-Jin Lee, Sang-Hyung Shim, Mi-Ryoung Song, Hyunju Lee, Jong C Park<br />
+<em>BMC Bioinformatics</em> (2013) <a href="https://doi.org/gb8v5s">https://doi.org/gb8v5s</a><br />
+DOI: <a href="https://doi.org/10.1186/1471-2105-14-323">10.1186/1471-2105-14-323</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24225062">24225062</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3833657">PMC3833657</a></p>
+</div>
+<div id="ref-1B0lnkj35">
+<p>79. <strong>Text Mining for Protein Docking</strong><br />
+Varsha D. Badal, Petras J. Kundrotas, Ilya A. Vakser<br />
+<em>PLOS Computational Biology</em> (2015-12-09) <a href="https://doi.org/gcvj3b">https://doi.org/gcvj3b</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004630">10.1371/journal.pcbi.1004630</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26650466">26650466</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4674139">PMC4674139</a></p>
+</div>
+<div id="ref-GeCe9qfW">
+<p>80. <strong>Automatic extraction of gene-disease associations from literature using joint ensemble learning</strong><br />
+Balu Bhasuran, Jeyakumar Natarajan<br />
+<em>PLOS ONE</em> (2018-07-26) <a href="https://doi.org/gdx63f">https://doi.org/gdx63f</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pone.0200699">10.1371/journal.pone.0200699</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30048465">30048465</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6061985">PMC6061985</a></p>
+</div>
+<div id="ref-hbAqN08A">
+<p>81. <strong>Extraction of relations between genes and diseases from text and large-scale data analysis: implications for translational research</strong><br />
+Àlex Bravo, Janet Piñero, Núria Queralt-Rosinach, Michael Rautschka, Laura I Furlong<br />
+<em>BMC Bioinformatics</em> (2015-02-21) <a href="https://doi.org/f7kn8s">https://doi.org/f7kn8s</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-015-0472-9">10.1186/s12859-015-0472-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25886734">25886734</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4466840">PMC4466840</a></p>
+</div>
+<div id="ref-vDFZcSf9">
+<p>82. <strong>Deep learning</strong><br />
+Ian Goodfellow, Yoshua Bengio, Aaron Courville<br />
+<em>The MIT Press</em> (2016)<br />
+ISBN: <a href="https://worldcat.org/isbn/0262035618,%209780262035613">0262035618, 9780262035613</a></p>
+</div>
+<div id="ref-BeijBSRE">
+<p>83. <strong>Deep learning</strong><br />
+Yann LeCun, Yoshua Bengio, Geoffrey Hinton<br />
+<em>Nature</em> (2015-05) <a href="https://doi.org/bmqp">https://doi.org/bmqp</a><br />
+DOI: <a href="https://doi.org/10.1038/nature14539">10.1038/nature14539</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26017442">26017442</a></p>
+</div>
+<div id="ref-x4dbEYer">
+<p>84. <strong>Long Short-Term Memory</strong><br />
+Sepp Hochreiter, Jürgen Schmidhuber<br />
+<em>Neural Computation</em> (1997-11) <a href="https://doi.org/bxd65w">https://doi.org/bxd65w</a><br />
+DOI: <a href="https://doi.org/10.1162/neco.1997.9.8.1735">10.1162/neco.1997.9.8.1735</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/9377276">9377276</a></p>
+</div>
+<div id="ref-kCSge2o8">
+<p>85. <strong>Deep learning for pharmacovigilance: recurrent neural network architectures for labeling adverse drug reactions in Twitter posts</strong><br />
+Anne Cocos, Alexander G Fiks, Aaron J Masino<br />
+<em>Journal of the American Medical Informatics Association</em> (2017-02-22) <a href="https://doi.org/gbp9nj">https://doi.org/gbp9nj</a><br />
+DOI: <a href="https://doi.org/10.1093/jamia/ocw180">10.1093/jamia/ocw180</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28339747">28339747</a></p>
+</div>
+<div id="ref-hEblZ1j5">
+<p>86. <strong>Semantic Relations in Compound Nouns: Perspectives from Inter-Annotator Agreement</strong><br />
+Yadav Prabha, Jezek Elisabetta, Bouillon Pierrette, Callahan Tiffany J., Bada Michael, Hunter Lawrence E., Cohen K. Bretonnel<br />
+<em>Studies in Health Technology and Informatics</em> (2017) <a href="https://doi.org/ggmk8t">https://doi.org/ggmk8t</a><br />
+DOI: <a href="https://doi.org/10.3233/978-1-61499-830-3-644">10.3233/978-1-61499-830-3-644</a></p>
+</div>
+<div id="ref-8lfvAUz7">
+<p>87. <strong>Cross-Sentence N-ary Relation Extraction with Graph LSTMs</strong><br />
+Nanyun Peng, Hoifung Poon, Chris Quirk, Kristina Toutanova, Wen-tau Yih<br />
+<em>arXiv</em> (2017-08-12) <a href="https://arxiv.org/abs/1708.03743v1">https://arxiv.org/abs/1708.03743v1</a></p>
+</div>
+<div id="ref-8NrcroGt">
+<p>88. <strong>Drug drug interaction extraction from biomedical literature using syntax convolutional neural network</strong><br />
+Zhehuan Zhao, Zhihao Yang, Ling Luo, Hongfei Lin, Jian Wang<br />
+<em>Bioinformatics</em> (2016-07-27) <a href="https://doi.org/f9nsq7">https://doi.org/f9nsq7</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btw486">10.1093/bioinformatics/btw486</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27466626">27466626</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5181565">PMC5181565</a></p>
+</div>
+<div id="ref-k4sSP5gN">
+<p>89. <strong>N-ary Relation Extraction using Graph State LSTM</strong><br />
+Linfeng Song, Yue Zhang, Zhiguo Wang, Daniel Gildea<br />
+<em>arXiv</em> (2018-08-28) <a href="https://arxiv.org/abs/1808.09101v1">https://arxiv.org/abs/1808.09101v1</a></p>
+</div>
+<div id="ref-1F5aZYjOB">
+<p>90. <strong>A neural joint model for entity and relation extraction from biomedical text</strong><br />
+Fei Li, Meishan Zhang, Guohong Fu, Donghong Ji<br />
+<em>BMC Bioinformatics</em> (2017-03-31) <a href="https://doi.org/gcgnx2">https://doi.org/gcgnx2</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-017-1609-9">10.1186/s12859-017-1609-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28359255">28359255</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5374588">PMC5374588</a></p>
+</div>
+<div id="ref-YYBiIF26">
+<p>91. <strong>The problem of learning long-term dependencies in recurrent networks</strong><br />
+Y. Bengio, P. Frasconi, P. Simard<br />
+<em>IEEE International Conference on Neural Networks</em> <a href="https://doi.org/d7zs24">https://doi.org/d7zs24</a><br />
+DOI: <a href="https://doi.org/10.1109/icnn.1993.298725">10.1109/icnn.1993.298725</a></p>
+</div>
+<div id="ref-6PiFh6Y2">
+<p>92. <strong>Fundamentals of Recurrent Neural Network (RNN) and Long Short-Term Memory (LSTM) Network</strong><br />
+Alex Sherstinsky<br />
+<em>arXiv</em> (2018-08-09) <a href="https://arxiv.org/abs/1808.03314v5">https://arxiv.org/abs/1808.03314v5</a><br />
+DOI: <a href="https://doi.org/10.1016/j.physd.2019.132306">10.1016/j.physd.2019.132306</a></p>
+</div>
+<div id="ref-FoztezBR">
+<p>93. <strong>On the difficulty of training Recurrent Neural Networks</strong><br />
+Razvan Pascanu, Tomas Mikolov, Yoshua Bengio<br />
+<em>arXiv</em> (2012-11-21) <a href="https://arxiv.org/abs/1211.5063v2">https://arxiv.org/abs/1211.5063v2</a></p>
+</div>
+<div id="ref-anpoBunY">
+<p>94. <strong>Revisiting Unreasonable Effectiveness of Data in Deep Learning Era</strong><br />
+Chen Sun, Abhinav Shrivastava, Saurabh Singh, Abhinav Gupta<br />
+<em>arXiv</em> (2017-07-10) <a href="https://arxiv.org/abs/1707.02968v2">https://arxiv.org/abs/1707.02968v2</a></p>
+</div>
 <div id="ref-1GhHIDxuW">
-<p>75. <strong>Efficient Estimation of Word Representations in Vector Space</strong><br />
+<p>95. <strong>Efficient Estimation of Word Representations in Vector Space</strong><br />
 Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean<br />
 <em>arXiv</em> (2013-01-16) <a href="https://arxiv.org/abs/1301.3781v3">https://arxiv.org/abs/1301.3781v3</a></p>
 </div>
 <div id="ref-u5iJzbp9">
-<p>76. <strong>Distributed Representations of Words and Phrases and their Compositionality</strong><br />
+<p>96. <strong>Distributed Representations of Words and Phrases and their Compositionality</strong><br />
 Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, Jeffrey Dean<br />
 <em>arXiv</em> (2013-10-16) <a href="https://arxiv.org/abs/1310.4546v1">https://arxiv.org/abs/1310.4546v1</a></p>
 </div>
+<div id="ref-TNHJioqT">
+<p>97. <strong>Deep learning for extracting protein-protein interactions from biomedical literature</strong><br />
+Yifan Peng, Zhiyong Lu<br />
+<em>arXiv</em> (2017-06-05) <a href="https://arxiv.org/abs/1706.01556v2">https://arxiv.org/abs/1706.01556v2</a></p>
+</div>
+<div id="ref-HS4ARwmZ">
+<p>98. <strong>Knowledge-guided convolutional networks for chemical-disease relation extraction</strong><br />
+Huiwei Zhou, Chengkun Lang, Zhuang Liu, Shixian Ning, Yingyu Lin, Lei Du<br />
+<em>BMC Bioinformatics</em> (2019-05-21) <a href="https://doi.org/gf45zn">https://doi.org/gf45zn</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-019-2873-7">10.1186/s12859-019-2873-7</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31113357">31113357</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6528333">PMC6528333</a></p>
+</div>
+<div id="ref-1H4LpFrU0">
+<p>99. <strong>Extraction of protein–protein interactions (PPIs) from the literature by deep convolutional neural networks with various feature embeddings</strong><br />
+Sung-Pil Choi<br />
+<em>Journal of Information Science</em> (2016-11-01) <a href="https://doi.org/gcv8bn">https://doi.org/gcv8bn</a><br />
+DOI: <a href="https://doi.org/10.1177/0165551516673485">10.1177/0165551516673485</a></p>
+</div>
+<div id="ref-5LOkzCNK">
+<p>100. <strong>Extracting chemical–protein relations with ensembles of SVM and deep learning models</strong><br />
+Yifan Peng, Anthony Rios, Ramakanth Kavuluru, Zhiyong Lu<br />
+<em>Database</em> (2018-01-01) <a href="https://doi.org/gf479f">https://doi.org/gf479f</a><br />
+DOI: <a href="https://doi.org/10.1093/database/bay073">10.1093/database/bay073</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30020437">30020437</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6051439">PMC6051439</a></p>
+</div>
+<div id="ref-19fr9ZRrA">
+<p>101. <strong>Expanding a Database-derived Biomedical Knowledge Graph via Multi-relation Extraction from Biomedical Abstracts</strong><br />
+David N. Nicholson, Daniel S. Himmelstein, Casey S. Greene<br />
+<em>Cold Spring Harbor Laboratory</em> (2019-08-08) <a href="https://doi.org/gf6qxh">https://doi.org/gf6qxh</a><br />
+DOI: <a href="https://doi.org/10.1101/730085">10.1101/730085</a></p>
+</div>
+<div id="ref-EHeTvZht">
+<p>102. <strong>Distant supervision for relation extraction without labeled data</strong><br />
+Mike Mintz, Steven Bills, Rion Snow, Dan Jurafsky<br />
+<em>Proceedings of the Joint Conference of the 47th Annual Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP: Volume 2 - ACL-IJCNLP ’09</em> (2009) <a href="https://doi.org/fg9q43">https://doi.org/fg9q43</a><br />
+DOI: <a href="https://doi.org/10.3115/1690219.1690287">10.3115/1690219.1690287</a></p>
+</div>
+<div id="ref-xWET58su">
+<p>103. <strong>Introduction to Semi-Supervised Learning</strong><br />
+Xiaojin Zhu, Andrew B. Goldberg<br />
+<em>Synthesis Lectures on Artificial Intelligence and Machine Learning</em> (2009-01) <a href="https://doi.org/bq7pm2">https://doi.org/bq7pm2</a><br />
+DOI: <a href="https://doi.org/10.2200/s00196ed1v01y200906aim006">10.2200/s00196ed1v01y200906aim006</a></p>
+</div>
+<div id="ref-12JtL2o6T">
+<p>104. <strong>A Survey on Transfer Learning</strong><br />
+Sinno Jialin Pan, Qiang Yang<br />
+<em>IEEE Transactions on Knowledge and Data Engineering</em> (2010-10) <a href="https://doi.org/bc4vws">https://doi.org/bc4vws</a><br />
+DOI: <a href="https://doi.org/10.1109/tkde.2009.191">10.1109/tkde.2009.191</a></p>
+</div>
+<div id="ref-YRDXK4f4">
+<p>105. <strong>A survey of transfer learning</strong><br />
+Karl Weiss, Taghi M. Khoshgoftaar, DingDing Wang<br />
+<em>Journal of Big Data</em> (2016-05-28) <a href="https://doi.org/gfkr2w">https://doi.org/gfkr2w</a><br />
+DOI: <a href="https://doi.org/10.1186/s40537-016-0043-6">10.1186/s40537-016-0043-6</a></p>
+</div>
+<div id="ref-hNMqMImK">
+<p>106. <strong>Exploring Semi-supervised Variational Autoencoders for Biomedical Relation Extraction</strong><br />
+Yijia Zhang, Zhiyong Lu<br />
+<em>arXiv</em> (2019-01-18) <a href="https://arxiv.org/abs/1901.06103v1">https://arxiv.org/abs/1901.06103v1</a></p>
+</div>
+<div id="ref-WYud0jQT">
+<p>107. <strong>Large-scale extraction of gene interactions from full-text literature using DeepDive</strong><br />
+Emily K. Mallory, Ce Zhang, Christopher Ré, Russ B. Altman<br />
+<em>Bioinformatics</em> (2015-09-03) <a href="https://doi.org/gb5g7b">https://doi.org/gb5g7b</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btv476">10.1093/bioinformatics/btv476</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26338771">26338771</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4681986">PMC4681986</a></p>
+</div>
+<div id="ref-vzoBuh4l">
+<p>108. <strong>Snorkel</strong><br />
+Alexander Ratner, Stephen H. Bach, Henry Ehrenberg, Jason Fries, Sen Wu, Christopher Ré<br />
+<em>Proceedings of the VLDB Endowment</em> (2017-11-01) <a href="https://doi.org/ch44">https://doi.org/ch44</a><br />
+DOI: <a href="https://doi.org/10.14778/3157794.3157797">10.14778/3157794.3157797</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29770249">29770249</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5951191">PMC5951191</a></p>
+</div>
+<div id="ref-9Jo1af7Z">
+<p>109. <strong>Snorkel MeTaL</strong><br />
+Alex Ratner, Braden Hancock, Jared Dunnmon, Roger Goldman, Christopher Ré<br />
+<em>Proceedings of the Second Workshop on Data Management for End-To-End Machine Learning - DEEM’18</em> (2018) <a href="https://doi.org/gf3xk7">https://doi.org/gf3xk7</a><br />
+DOI: <a href="https://doi.org/10.1145/3209889.3209898">10.1145/3209889.3209898</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30931438">30931438</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6436830">PMC6436830</a></p>
+</div>
+<div id="ref-kvlZD1mv">
+<p>110. <strong>Learning protein protein interaction extraction using distant supervision</strong><br />
+Philippe Thomas, Illés Solt, Roman Klinger, Ulf Leser<br />
+(2011-01)</p>
+</div>
+<div id="ref-Kry87kzn">
+<p>111. <strong>Robust Distant Supervision Relation Extraction via Deep Reinforcement Learning</strong><br />
+Pengda Qin, Weiran Xu, William Yang Wang<br />
+<em>arXiv</em> (2018-05-24) <a href="https://arxiv.org/abs/1805.09927v1">https://arxiv.org/abs/1805.09927v1</a></p>
+</div>
+<div id="ref-M5UWoN93">
+<p>112. <strong>DSGAN: Generative Adversarial Training for Distant Supervision Relation Extraction</strong><br />
+Pengda Qin, Weiran Xu, William Yang Wang<br />
+<em>arXiv</em> (2018-05-24) <a href="https://arxiv.org/abs/1805.09929v1">https://arxiv.org/abs/1805.09929v1</a></p>
+</div>
+<div id="ref-xy08BzDf">
+<p>113. <strong>Noise Reduction Methods for Distantly Supervised Biomedical Relation Extraction</strong><br />
+Gang Li, Cathy Wu, K. Vijay-Shanker<br />
+<em>BioNLP 2017</em> (2017) <a href="https://doi.org/ggmk8s">https://doi.org/ggmk8s</a><br />
+DOI: <a href="https://doi.org/10.18653/v1/w17-2323">10.18653/v1/w17-2323</a></p>
+</div>
+<div id="ref-DWpAeBxB">
+<p>114. <strong>BioInfer: a corpus for information extraction in the biomedical domain</strong><br />
+Sampo Pyysalo, Filip Ginter, Juho Heimonen, Jari Björne, Jorma Boberg, Jouni Järvinen, Tapio Salakoski<br />
+<em>BMC Bioinformatics</em> (2007-02-09) <a href="https://doi.org/b7bhhc">https://doi.org/b7bhhc</a><br />
+DOI: <a href="https://doi.org/10.1186/1471-2105-8-50">10.1186/1471-2105-8-50</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17291334">17291334</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1808065">PMC1808065</a></p>
+</div>
+<div id="ref-szMMEMdC">
+<p>115. <strong>Learning language in logic - genic interaction extraction challenge</strong><br />
+C. Nédellec<br />
+<em>Proceedings of the learning language in logic 2005 workshop at the international conference on machine learning</em> (2005)</p>
+</div>
+<div id="ref-115pgEuOr">
+<p>116. <strong>Mining medline: Abstracts, sentences, or phrases?</strong><br />
+Jing Ding, Daniel Berleant, Dan Nettleton, Eve Syrkin Wurtele<br />
+<em>Pacific symposium on biocomputing</em> (2002) <a href="http://helix-web.stanford.edu/psb02/ding.pdf">http://helix-web.stanford.edu/psb02/ding.pdf</a></p>
+</div>
+<div id="ref-1Du6MinB8">
+<p>117. <strong>Concept annotation in the CRAFT corpus</strong><br />
+Michael Bada, Miriam Eckert, Donald Evans, Kristin Garcia, Krista Shipley, Dmitry Sitnikov, William A Baumgartner Jr, K Bretonnel Cohen, Karin Verspoor, Judith A Blake, Lawrence E Hunter<br />
+<em>BMC Bioinformatics</em> (2012-07-09) <a href="https://doi.org/gb8vdr">https://doi.org/gb8vdr</a><br />
+DOI: <a href="https://doi.org/10.1186/1471-2105-13-161">10.1186/1471-2105-13-161</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/22776079">22776079</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3476437">PMC3476437</a></p>
+</div>
 <div id="ref-j7KrVyi8">
-<p>77. <strong>Deep Residual Learning for Image Recognition</strong><br />
+<p>118. <strong>Deep Residual Learning for Image Recognition</strong><br />
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun<br />
 <em>arXiv</em> (2015-12-10) <a href="https://arxiv.org/abs/1512.03385v1">https://arxiv.org/abs/1512.03385v1</a></p>
 </div>
 <div id="ref-DSiHGDz9">
-<p>78. <strong>Representation Learning on Graphs: Methods and Applications</strong><br />
+<p>119. <strong>Representation Learning on Graphs: Methods and Applications</strong><br />
 William L. Hamilton, Rex Ying, Jure Leskovec<br />
 <em>arXiv</em> (2017-09-17) <a href="https://arxiv.org/abs/1709.05584v3">https://arxiv.org/abs/1709.05584v3</a></p>
 </div>
 <div id="ref-18ZTxo1gJ">
-<p>79. <strong>Signed laplacian embedding for supervised dimension reduction</strong><br />
+<p>120. <strong>Signed laplacian embedding for supervised dimension reduction</strong><br />
 Chen Gong, Dacheng Tao, Jie Yang, Keren Fu<br />
 <em>Proceedings of the twenty-eighth aaai conference on artificial intelligence</em> (2014) <a href="http://dl.acm.org/citation.cfm?id=2892753.2892809">http://dl.acm.org/citation.cfm?id=2892753.2892809</a></p>
 </div>
 <div id="ref-u6NlpEUq">
-<p>80. <strong>A Semi-NMF-PCA Unified Framework for Data Clustering</strong><br />
+<p>121. <strong>A Semi-NMF-PCA Unified Framework for Data Clustering</strong><br />
 Kais Allab, Lazhar Labiod, Mohamed Nadif<br />
 <em>IEEE Transactions on Knowledge and Data Engineering</em> (2017-01-01) <a href="https://doi.org/f9hm9g">https://doi.org/f9hm9g</a><br />
 DOI: <a href="https://doi.org/10.1109/tkde.2016.2606098">10.1109/tkde.2016.2606098</a></p>
 </div>
 <div id="ref-dylXYFm6">
-<p>81. <strong>Partially supervised graph embedding for positive unlabelled feature selection</strong><br />
+<p>122. <strong>Partially supervised graph embedding for positive unlabelled feature selection</strong><br />
 Yufei Han, Yun Shen<br />
 <em>Proceedings of the twenty-fifth international joint conference on artificial intelligence</em> (2016) <a href="http://dl.acm.org/citation.cfm?id=3060832.3060837">http://dl.acm.org/citation.cfm?id=3060832.3060837</a><br />
 ISBN: <a href="https://worldcat.org/isbn/978-1-57735-770-4">978-1-57735-770-4</a></p>
 </div>
 <div id="ref-9F3iyg8e">
-<p>82. <strong>GraRep</strong><br />
+<p>123. <strong>GraRep</strong><br />
 Shaosheng Cao, Wei Lu, Qiongkai Xu<br />
 <em>Proceedings of the 24th ACM International on Conference on Information and Knowledge Management - CIKM ’15</em> (2015) <a href="https://doi.org/gf8rgf">https://doi.org/gf8rgf</a><br />
 DOI: <a href="https://doi.org/10.1145/2806416.2806512">10.1145/2806416.2806512</a></p>
 </div>
 <div id="ref-E5xHFo4P">
-<p>83. <strong>Improved Knowledge Base Completion by Path-Augmented TransR Model</strong><br />
+<p>124. <strong>Improved Knowledge Base Completion by Path-Augmented TransR Model</strong><br />
 Wenhao Huang, Ge Li, Zhi Jin<br />
 <em>arXiv</em> (2016-10-06) <a href="https://arxiv.org/abs/1610.04073v1">https://arxiv.org/abs/1610.04073v1</a></p>
 </div>
 <div id="ref-mGBbZq62">
-<p>84. <strong>Translating embeddings for modeling multi-relational data</strong><br />
+<p>125. <strong>Translating embeddings for modeling multi-relational data</strong><br />
 Antoine Bordes, Nicolas Usunier, Alberto García-Durán, Jason Weston, Oksana Yakhnenko<br />
 <em>NIPS</em> (2013)</p>
 </div>
 <div id="ref-nprR5cVj">
-<p>85. <strong>Knowledge graph embedding by translating on hyperplanes</strong><br />
+<p>126. <strong>Knowledge graph embedding by translating on hyperplanes</strong><br />
 Zhen Wang, Jianwen Zhang, Jianlin Feng, Zheng Chen<br />
 <em>Proceedings of the twenty-eighth aaai conference on artificial intelligence</em> (2014) <a href="http://dl.acm.org/citation.cfm?id=2893873.2894046">http://dl.acm.org/citation.cfm?id=2893873.2894046</a></p>
 </div>
 <div id="ref-R8kotaKY">
-<p>86. <strong>Learning entity and relation embeddings for knowledge graph completion</strong><br />
+<p>127. <strong>Learning entity and relation embeddings for knowledge graph completion</strong><br />
 Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu<br />
 <em>Proceedings of the twenty-ninth aaai conference on artificial intelligence</em> (2015) <a href="http://dl.acm.org/citation.cfm?id=2886521.2886624">http://dl.acm.org/citation.cfm?id=2886521.2886624</a><br />
 ISBN: <a href="https://worldcat.org/isbn/0-262-51129-0">0-262-51129-0</a></p>
 </div>
 <div id="ref-BRGxlTb9">
-<p>87. <strong>PrTransH: Embedding Probabilistic Medical Knowledge from Real World EMR Data</strong><br />
+<p>128. <strong>PrTransH: Embedding Probabilistic Medical Knowledge from Real World EMR Data</strong><br />
 Linfeng Li, Peng Wang, Yao Wang, Jinpeng Jiang, Buzhou Tang, Jun Yan, Shenghui Wang, Yuting Liu<br />
 <em>arXiv</em> (2019-09-02) <a href="https://arxiv.org/abs/1909.00672v1">https://arxiv.org/abs/1909.00672v1</a></p>
 </div>
 <div id="ref-7BUncUx3">
-<p>88. <strong>DeepWalk: Online Learning of Social Representations</strong><br />
+<p>129. <strong>DeepWalk: Online Learning of Social Representations</strong><br />
 Bryan Perozzi, Rami Al-Rfou, Steven Skiena<br />
 <em>arXiv</em> (2014-03-26) <a href="https://arxiv.org/abs/1403.6652v2">https://arxiv.org/abs/1403.6652v2</a><br />
 DOI: <a href="https://doi.org/10.1145/2623330.2623732">10.1145/2623330.2623732</a></p>
 </div>
 <div id="ref-PD4udqRe">
-<p>89. <strong>node2vec: Scalable Feature Learning for Networks</strong><br />
+<p>130. <strong>node2vec: Scalable Feature Learning for Networks</strong><br />
 Aditya Grover, Jure Leskovec<br />
 <em>arXiv</em> (2016-07-03) <a href="https://arxiv.org/abs/1607.00653v1">https://arxiv.org/abs/1607.00653v1</a></p>
 </div>
 <div id="ref-BatC4UOA">
-<p>90. <strong>struc2vec: Learning Node Representations from Structural Identity</strong><br />
+<p>131. <strong>struc2vec: Learning Node Representations from Structural Identity</strong><br />
 Leonardo F. R. Ribeiro, Pedro H. P. Savarese, Daniel R. Figueiredo<br />
 <em>arXiv</em> (2017-04-11) <a href="https://arxiv.org/abs/1704.03165v3">https://arxiv.org/abs/1704.03165v3</a><br />
 DOI: <a href="https://doi.org/10.1145/3097983.3098061">10.1145/3097983.3098061</a></p>
 </div>
 <div id="ref-1AeZs6xaT">
-<p>91. <strong>metapath2vec</strong><br />
+<p>132. <strong>metapath2vec</strong><br />
 Yuxiao Dong, Nitesh V. Chawla, Ananthram Swami<br />
 <em>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining - KDD ’17</em> (2017) <a href="https://doi.org/gfsqzn">https://doi.org/gfsqzn</a><br />
 DOI: <a href="https://doi.org/10.1145/3097983.3098036">10.1145/3097983.3098036</a></p>
 </div>
 <div id="ref-1G1nukcFt">
-<p>92. <strong>edge2vec: Representation learning using edge semantics for biomedical knowledge discovery</strong><br />
+<p>133. <strong>edge2vec: Representation learning using edge semantics for biomedical knowledge discovery</strong><br />
 Zheng Gao, Gang Fu, Chunping Ouyang, Satoshi Tsutsui, Xiaozhong Liu, Jeremy Yang, Christopher Gessner, Brian Foote, David Wild, Qi Yu, Ying Ding<br />
 <em>arXiv</em> (2018-09-07) <a href="https://arxiv.org/abs/1809.02269v3">https://arxiv.org/abs/1809.02269v3</a></p>
 </div>
 <div id="ref-eSGflyQ5">
-<p>93. <strong>Learning Graph Embeddings from WordNet-based Similarity Measures</strong><br />
+<p>134. <strong>Learning Graph Embeddings from WordNet-based Similarity Measures</strong><br />
 Andrey Kutuzov, Mohammad Dorgham, Oleksiy Oliynyk, Chris Biemann, Alexander Panchenko<br />
 <em>arXiv</em> (2018-08-16) <a href="https://arxiv.org/abs/1808.05611v4">https://arxiv.org/abs/1808.05611v4</a></p>
 </div>
 <div id="ref-bt1KIf4U">
-<p>94. <strong>Learning to Make Predictions on Graphs with Autoencoders</strong><br />
+<p>135. <strong>Learning to Make Predictions on Graphs with Autoencoders</strong><br />
 Phi Vu Tran<br />
 <em>arXiv</em> (2018-02-23) <a href="https://arxiv.org/abs/1802.08352v2">https://arxiv.org/abs/1802.08352v2</a><br />
 DOI: <a href="https://doi.org/10.1109/DSAA.2018.00034">10.1109/dsaa.2018.00034</a></p>
 </div>
 <div id="ref-hjIIetVM">
-<p>95. <strong>Variational Graph Auto-Encoders</strong><br />
+<p>136. <strong>Variational Graph Auto-Encoders</strong><br />
 Thomas N. Kipf, Max Welling<br />
 <em>arXiv</em> (2016-11-21) <a href="https://arxiv.org/abs/1611.07308v1">https://arxiv.org/abs/1611.07308v1</a></p>
 </div>
 <div id="ref-1A6Dhbwkr">
-<p>96. <strong>Adversarially Regularized Graph Autoencoder for Graph Embedding</strong><br />
+<p>137. <strong>Adversarially Regularized Graph Autoencoder for Graph Embedding</strong><br />
 Shirui Pan, Ruiqi Hu, Guodong Long, Jing Jiang, Lina Yao, Chengqi Zhang<br />
 <em>arXiv</em> (2018-02-13) <a href="https://arxiv.org/abs/1802.04407v2">https://arxiv.org/abs/1802.04407v2</a></p>
 </div>
 <div id="ref-DZT65ZRY">
-<p>97. <strong>Deep Learning in Neural Networks: An Overview</strong><br />
+<p>138. <strong>Deep Learning in Neural Networks: An Overview</strong><br />
 Juergen Schmidhuber<br />
 <em>arXiv</em> (2014-04-30) <a href="https://arxiv.org/abs/1404.7828v4">https://arxiv.org/abs/1404.7828v4</a><br />
 DOI: <a href="https://doi.org/10.1016/j.neunet.2014.09.003">10.1016/j.neunet.2014.09.003</a></p>
 </div>
 <div id="ref-1ErNQZjBt">
-<p>98. <strong>Autoencoders, unsupervised learning and deep architectures</strong><br />
+<p>139. <strong>Autoencoders, unsupervised learning and deep architectures</strong><br />
 Pierre Baldi<br />
 <em>Proceedings of the 2011 international conference on unsupervised and transfer learning workshop - volume 27</em> (2011)</p>
 </div>
 <div id="ref-YVOAlp8C">
-<p>99. <strong>A Comparative Study for Unsupervised Network Representation Learning</strong><br />
+<p>140. <strong>A Comparative Study for Unsupervised Network Representation Learning</strong><br />
 Megha Khosla, Vinay Setty, Avishek Anand<br />
 <em>arXiv</em> (2019-03-19) <a href="https://arxiv.org/abs/1903.07902v5">https://arxiv.org/abs/1903.07902v5</a><br />
 DOI: <a href="https://doi.org/10.1109/TKDE.2019.2951398">10.1109/tkde.2019.2951398</a></p>
 </div>
 <div id="ref-1EP2NrAhl">
-<p>100. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
+<p>141. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
 Gamal Crichton, Yufan Guo, Sampo Pyysalo, Anna Korhonen<br />
 <em>BMC Bioinformatics</em> (2018-05-21) <a href="https://doi.org/ggkm7q">https://doi.org/ggkm7q</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-018-2163-9">10.1186/s12859-018-2163-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29783926">29783926</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5963080">PMC5963080</a></p>
 </div>
 <div id="ref-17R6q0KTd">
-<p>101. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
+<p>142. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
 Christos Dimitrakopoulos, Sravanth Kumar Hindupur, Luca Häfliger, Jonas Behr, Hesam Montazeri, Michael N Hall, Niko Beerenwinkel<br />
 <em>Bioinformatics</em> (2018-03-14) <a href="https://doi.org/gc6953">https://doi.org/gc6953</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/bty148">10.1093/bioinformatics/bty148</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29547932">29547932</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6041755">PMC6041755</a></p>
 </div>
 <div id="ref-aLsdEzlV">
-<p>102. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
+<p>143. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
 Meng Wang, Mengyue Liu, Jun Liu, Sen Wang, Guodong Long, Buyue Qian<br />
 <em>arXiv</em> (2017-10-16) <a href="https://arxiv.org/abs/1710.05980v2">https://arxiv.org/abs/1710.05980v2</a></p>
 </div>
 <div id="ref-8vj5v8un">
-<p>103. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
+<p>144. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
 Junyuan Shang, Cao Xiao, Tengfei Ma, Hongyan Li, Jimeng Sun<br />
 <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> (2019-07-17) <a href="https://doi.org/ggkm7r">https://doi.org/ggkm7r</a><br />
 DOI: <a href="https://doi.org/10.1609/aaai.v33i01.33011126">10.1609/aaai.v33i01.33011126</a></p>
