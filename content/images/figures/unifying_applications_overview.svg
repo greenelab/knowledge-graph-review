@@ -1,0 +1,374 @@
+<!-- blue 64 150 247 -->
+<!-- brown 139 85 27 -->
+<!-- red  235 64 37 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1280 720" width="1280" height="720">
+
+<!-- Universal css style for the figure --> 
+<style>
+	.gene{
+		fill: rgb(64, 150, 247);
+	}
+	.disease{
+		fill: rgb(139, 85, 27);
+	}
+	.compound{
+		fill: rgb(235, 64, 37);
+	}
+	.side_effect{
+		fill:rgb(255,249,83);
+	}
+
+	.node{
+		stroke: black;
+		stroke-width: 2;
+	}
+
+	.math_symbol{
+		font-size: 80px;
+		font-weight: bold;
+		fill: black;
+	}
+	.math_font {
+		font-size: 80px;
+		font-weight: bold;
+		fill: black;
+	}
+
+	.label_font {
+		font-size: 20px;
+		font-weight: bold;
+		fill:black;
+	}
+</style>
+
+<!-- pre-define the shapes for the figure -->
+<defs>
+
+	<marker
+		id="arrowhead"
+		viewbox="0 0 10 10"
+		refX="5"
+		refY="5"
+		markerWidth="10"
+		markerHeight="10"
+		orient="auto-start-reverse"
+	>
+		<path 
+			d="
+			M 0 0 
+			L 10 5
+			L 0 10
+			z
+			"
+		>
+		</path>
+	</marker>
+</defs>
+
+<g id="network" transform="translate(120,360) scale(1)">
+	<path 
+	d = "
+	M 0, 0
+	L 0, -100
+	M 0, -100
+	L 86, -50
+	M 86, -50
+	L 0, 0
+	M 0, 0
+	L 50, -86
+	M 0, 0
+	L -86, 50
+	M 50, -86
+	L 0, 100
+	M -50, -86
+	L -86, 50
+	M -86, 50
+	L 100, 0
+	M 100, 0
+	L 50, 86
+	M 50, 86
+	L -100,0
+	M -100,0
+	L -50,86
+	M -50,86
+	L -86, -50
+	M -86, -50
+	L 86,-50
+	M 86,-50
+	L 86,50
+	M 86,50
+	L 0,0
+	M 0,0
+	L 50,86
+	M 50,86
+	L -86,-50
+	M -50,86
+	L 0, -100
+	M -50,86
+	L 86, 50
+	"
+	stroke="black"
+	/>
+	<circle cx="0" cy="0" r="10" class="disease node"/>
+	<circle cx="0" cy="-100" r="10" class="gene node"/>
+	<circle cx="86" cy="-50" r="10" class="disease node"/>
+	<circle cx="50" cy="-86" r="10" class="compound node"/>
+	<circle cx="100" cy="0" r="10" class="gene node"/>
+	<circle cx="50" cy="86" r="10" class="compound node"/>
+	<circle cx="86" cy="50" r="10" class="disease node"/>
+	<circle cx="0" cy="100" r="10" class="gene node"/>
+	<circle cx="-86" cy="50" r="10" class="disease node"/>
+	<circle cx="-50" cy="86" r="10" class="compound node"/>
+	<circle cx="-100" cy="0" r="10" class="gene node"/>
+	<circle cx="-50" cy="-86" r="10" class="compound node"/>
+	<circle cx="-86" cy="-50" r="10" class="disease node"/>
+</g>
+<!-- label the network -->
+<text x="40" y="230" font-size="20px">
+	Knowledge Graph
+</text>
+<image href="http://clipart-library.com/images_k/transparent-white-arrow/transparent-white-arrow-8.png" x="240" y="330" height="45" width="55"/>
+
+<rect x="300" y="80" width="900" height="180" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>/>
+<g id="multi_omic" transform="translate(280,80) scale(0.75)">
+	<g id="gene_disease" transform="translate(100, 100)">
+		<circle cx="0" cy="0" r="50" class="node gene"/>
+		<circle cx="200" cy="0" r="50" class="node disease"/>
+		<text x="-20" y="5" class="label_font">
+			Gene
+		</text>
+		<text x="170" y="5" class="label_font">
+			Disease
+		</text>
+		<path id="dag" d="
+			M 55 0
+			L 140 0
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<path id="dag" d="
+			M 140 10
+			L 55 10
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+	</g>
+	<g id="rna_disease" transform="translate(465,100)">
+		<circle cx="0" cy="0" r="50" class="node compound"/>
+		<circle cx="200" cy="0" r="50" class="node disease"/>
+		<text x="-20" y="5" class="label_font">
+			RNA
+		</text>
+		<text x="170" y="5" class="label_font">
+			Disease
+		</text>
+		<path id="dag" d="
+			M 55 0
+			L 140 0
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<path id="dag" d="
+			M 140 10
+			L 55 10
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+	</g>
+	<g id="protein_protein_interactions" transform="translate(750,50) scale(1.15)">
+		<image href="http://clipart-library.com/image_gallery/204887.jpg" x="0" y="0" widht="100" height="100" />
+		<image href="http://clipart-library.com/image_gallery/38502.png" x="230" y="0" width="100" height="100" />
+		<path id="ppi" d="
+			M 110 50
+			L 220 50
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<path id="ppi" d="
+			M 220 60
+			L 115 60
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<text x="10" y="-2" class="label_font">
+			<textPath href="#ppi">
+				Interacts
+			</textPath>
+		</text>
+	</g>
+</g>
+<text x="305" y="100" class="label_font">
+	(a) Multi-Omic Applications
+</text>
+<text x="385" y="210" class="label_font" text-decoration="underline">
+	Genomics
+</text>
+<text x="635" y="212" class="label_font" text-decoration="underline">
+	Transcriptomics
+</text>
+<text x="945" y="210" class="label_font" text-decoration="underline">
+	Proteomics
+</text>
+
+<rect x="300" y="280" width="900" height="200" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>/>
+<g id="pharmaceutical" transform="translate(320,330) scale(0.9)">
+	<g id="drug_interactions" transform="scale(0.85)">
+		<image href="http://clipart-library.com/images_k/pill-transparent-background/pill-transparent-background-4.png" x="10" y="10" height="100" width="100" />
+		<image href="http://clipart-library.com/images/XrinAE4cR.png" x="210" y="10" height="100" width="100" />
+		<path id="drugpath" d="
+			M 110 40
+			L 210 40
+			"
+			fill="none"
+			stroke="black"
+			marker-end="url('#arrowhead')"
+		/>
+		<path id="reverse_drug_path" d="
+			M 210 50
+			L 110 50
+			"
+			fill="none"
+			stroke="black"
+			marker-end="url('#arrowhead')"
+		/>
+		<text x="10" y="-2" class="label_font">
+			<textPath href="#drugpath">
+				Interacts
+			</textPath>
+		</text>
+	</g>
+	<g id="drug_side_effects" transform="translate(300,0) scale(0.85)">
+		<image href="http://clipart-library.com/images_k/pill-transparent-background/pill-transparent-background-4.png" x="60" y="10" height="100" width="100" />
+		<circle cx="320" cy="55" r="50" class="node side_effect"/> 
+		<text x="275" y="60" font-size="18" font-weight="bold">
+			Side Effects
+		</text>
+		<path id="side_effects" d="
+			M 160 55
+			L 260 55
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<text x="15" y="-5" class="label_font">
+			<textPath href="#side_effects">
+				Causes
+			</textPath>
+		</text>
+	</g>
+	<g id="drug_repurposing" transform="translate(700,-50) scale(0.52)">
+		<image href="http://clipart-library.com/images_k/pill-transparent-background/pill-transparent-background-4.png" x="10" y="190" height="100" width="100" />
+		<image href="http://clipart-library.com/images/XrinAE4cR.png" x="10" y="10" height="100" width="100" />
+		<circle cx="320" cy="155" r="50" class="node disease" />
+		<text x="290" y="160" class="label_font">
+			Disease
+		</text>
+
+		<path id="treats1" d="
+		M 110 65
+		L 260 125
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<text x="34" y="-2" class="label_font">
+			<textPath href="#treats1">
+				Treats?
+			</textPath>
+		</text>
+
+		<path id="treats2" d="
+		M 110 225
+		L 260 175
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<text x="34" y="-2" class="label_font">
+			<textPath href="#treats2">
+				Treats
+			</textPath>
+		</text>
+	</g>
+</g>
+
+<text x="305" y="300" class="label_font">
+	(b) Pharmaceutical Applications
+</text>
+<text x="355" y="450" class="label_font" text-decoration="underline">
+	Drug-Drug Interactions
+</text>
+<text x="675" y="452" class="label_font" text-decoration="underline">
+	Drug Side Effects
+</text>
+<text x="965" y="450" class="label_font" text-decoration="underline">
+	Drug Repurposing
+</text>
+
+<rect x="300" y="500" width="900" height="200" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>/>
+<g id="clinical_applications" transform="translate(350, 550) scale(0.8)">
+	<g id="safe_drug_recommendations" transform="translate(50,0)">
+		<image href="http://clipart-library.com/images_k/pill-transparent-background/pill-transparent-background-4.png" x="0" y="0" height="100" width="100" />
+		<image href="http://clipart-library.com/data_images/12685.png" x="200" y="0" height="100" width="100" />
+		<path id="recommendation" d="
+			M 100 50
+			L 195 50
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+		<text x="5" y="-2" class="label_font">
+			<textPath href="#recommendation">
+				Perscribe
+			</textPath>
+		</text>
+	</g>
+	<g id="patient_diagonsis" transform="translate(560, 0)">
+		<image href="http://clipart-library.com/data_images/12685.png" x="0" y="0" height="100" width="100" />
+		<circle cx="260" cy="50" r="50" class="node disease"/>
+		<text x="230" y="55" class="label_font">
+			Disease
+		</text>
+		
+		<path id="diagnosis" d="
+			M 100 50
+			L 200 50
+		"
+		fill="none"
+		stroke="black"
+		marker-end="url('#arrowhead')"
+		/>
+
+		<text x="25" y="-2" class="label_font">
+			<textPath href="#diagnosis">
+				Has
+			</textPath>
+		</text>
+	</g>
+</g>
+<text x="305" y="520" class="label_font">
+	(c) Clinical Applications
+</text>
+<text x="400" y="655" class="label_font" text-decoration="underline">
+	Safe Drug Recommendations
+</text>
+<text x="850" y="655" class="label_font" text-decoration="underline">
+	Patient Diagnosis
+</text>
+</svg>
