@@ -1,8 +1,8 @@
 ---
 author-meta:
 - David Nicholson
-- Jane Roe
-date-meta: '2020-02-25'
+- Casey S. Greene
+date-meta: '2020-02-26'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/7bb032daf9b96f78db2cc64c89b07a6ef95088f0/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/2834acdbb828b24abf7e5b3071d06301e5b9fc4b/))
 was automatically generated
-from [greenelab/knowledge-graph-review@7bb032d](https://github.com/greenelab/knowledge-graph-review/tree/7bb032daf9b96f78db2cc64c89b07a6ef95088f0)
-on February 25, 2020.
+from [greenelab/knowledge-graph-review@2834acd](https://github.com/greenelab/knowledge-graph-review/tree/2834acdbb828b24abf7e5b3071d06301e5b9fc4b)
+on February 26, 2020.
 </em></small>
 
 ## Authors
@@ -42,13 +42,15 @@ on February 25, 2020.
      · Funded by GBMF4552 and T32 HG000046
   </small>
 
-+ **Jane Roe**<br>
++ **Casey S. Greene**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
+    [0000-0001-8713-9213](https://orcid.org/0000-0001-8713-9213)
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [janeroe](https://github.com/janeroe)<br>
+    [cgreene](https://github.com/cgreene)
+    · ![Twitter icon](images/twitter.svg){.inline_icon}
+    [greenescientist](https://twitter.com/greenescientist)<br>
   <small>
-     Department of Something, University of Whatever; Department of Whatever, University of Something
+     Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania; Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation
   </small>
 
 

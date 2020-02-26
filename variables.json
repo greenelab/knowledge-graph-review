@@ -1,5 +1,5 @@
 {
-  "date": "February 25, 2020",
+  "date": "February 26, 2020",
   "authors": [
     {
       "github": "danich1",
@@ -17,14 +17,15 @@
       ]
     },
     {
-      "github": "janeroe",
-      "name": "Jane Roe",
-      "initials": "JR",
-      "orcid": "XXXX-XXXX-XXXX-XXXX",
-      "email": "jane.roe@whatever.edu",
+      "github": "cgreene",
+      "name": "Casey S. Greene",
+      "initials": "CSG",
+      "orcid": "0000-0001-8713-9213",
+      "twitter": "greenescientist",
+      "email": "greenescientist@gmail.com",
       "affiliations": [
-        "Department of Something, University of Whatever",
-        "Department of Whatever, University of Something"
+        "Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania",
+        "Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation"
       ],
       "affiliation_numbers": [
         2,
@@ -38,11 +39,11 @@
       "affiliation_number": 1
     },
     {
-      "affiliation": "Department of Something, University of Whatever",
+      "affiliation": "Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania",
       "affiliation_number": 2
     },
     {
-      "affiliation": "Department of Whatever, University of Something",
+      "affiliation": "Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation",
       "affiliation_number": 3
     }
   ],
@@ -50,7 +51,7 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "7bb032daf9b96f78db2cc64c89b07a6ef95088f0"
+    "commit": "2834acdbb828b24abf7e5b3071d06301e5b9fc4b"
   },
   "manuscript_stats": {
     "reference_counts": {
