@@ -1,0 +1,432 @@
+<!-- blue 64 150 247 -->
+<!-- brown 139 85 27 -->
+<!-- red  235 64 37 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1280 720" width="1280" height="720">
+
+<!-- Universal css style for the figure --> 
+<style>
+	.gene{
+		fill: rgb(64, 150, 247);
+	}
+	.disease{
+		fill: rgb(139, 85, 27);
+	}
+	.compound{
+		fill: rgb(235, 64, 37);
+	}
+
+	.node{
+		stroke: black;
+		stroke-width: 1;
+	}
+
+	.math_symbol{
+		font-size: 80px;
+		font-weight: bold;
+		fill: black;
+	}
+	.math_font {
+		font-size: 80px;
+		font-weight: bold;
+		fill: black;
+	}
+
+	.label_font {
+		font-size: 17px;
+		font-weight: bold;
+		fill:black;
+	}
+</style>
+
+<!-- pre-define the shapes for the figure -->
+<defs>
+
+	<marker
+		id="arrowhead"
+		viewbox="0 0 10 10"
+		refX="5"
+		refY="5"
+		markerWidth="10"
+		markerHeight="10"
+		orient="auto-start-reverse"
+	>
+		<path 
+			d="
+			M 0 0 
+			L 10 5
+			L 0 10
+			z
+			"
+		>
+		</path>
+	</marker>
+</defs>
+<g id="network" transform="translate(120,360) scale(0.9)">
+	<path 
+	d = "
+	M 0, 0
+	L 0, -100
+	M 0, -100
+	L 86, -50
+	M 86, -50
+	L 0, 0
+	M 0, 0
+	L 50, -86
+	M 0, 0
+	L -86, 50
+	M 50, -86
+	L 0, 100
+	M -50, -86
+	L -86, 50
+	M -86, 50
+	L 100, 0
+	M 100, 0
+	L 50, 86
+	M 50, 86
+	L -100,0
+	M -100,0
+	L -50,86
+	M -50,86
+	L -86, -50
+	M -86, -50
+	L 86,-50
+	M 86,-50
+	L 86,50
+	M 86,50
+	L 0,0
+	M 0,0
+	L 50,86
+	M 50,86
+	L -86,-50
+	M -50,86
+	L 0, -100
+	M -50,86
+	L 86, 50
+	"
+	stroke="black"
+	/>
+	<circle cx="0" cy="0" r="10" class="disease node"/>
+	<circle cx="0" cy="-100" r="10" class="gene node"/>
+	<circle cx="86" cy="-50" r="10" class="disease node"/>
+	<circle cx="50" cy="-86" r="10" class="compound node"/>
+	<circle cx="100" cy="0" r="10" class="gene node"/>
+	<circle cx="50" cy="86" r="10" class="compound node"/>
+	<circle cx="86" cy="50" r="10" class="disease node"/>
+	<circle cx="0" cy="100" r="10" class="gene node"/>
+	<circle cx="-86" cy="50" r="10" class="disease node"/>
+	<circle cx="-50" cy="86" r="10" class="compound node"/>
+	<circle cx="-100" cy="0" r="10" class="gene node"/>
+	<circle cx="-50" cy="-86" r="10" class="compound node"/>
+	<circle cx="-86" cy="-50" r="10" class="disease node"/>
+</g>
+
+<rect x="300" y="130" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
+<g id="matrix_fact" transform="translate(370,160) scale(0.4)">
+
+	<rect x="0" y="0" width="200" height="200" fill="None" stroke="black"/>
+	<text 
+		x="100" y="100" 
+		font-size="80" 
+		text-anchor="middle" 
+		dominant-baseline="middle" 
+		fill="Black"
+		stroke="Black"
+		stroke-width="1"
+		stroke-dasharray="1 1">
+		A
+	</text>
+	<rect x="300" y="0" width="100" height="200" fill="None" stroke="black"/>
+	<text 
+		x="350" y="100" 
+		font-size="80" 
+		text-anchor="middle" 
+		dominant-baseline="middle" 
+		fill="Black"
+		stroke="Black"
+		stroke-width="1"
+		stroke-dasharray="1 1">
+		U
+	</text>
+
+	<rect x="500" y="0" width="200" height="100" fill="None" stroke="black"/>
+	<text 
+		x="600" y="65" 
+		font-size="80" 
+		text-anchor="middle" 
+		dominant-baseline="middle" 
+		fill="Black"
+		stroke="Black"
+		stroke-width="1"
+		stroke-dasharray="1 1">
+		V
+		<tspan x="625" y="30" font-size="25">
+			T
+		</tspan>
+	</text>
+	<text 
+		x="250" y="100" 
+		font-size="80" 
+		text-anchor="middle" 
+		dominant-baseline="middle" 
+		fill="Black"
+		stroke="Black">
+		≈
+	</text>
+	<text 
+		x="450" y="50" 
+		font-size="50" 
+		text-anchor="middle" 
+		dominant-baseline="middle" 
+		fill="Black">
+		X
+	</text>
+	<text x="70" y="230" fill="black" font-size="30">
+		N x N
+	</text>
+	<text x="315" y="230" fill="black" font-size="30">
+		N x d
+	</text>
+	<text x="560" y="130" fill="black" font-size="30">
+		d x N
+	</text>
+</g>
+<rect x="300" y="280" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
+<g id="translational_models" transform="translate(410,315) scale(0.4)">
+	<circle cx="0" cy="0" r="25" class="disease node"/>
+	<rect x="-50" y="35" width="100" height="200" fill="none" stroke="black"/>
+	<text x="-20" y="147" class="math_font">
+		h
+	</text>
+
+	<text x="100" y="147" class="math_symbol">
+	+
+	</text>
+
+	<line x1="200" y1="0"  x2="255" y2="0" stroke="black" stroke-width="2"/>
+	<rect x="175" y="35" width="100" height="200" fill="none" stroke="black"/>
+	<text x="210" y="147" class="math_font">
+		r
+	</text>
+
+	<text x="300" y="147" class="math_symbol">
+		≈
+	</text>
+
+	<circle cx="425" cy="0" r="25" class="gene node"/>
+	<rect x="375" y="35" width="100" height="200" fill="none" stroke="black"/>
+	<text x="412" y="147" class="math_font">
+		t
+	</text>
+</g>
+<rect x="300" y="430" width="400" height="150" fill="white" stroke="black" rx="5" ry="3" stroke-dasharray="10"/>
+<g id="deep_learning" transform="translate(350, 460) scale(0.4)">
+	<g id="CBOW">
+		<circle cx="50" cy="0" r="10" class="disease node"/>
+		<circle cx="50" cy="100" r="10" class="gene node"/>
+		<circle cx="50" cy="200" r="10" class="compound node"/>
+		<circle cx="320" cy="100" r="10" class="disease node"/>
+
+		<rect x="29" y="20" width="40" height="60" fill="none" stroke="black"/>
+		<rect x="29" y="120" width="40" height="60" fill="none" stroke="black"/>
+		<rect x="29" y="220" width="40" height="60" fill="none" stroke="black"/>
+		<rect x="105" y="80" width="150" height="150" fill="none" stroke="black"/>
+		<rect x="300" y="120" width="40" height="60" fill="none" stroke="black"/>
+
+		<path d="M 69 55 L 100 80" stroke="black" marker-end="url(#arrowhead)"/>
+		<path d="M 69 155 L 100 155" stroke="black" marker-end="url(#arrowhead)"/>
+		<path d="M 69 250 L 100 230" stroke="black" marker-end="url(#arrowhead)"/>
+		<path d="M 255 155 L 295 155" stroke="black" marker-end="url(#arrowhead)"/>
+	</g>
+	<g id="autoencoder">
+		<g id="model" transform="translate(500,30)">
+			<line x1="0" y1="0" x2 ="100" y2="75" stroke="black"/>
+			<line x1="0" y1="50" x2 ="100" y2="75" stroke="black"/>
+			<line x1="0" y1="100" x2 ="100" y2="75" stroke="black"/>
+			<line x1="0" y1="150" x2 ="100" y2="75" stroke="black"/>
+			<line x1="0" y1="200" x2 ="100" y2="75" stroke="black"/>
+			<line x1="0" y1="0" x2 ="100" y2="125" stroke="black"/>
+			<line x1="0" y1="50" x2 ="100" y2="125" stroke="black"/>
+			<line x1="0" y1="100" x2 ="100" y2="125" stroke="black"/>
+			<line x1="0" y1="150" x2 ="100" y2="125" stroke="black"/>
+			<line x1="0" y1="200" x2 ="100" y2="125" stroke="black"/>
+
+			<line x1="100" y1="75" x2 ="200" y2="0" stroke="black"/>
+			<line x1="100" y1="75" x2 ="200" y2="50" stroke="black"/>
+			<line x1="100" y1="75" x2 ="200" y2="100" stroke="black"/>
+			<line x1="100" y1="75" x2 ="200" y2="150" stroke="black"/>
+			<line x1="100" y1="75" x2 ="200" y2="200" stroke="black"/>
+			<line x1="100" y1="125" x2 ="200" y2="0" stroke="black"/>
+			<line x1="100" y1="125" x2 ="200" y2="50" stroke="black"/>
+			<line x1="100" y1="125" x2 ="200" y2="100" stroke="black"/>
+			<line x1="100" y1="125" x2 ="200" y2="150" stroke="black"/>
+			<line x1="100" y1="125" x2 ="200" y2="200" stroke="black"/>
+
+			<circle cx="0" cy="0" r="15" fill="grey" class="node"/>
+			<circle cx="0" cy="50" r="15" fill="grey" class="node"/>
+			<circle cx="0" cy="100" r="15" fill="grey" class="node"/>
+			<circle cx="0" cy="150" r="15" fill="grey" class="node"/>
+			<circle cx="0" cy="200" r="15" fill="grey" class="node"/>
+
+			<circle cx="100" cy="75" r="15" fill="lightblue" class="node"/>
+			<circle cx="100" cy="125" r="15" fill="lightblue" class="node"/>
+
+			<circle cx="200" cy="0" r="15" fill="grey" class="node"/>
+			<circle cx="200" cy="50" r="15" fill="grey" class="node"/>
+			<circle cx="200" cy="100" r="15" fill="grey" class="node"/>
+			<circle cx="200" cy="150" r="15" fill="grey" class="node"/>
+			<circle cx="200" cy="200" r="15" fill="grey" class="node"/>
+
+			<text x="-7" y="5" fill="white">
+				X
+				<tspan dy="2" dx="-4" font-size=".7em">
+				1
+				</tspan>
+			</text>
+			<text x="-7" y="55" fill="white">
+				X
+				<tspan dy="2" dx="-4" font-size=".7em">
+				2
+				</tspan>
+			</text>
+			<text x="-7" y="105" fill="white">
+				X
+				<tspan dy="2" dx="-4" font-size=".7em">
+				3
+				</tspan>
+			</text>
+			<text x="-7" y="155" fill="white">
+				X
+				<tspan dy="2" dx="-4" font-size=".7em">
+				4
+				</tspan>
+			</text>
+			<text x="-7" y="205" fill="white">
+				X
+				<tspan dy="2" dx="-4" font-size=".7em">
+				5
+				</tspan>
+			</text>
+
+			<text x="95" y="80" fill="white">
+				λ
+				<tspan dy="2" dx="-4" font-size=".7em">
+				1
+				</tspan>
+			</text>
+			<text x="95" y="130" fill="white">
+				λ
+				<tspan dy="2" dx="-4" font-size=".7em">
+				2
+				</tspan>
+			</text>
+
+			<text x="193" y="5" fill="white">
+				X
+				<tspan dy="-5" dx="-4" font-size="0.7em">
+					'
+				</tspan>
+				<tspan dy="9" dx="-5" font-size=".7em">
+				1
+				</tspan>
+			</text>
+			<text x="193" y="55" fill="white">
+				X
+				<tspan dy="-5" dx="-4" font-size="0.7em">
+					'
+				</tspan>
+				<tspan dy="9" dx="-5" font-size=".7em">
+				2
+				</tspan>
+			</text><text x="193" y="105" fill="white">
+				X
+				<tspan dy="-5" dx="-4" font-size="0.7em">
+					'
+				</tspan>
+				<tspan dy="9" dx="-5" font-size=".7em">
+				3
+				</tspan>
+			</text><text x="193" y="155" fill="white">
+				X
+				<tspan dy="-5" dx="-4" font-size="0.7em">
+					'
+				</tspan>
+				<tspan dy="9" dx="-5" font-size=".7em">
+				4
+				</tspan>
+			</text><text x="193" y="205" fill="white">
+				X
+				<tspan dy="-5" dx="-4" font-size="0.7em">
+					'
+				</tspan>
+				<tspan dy="9" dx="-5" font-size=".7em">
+				5
+				</tspan>
+			</text>
+		</g>
+	</g>
+</g>
+
+<g id="embedding_graph" transform="translate(780,250)">
+	<path
+		d="
+		M 0 200
+		L 0 0
+		"
+		marker-end="url(#arrowhead)"
+		stroke="black"
+	/>
+	<path
+		d="
+		M 0 200
+		L 200 200
+		"
+		marker-end="url(#arrowhead)"
+		stroke="black"
+	/>
+	<circle cx="50" cy="100" r="10" class="disease node"/>
+	<circle cx="15" cy="110" r="10" class="disease node"/>
+	<circle cx="50" cy="130" r="10" class="disease node"/>
+	<circle cx="15" cy="150" r="10" class="disease node"/>
+	<circle cx="30" cy="180" r="10" class="disease node"/>
+
+	<circle cx="150" cy="20" r="10" class="gene node"/>
+	<circle cx="150" cy="40" r="10" class="gene node"/>
+	<circle cx="170" cy="40" r="10" class="gene node"/>
+	<circle cx="130" cy="50" r="10" class="gene node"/>
+
+	<circle cx="150" cy="186" r="10" class="compound node"/>
+	<circle cx="150" cy="146" r="10" class="compound node"/>
+	<circle cx="110" cy="146" r="10" class="compound node"/>
+	<circle cx="180" cy="126" r="10" class="compound node"/>
+</g>
+<text x="305" y="150" class="label_font">
+	(a) Matrix Factorization
+</text>
+<text x="305" y="300" class="label_font">
+	(b) Translational Models
+</text>
+<text x="305" y="450" class="label_font">
+	(c) Deep Learning
+</text>
+<text x="800" y="240" font-size="15px">
+	Node Embedding Space
+</text>
+<text x="805" y="480" class="label_font">
+	Low Dimensional
+	<tspan dy="25" dx="-120">
+		Representation
+	</tspan>
+</text>
+<text x="65" y="240" font-size="15px">
+	Knowledge Graph
+</text>
+<text x="395" y="575" font-size="15px">
+	Node2vec
+</text>
+<text x="555" y="575" font-size="15px">
+	Autoencoder
+</text>
+
+<image href="http://clipart-library.com/images_k/transparent-white-arrow/transparent-white-arrow-8.png" x="225" y="330" height="50" width="70"/>
+<image href="http://clipart-library.com/images_k/transparent-white-arrow/transparent-white-arrow-8.png" x="705" y="330" height="50" width="70"/>
+</svg>
