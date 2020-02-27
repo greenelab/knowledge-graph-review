@@ -51,16 +51,16 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "a6d4cf227a69944b2c9e55f4fd880912926ed35b"
+    "commit": "55789e3a6680fe846eb4a42157d7c8319bfe06d5"
   },
   "manuscript_stats": {
     "reference_counts": {
       "arxiv": 29,
-      "doi": 105,
+      "doi": 121,
       "pmid": 4,
       "raw": 15,
-      "total": 153
+      "total": 169
     },
-    "word_count": 5762
+    "word_count": 6312
   }
 }

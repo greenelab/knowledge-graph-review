@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/a6d4cf227a69944b2c9e55f4fd880912926ed35b/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/55789e3a6680fe846eb4a42157d7c8319bfe06d5/))
 was automatically generated
-from [greenelab/knowledge-graph-review@a6d4cf2](https://github.com/greenelab/knowledge-graph-review/tree/a6d4cf227a69944b2c9e55f4fd880912926ed35b)
+from [greenelab/knowledge-graph-review@55789e3](https://github.com/greenelab/knowledge-graph-review/tree/55789e3a6680fe846eb4a42157d7c8319bfe06d5)
 on February 27, 2020.
 </em></small>
 
@@ -429,18 +429,45 @@ Future approaches should consider creating hybrid models that use both node2vec 
 
 ### Unifying Applications
 
-Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un].
+Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un] (Figure {@fig:unifying_applications}).
 In this section we discuss how knowledge graphs are being applied in biomedical settings. 
 We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.
 
-#### Disease and Gene Interactions
+![
+Overview of biomedical applications that make use of knowledge graphs.
+Categories consist of: (a) Multi-Omic applications, (b) Pharmaceutical Applications and (c) Clinical Applications.
+](images/figures/unifying_applications_overview.png){#fig:unifying_applications}
 
-1. Mention disease gene prioritization
-2. Mention Disease gene associations
+#### Multi-Omic Applications
 
-#### Protein Protein Interactions
+Multi-omic applications for knowledge graphs include efforts to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome.
+Approaches in this category use knowledge graphs to establish connections between -omic entities as well as diseases.
+Such tasks include gene-symptom prioritization [@otY29wFV], protein-protein interaction prediction [@6O3BO6WO;10.1186/1752-0509-9-S1-S9], and detecting miRNA-disease associations [@YyPaovQ0].
+We focus specifically on multi-omic applications of algorithms that project knowledge graphs into a low dimensional space to make connections.
 
-1. Mention predicting genes interacting genes
+Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins.
+Shen et al. [@YyPaovQ0] used an algorithm called collaborative filtering to establish an association between miRNA and diseases.
+The authors constructed an miRNA-Disease network using the HMDDD database [@1F18ycwfS] and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases.
+This adjacency matrix was decomposed into small rectangular matrices using SVD, then these matricies were used to calculate similarity scores between the miRNA and diseases.
+High scores implied a high likelihood that a given miRNA had an association with a given disease [@YyPaovQ0].
+Other approaches have built off of Shen et al.'s [@YyPaovQ0] work by incorpoating novel ways to perform matrix factorization [@1DjgsuPV2; @hZ2R5BRj;@4xcJzyPc] or by integrating machine learning models in conjunction with matrix factorization [@icSe8Yyw].
+These methods provided high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best [@YyPaovQ0].
+Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions [@6FrpIkNZ; @6O3BO6WO; @Y2RTnbCe].
+Though extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation of such approaches.
+
+Approaches that use deep learning have mainly used the node2vec model [@PD4udqRe] or variants of that model.
+Yang et al. [@otY29wFV] used node2vec to create a recommendation system to infer associations between genes and disease symptoms.
+The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes-diseases and diseases-disease symptoms.
+The generated knowledge graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph.
+High scores implicated high chance for an association [@otY29wFV].
+This approach outperformed methods that didn't use a knowledge graph; however, validation was difficult as it involved manual curation of the literature @otY29wFV].
+Similar approaches used variants of the node2vec algorithm to predict gene-disease associations
+[@1D9FTzRBg; doi:10.3389/fgene.2019.00226 @6PISrkV5; @taI1UUAE] analyze RNA-seq data [@qbHGtxhA] and infer novel protein information [@QQtRw08H; @8qB2oCgy; @RYW74Wvh; @1EP2NrAhl].
+Future extensions of these applications should consider incorporating more sources of data such as compounds, anatomic locations or even gene pathways to improve prediciton performance.
+
+Knowledge graphs have aided the multi-omics field by generating novel discoveries.
+Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, and translational models may be an untapped resource that could aid future efforts.
+Another area of exploration could be the incorporation of multiple sources of information such as anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).
 
 #### Drug Interactions
 
