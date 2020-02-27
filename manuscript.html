@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/55789e3a6680fe846eb4a42157d7c8319bfe06d5/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/55789e3a6680fe846eb4a42157d7c8319bfe06d5">greenelab/knowledge-graph-review@55789e3</a> on February 27, 2020. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/9a484dff84c3feb15d6c794462d12b2bb3346c21/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/9a484dff84c3feb15d6c794462d12b2bb3346c21">greenelab/knowledge-graph-review@9a484df</a> on February 27, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -294,12 +294,11 @@
 <p>Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins. Shen et al. <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span> used an algorithm called collaborative filtering to establish an association between miRNA and diseases. The authors constructed an miRNA-Disease network using the HMDDD database <span class="citation" data-cites="1F18ycwfS">[<a href="#ref-1F18ycwfS" role="doc-biblioref">157</a>]</span> and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases. This adjacency matrix was decomposed into small rectangular matrices using SVD, then these matricies were used to calculate similarity scores between the miRNA and diseases. High scores implied a high likelihood that a given miRNA had an association with a given disease <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span>. Other approaches have built off of Shen et al.’s <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span> work by incorpoating novel ways to perform matrix factorization <span class="citation" data-cites="1DjgsuPV2 hZ2R5BRj 4xcJzyPc">[<a href="#ref-1DjgsuPV2" role="doc-biblioref">158</a>,<a href="#ref-hZ2R5BRj" role="doc-biblioref">159</a>,<a href="#ref-4xcJzyPc" role="doc-biblioref">160</a>]</span> or by integrating machine learning models in conjunction with matrix factorization <span class="citation" data-cites="icSe8Yyw">[<a href="#ref-icSe8Yyw" role="doc-biblioref">161</a>]</span>. These methods provided high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span>. Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions <span class="citation" data-cites="6FrpIkNZ 6O3BO6WO Y2RTnbCe">[<a href="#ref-6O3BO6WO" role="doc-biblioref">155</a>,<a href="#ref-6FrpIkNZ" role="doc-biblioref">162</a>,<a href="#ref-Y2RTnbCe" role="doc-biblioref">163</a>]</span>. Though extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation of such approaches.</p>
 <p>Approaches that use deep learning have mainly used the node2vec model <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">139</a>]</span> or variants of that model. Yang et al. <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">154</a>]</span> used node2vec to create a recommendation system to infer associations between genes and disease symptoms. The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes-diseases and diseases-disease symptoms. The generated knowledge graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph. High scores implicated high chance for an association <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">154</a>]</span>. This approach outperformed methods that didn’t use a knowledge graph; however, validation was difficult as it involved manual curation of the literature <span class="citation" data-cites="otY29wFV"><a href="#ref-otY29wFV" role="doc-biblioref">154</a></span>]. Similar approaches used variants of the node2vec algorithm to predict gene-disease associations <span class="citation" data-cites="1D9FTzRBg 6PISrkV5 taI1UUAE">[<a href="#ref-1D9FTzRBg" role="doc-biblioref">8</a>,<a href="#ref-6PISrkV5" role="doc-biblioref">164</a>,<a href="#ref-taI1UUAE" role="doc-biblioref">165</a>]</span> analyze RNA-seq data <span class="citation" data-cites="qbHGtxhA">[<a href="#ref-qbHGtxhA" role="doc-biblioref">166</a>]</span> and infer novel protein information <span class="citation" data-cites="QQtRw08H 8qB2oCgy RYW74Wvh 1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">150</a>,<a href="#ref-QQtRw08H" role="doc-biblioref">167</a>,<a href="#ref-8qB2oCgy" role="doc-biblioref">168</a>,<a href="#ref-RYW74Wvh" role="doc-biblioref">169</a>]</span>. Future extensions of these applications should consider incorporating more sources of data such as compounds, anatomic locations or even gene pathways to improve prediciton performance.</p>
 <p>Knowledge graphs have aided the multi-omics field by generating novel discoveries. Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, and translational models may be an untapped resource that could aid future efforts. Another area of exploration could be the incorporation of multiple sources of information such as anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).</p>
-<h4 id="drug-interactions">Drug Interactions</h4>
-<ol type="1">
-<li>Talk about drug side effects</li>
-<li>Drug repurposing</li>
-<li>Drug-Disease Interations</li>
-</ol>
+<h4 id="pharmaceutical-applications">Pharmaceutical Applications</h4>
+<p>There are many examples of how knowledge graphs are applied to identify new properties of drugs. Tasks in this context involve prediction drugs interacting with other drugs <span class="citation" data-cites="NnOS86ev">[<a href="#ref-NnOS86ev" role="doc-biblioref">170</a>]</span>, identifying molecular targets a drug might interact with <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span> and identifying new disease treatments for previously established drugs <span class="citation" data-cites="sj2fr8fp">[<a href="#ref-sj2fr8fp" role="doc-biblioref">172</a>]</span>. As with other applications, we focus on those that use low-dimensional representations.</p>
+<p>Similar to multi-omic applications knowledge graphs have been used in recommendation systems to infer novel links between drugs and diseases. Dai et al. <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span> used collaborative filtering to infer drug-disease associations. The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network. They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. Then the authors generated an adjacency matrix where rows represent drugs and columns represent diseases and decomposed this matrix into two small rectangular matrices. These matrices were used to calculate similarity scores between all drugs and all diseases where high values implicate an association <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span>. Related approaches have been used to infer drug-target interactions <span class="citation" data-cites="S0MrOfj0 HOrwJFzW Z391qdG0">[<a href="#ref-S0MrOfj0" role="doc-biblioref">173</a>,<a href="#ref-HOrwJFzW" role="doc-biblioref">174</a>,<a href="#ref-Z391qdG0" role="doc-biblioref">175</a>]</span> and drug-disease treatments <span class="citation" data-cites="dbgPwLaZ 94kKAy9w oKdMo9U9 16FEYidu2 18YRZaX7n">[<a href="#ref-dbgPwLaZ" role="doc-biblioref">176</a>,<a href="#ref-94kKAy9w" role="doc-biblioref">177</a>,<a href="#ref-oKdMo9U9" role="doc-biblioref">178</a>,<a href="#ref-16FEYidu2" role="doc-biblioref">179</a>,<a href="#ref-18YRZaX7n" role="doc-biblioref">180</a>]</span> In spite of reported success, these approaches are limited to the drugs and diseases contained in the network. Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.</p>
+<p>Deep learning applications have used node2vec <span class="citation" data-cites="19E33rJiu dR3gjJXP">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>,<a href="#ref-dR3gjJXP" role="doc-biblioref">182</a>]</span> and auto-encoder <span class="citation" data-cites="za8DCIPS 1BT2OTuxL">[<a href="#ref-za8DCIPS" role="doc-biblioref">183</a>,<a href="#ref-1BT2OTuxL" role="doc-biblioref">184</a>]</span> approaches to project knowledge graphs into a low dimensional space. Zong et al. <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span> used a node2vec-like model to predict drug-target associations. The authors constructed a disease-target-disease network using drug centered databases: Drugbank <span class="citation" data-cites="111FgvD8J">[<a href="#ref-111FgvD8J" role="doc-biblioref">185</a>]</span> and Diseasome <span class="citation" data-cites="14fs7pzn0">[<a href="#ref-14fs7pzn0" role="doc-biblioref">186</a>]</span>. Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings. Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span>. A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance. Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span>.</p>
+<p>Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments. Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation. Due to the success of deep learning <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span> the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance. Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.</p>
 <h4 id="clinical-applications">Clinical applications</h4>
 <ol type="1">
 <li>Can mention EHR use and other related applications</li>
@@ -1292,6 +1291,119 @@ DOI: <a href="https://doi.org/10.1007/978-3-030-00825-3_16">10.1007/978-3-030-00
 Xiaoxia Liu, Zhihao Yang, Shengtian Sang, Hongfei Lin, Jian Wang, Bo Xu<br />
 <em>Artificial Intelligence in Medicine</em> (2019-05) <a href="https://doi.org/ggmrpf">https://doi.org/ggmrpf</a><br />
 DOI: <a href="https://doi.org/10.1016/j.artmed.2019.04.001">10.1016/j.artmed.2019.04.001</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31164203">31164203</a></p>
+</div>
+<div id="ref-NnOS86ev">
+<p>170. <strong>Large-scale structural and textual similarity-based mining of knowledge graph to predict drug–drug interactions</strong><br />
+Ibrahim Abdelaziz, Achille Fokoue, Oktie Hassanzadeh, Ping Zhang, Mohammad Sadoghi<br />
+<em>Journal of Web Semantics</em> (2017-05) <a href="https://doi.org/gcrwk3">https://doi.org/gcrwk3</a><br />
+DOI: <a href="https://doi.org/10.1016/j.websem.2017.06.002">10.1016/j.websem.2017.06.002</a></p>
+</div>
+<div id="ref-11ua4nEkY">
+<p>171. <strong>Matrix Factorization-Based Prediction of Novel Drug Indications by Integrating Genomic Space</strong><br />
+Wen Dai, Xi Liu, Yibo Gao, Lin Chen, Jianglong Song, Di Chen, Kuo Gao, Yongshi Jiang, Yiping Yang, Jianxin Chen, Peng Lu<br />
+<em>Computational and Mathematical Methods in Medicine</em> (2015) <a href="https://doi.org/gb58g8">https://doi.org/gb58g8</a><br />
+DOI: <a href="https://doi.org/10.1155/2015/275045">10.1155/2015/275045</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26078775">26078775</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4452507">PMC4452507</a></p>
+</div>
+<div id="ref-sj2fr8fp">
+<p>172. <strong>Abstract</strong><br />
+eLife Sciences Publications, Ltd<br />
+<a href="https://doi.org/gf4fdb">https://doi.org/gf4fdb</a><br />
+DOI: <a href="https://doi.org/10.7554/elife.26726.001">10.7554/elife.26726.001</a></p>
+</div>
+<div id="ref-S0MrOfj0">
+<p>173. <strong>Drug-Target Interaction Prediction with Graph Regularized Matrix Factorization</strong><br />
+Ali Ezzat, Peilin Zhao, Min Wu, Xiao-Li Li, Chee-Keong Kwoh<br />
+<em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2017-05-01) <a href="https://doi.org/ggmrrp">https://doi.org/ggmrrp</a><br />
+DOI: <a href="https://doi.org/10.1109/tcbb.2016.2530062">10.1109/tcbb.2016.2530062</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26890921">26890921</a></p>
+</div>
+<div id="ref-HOrwJFzW">
+<p>174. <strong>Predicting Drug-Target Interaction Using Deep Matrix Factorization</strong><br />
+Hafez Eslami Manoochehri, Mehrdad Nourani<br />
+<em>2018 IEEE Biomedical Circuits and Systems Conference (BioCAS)</em> (2018-10) <a href="https://doi.org/ggmrrn">https://doi.org/ggmrrn</a><br />
+DOI: <a href="https://doi.org/10.1109/biocas.2018.8584817">10.1109/biocas.2018.8584817</a></p>
+</div>
+<div id="ref-Z391qdG0">
+<p>175. <strong>Network-based prediction of drug–target interactions using an arbitrary-order proximity embedded deep forest</strong><br />
+Xiangxiang Zeng, Siyi Zhu, Yuan Hou, Pengyue Zhang, Lang Li, Jing Li, L Frank Huang, Stephen J Lewis, Ruth Nussinov, Feixiong Cheng<br />
+<em>Bioinformatics</em> (2020-01-23) <a href="https://doi.org/ggmrrk">https://doi.org/ggmrrk</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btaa010">10.1093/bioinformatics/btaa010</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31971579">31971579</a></p>
+</div>
+<div id="ref-dbgPwLaZ">
+<p>176. <strong>DrPOCS: Drug Repositioning Based on Projection Onto Convex Sets</strong><br />
+Yin-Ying Wang, Chunfeng Cui, Liqun Qi, Hong Yan, Xing-Ming Zhao<br />
+<em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2019-01-01) <a href="https://doi.org/ggmrrq">https://doi.org/ggmrrq</a><br />
+DOI: <a href="https://doi.org/10.1109/tcbb.2018.2830384">10.1109/tcbb.2018.2830384</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29993698">29993698</a></p>
+</div>
+<div id="ref-94kKAy9w">
+<p>177. <strong>Neighborhood Regularized Logistic Matrix Factorization for Drug-Target Interaction Prediction</strong><br />
+Yong Liu, Min Wu, Chunyan Miao, Peilin Zhao, Xiao-Li Li<br />
+<em>PLOS Computational Biology</em> (2016-02-12) <a href="https://doi.org/ggmrrw">https://doi.org/ggmrrw</a><br />
+DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004760">10.1371/journal.pcbi.1004760</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26872142">26872142</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4752318">PMC4752318</a></p>
+</div>
+<div id="ref-oKdMo9U9">
+<p>178. <strong>Predicting drug-target interactions by dual-network integrated logistic matrix factorization</strong><br />
+Ming Hao, Stephen H. Bryant, Yanli Wang<br />
+<em>Scientific Reports</em> (2017-01-12) <a href="https://doi.org/ggmrrj">https://doi.org/ggmrrj</a><br />
+DOI: <a href="https://doi.org/10.1038/srep40376">10.1038/srep40376</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28079135">28079135</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5227688">PMC5227688</a></p>
+</div>
+<div id="ref-16FEYidu2">
+<p>179. <strong>Drug–Disease Association and Drug-Repositioning Predictions in Complex Diseases Using Causal Inference–Probabilistic Matrix Factorization</strong><br />
+Jihong Yang, Zheng Li, Xiaohui Fan, Yiyu Cheng<br />
+<em>Journal of Chemical Information and Modeling</em> (2014-08-22) <a href="https://doi.org/f6hpb4">https://doi.org/f6hpb4</a><br />
+DOI: <a href="https://doi.org/10.1021/ci500340n">10.1021/ci500340n</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25116798">25116798</a></p>
+</div>
+<div id="ref-18YRZaX7n">
+<p>180. <strong>Predicting drug-disease associations by using similarity constrained matrix factorization</strong><br />
+Wen Zhang, Xiang Yue, Weiran Lin, Wenjian Wu, Ruoqi Liu, Feng Huang, Feng Liu<br />
+<em>BMC Bioinformatics</em> (2018-06-19) <a href="https://doi.org/ggmrrt">https://doi.org/ggmrrt</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-018-2220-4">10.1186/s12859-018-2220-4</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29914348">29914348</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6006580">PMC6006580</a></p>
+</div>
+<div id="ref-19E33rJiu">
+<p>181. <strong>Deep mining heterogeneous networks of biomedical linked data to predict novel drug–target associations</strong><br />
+Nansu Zong, Hyeoneui Kim, Victoria Ngo, Olivier Harismendy<br />
+<em>Bioinformatics</em> (2017-04-18) <a href="https://doi.org/gbqjgx">https://doi.org/gbqjgx</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/btx160">10.1093/bioinformatics/btx160</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28430977">28430977</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5860112">PMC5860112</a></p>
+</div>
+<div id="ref-dR3gjJXP">
+<p>182. <strong>Scalable and Accurate Drug–target Prediction Based on Heterogeneous Bio-linked Network Mining</strong><br />
+Nansu Zong, Rachael Sze Nga Wong, Victoria Ngo, Yue Yu, Ning Li<br />
+<em>Cold Spring Harbor Laboratory</em> (2019-02-03) <a href="https://doi.org/ggmrrm">https://doi.org/ggmrrm</a><br />
+DOI: <a href="https://doi.org/10.1101/539643">10.1101/539643</a></p>
+</div>
+<div id="ref-za8DCIPS">
+<p>183. <strong>Drug Similarity Integration Through Attentive Multi-view Graph Auto-Encoders</strong><br />
+Tengfei Ma, Cao Xiao, Jiayu Zhou, Fei Wang<br />
+<em>arXiv</em> (2018-04-28) <a href="https://arxiv.org/abs/1804.10850v1">https://arxiv.org/abs/1804.10850v1</a></p>
+</div>
+<div id="ref-1BT2OTuxL">
+<p>184. <strong>Modeling polypharmacy side effects with graph convolutional networks</strong><br />
+Marinka Zitnik, Monica Agrawal, Jure Leskovec<br />
+<em>arXiv</em> (2018-02-02) <a href="https://arxiv.org/abs/1802.00543v2">https://arxiv.org/abs/1802.00543v2</a><br />
+DOI: <a href="https://doi.org/10.1093/bioinformatics/bty294">10.1093/bioinformatics/bty294</a></p>
+</div>
+<div id="ref-111FgvD8J">
+<p>185. <strong>DrugBank: a knowledgebase for drugs, drug actions and drug targets</strong><br />
+David S. Wishart, Craig Knox, An Chi Guo, Dean Cheng, Savita Shrivastava, Dan Tzur, Bijaya Gautam, Murtaza Hassanali<br />
+<em>Nucleic Acids Research</em> (2007-11-29) <a href="https://doi.org/d3qqpj">https://doi.org/d3qqpj</a><br />
+DOI: <a href="https://doi.org/10.1093/nar/gkm958">10.1093/nar/gkm958</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/18048412">18048412</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2238889">PMC2238889</a></p>
+</div>
+<div id="ref-14fs7pzn0">
+<p>186. <strong>The human disease network</strong><br />
+K.-I. Goh, M. E. Cusick, D. Valle, B. Childs, M. Vidal, A.-L. Barabasi<br />
+<em>Proceedings of the National Academy of Sciences</em> (2007-05-14) <a href="https://doi.org/bt6qvc">https://doi.org/bt6qvc</a><br />
+DOI: <a href="https://doi.org/10.1073/pnas.0701361104">10.1073/pnas.0701361104</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17502601">17502601</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1885563">PMC1885563</a></p>
+</div>
+<div id="ref-245Px4P3">
+<p>187. <strong>Evaluation of knowledge graph embedding approaches for drug-drug interaction prediction in realistic settings</strong><br />
+Remzi Celebi, Huseyin Uyar, Erkan Yasar, Ozgur Gumus, Oguz Dikenelli, Michel Dumontier<br />
+<em>BMC Bioinformatics</em> (2019-12) <a href="https://doi.org/ggmrrv">https://doi.org/ggmrrv</a><br />
+DOI: <a href="https://doi.org/10.1186/s12859-019-3284-5">10.1186/s12859-019-3284-5</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31852427">31852427</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6921491">PMC6921491</a></p>
+</div>
+<div id="ref-WMEox1CM">
+<p>188. <strong>Drug-Drug Interaction Prediction Based on Knowledge Graph Embeddings and Convolutional-LSTM Network</strong><br />
+Md. Rezaul Karim, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, Stefan Decker<br />
+<em>Proceedings of the 10th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics - BCB ’19</em> (2019) <a href="https://doi.org/ggmrrs">https://doi.org/ggmrrs</a><br />
+DOI: <a href="https://doi.org/10.1145/3307339.3342161">10.1145/3307339.3342161</a></p>
 </div>
 </div>
 <!-- default theme -->

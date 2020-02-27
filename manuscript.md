@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/55789e3a6680fe846eb4a42157d7c8319bfe06d5/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/9a484dff84c3feb15d6c794462d12b2bb3346c21/))
 was automatically generated
-from [greenelab/knowledge-graph-review@55789e3](https://github.com/greenelab/knowledge-graph-review/tree/55789e3a6680fe846eb4a42157d7c8319bfe06d5)
+from [greenelab/knowledge-graph-review@9a484df](https://github.com/greenelab/knowledge-graph-review/tree/9a484dff84c3feb15d6c794462d12b2bb3346c21)
 on February 27, 2020.
 </em></small>
 
@@ -469,11 +469,34 @@ Knowledge graphs have aided the multi-omics field by generating novel discoverie
 Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, and translational models may be an untapped resource that could aid future efforts.
 Another area of exploration could be the incorporation of multiple sources of information such as anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).
 
-#### Drug Interactions
+#### Pharmaceutical Applications
 
-1. Talk about drug side effects
-2. Drug repurposing
-3. Drug-Disease Interations
+There are many examples of how knowledge graphs are applied to identify new properties of drugs.
+Tasks in this context involve prediction drugs interacting with other drugs [@NnOS86ev], identifying molecular targets a drug might interact with [@11ua4nEkY] and identifying new disease treatments for previously established drugs [@sj2fr8fp].
+As with other applications, we focus on those that use low-dimensional representations.
+
+Similar to multi-omic applications knowledge graphs have been used in recommendation systems to infer novel links between drugs and diseases.
+Dai et al. [@11ua4nEkY] used collaborative filtering to infer drug-disease associations.
+The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network.
+They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. 
+Then the authors generated an adjacency matrix where rows represent drugs and columns represent diseases and decomposed this matrix into two small rectangular matrices. 
+These matrices were used to calculate similarity scores between all drugs and all diseases where high values implicate an association [@11ua4nEkY].
+Related approaches have been used to infer drug-target interactions [@S0MrOfj0; @HOrwJFzW; @Z391qdG0] and drug-disease treatments [@dbgPwLaZ; @94kKAy9w; @oKdMo9U9; @16FEYidu2; @18YRZaX7n]
+In spite of reported success, these approaches are limited to the drugs and diseases contained in the network.
+Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.
+
+Deep learning applications have used node2vec [@19E33rJiu; @dR3gjJXP] and auto-encoder [@za8DCIPS; @1BT2OTuxL] approaches to project knowledge graphs into a low dimensional space.
+Zong et al. [@19E33rJiu] used a node2vec-like model to predict drug-target associations.
+The authors constructed a disease-target-disease network using drug centered databases: Drugbank [@111FgvD8J] and Diseasome [@14fs7pzn0].
+Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings.
+Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets [@19E33rJiu].
+A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance.
+Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
+
+Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments.
+Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation.
+Due to the success of deep learning [@245Px4P3; @WMEox1CM] the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance.
+Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.
 
 #### Clinical applications
 
