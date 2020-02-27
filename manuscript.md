@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-02-26'
+date-meta: '2020-02-27'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/2834acdbb828b24abf7e5b3071d06301e5b9fc4b/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/a6d4cf227a69944b2c9e55f4fd880912926ed35b/))
 was automatically generated
-from [greenelab/knowledge-graph-review@2834acd](https://github.com/greenelab/knowledge-graph-review/tree/2834acdbb828b24abf7e5b3071d06301e5b9fc4b)
-on February 26, 2020.
+from [greenelab/knowledge-graph-review@a6d4cf2](https://github.com/greenelab/knowledge-graph-review/tree/a6d4cf227a69944b2c9e55f4fd880912926ed35b)
+on February 27, 2020.
 </em></small>
 
 ## Authors
@@ -203,14 +203,14 @@ For these type of trees the root begins at the main verb of a sentence.
 Each arrows depicts the dependency shared between two words.
 For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject.
 This means that BRCA1 is the subject of the sentneces and it is being referred to by the word associated.
-](images/dependency_parse_example.png){#fig:dependency-parse-tree-example}
+](images/figures/dependency_parse_example.png){#fig:dependency-parse-tree-example}
 
 ![
 A visualization of a constituency parse tree using the following sentence: "BRCA1 is associated with breast cancer" [@1EvoylLWK].
 This type of tree has the root beginning at the start of the sentence.
 Each word is grouped into subphrases depending on the part of speech tags of a word.
 For example, the word "associated" is a past particple verb (VBN) that belongs to the verb phrase (VP) subgroup.
-](images/constituency_parse_tree_example.png){#fig:constituency-parse-tree-example}
+](images/figures/constituency_parse_tree_example.png){#fig:constituency-parse-tree-example}
 
 #### Extracting Relationships Without Labels
 
@@ -339,11 +339,45 @@ Table: A set of publicly available datasets for supervised text mining. {#tbl:su
 Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing [@1GhHIDxuW; @u5iJzbp9] and image analysis [@j7KrVyi8].
 The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well [@DSiHGDz9].
 Techniques that perform this projection often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
-We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning.
+We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning (Figure {@fig:unifying_techniques_overview}).
+
+![
+Pipeline for embedding knowledge graphs into a low dimensional space.
+Starting with a knowledge graph, embeddings can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c).
+The output of this pipeline is an embedding space that clusters similar node types together.
+](images/figures/unifying_techniques_overview.png){#fig:unifying_techniques_overview}
 
 #### Matrix Factorization
 
-1. Mention techniques for these with some papers
+Matrix factorization is a technique that uses linear algebra to map high dimensional data into a low dimensional space.
+This projection is accomplished by decomposing a matrix into a set of small rectangular matrices (Figure {@fig:unifying_techniques_overview} (a)).
+Notable methods for matrix decomposition include Isomap [@13cvwdrYY], Laplacian eigenmaps [@MxPEnWF1] and Principal Component Analysis (PCA) [@sSbTaHau]/Singular Vector Decomposition (SVD) [@H0ez30Pz].
+These methods were designed to be used on many different types of data; however, we discuss their use in the context of projecting knowledge graphs into a low dimensional space.	
+
+SVD [@H0ez30Pz] is an algorithm that uses matrix factorization to represent knowledge graphs in a low dimensional space.
+The input for this algorithm is an adjacency matrix ($A$), which is a square matrix where rows and columns represent nodes and each entry represents the presence of an edge between two nodes. 
+This adjacency matrix ($A$) gets decomposed into three parts: a square matrix $Σ$ and a set of two small rectangular matrices $U$ and $V^{T}$.
+This values within $Σ$ are called singular values, which akin to eigenvalues [@H0ez30Pz].
+Each row in $U$ and each column in $V^{T}$ represents nodes projected onto a low dimensional space [@H0ez30Pz; @sSbTaHau].
+In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [@H0ez30Pz; @TFsQrgwM].
+Typically, SVD appears in recommendation systems via collaborative filtering [@Z5VAJJmP]; however, this technique can also be used as a standalone baseline to compare to other approaches [@OJXYxm8W].
+
+Laplacian eigenmaps assume there is low dimensional structure in a high dimensional space [@MxPEnWF1].
+This algorithm preserves this structure while projecting data into a low dimensional space. 
+Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been constructed.
+The next step in this algorithm is to obtain both an adjacency matrix ($A$) and a degree matrix ($D$) from the knowledge graph.
+A degree matrix is a diagonal matrix where each entry represents the number of edges connected to a node.
+The adjacency and degree matrices are converted into a laplacian matrix ($L$), which is a matrix that shares the same properties as the adjacency matrix.
+The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix ($L=D-A$) and, once constructed, the algorithm uses linear algebra to calculate eigenvalues and eigenvectors from the matrix ($Lx = \lambda Dx$).
+The generated eigenvectors represent the knowledge graph's nodes projected onto a low dimensional space [@MxPEnWF1].
+A number of approaches have used variants of this algorithm to perform their own node projection [@18ZTxo1gJ; @u6NlpEUq; @KzDGRrSP].
+Typically, eigenmaps work well when knowledge graphs have a sparse number of edges between nodes but struggle when presented with denser networks [@OJXYxm8W; @FE8pyO0l; @KzDGRrSP].
+A future direction is to adapt these methods to scale to knowledge graphs that have a large number of edges.
+
+Matrix factorization is a powerful technique that uses a matrices such as  an adjacency matrix as input.
+Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to perform embeddings.
+Despite reported success, the dependence on matrices like an adjacency matrix creates an issue of scalability as matrices of large networks would take too much memory for a regular computer to handle.
+Furthermore, these methods treat all edge types the same, but a possible extension for future approaches that use matrix factorization would be to incorporate node and edge types as sources of input.
 
 #### Translational Distance Models
 
