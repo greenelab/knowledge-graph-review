@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/9a484dff84c3feb15d6c794462d12b2bb3346c21/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/f0313654623fdcab77dce1ffbbf31745e3a7989b/))
 was automatically generated
-from [greenelab/knowledge-graph-review@9a484df](https://github.com/greenelab/knowledge-graph-review/tree/9a484dff84c3feb15d6c794462d12b2bb3346c21)
+from [greenelab/knowledge-graph-review@f031365](https://github.com/greenelab/knowledge-graph-review/tree/f0313654623fdcab77dce1ffbbf31745e3a7989b)
 on February 27, 2020.
 </em></small>
 
@@ -500,8 +500,27 @@ Plus, another area of exploration is to incorporate information such as phamaceu
 
 #### Clinical applications
 
-1. Can mention EHR use and other related applications
-2. Mention Tiffany's work on private data embeddings
+Using knowledge graphs for clinical applications is in early stages of development, but the long-term goal is to use analyses of knowledge graphs to aid patient care.
+Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases and edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease [@xNv4Rkif; @mrfQbq3g; @xU6Ims3W; @gddb9uXr].
+Tasks range from improving patient diagnoses [@UuF5A9Pu;@OCnhKscH] to recommending safer drugs for patients [@aLsdEzlV; @OCnhKscH].
+
+Early work in this field applied translational models (Figure {@fig:unifying_techniques_overview} (b)) to knowledge graphs to recommend safe drugs.
+Wang et al. [@aLsdEzlV] used a variant of the TransH [@nprR5cVj] model to create such a system for patients.
+They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network.
+Every node in the graph was embedded while satisfying the following equation: $\textbf{h} - r \approx \textbf{t}$.
+Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions [@aLsdEzlV].
+Researchers in [@BRGxlTb9] applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.
+
+In contrast with other applications where node2vec and auto-encoder models have become established, deep learning methods in this area often use graph attention models [@Exfv0f4l].
+These models mimic machine translation models [@haHzVaaz] and aim to simultaneously embed knowledge graphs into a low dimensional space and perform the task at hand.
+Choi et al. [@10nDTiETi] used a graph attention model to predict patient diagnoses.
+The authors constructed a directed graph using medical concepts from patient EHR data.
+This directed graph was fed into a graph attention network and then used to predict a patient's likelihood of heart failure [@10nDTiETi].
+Other approaches have used graph attention models to perform clinical tasks such as drug safety recommendations [@8vj5v8un] and patient diagnoses [@QNJ3b5bY].
+
+Knowledge graphs have shown promising results when used for clinical applications; however, there is still room for improvement.
+Most approaches have run into the common problem with missing data from EHR [@10nDTiETi; @aLsdEzlV; @8vj5v8un].
+Future directions consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.
 
 
 ## Conclusion

@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/9a484dff84c3feb15d6c794462d12b2bb3346c21/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/9a484dff84c3feb15d6c794462d12b2bb3346c21">greenelab/knowledge-graph-review@9a484df</a> on February 27, 2020. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/f0313654623fdcab77dce1ffbbf31745e3a7989b/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/f0313654623fdcab77dce1ffbbf31745e3a7989b">greenelab/knowledge-graph-review@f031365</a> on February 27, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -300,10 +300,10 @@
 <p>Deep learning applications have used node2vec <span class="citation" data-cites="19E33rJiu dR3gjJXP">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>,<a href="#ref-dR3gjJXP" role="doc-biblioref">182</a>]</span> and auto-encoder <span class="citation" data-cites="za8DCIPS 1BT2OTuxL">[<a href="#ref-za8DCIPS" role="doc-biblioref">183</a>,<a href="#ref-1BT2OTuxL" role="doc-biblioref">184</a>]</span> approaches to project knowledge graphs into a low dimensional space. Zong et al. <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span> used a node2vec-like model to predict drug-target associations. The authors constructed a disease-target-disease network using drug centered databases: Drugbank <span class="citation" data-cites="111FgvD8J">[<a href="#ref-111FgvD8J" role="doc-biblioref">185</a>]</span> and Diseasome <span class="citation" data-cites="14fs7pzn0">[<a href="#ref-14fs7pzn0" role="doc-biblioref">186</a>]</span>. Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings. Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span>. A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance. Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span>.</p>
 <p>Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments. Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation. Due to the success of deep learning <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span> the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance. Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.</p>
 <h4 id="clinical-applications">Clinical applications</h4>
-<ol type="1">
-<li>Can mention EHR use and other related applications</li>
-<li>Mention Tiffany’s work on private data embeddings</li>
-</ol>
+<p>Using knowledge graphs for clinical applications is in early stages of development, but the long-term goal is to use analyses of knowledge graphs to aid patient care. Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases and edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease <span class="citation" data-cites="xNv4Rkif mrfQbq3g xU6Ims3W gddb9uXr">[<a href="#ref-gddb9uXr" role="doc-biblioref">17</a>,<a href="#ref-xNv4Rkif" role="doc-biblioref">189</a>,<a href="#ref-mrfQbq3g" role="doc-biblioref">190</a>,<a href="#ref-xU6Ims3W" role="doc-biblioref">191</a>]</span>. Tasks range from improving patient diagnoses <span class="citation" data-cites="UuF5A9Pu OCnhKscH">[<a href="#ref-UuF5A9Pu" role="doc-biblioref">192</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">193</a>]</span> to recommending safer drugs for patients <span class="citation" data-cites="aLsdEzlV OCnhKscH">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">193</a>]</span>.</p>
+<p>Early work in this field applied translational models (Figure <a href="#fig:unifying_techniques_overview">4</a> (b)) to knowledge graphs to recommend safe drugs. Wang et al. <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>]</span> used a variant of the TransH <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">135</a>]</span> model to create such a system for patients. They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network. Every node in the graph was embedded while satisfying the following equation: <span class="math inline">\(\textbf{h} - r \approx \textbf{t}\)</span>. Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>]</span>. Researchers in <span class="citation" data-cites="BRGxlTb9">[<a href="#ref-BRGxlTb9" role="doc-biblioref">137</a>]</span> applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.</p>
+<p>In contrast with other applications where node2vec and auto-encoder models have become established, deep learning methods in this area often use graph attention models <span class="citation" data-cites="Exfv0f4l">[<a href="#ref-Exfv0f4l" role="doc-biblioref">194</a>]</span>. These models mimic machine translation models <span class="citation" data-cites="haHzVaaz">[<a href="#ref-haHzVaaz" role="doc-biblioref">195</a>]</span> and aim to simultaneously embed knowledge graphs into a low dimensional space and perform the task at hand. Choi et al. <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span> used a graph attention model to predict patient diagnoses. The authors constructed a directed graph using medical concepts from patient EHR data. This directed graph was fed into a graph attention network and then used to predict a patient’s likelihood of heart failure <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span>. Other approaches have used graph attention models to perform clinical tasks such as drug safety recommendations <span class="citation" data-cites="8vj5v8un">[<a href="#ref-8vj5v8un" role="doc-biblioref">153</a>]</span> and patient diagnoses <span class="citation" data-cites="QNJ3b5bY">[<a href="#ref-QNJ3b5bY" role="doc-biblioref">197</a>]</span>.</p>
+<p>Knowledge graphs have shown promising results when used for clinical applications; however, there is still room for improvement. Most approaches have run into the common problem with missing data from EHR <span class="citation" data-cites="10nDTiETi aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">153</a>,<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span>. Future directions consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.</p>
 <h2 id="conclusion">Conclusion</h2>
 <ol type="1">
 <li>Summarize discussed positives and pitfalls</li>
@@ -1404,6 +1404,54 @@ DOI: <a href="https://doi.org/10.1186/s12859-019-3284-5">10.1186/s12859-019-3284
 Md. Rezaul Karim, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, Stefan Decker<br />
 <em>Proceedings of the 10th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics - BCB ’19</em> (2019) <a href="https://doi.org/ggmrrs">https://doi.org/ggmrrs</a><br />
 DOI: <a href="https://doi.org/10.1145/3307339.3342161">10.1145/3307339.3342161</a></p>
+</div>
+<div id="ref-xNv4Rkif">
+<p>189. <strong>Mining Electronic Health Records using Linked Data.</strong><br />
+David J Odgers, Michel Dumontier<br />
+<em>AMIA Joint Summits on Translational Science proceedings. AMIA Joint Summits on Translational Science</em> (2015-03-23) <a href="https://www.ncbi.nlm.nih.gov/pubmed/26306276">https://www.ncbi.nlm.nih.gov/pubmed/26306276</a><br />
+PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26306276">26306276</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4525267">PMC4525267</a></p>
+</div>
+<div id="ref-mrfQbq3g">
+<p>190. <strong>Applying linked data principles to represent patient’s electronic health records at Mayo clinic</strong><br />
+Jyotishman Pathak, Richard C. Kiefer, Christopher G. Chute<br />
+<em>Proceedings of the 2nd ACM SIGHIT symposium on International health informatics - IHI ’12</em> (2012) <a href="https://doi.org/fzm2p7">https://doi.org/fzm2p7</a><br />
+DOI: <a href="https://doi.org/10.1145/2110363.2110415">10.1145/2110363.2110415</a></p>
+</div>
+<div id="ref-xU6Ims3W">
+<p>191. <strong>PDD Graph: Bridging Electronic Medical Records and Biomedical Knowledge Graphs via Entity Linking</strong><br />
+Meng Wang, Jiaheng Zhang, Jun Liu, Wei Hu, Sen Wang, Xue Li, Wenqiang Liu<br />
+<em>arXiv</em> (2017-07-17) <a href="https://arxiv.org/abs/1707.05340v2">https://arxiv.org/abs/1707.05340v2</a></p>
+</div>
+<div id="ref-UuF5A9Pu">
+<p>192. <strong>Diagnosis Code Assignment Using Sparsity-Based Disease Correlation Embedding</strong><br />
+Sen Wang, Xiaojun Chang, Xue Li, Guodong Long, Lina Yao, Quan Z. Sheng<br />
+<em>IEEE Transactions on Knowledge and Data Engineering</em> (2016-12-01) <a href="https://doi.org/f9cgtv">https://doi.org/f9cgtv</a><br />
+DOI: <a href="https://doi.org/10.1109/tkde.2016.2605687">10.1109/tkde.2016.2605687</a></p>
+</div>
+<div id="ref-OCnhKscH">
+<p>193. <strong>EMR-based medical knowledge representation and inference via Markov random fields and distributed representation learning</strong><br />
+Chao Zhao, Jingchi Jiang, Yi Guan<br />
+<em>arXiv</em> (2017-09-20) <a href="https://arxiv.org/abs/1709.06908v1">https://arxiv.org/abs/1709.06908v1</a></p>
+</div>
+<div id="ref-Exfv0f4l">
+<p>194. <strong>Attention Is All You Need</strong><br />
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin<br />
+<em>arXiv</em> (2017-06-12) <a href="https://arxiv.org/abs/1706.03762v5">https://arxiv.org/abs/1706.03762v5</a></p>
+</div>
+<div id="ref-haHzVaaz">
+<p>195. <strong>Neural Machine Translation by Jointly Learning to Align and Translate</strong><br />
+Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio<br />
+<em>arXiv</em> (2014-09-01) <a href="https://arxiv.org/abs/1409.0473v7">https://arxiv.org/abs/1409.0473v7</a></p>
+</div>
+<div id="ref-10nDTiETi">
+<p>196. <strong>GRAM: Graph-based Attention Model for Healthcare Representation Learning</strong><br />
+Edward Choi, Mohammad Taha Bahadori, Le Song, Walter F. Stewart, Jimeng Sun<br />
+<em>arXiv</em> (2016-11-21) <a href="https://arxiv.org/abs/1611.07012v3">https://arxiv.org/abs/1611.07012v3</a></p>
+</div>
+<div id="ref-QNJ3b5bY">
+<p>197. <strong>Learning the Graphical Structure of Electronic Health Records with Graph Convolutional Transformer</strong><br />
+Edward Choi, Zhen Xu, Yujia Li, Michael W. Dusenberry, Gerardo Flores, Yuan Xue, Andrew M. Dai<br />
+<em>arXiv</em> (2019-06-11) <a href="https://arxiv.org/abs/1906.04716v3">https://arxiv.org/abs/1906.04716v3</a></p>
 </div>
 </div>
 <!-- default theme -->
