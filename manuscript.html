@@ -23,7 +23,7 @@
 <header id="title-block-header">
 <h1 class="title">Constructing Knowledge Graphs and Their Biomedical Applications</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/f0313654623fdcab77dce1ffbbf31745e3a7989b/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/f0313654623fdcab77dce1ffbbf31745e3a7989b">greenelab/knowledge-graph-review@f031365</a> on February 27, 2020. </em></small></p>
+<p><small><em> This manuscript (<a href="https://greenelab.github.io/knowledge-graph-review/v/95501de78c6c221bfefe2e6d1e0eb6402a049416/">permalink</a>) was automatically generated from <a href="https://github.com/greenelab/knowledge-graph-review/tree/95501de78c6c221bfefe2e6d1e0eb6402a049416">greenelab/knowledge-graph-review@95501de</a> on February 27, 2020. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><p><strong>David Nicholson</strong><br> <img src="images/orcid.svg" alt="ORCID icon" class="inline_icon" /> <a href="https://orcid.org/0000-0003-0002-5761">0000-0003-0002-5761</a> · <img src="images/github.svg" alt="GitHub icon" class="inline_icon" /> <a href="https://github.com/danich1">danich1</a><br> <small> Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania · Funded by GBMF4552 and T32 HG000046 </small></p></li>
@@ -168,31 +168,31 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="citation" data-cites="IGXdryzB">[<a href="#ref-IGXdryzB" role="doc-biblioref">70</a>]</span></td>
+<td>CoCoScore <span class="citation" data-cites="IGXdryzB">[<a href="#ref-IGXdryzB" role="doc-biblioref">70</a>]</span></td>
 <td>Protein-Protein Interactions, Disease-Gene and Tissue-Gene Associations</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="ETC6lm7S">[<a href="#ref-ETC6lm7S" role="doc-biblioref">71</a>]</span></td>
+<td>Rastegar-Mojarad et al. <span class="citation" data-cites="ETC6lm7S">[<a href="#ref-ETC6lm7S" role="doc-biblioref">71</a>]</span></td>
 <td>Drug Disease Treatments</td>
 </tr>
 <tr class="odd">
-<td><span class="citation" data-cites="AdKPf5EO">[<a href="#ref-AdKPf5EO" role="doc-biblioref">72</a>]</span></td>
+<td>CoPub Discovery <span class="citation" data-cites="AdKPf5EO">[<a href="#ref-AdKPf5EO" role="doc-biblioref">72</a>]</span></td>
 <td>Drug, Gene and Disease interactions</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">67</a>]</span></td>
+<td>Westergaard et al. <span class="citation" data-cites="DGlWGDEt">[<a href="#ref-DGlWGDEt" role="doc-biblioref">67</a>]</span></td>
 <td>Protein-Protein Interactions</td>
 </tr>
 <tr class="odd">
-<td><span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span></td>
+<td>DISEASES <span class="citation" data-cites="5gG8hwv7">[<a href="#ref-5gG8hwv7" role="doc-biblioref">12</a>]</span></td>
 <td>Disease-Gene associations</td>
 </tr>
 <tr class="even">
-<td><span class="citation" data-cites="q9Fhy8eq">[<a href="#ref-q9Fhy8eq" role="doc-biblioref">73</a>]</span></td>
+<td>STRING <span class="citation" data-cites="q9Fhy8eq">[<a href="#ref-q9Fhy8eq" role="doc-biblioref">73</a>]</span></td>
 <td>Protein-Protein Interactions</td>
 </tr>
 <tr class="odd">
-<td><span class="citation" data-cites="10tWTMIaV">[<a href="#ref-10tWTMIaV" role="doc-biblioref">74</a>]</span></td>
+<td>Singhal et al. <span class="citation" data-cites="10tWTMIaV">[<a href="#ref-10tWTMIaV" role="doc-biblioref">74</a>]</span></td>
 <td>Genotype-Phenotype Relationships</td>
 </tr>
 </tbody>
@@ -262,48 +262,44 @@
 </tbody>
 </table>
 <h2 id="applying-knowledge-graphs-to-biomedical-challenges">Applying Knowledge Graphs to Biomedical Challenges</h2>
-<ol type="1">
-<li>Mention that these graphs can be used for discovery</li>
-<li>Mention representation learning (aka representing a graph as dense vectors for nodes and/or edges)</li>
-<li></li>
-</ol>
+<p>Knowledge graphs can help researchers tackle many biomedical tasks such as finding new treatments for existing drugs <span class="citation" data-cites="O21tn8vf">[<a href="#ref-O21tn8vf" role="doc-biblioref">9</a>]</span>, aiding efforts to diagnose patients <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">118</a>]</span> and predicting associations between diseases and biomolecules <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span>. In many cases, solutions rely on representing knowledges graphs in a low dimensional space, which is a process called representation learning. This space preserves a knowledge graph’s local and/or global structure and can support efforts to apply machine learning methods to make predictions. We discuss the unifying techniques to construct this low dimensional space and unifying applications that use this space to solve biomedical problems.</p>
 <h3 id="unifying-techniques">Unifying Techniques</h3>
-<p>Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> and image analysis <span class="citation" data-cites="j7KrVyi8">[<a href="#ref-j7KrVyi8" role="doc-biblioref">118</a>]</span>. The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well <span class="citation" data-cites="DSiHGDz9">[<a href="#ref-DSiHGDz9" role="doc-biblioref">119</a>]</span>. Techniques that perform this projection often require information on how nodes are connected with one another <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq dylXYFm6 9F3iyg8e">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">120</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">121</a>,<a href="#ref-dylXYFm6" role="doc-biblioref">122</a>,<a href="#ref-9F3iyg8e" role="doc-biblioref">123</a>]</span>, while other approaches can work directly with the edges themselves <span class="citation" data-cites="E5xHFo4P">[<a href="#ref-E5xHFo4P" role="doc-biblioref">124</a>]</span>. We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning (Figure <a href="#fig:unifying_techniques_overview">4</a>).</p>
+<p>Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing <span class="citation" data-cites="1GhHIDxuW u5iJzbp9">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> and image analysis <span class="citation" data-cites="j7KrVyi8">[<a href="#ref-j7KrVyi8" role="doc-biblioref">120</a>]</span>. The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well <span class="citation" data-cites="DSiHGDz9">[<a href="#ref-DSiHGDz9" role="doc-biblioref">121</a>]</span>. Techniques that perform this projection often require information on how nodes are connected with one another <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq dylXYFm6 9F3iyg8e">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">122</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">123</a>,<a href="#ref-dylXYFm6" role="doc-biblioref">124</a>,<a href="#ref-9F3iyg8e" role="doc-biblioref">125</a>]</span>, while other approaches can work directly with the edges themselves <span class="citation" data-cites="E5xHFo4P">[<a href="#ref-E5xHFo4P" role="doc-biblioref">126</a>]</span>. We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning (Figure <a href="#fig:unifying_techniques_overview">4</a>).</p>
 <figure>
 <img src="images/figures/unifying_techniques_overview.png" alt="Figure 4: Pipeline for embedding knowledge graphs into a low dimensional space. Starting with a knowledge graph, embeddings can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c). The output of this pipeline is an embedding space that clusters similar node types together." id="fig:unifying_techniques_overview" /><figcaption><span>Figure 4:</span> Pipeline for embedding knowledge graphs into a low dimensional space. Starting with a knowledge graph, embeddings can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c). The output of this pipeline is an embedding space that clusters similar node types together.</figcaption>
 </figure>
 <h4 id="matrix-factorization">Matrix Factorization</h4>
-<p>Matrix factorization is a technique that uses linear algebra to map high dimensional data into a low dimensional space. This projection is accomplished by decomposing a matrix into a set of small rectangular matrices (Figure <a href="#fig:unifying_techniques_overview">4</a> (a)). Notable methods for matrix decomposition include Isomap <span class="citation" data-cites="13cvwdrYY">[<a href="#ref-13cvwdrYY" role="doc-biblioref">125</a>]</span>, Laplacian eigenmaps <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">126</a>]</span> and Principal Component Analysis (PCA) <span class="citation" data-cites="sSbTaHau">[<a href="#ref-sSbTaHau" role="doc-biblioref">127</a>]</span>/Singular Vector Decomposition (SVD) <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">128</a>]</span>. These methods were designed to be used on many different types of data; however, we discuss their use in the context of projecting knowledge graphs into a low dimensional space.</p>
-<p>SVD <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">128</a>]</span> is an algorithm that uses matrix factorization to represent knowledge graphs in a low dimensional space. The input for this algorithm is an adjacency matrix (<span class="math inline">\(A\)</span>), which is a square matrix where rows and columns represent nodes and each entry represents the presence of an edge between two nodes. This adjacency matrix (<span class="math inline">\(A\)</span>) gets decomposed into three parts: a square matrix <span class="math inline">\(Σ\)</span> and a set of two small rectangular matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^{T}\)</span>. This values within <span class="math inline">\(Σ\)</span> are called singular values, which akin to eigenvalues <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">128</a>]</span>. Each row in <span class="math inline">\(U\)</span> and each column in <span class="math inline">\(V^{T}\)</span> represents nodes projected onto a low dimensional space <span class="citation" data-cites="H0ez30Pz sSbTaHau">[<a href="#ref-sSbTaHau" role="doc-biblioref">127</a>,<a href="#ref-H0ez30Pz" role="doc-biblioref">128</a>]</span>. In practice <span class="math inline">\(U\)</span> is usually used to represent nodes in a knowledge graph, but <span class="math inline">\(V^{T}\)</span> can also be used <span class="citation" data-cites="H0ez30Pz TFsQrgwM">[<a href="#ref-H0ez30Pz" role="doc-biblioref">128</a>,<a href="#ref-TFsQrgwM" role="doc-biblioref">129</a>]</span>. Typically, SVD appears in recommendation systems via collaborative filtering <span class="citation" data-cites="Z5VAJJmP">[<a href="#ref-Z5VAJJmP" role="doc-biblioref">130</a>]</span>; however, this technique can also be used as a standalone baseline to compare to other approaches <span class="citation" data-cites="OJXYxm8W">[<a href="#ref-OJXYxm8W" role="doc-biblioref">131</a>]</span>.</p>
-<p>Laplacian eigenmaps assume there is low dimensional structure in a high dimensional space <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">126</a>]</span>. This algorithm preserves this structure while projecting data into a low dimensional space. Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been constructed. The next step in this algorithm is to obtain both an adjacency matrix (<span class="math inline">\(A\)</span>) and a degree matrix (<span class="math inline">\(D\)</span>) from the knowledge graph. A degree matrix is a diagonal matrix where each entry represents the number of edges connected to a node. The adjacency and degree matrices are converted into a laplacian matrix (<span class="math inline">\(L\)</span>), which is a matrix that shares the same properties as the adjacency matrix. The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix (<span class="math inline">\(L=D-A\)</span>) and, once constructed, the algorithm uses linear algebra to calculate eigenvalues and eigenvectors from the matrix (<span class="math inline">\(Lx = \lambda Dx\)</span>). The generated eigenvectors represent the knowledge graph’s nodes projected onto a low dimensional space <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">126</a>]</span>. A number of approaches have used variants of this algorithm to perform their own node projection <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq KzDGRrSP">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">120</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">121</a>,<a href="#ref-KzDGRrSP" role="doc-biblioref">132</a>]</span>. Typically, eigenmaps work well when knowledge graphs have a sparse number of edges between nodes but struggle when presented with denser networks <span class="citation" data-cites="OJXYxm8W FE8pyO0l KzDGRrSP">[<a href="#ref-OJXYxm8W" role="doc-biblioref">131</a>,<a href="#ref-KzDGRrSP" role="doc-biblioref">132</a>,<a href="#ref-FE8pyO0l" role="doc-biblioref">133</a>]</span>. A future direction is to adapt these methods to scale to knowledge graphs that have a large number of edges.</p>
+<p>Matrix factorization is a technique that uses linear algebra to map high dimensional data into a low dimensional space. This projection is accomplished by decomposing a matrix into a set of small rectangular matrices (Figure <a href="#fig:unifying_techniques_overview">4</a> (a)). Notable methods for matrix decomposition include Isomap <span class="citation" data-cites="13cvwdrYY">[<a href="#ref-13cvwdrYY" role="doc-biblioref">127</a>]</span>, Laplacian eigenmaps <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">128</a>]</span> and Principal Component Analysis (PCA) <span class="citation" data-cites="sSbTaHau">[<a href="#ref-sSbTaHau" role="doc-biblioref">129</a>]</span>/Singular Vector Decomposition (SVD) <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">130</a>]</span>. These methods were designed to be used on many different types of data; however, we discuss their use in the context of projecting knowledge graphs into a low dimensional space.</p>
+<p>SVD <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">130</a>]</span> is an algorithm that uses matrix factorization to represent knowledge graphs in a low dimensional space. The input for this algorithm is an adjacency matrix (<span class="math inline">\(A\)</span>), which is a square matrix where rows and columns represent nodes and each entry represents the presence of an edge between two nodes. This adjacency matrix (<span class="math inline">\(A\)</span>) gets decomposed into three parts: a square matrix <span class="math inline">\(Σ\)</span> and a set of two small rectangular matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^{T}\)</span>. This values within <span class="math inline">\(Σ\)</span> are called singular values, which akin to eigenvalues <span class="citation" data-cites="H0ez30Pz">[<a href="#ref-H0ez30Pz" role="doc-biblioref">130</a>]</span>. Each row in <span class="math inline">\(U\)</span> and each column in <span class="math inline">\(V^{T}\)</span> represents nodes projected onto a low dimensional space <span class="citation" data-cites="H0ez30Pz sSbTaHau">[<a href="#ref-sSbTaHau" role="doc-biblioref">129</a>,<a href="#ref-H0ez30Pz" role="doc-biblioref">130</a>]</span>. In practice <span class="math inline">\(U\)</span> is usually used to represent nodes in a knowledge graph, but <span class="math inline">\(V^{T}\)</span> can also be used <span class="citation" data-cites="H0ez30Pz TFsQrgwM">[<a href="#ref-H0ez30Pz" role="doc-biblioref">130</a>,<a href="#ref-TFsQrgwM" role="doc-biblioref">131</a>]</span>. Typically, SVD appears in recommendation systems via collaborative filtering <span class="citation" data-cites="Z5VAJJmP">[<a href="#ref-Z5VAJJmP" role="doc-biblioref">132</a>]</span>; however, this technique can also be used as a standalone baseline to compare to other approaches <span class="citation" data-cites="OJXYxm8W">[<a href="#ref-OJXYxm8W" role="doc-biblioref">133</a>]</span>.</p>
+<p>Laplacian eigenmaps assume there is low dimensional structure in a high dimensional space <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">128</a>]</span>. This algorithm preserves this structure while projecting data into a low dimensional space. Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been constructed. The next step in this algorithm is to obtain both an adjacency matrix (<span class="math inline">\(A\)</span>) and a degree matrix (<span class="math inline">\(D\)</span>) from the knowledge graph. A degree matrix is a diagonal matrix where each entry represents the number of edges connected to a node. The adjacency and degree matrices are converted into a laplacian matrix (<span class="math inline">\(L\)</span>), which is a matrix that shares the same properties as the adjacency matrix. The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix (<span class="math inline">\(L=D-A\)</span>) and, once constructed, the algorithm uses linear algebra to calculate eigenvalues and eigenvectors from the matrix (<span class="math inline">\(Lx = \lambda Dx\)</span>). The generated eigenvectors represent the knowledge graph’s nodes projected onto a low dimensional space <span class="citation" data-cites="MxPEnWF1">[<a href="#ref-MxPEnWF1" role="doc-biblioref">128</a>]</span>. A number of approaches have used variants of this algorithm to perform their own node projection <span class="citation" data-cites="18ZTxo1gJ u6NlpEUq KzDGRrSP">[<a href="#ref-18ZTxo1gJ" role="doc-biblioref">122</a>,<a href="#ref-u6NlpEUq" role="doc-biblioref">123</a>,<a href="#ref-KzDGRrSP" role="doc-biblioref">134</a>]</span>. Typically, eigenmaps work well when knowledge graphs have a sparse number of edges between nodes but struggle when presented with denser networks <span class="citation" data-cites="OJXYxm8W FE8pyO0l KzDGRrSP">[<a href="#ref-OJXYxm8W" role="doc-biblioref">133</a>,<a href="#ref-KzDGRrSP" role="doc-biblioref">134</a>,<a href="#ref-FE8pyO0l" role="doc-biblioref">135</a>]</span>. A future direction is to adapt these methods to scale to knowledge graphs that have a large number of edges.</p>
 <p>Matrix factorization is a powerful technique that uses a matrices such as an adjacency matrix as input. Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to perform embeddings. Despite reported success, the dependence on matrices like an adjacency matrix creates an issue of scalability as matrices of large networks would take too much memory for a regular computer to handle. Furthermore, these methods treat all edge types the same, but a possible extension for future approaches that use matrix factorization would be to incorporate node and edge types as sources of input.</p>
 <h4 id="translational-distance-models">Translational Distance Models</h4>
-<p>Translational distance models treat edges in a knowledge graph as linear transformations. As an example, one such algorithm, TransE <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">134</a>]</span>, treats every node-edge pair as a triplet with head nodes represented as <span class="math inline">\(\textbf{h}\)</span>, edges represented as <span class="math inline">\(\textbf{r}\)</span>, and tail nodes represented as <span class="math inline">\(\textbf{t}\)</span>. These representations are combined into an equation that mimics the iconic word vectors translations (<span class="math inline">\(\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}\)</span>) from the Word2vec model <span class="citation" data-cites="u5iJzbp9">[<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. The equation is shown as follows: <span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>. Starting at the head node (<span class="math inline">\(\textbf{h}\)</span>), add the edge vector (<span class="math inline">\(\textbf{r}\)</span>) and the result should be the tail node (<span class="math inline">\(\textbf{t}\)</span>). TransE optimizes embeddings for <span class="math inline">\(\textbf{h}\)</span>, <span class="math inline">\(\textbf{r}\)</span>, <span class="math inline">\(\textbf{t}\)</span>, while guaranteeing the global equation (<span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>) is satisfied <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">134</a>]</span>. A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.</p>
-<p>Wang et al. <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">135</a>]</span> attempted to resolve the one to one mapping issue by developing the TransH model. TransH treats relations as hyperplanes rather than a regular vector and projects the head (<span class="math inline">\(\textbf{h}\)</span>) and tail (<span class="math inline">\(\textbf{t}\)</span>) nodes onto the hyperplane. Following this projection, a distance vector (<span class="math inline">\(\textbf{d}_{r}\)</span>) is calculated between the projected head and tail nodes. Finally, each vector is optimized while preserving the global equation (<span class="math inline">\(\textbf{h} + \textbf{d}_{r} \approx \textbf{t}\)</span>) <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">135</a>]</span>. Other approaches <span class="citation" data-cites="R8kotaKY BRGxlTb9">[<a href="#ref-R8kotaKY" role="doc-biblioref">136</a>,<a href="#ref-BRGxlTb9" role="doc-biblioref">137</a>]</span> have built off of the TransE and TransH models. In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.</p>
+<p>Translational distance models treat edges in a knowledge graph as linear transformations. As an example, one such algorithm, TransE <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">136</a>]</span>, treats every node-edge pair as a triplet with head nodes represented as <span class="math inline">\(\textbf{h}\)</span>, edges represented as <span class="math inline">\(\textbf{r}\)</span>, and tail nodes represented as <span class="math inline">\(\textbf{t}\)</span>. These representations are combined into an equation that mimics the iconic word vectors translations (<span class="math inline">\(\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}\)</span>) from the Word2vec model <span class="citation" data-cites="u5iJzbp9">[<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. The equation is shown as follows: <span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>. Starting at the head node (<span class="math inline">\(\textbf{h}\)</span>), add the edge vector (<span class="math inline">\(\textbf{r}\)</span>) and the result should be the tail node (<span class="math inline">\(\textbf{t}\)</span>). TransE optimizes embeddings for <span class="math inline">\(\textbf{h}\)</span>, <span class="math inline">\(\textbf{r}\)</span>, <span class="math inline">\(\textbf{t}\)</span>, while guaranteeing the global equation (<span class="math inline">\(\textbf{h} + \textbf{r} \approx \textbf{t}\)</span>) is satisfied <span class="citation" data-cites="mGBbZq62">[<a href="#ref-mGBbZq62" role="doc-biblioref">136</a>]</span>. A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.</p>
+<p>Wang et al. <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">137</a>]</span> attempted to resolve the one to one mapping issue by developing the TransH model. TransH treats relations as hyperplanes rather than a regular vector and projects the head (<span class="math inline">\(\textbf{h}\)</span>) and tail (<span class="math inline">\(\textbf{t}\)</span>) nodes onto the hyperplane. Following this projection, a distance vector (<span class="math inline">\(\textbf{d}_{r}\)</span>) is calculated between the projected head and tail nodes. Finally, each vector is optimized while preserving the global equation (<span class="math inline">\(\textbf{h} + \textbf{d}_{r} \approx \textbf{t}\)</span>) <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">137</a>]</span>. Other approaches <span class="citation" data-cites="R8kotaKY BRGxlTb9">[<a href="#ref-R8kotaKY" role="doc-biblioref">138</a>,<a href="#ref-BRGxlTb9" role="doc-biblioref">139</a>]</span> have built off of the TransE and TransH models. In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.</p>
 <h4 id="deep-learning">Deep Learning</h4>
 <p>Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space. Many techniques that use deep learning for knowledge graphs are based on word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>, a set of approaches that are widely used for natural language processing. The goal of word2vec is to project words into a low dimensional space that preserves their semantic meaning. Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW). Both models are feed-forward neural networks, but CBOW models are trained to predict a word given it’s context while skip-gram models are trained to predict the context given a word <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.</p>
-<p>Deepwalk <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">138</a>]</span> is an early method designed to project a knowledge graph into a low dimensional space. The first step of this method is to perform a random walk along a knowledge graph. During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">138</a>]</span>. A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached. Grover and Leskovec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">139</a>]</span> demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result. Node2vec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">139</a>]</span> operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes. A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type. Various approaches have evolved to fix this limitation by incorporating node, edge and even path types when projecting nodes into a low dimensional space <span class="citation" data-cites="BatC4UOA 1AeZs6xaT 1G1nukcFt eSGflyQ5">[<a href="#ref-BatC4UOA" role="doc-biblioref">140</a>,<a href="#ref-1AeZs6xaT" role="doc-biblioref">141</a>,<a href="#ref-1G1nukcFt" role="doc-biblioref">142</a>,<a href="#ref-eSGflyQ5" role="doc-biblioref">143</a>]</span>. These approaches primarily capture a network’s local structure. An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.</p>
-<p>Some deep learning approaches use an adjacency matrix as input <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> instead of using the word2vec framing. Algorithms such as auto-encoders can also generate network embeddings <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">144</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">145</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">146</a>]</span>. Autoencoders <span class="citation" data-cites="DZT65ZRY 1ErNQZjBt">[<a href="#ref-DZT65ZRY" role="doc-biblioref">147</a>,<a href="#ref-1ErNQZjBt" role="doc-biblioref">148</a>]</span> are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input. The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">144</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">145</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">146</a>]</span>. Despite the high potential of this approach, this method relies on an adjacency matrix for input. If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">149</a>]</span>. Plus, Khosla et al.<span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">149</a>]</span> discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification. Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">149</a>]</span>. Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.</p>
+<p>Deepwalk <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">140</a>]</span> is an early method designed to project a knowledge graph into a low dimensional space. The first step of this method is to perform a random walk along a knowledge graph. During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span>. After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space <span class="citation" data-cites="7BUncUx3">[<a href="#ref-7BUncUx3" role="doc-biblioref">140</a>]</span>. A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached. Grover and Leskovec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">141</a>]</span> demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result. Node2vec <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">141</a>]</span> operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes. A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type. Various approaches have evolved to fix this limitation by incorporating node, edge and even path types when projecting nodes into a low dimensional space <span class="citation" data-cites="BatC4UOA 1AeZs6xaT 1G1nukcFt eSGflyQ5">[<a href="#ref-BatC4UOA" role="doc-biblioref">142</a>,<a href="#ref-1AeZs6xaT" role="doc-biblioref">143</a>,<a href="#ref-1G1nukcFt" role="doc-biblioref">144</a>,<a href="#ref-eSGflyQ5" role="doc-biblioref">145</a>]</span>. These approaches primarily capture a network’s local structure. An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.</p>
+<p>Some deep learning approaches use an adjacency matrix as input <span class="citation" data-cites="u5iJzbp9 1GhHIDxuW">[<a href="#ref-1GhHIDxuW" role="doc-biblioref">95</a>,<a href="#ref-u5iJzbp9" role="doc-biblioref">96</a>]</span> instead of using the word2vec framing. Algorithms such as auto-encoders can also generate network embeddings <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">146</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">147</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">148</a>]</span>. Autoencoders <span class="citation" data-cites="DZT65ZRY 1ErNQZjBt">[<a href="#ref-DZT65ZRY" role="doc-biblioref">149</a>,<a href="#ref-1ErNQZjBt" role="doc-biblioref">150</a>]</span> are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input. The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space <span class="citation" data-cites="bt1KIf4U hjIIetVM 1A6Dhbwkr">[<a href="#ref-bt1KIf4U" role="doc-biblioref">146</a>,<a href="#ref-hjIIetVM" role="doc-biblioref">147</a>,<a href="#ref-1A6Dhbwkr" role="doc-biblioref">148</a>]</span>. Despite the high potential of this approach, this method relies on an adjacency matrix for input. If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">151</a>]</span>. Plus, Khosla et al.<span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">151</a>]</span> discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification. Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph <span class="citation" data-cites="YVOAlp8C">[<a href="#ref-YVOAlp8C" role="doc-biblioref">151</a>]</span>. Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.</p>
 <h3 id="unifying-applications">Unifying Applications</h3>
-<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">150</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">151</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">153</a>]</span> (Figure <a href="#fig:unifying_applications">5</a>). In this section we discuss how knowledge graphs are being applied in biomedical settings. We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
+<p>Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions <span class="citation" data-cites="1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">152</a>]</span> to prioritizing cancer genes <span class="citation" data-cites="17R6q0KTd">[<a href="#ref-17R6q0KTd" role="doc-biblioref">153</a>]</span> to recommending safer drugs to patients <span class="citation" data-cites="aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">154</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">155</a>]</span> (Figure <a href="#fig:unifying_applications">5</a>). In this section we discuss how knowledge graphs are being applied in biomedical settings and put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.</p>
 <figure>
 <img src="images/figures/unifying_applications_overview.png" alt="Figure 5: Overview of biomedical applications that make use of knowledge graphs. Categories consist of: (a) Multi-Omic applications, (b) Pharmaceutical Applications and (c) Clinical Applications." id="fig:unifying_applications" /><figcaption><span>Figure 5:</span> Overview of biomedical applications that make use of knowledge graphs. Categories consist of: (a) Multi-Omic applications, (b) Pharmaceutical Applications and (c) Clinical Applications.</figcaption>
 </figure>
 <h4 id="multi-omic-applications">Multi-Omic Applications</h4>
-<p>Multi-omic applications for knowledge graphs include efforts to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome. Approaches in this category use knowledge graphs to establish connections between -omic entities as well as diseases. Such tasks include gene-symptom prioritization <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">154</a>]</span>, protein-protein interaction prediction [<span class="citation" data-cites="6O3BO6WO"><a href="#ref-6O3BO6WO" role="doc-biblioref">155</a></span>;10.1186/1752-0509-9-S1-S9], and detecting miRNA-disease associations <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span>. We focus specifically on multi-omic applications of algorithms that project knowledge graphs into a low dimensional space to make connections.</p>
-<p>Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins. Shen et al. <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span> used an algorithm called collaborative filtering to establish an association between miRNA and diseases. The authors constructed an miRNA-Disease network using the HMDDD database <span class="citation" data-cites="1F18ycwfS">[<a href="#ref-1F18ycwfS" role="doc-biblioref">157</a>]</span> and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases. This adjacency matrix was decomposed into small rectangular matrices using SVD, then these matricies were used to calculate similarity scores between the miRNA and diseases. High scores implied a high likelihood that a given miRNA had an association with a given disease <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span>. Other approaches have built off of Shen et al.’s <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span> work by incorpoating novel ways to perform matrix factorization <span class="citation" data-cites="1DjgsuPV2 hZ2R5BRj 4xcJzyPc">[<a href="#ref-1DjgsuPV2" role="doc-biblioref">158</a>,<a href="#ref-hZ2R5BRj" role="doc-biblioref">159</a>,<a href="#ref-4xcJzyPc" role="doc-biblioref">160</a>]</span> or by integrating machine learning models in conjunction with matrix factorization <span class="citation" data-cites="icSe8Yyw">[<a href="#ref-icSe8Yyw" role="doc-biblioref">161</a>]</span>. These methods provided high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">156</a>]</span>. Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions <span class="citation" data-cites="6FrpIkNZ 6O3BO6WO Y2RTnbCe">[<a href="#ref-6O3BO6WO" role="doc-biblioref">155</a>,<a href="#ref-6FrpIkNZ" role="doc-biblioref">162</a>,<a href="#ref-Y2RTnbCe" role="doc-biblioref">163</a>]</span>. Though extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation of such approaches.</p>
-<p>Approaches that use deep learning have mainly used the node2vec model <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">139</a>]</span> or variants of that model. Yang et al. <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">154</a>]</span> used node2vec to create a recommendation system to infer associations between genes and disease symptoms. The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes-diseases and diseases-disease symptoms. The generated knowledge graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph. High scores implicated high chance for an association <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">154</a>]</span>. This approach outperformed methods that didn’t use a knowledge graph; however, validation was difficult as it involved manual curation of the literature <span class="citation" data-cites="otY29wFV"><a href="#ref-otY29wFV" role="doc-biblioref">154</a></span>]. Similar approaches used variants of the node2vec algorithm to predict gene-disease associations <span class="citation" data-cites="1D9FTzRBg 6PISrkV5 taI1UUAE">[<a href="#ref-1D9FTzRBg" role="doc-biblioref">8</a>,<a href="#ref-6PISrkV5" role="doc-biblioref">164</a>,<a href="#ref-taI1UUAE" role="doc-biblioref">165</a>]</span> analyze RNA-seq data <span class="citation" data-cites="qbHGtxhA">[<a href="#ref-qbHGtxhA" role="doc-biblioref">166</a>]</span> and infer novel protein information <span class="citation" data-cites="QQtRw08H 8qB2oCgy RYW74Wvh 1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">150</a>,<a href="#ref-QQtRw08H" role="doc-biblioref">167</a>,<a href="#ref-8qB2oCgy" role="doc-biblioref">168</a>,<a href="#ref-RYW74Wvh" role="doc-biblioref">169</a>]</span>. Future extensions of these applications should consider incorporating more sources of data such as compounds, anatomic locations or even gene pathways to improve prediciton performance.</p>
+<p>Multi-omic applications for knowledge graphs include efforts to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome. Approaches in this category use knowledge graphs to establish connections between -omic entities as well as diseases. Such tasks include gene-symptom prioritization <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">156</a>]</span>, protein-protein interaction prediction <span class="citation" data-cites="6O3BO6WO Y2RTnbCe">[<a href="#ref-6O3BO6WO" role="doc-biblioref">157</a>,<a href="#ref-Y2RTnbCe" role="doc-biblioref">158</a>]</span>, and detecting miRNA-disease associations <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span>. We focus specifically on multi-omic applications of algorithms that project knowledge graphs into a low dimensional space to make connections.</p>
+<p>Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins. Shen et al. <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span> used an algorithm called collaborative filtering to establish an association between miRNA and diseases. The authors constructed an miRNA-Disease network using the HMDDD database <span class="citation" data-cites="1F18ycwfS">[<a href="#ref-1F18ycwfS" role="doc-biblioref">159</a>]</span> and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases. This adjacency matrix was decomposed into small rectangular matrices using SVD, then these matricies were used to calculate similarity scores between the miRNA and diseases. High scores implied a high likelihood that a given miRNA had an association with a given disease <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span>. Other approaches have built off of Shen et al.’s <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span> work by incorpoating novel ways to perform matrix factorization <span class="citation" data-cites="1DjgsuPV2 hZ2R5BRj 4xcJzyPc">[<a href="#ref-1DjgsuPV2" role="doc-biblioref">160</a>,<a href="#ref-hZ2R5BRj" role="doc-biblioref">161</a>,<a href="#ref-4xcJzyPc" role="doc-biblioref">162</a>]</span> or by integrating machine learning models in conjunction with matrix factorization <span class="citation" data-cites="icSe8Yyw">[<a href="#ref-icSe8Yyw" role="doc-biblioref">163</a>]</span>. These methods provided high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best <span class="citation" data-cites="YyPaovQ0">[<a href="#ref-YyPaovQ0" role="doc-biblioref">119</a>]</span>. Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions <span class="citation" data-cites="6FrpIkNZ 6O3BO6WO Y2RTnbCe">[<a href="#ref-6O3BO6WO" role="doc-biblioref">157</a>,<a href="#ref-Y2RTnbCe" role="doc-biblioref">158</a>,<a href="#ref-6FrpIkNZ" role="doc-biblioref">164</a>]</span>. Though extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation of such approaches.</p>
+<p>Approaches that use deep learning have mainly used the node2vec model <span class="citation" data-cites="PD4udqRe">[<a href="#ref-PD4udqRe" role="doc-biblioref">141</a>]</span> or variants of that model. Yang et al. <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">156</a>]</span> used node2vec to create a recommendation system to infer associations between genes and disease symptoms. The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes-diseases and diseases-disease symptoms. The generated knowledge graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph. High scores implicated high chance for an association <span class="citation" data-cites="otY29wFV">[<a href="#ref-otY29wFV" role="doc-biblioref">156</a>]</span>. This approach outperformed methods that didn’t use a knowledge graph; however, validation was difficult as it involved manual curation of the literature <span class="citation" data-cites="otY29wFV"><a href="#ref-otY29wFV" role="doc-biblioref">156</a></span>]. Similar approaches used variants of the node2vec algorithm to predict gene-disease associations <span class="citation" data-cites="1D9FTzRBg 6PISrkV5 taI1UUAE">[<a href="#ref-1D9FTzRBg" role="doc-biblioref">8</a>,<a href="#ref-6PISrkV5" role="doc-biblioref">165</a>,<a href="#ref-taI1UUAE" role="doc-biblioref">166</a>]</span> analyze RNA-seq data <span class="citation" data-cites="qbHGtxhA">[<a href="#ref-qbHGtxhA" role="doc-biblioref">167</a>]</span> and infer novel protein information <span class="citation" data-cites="QQtRw08H 8qB2oCgy RYW74Wvh 1EP2NrAhl">[<a href="#ref-1EP2NrAhl" role="doc-biblioref">152</a>,<a href="#ref-QQtRw08H" role="doc-biblioref">168</a>,<a href="#ref-8qB2oCgy" role="doc-biblioref">169</a>,<a href="#ref-RYW74Wvh" role="doc-biblioref">170</a>]</span>. Future extensions of these applications should consider incorporating more sources of data such as compounds, anatomic locations or even gene pathways to improve prediciton performance.</p>
 <p>Knowledge graphs have aided the multi-omics field by generating novel discoveries. Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, and translational models may be an untapped resource that could aid future efforts. Another area of exploration could be the incorporation of multiple sources of information such as anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).</p>
 <h4 id="pharmaceutical-applications">Pharmaceutical Applications</h4>
-<p>There are many examples of how knowledge graphs are applied to identify new properties of drugs. Tasks in this context involve prediction drugs interacting with other drugs <span class="citation" data-cites="NnOS86ev">[<a href="#ref-NnOS86ev" role="doc-biblioref">170</a>]</span>, identifying molecular targets a drug might interact with <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span> and identifying new disease treatments for previously established drugs <span class="citation" data-cites="sj2fr8fp">[<a href="#ref-sj2fr8fp" role="doc-biblioref">172</a>]</span>. As with other applications, we focus on those that use low-dimensional representations.</p>
-<p>Similar to multi-omic applications knowledge graphs have been used in recommendation systems to infer novel links between drugs and diseases. Dai et al. <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span> used collaborative filtering to infer drug-disease associations. The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network. They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. Then the authors generated an adjacency matrix where rows represent drugs and columns represent diseases and decomposed this matrix into two small rectangular matrices. These matrices were used to calculate similarity scores between all drugs and all diseases where high values implicate an association <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">171</a>]</span>. Related approaches have been used to infer drug-target interactions <span class="citation" data-cites="S0MrOfj0 HOrwJFzW Z391qdG0">[<a href="#ref-S0MrOfj0" role="doc-biblioref">173</a>,<a href="#ref-HOrwJFzW" role="doc-biblioref">174</a>,<a href="#ref-Z391qdG0" role="doc-biblioref">175</a>]</span> and drug-disease treatments <span class="citation" data-cites="dbgPwLaZ 94kKAy9w oKdMo9U9 16FEYidu2 18YRZaX7n">[<a href="#ref-dbgPwLaZ" role="doc-biblioref">176</a>,<a href="#ref-94kKAy9w" role="doc-biblioref">177</a>,<a href="#ref-oKdMo9U9" role="doc-biblioref">178</a>,<a href="#ref-16FEYidu2" role="doc-biblioref">179</a>,<a href="#ref-18YRZaX7n" role="doc-biblioref">180</a>]</span> In spite of reported success, these approaches are limited to the drugs and diseases contained in the network. Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.</p>
-<p>Deep learning applications have used node2vec <span class="citation" data-cites="19E33rJiu dR3gjJXP">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>,<a href="#ref-dR3gjJXP" role="doc-biblioref">182</a>]</span> and auto-encoder <span class="citation" data-cites="za8DCIPS 1BT2OTuxL">[<a href="#ref-za8DCIPS" role="doc-biblioref">183</a>,<a href="#ref-1BT2OTuxL" role="doc-biblioref">184</a>]</span> approaches to project knowledge graphs into a low dimensional space. Zong et al. <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span> used a node2vec-like model to predict drug-target associations. The authors constructed a disease-target-disease network using drug centered databases: Drugbank <span class="citation" data-cites="111FgvD8J">[<a href="#ref-111FgvD8J" role="doc-biblioref">185</a>]</span> and Diseasome <span class="citation" data-cites="14fs7pzn0">[<a href="#ref-14fs7pzn0" role="doc-biblioref">186</a>]</span>. Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings. Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">181</a>]</span>. A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance. Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span>.</p>
-<p>Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments. Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation. Due to the success of deep learning <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">187</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">188</a>]</span> the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance. Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.</p>
+<p>There are many examples of how knowledge graphs are applied to identify new properties of drugs. Tasks in this context involve prediction drugs interacting with other drugs <span class="citation" data-cites="NnOS86ev">[<a href="#ref-NnOS86ev" role="doc-biblioref">171</a>]</span>, identifying molecular targets a drug might interact with <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">172</a>]</span> and identifying new disease treatments for previously established drugs <span class="citation" data-cites="sj2fr8fp">[<a href="#ref-sj2fr8fp" role="doc-biblioref">173</a>]</span>. As with other applications, we focus on those that use low-dimensional representations.</p>
+<p>Similar to multi-omic applications knowledge graphs have been used in recommendation systems to infer novel links between drugs and diseases. Dai et al. <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">172</a>]</span> used collaborative filtering to infer drug-disease associations. The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network. They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. Then the authors generated an adjacency matrix where rows represent drugs and columns represent diseases and decomposed this matrix into two small rectangular matrices. These matrices were used to calculate similarity scores between all drugs and all diseases where high values implicate an association <span class="citation" data-cites="11ua4nEkY">[<a href="#ref-11ua4nEkY" role="doc-biblioref">172</a>]</span>. Related approaches have been used to infer drug-target interactions <span class="citation" data-cites="S0MrOfj0 HOrwJFzW Z391qdG0">[<a href="#ref-S0MrOfj0" role="doc-biblioref">174</a>,<a href="#ref-HOrwJFzW" role="doc-biblioref">175</a>,<a href="#ref-Z391qdG0" role="doc-biblioref">176</a>]</span> and drug-disease treatments <span class="citation" data-cites="dbgPwLaZ 94kKAy9w oKdMo9U9 16FEYidu2 18YRZaX7n">[<a href="#ref-dbgPwLaZ" role="doc-biblioref">177</a>,<a href="#ref-94kKAy9w" role="doc-biblioref">178</a>,<a href="#ref-oKdMo9U9" role="doc-biblioref">179</a>,<a href="#ref-16FEYidu2" role="doc-biblioref">180</a>,<a href="#ref-18YRZaX7n" role="doc-biblioref">181</a>]</span> In spite of reported success, these approaches are limited to the drugs and diseases contained in the network. Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.</p>
+<p>Deep learning applications have used node2vec <span class="citation" data-cites="19E33rJiu dR3gjJXP">[<a href="#ref-19E33rJiu" role="doc-biblioref">182</a>,<a href="#ref-dR3gjJXP" role="doc-biblioref">183</a>]</span> and auto-encoder <span class="citation" data-cites="za8DCIPS 1BT2OTuxL">[<a href="#ref-za8DCIPS" role="doc-biblioref">184</a>,<a href="#ref-1BT2OTuxL" role="doc-biblioref">185</a>]</span> approaches to project knowledge graphs into a low dimensional space. Zong et al. <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">182</a>]</span> used a node2vec-like model to predict drug-target associations. The authors constructed a disease-target-disease network using drug centered databases: Drugbank <span class="citation" data-cites="111FgvD8J">[<a href="#ref-111FgvD8J" role="doc-biblioref">186</a>]</span> and Diseasome <span class="citation" data-cites="14fs7pzn0">[<a href="#ref-14fs7pzn0" role="doc-biblioref">187</a>]</span>. Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings. Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets <span class="citation" data-cites="19E33rJiu">[<a href="#ref-19E33rJiu" role="doc-biblioref">182</a>]</span>. A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance. Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">188</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">189</a>]</span>.</p>
+<p>Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments. Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation. Due to the success of deep learning <span class="citation" data-cites="245Px4P3 WMEox1CM">[<a href="#ref-245Px4P3" role="doc-biblioref">188</a>,<a href="#ref-WMEox1CM" role="doc-biblioref">189</a>]</span> the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance. Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.</p>
 <h4 id="clinical-applications">Clinical applications</h4>
-<p>Using knowledge graphs for clinical applications is in early stages of development, but the long-term goal is to use analyses of knowledge graphs to aid patient care. Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases and edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease <span class="citation" data-cites="xNv4Rkif mrfQbq3g xU6Ims3W gddb9uXr">[<a href="#ref-gddb9uXr" role="doc-biblioref">17</a>,<a href="#ref-xNv4Rkif" role="doc-biblioref">189</a>,<a href="#ref-mrfQbq3g" role="doc-biblioref">190</a>,<a href="#ref-xU6Ims3W" role="doc-biblioref">191</a>]</span>. Tasks range from improving patient diagnoses <span class="citation" data-cites="UuF5A9Pu OCnhKscH">[<a href="#ref-UuF5A9Pu" role="doc-biblioref">192</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">193</a>]</span> to recommending safer drugs for patients <span class="citation" data-cites="aLsdEzlV OCnhKscH">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">193</a>]</span>.</p>
-<p>Early work in this field applied translational models (Figure <a href="#fig:unifying_techniques_overview">4</a> (b)) to knowledge graphs to recommend safe drugs. Wang et al. <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>]</span> used a variant of the TransH <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">135</a>]</span> model to create such a system for patients. They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network. Every node in the graph was embedded while satisfying the following equation: <span class="math inline">\(\textbf{h} - r \approx \textbf{t}\)</span>. Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>]</span>. Researchers in <span class="citation" data-cites="BRGxlTb9">[<a href="#ref-BRGxlTb9" role="doc-biblioref">137</a>]</span> applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.</p>
-<p>In contrast with other applications where node2vec and auto-encoder models have become established, deep learning methods in this area often use graph attention models <span class="citation" data-cites="Exfv0f4l">[<a href="#ref-Exfv0f4l" role="doc-biblioref">194</a>]</span>. These models mimic machine translation models <span class="citation" data-cites="haHzVaaz">[<a href="#ref-haHzVaaz" role="doc-biblioref">195</a>]</span> and aim to simultaneously embed knowledge graphs into a low dimensional space and perform the task at hand. Choi et al. <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span> used a graph attention model to predict patient diagnoses. The authors constructed a directed graph using medical concepts from patient EHR data. This directed graph was fed into a graph attention network and then used to predict a patient’s likelihood of heart failure <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span>. Other approaches have used graph attention models to perform clinical tasks such as drug safety recommendations <span class="citation" data-cites="8vj5v8un">[<a href="#ref-8vj5v8un" role="doc-biblioref">153</a>]</span> and patient diagnoses <span class="citation" data-cites="QNJ3b5bY">[<a href="#ref-QNJ3b5bY" role="doc-biblioref">197</a>]</span>.</p>
-<p>Knowledge graphs have shown promising results when used for clinical applications; however, there is still room for improvement. Most approaches have run into the common problem with missing data from EHR <span class="citation" data-cites="10nDTiETi aLsdEzlV 8vj5v8un">[<a href="#ref-aLsdEzlV" role="doc-biblioref">152</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">153</a>,<a href="#ref-10nDTiETi" role="doc-biblioref">196</a>]</span>. Future directions consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.</p>
+<p>Using knowledge graphs for clinical applications is in early stages of development, but the long-term goal is to use analyses of knowledge graphs to aid patient care. Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases and edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease <span class="citation" data-cites="xNv4Rkif mrfQbq3g xU6Ims3W gddb9uXr">[<a href="#ref-gddb9uXr" role="doc-biblioref">17</a>,<a href="#ref-xNv4Rkif" role="doc-biblioref">190</a>,<a href="#ref-mrfQbq3g" role="doc-biblioref">191</a>,<a href="#ref-xU6Ims3W" role="doc-biblioref">192</a>]</span>. Tasks range from improving patient diagnoses <span class="citation" data-cites="UuF5A9Pu OCnhKscH">[<a href="#ref-UuF5A9Pu" role="doc-biblioref">193</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">194</a>]</span> to recommending safer drugs for patients <span class="citation" data-cites="aLsdEzlV OCnhKscH">[<a href="#ref-aLsdEzlV" role="doc-biblioref">154</a>,<a href="#ref-OCnhKscH" role="doc-biblioref">194</a>]</span>.</p>
+<p>Early work in this field applied translational models (Figure <a href="#fig:unifying_techniques_overview">4</a> (b)) to knowledge graphs to recommend safe drugs. Wang et al. <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">154</a>]</span> used a variant of the TransH <span class="citation" data-cites="nprR5cVj">[<a href="#ref-nprR5cVj" role="doc-biblioref">137</a>]</span> model to create such a system for patients. They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network. Every node in the graph was embedded while satisfying the following equation: <span class="math inline">\(\textbf{h} - r \approx \textbf{t}\)</span>. Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions <span class="citation" data-cites="aLsdEzlV">[<a href="#ref-aLsdEzlV" role="doc-biblioref">154</a>]</span>. Researchers in <span class="citation" data-cites="BRGxlTb9">[<a href="#ref-BRGxlTb9" role="doc-biblioref">139</a>]</span> applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.</p>
+<p>In contrast with other applications where node2vec and auto-encoder models have become established, deep learning methods in this area often use graph attention models <span class="citation" data-cites="Exfv0f4l">[<a href="#ref-Exfv0f4l" role="doc-biblioref">195</a>]</span>. These models mimic machine translation models <span class="citation" data-cites="haHzVaaz">[<a href="#ref-haHzVaaz" role="doc-biblioref">196</a>]</span> and aim to simultaneously embed knowledge graphs into a low dimensional space and perform the task at hand. Choi et al. <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">118</a>]</span> used a graph attention model to predict patient diagnoses. The authors constructed a directed graph using medical concepts from patient EHR data. This directed graph was fed into a graph attention network and then used to predict a patient’s likelihood of heart failure <span class="citation" data-cites="10nDTiETi">[<a href="#ref-10nDTiETi" role="doc-biblioref">118</a>]</span>. Other approaches have used graph attention models to perform clinical tasks such as drug safety recommendations <span class="citation" data-cites="8vj5v8un">[<a href="#ref-8vj5v8un" role="doc-biblioref">155</a>]</span> and patient diagnoses <span class="citation" data-cites="QNJ3b5bY">[<a href="#ref-QNJ3b5bY" role="doc-biblioref">197</a>]</span>.</p>
+<p>Knowledge graphs have shown promising results when used for clinical applications; however, there is still room for improvement. Most approaches have run into the common problem with missing data from EHR <span class="citation" data-cites="10nDTiETi aLsdEzlV 8vj5v8un">[<a href="#ref-10nDTiETi" role="doc-biblioref">118</a>,<a href="#ref-aLsdEzlV" role="doc-biblioref">154</a>,<a href="#ref-8vj5v8un" role="doc-biblioref">155</a>]</span>. Future directions consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.</p>
 <h2 id="conclusion">Conclusion</h2>
 <ol type="1">
 <li>Summarize discussed positives and pitfalls</li>
@@ -995,458 +991,458 @@ Michael Bada, Miriam Eckert, Donald Evans, Kristin Garcia, Krista Shipley, Dmitr
 <em>BMC Bioinformatics</em> (2012-07-09) <a href="https://doi.org/gb8vdr">https://doi.org/gb8vdr</a><br />
 DOI: <a href="https://doi.org/10.1186/1471-2105-13-161">10.1186/1471-2105-13-161</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/22776079">22776079</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3476437">PMC3476437</a></p>
 </div>
+<div id="ref-10nDTiETi">
+<p>118. <strong>GRAM: Graph-based Attention Model for Healthcare Representation Learning</strong><br />
+Edward Choi, Mohammad Taha Bahadori, Le Song, Walter F. Stewart, Jimeng Sun<br />
+<em>arXiv</em> (2016-11-21) <a href="https://arxiv.org/abs/1611.07012v3">https://arxiv.org/abs/1611.07012v3</a></p>
+</div>
+<div id="ref-YyPaovQ0">
+<p>119. <strong>miRNA-Disease Association Prediction with Collaborative Matrix Factorization</strong><br />
+Zhen Shen, You-Hua Zhang, Kyungsook Han, Asoke K. Nandi, Barry Honig, De-Shuang Huang<br />
+<em>Complexity</em> (2017) <a href="https://doi.org/ggmrpm">https://doi.org/ggmrpm</a><br />
+DOI: <a href="https://doi.org/10.1155/2017/2498957">10.1155/2017/2498957</a></p>
+</div>
 <div id="ref-j7KrVyi8">
-<p>118. <strong>Deep Residual Learning for Image Recognition</strong><br />
+<p>120. <strong>Deep Residual Learning for Image Recognition</strong><br />
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun<br />
 <em>arXiv</em> (2015-12-10) <a href="https://arxiv.org/abs/1512.03385v1">https://arxiv.org/abs/1512.03385v1</a></p>
 </div>
 <div id="ref-DSiHGDz9">
-<p>119. <strong>Representation Learning on Graphs: Methods and Applications</strong><br />
+<p>121. <strong>Representation Learning on Graphs: Methods and Applications</strong><br />
 William L. Hamilton, Rex Ying, Jure Leskovec<br />
 <em>arXiv</em> (2017-09-17) <a href="https://arxiv.org/abs/1709.05584v3">https://arxiv.org/abs/1709.05584v3</a></p>
 </div>
 <div id="ref-18ZTxo1gJ">
-<p>120. <strong>Signed laplacian embedding for supervised dimension reduction</strong><br />
+<p>122. <strong>Signed laplacian embedding for supervised dimension reduction</strong><br />
 Chen Gong, Dacheng Tao, Jie Yang, Keren Fu<br />
 <em>Proceedings of the twenty-eighth aaai conference on artificial intelligence</em> (2014) <a href="http://dl.acm.org/citation.cfm?id=2892753.2892809">http://dl.acm.org/citation.cfm?id=2892753.2892809</a></p>
 </div>
 <div id="ref-u6NlpEUq">
-<p>121. <strong>A Semi-NMF-PCA Unified Framework for Data Clustering</strong><br />
+<p>123. <strong>A Semi-NMF-PCA Unified Framework for Data Clustering</strong><br />
 Kais Allab, Lazhar Labiod, Mohamed Nadif<br />
 <em>IEEE Transactions on Knowledge and Data Engineering</em> (2017-01-01) <a href="https://doi.org/f9hm9g">https://doi.org/f9hm9g</a><br />
 DOI: <a href="https://doi.org/10.1109/tkde.2016.2606098">10.1109/tkde.2016.2606098</a></p>
 </div>
 <div id="ref-dylXYFm6">
-<p>122. <strong>Partially supervised graph embedding for positive unlabelled feature selection</strong><br />
+<p>124. <strong>Partially supervised graph embedding for positive unlabelled feature selection</strong><br />
 Yufei Han, Yun Shen<br />
 <em>Proceedings of the twenty-fifth international joint conference on artificial intelligence</em> (2016) <a href="http://dl.acm.org/citation.cfm?id=3060832.3060837">http://dl.acm.org/citation.cfm?id=3060832.3060837</a><br />
 ISBN: <a href="https://worldcat.org/isbn/978-1-57735-770-4">978-1-57735-770-4</a></p>
 </div>
 <div id="ref-9F3iyg8e">
-<p>123. <strong>GraRep</strong><br />
+<p>125. <strong>GraRep</strong><br />
 Shaosheng Cao, Wei Lu, Qiongkai Xu<br />
 <em>Proceedings of the 24th ACM International on Conference on Information and Knowledge Management - CIKM ’15</em> (2015) <a href="https://doi.org/gf8rgf">https://doi.org/gf8rgf</a><br />
 DOI: <a href="https://doi.org/10.1145/2806416.2806512">10.1145/2806416.2806512</a></p>
 </div>
 <div id="ref-E5xHFo4P">
-<p>124. <strong>Improved Knowledge Base Completion by Path-Augmented TransR Model</strong><br />
+<p>126. <strong>Improved Knowledge Base Completion by Path-Augmented TransR Model</strong><br />
 Wenhao Huang, Ge Li, Zhi Jin<br />
 <em>arXiv</em> (2016-10-06) <a href="https://arxiv.org/abs/1610.04073v1">https://arxiv.org/abs/1610.04073v1</a></p>
 </div>
 <div id="ref-13cvwdrYY">
-<p>125. <strong>A Global Geometric Framework for Nonlinear Dimensionality Reduction</strong><br />
+<p>127. <strong>A Global Geometric Framework for Nonlinear Dimensionality Reduction</strong><br />
 J. B. Tenenbaum<br />
 <em>Science</em> (2000-12-22) <a href="https://doi.org/cz8wgk">https://doi.org/cz8wgk</a><br />
 DOI: <a href="https://doi.org/10.1126/science.290.5500.2319">10.1126/science.290.5500.2319</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/11125149">11125149</a></p>
 </div>
 <div id="ref-MxPEnWF1">
-<p>126. <strong>Laplacian Eigenmaps for Dimensionality Reduction and Data Representation</strong><br />
+<p>128. <strong>Laplacian Eigenmaps for Dimensionality Reduction and Data Representation</strong><br />
 Mikhail Belkin, Partha Niyogi<br />
 <em>Neural Computation</em> (2003-06) <a href="https://doi.org/bbr9cw">https://doi.org/bbr9cw</a><br />
 DOI: <a href="https://doi.org/10.1162/089976603321780317">10.1162/089976603321780317</a></p>
 </div>
 <div id="ref-sSbTaHau">
-<p>127. <strong>Principal component analysis</strong><br />
+<p>129. <strong>Principal component analysis</strong><br />
 Svante Wold, Kim Esbensen, Paul Geladi<br />
 <em>Chemometrics and Intelligent Laboratory Systems</em> (1987-08) <a href="https://doi.org/bm8dnf">https://doi.org/bm8dnf</a><br />
 DOI: <a href="https://doi.org/10.1016/0169-7439(87)80084-9">10.1016/0169-7439(87)80084-9</a></p>
 </div>
 <div id="ref-H0ez30Pz">
-<p>128. <strong>The approximation of one matrix by another of lower rank</strong><br />
+<p>130. <strong>The approximation of one matrix by another of lower rank</strong><br />
 Carl Eckart, Gale Young<br />
 <em>Psychometrika</em> (1936-09) <a href="https://doi.org/c2frtd">https://doi.org/c2frtd</a><br />
 DOI: <a href="https://doi.org/10.1007/bf02288367">10.1007/bf02288367</a></p>
 </div>
 <div id="ref-TFsQrgwM">
-<p>129. <strong>Network embedding as matrix factorization: Unifying deepwalk, line, pte, and node2vec</strong><br />
+<p>131. <strong>Network embedding as matrix factorization: Unifying deepwalk, line, pte, and node2vec</strong><br />
 Jiezhong Qiu, Yuxiao Dong, Hao Ma, Jian Li, Kuansan Wang, Jie Tang<br />
 <em>Proceedings of the eleventh acm international conference on web search and data mining</em> (2018) <a href="https://doi.org/10.1145/3159652.3159706">https://doi.org/10.1145/3159652.3159706</a><br />
 DOI: <a href="https://doi.org/10.1145/3159652.3159706">10.1145/3159652.3159706</a> · ISBN: <a href="https://worldcat.org/isbn/9781450355810">9781450355810</a></p>
 </div>
 <div id="ref-Z5VAJJmP">
-<p>130. <strong>A Survey of Collaborative Filtering Techniques</strong><br />
+<p>132. <strong>A Survey of Collaborative Filtering Techniques</strong><br />
 Xiaoyuan Su, Taghi M. Khoshgoftaar<br />
 <em>Advances in Artificial Intelligence</em> (2009) <a href="https://doi.org/fk9jjg">https://doi.org/fk9jjg</a><br />
 DOI: <a href="https://doi.org/10.1155/2009/421425">10.1155/2009/421425</a></p>
 </div>
 <div id="ref-OJXYxm8W">
-<p>131. <strong>Graph Embedding on Biomedical Networks: Methods, Applications, and Evaluations</strong><br />
+<p>133. <strong>Graph Embedding on Biomedical Networks: Methods, Applications, and Evaluations</strong><br />
 Xiang Yue, Zhen Wang, Jingong Huang, Srinivasan Parthasarathy, Soheil Moosavinasab, Yungui Huang, Simon M. Lin, Wen Zhang, Ping Zhang, Huan Sun<br />
 <em>arXiv</em> (2019-06-12) <a href="https://arxiv.org/abs/1906.05017v3">https://arxiv.org/abs/1906.05017v3</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/btz718">10.1093/bioinformatics/btz718</a></p>
 </div>
 <div id="ref-KzDGRrSP">
-<p>132. <strong>GLEE: Geometric Laplacian Eigenmap Embedding</strong><br />
+<p>134. <strong>GLEE: Geometric Laplacian Eigenmap Embedding</strong><br />
 Leo Torres, Kevin S Chan, Tina Eliassi-Rad<br />
 <em>arXiv</em> (2019-05-23) <a href="https://arxiv.org/abs/1905.09763v2">https://arxiv.org/abs/1905.09763v2</a></p>
 </div>
 <div id="ref-FE8pyO0l">
-<p>133. <strong>Vicus: Exploiting local structures to improve network-based analysis of biological data</strong><br />
+<p>135. <strong>Vicus: Exploiting local structures to improve network-based analysis of biological data</strong><br />
 Bo Wang, Lin Huang, Yuke Zhu, Anshul Kundaje, Serafim Batzoglou, Anna Goldenberg<br />
 <em>PLOS Computational Biology</em> (2017-10-12) <a href="https://doi.org/gb368p">https://doi.org/gb368p</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1005621">10.1371/journal.pcbi.1005621</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29023470">29023470</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5638230">PMC5638230</a></p>
 </div>
 <div id="ref-mGBbZq62">
-<p>134. <strong>Translating embeddings for modeling multi-relational data</strong><br />
+<p>136. <strong>Translating embeddings for modeling multi-relational data</strong><br />
 Antoine Bordes, Nicolas Usunier, Alberto García-Durán, Jason Weston, Oksana Yakhnenko<br />
 <em>NIPS</em> (2013)</p>
 </div>
 <div id="ref-nprR5cVj">
-<p>135. <strong>Knowledge graph embedding by translating on hyperplanes</strong><br />
+<p>137. <strong>Knowledge graph embedding by translating on hyperplanes</strong><br />
 Zhen Wang, Jianwen Zhang, Jianlin Feng, Zheng Chen<br />
 <em>Proceedings of the twenty-eighth aaai conference on artificial intelligence</em> (2014) <a href="http://dl.acm.org/citation.cfm?id=2893873.2894046">http://dl.acm.org/citation.cfm?id=2893873.2894046</a></p>
 </div>
 <div id="ref-R8kotaKY">
-<p>136. <strong>Learning entity and relation embeddings for knowledge graph completion</strong><br />
+<p>138. <strong>Learning entity and relation embeddings for knowledge graph completion</strong><br />
 Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu<br />
 <em>Proceedings of the twenty-ninth aaai conference on artificial intelligence</em> (2015) <a href="http://dl.acm.org/citation.cfm?id=2886521.2886624">http://dl.acm.org/citation.cfm?id=2886521.2886624</a><br />
 ISBN: <a href="https://worldcat.org/isbn/0-262-51129-0">0-262-51129-0</a></p>
 </div>
 <div id="ref-BRGxlTb9">
-<p>137. <strong>PrTransH: Embedding Probabilistic Medical Knowledge from Real World EMR Data</strong><br />
+<p>139. <strong>PrTransH: Embedding Probabilistic Medical Knowledge from Real World EMR Data</strong><br />
 Linfeng Li, Peng Wang, Yao Wang, Jinpeng Jiang, Buzhou Tang, Jun Yan, Shenghui Wang, Yuting Liu<br />
 <em>arXiv</em> (2019-09-02) <a href="https://arxiv.org/abs/1909.00672v1">https://arxiv.org/abs/1909.00672v1</a></p>
 </div>
 <div id="ref-7BUncUx3">
-<p>138. <strong>DeepWalk: Online Learning of Social Representations</strong><br />
+<p>140. <strong>DeepWalk: Online Learning of Social Representations</strong><br />
 Bryan Perozzi, Rami Al-Rfou, Steven Skiena<br />
 <em>arXiv</em> (2014-03-26) <a href="https://arxiv.org/abs/1403.6652v2">https://arxiv.org/abs/1403.6652v2</a><br />
 DOI: <a href="https://doi.org/10.1145/2623330.2623732">10.1145/2623330.2623732</a></p>
 </div>
 <div id="ref-PD4udqRe">
-<p>139. <strong>node2vec: Scalable Feature Learning for Networks</strong><br />
+<p>141. <strong>node2vec: Scalable Feature Learning for Networks</strong><br />
 Aditya Grover, Jure Leskovec<br />
 <em>arXiv</em> (2016-07-03) <a href="https://arxiv.org/abs/1607.00653v1">https://arxiv.org/abs/1607.00653v1</a></p>
 </div>
 <div id="ref-BatC4UOA">
-<p>140. <strong>struc2vec: Learning Node Representations from Structural Identity</strong><br />
+<p>142. <strong>struc2vec: Learning Node Representations from Structural Identity</strong><br />
 Leonardo F. R. Ribeiro, Pedro H. P. Savarese, Daniel R. Figueiredo<br />
 <em>arXiv</em> (2017-04-11) <a href="https://arxiv.org/abs/1704.03165v3">https://arxiv.org/abs/1704.03165v3</a><br />
 DOI: <a href="https://doi.org/10.1145/3097983.3098061">10.1145/3097983.3098061</a></p>
 </div>
 <div id="ref-1AeZs6xaT">
-<p>141. <strong>metapath2vec</strong><br />
+<p>143. <strong>metapath2vec</strong><br />
 Yuxiao Dong, Nitesh V. Chawla, Ananthram Swami<br />
 <em>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining - KDD ’17</em> (2017) <a href="https://doi.org/gfsqzn">https://doi.org/gfsqzn</a><br />
 DOI: <a href="https://doi.org/10.1145/3097983.3098036">10.1145/3097983.3098036</a></p>
 </div>
 <div id="ref-1G1nukcFt">
-<p>142. <strong>edge2vec: Representation learning using edge semantics for biomedical knowledge discovery</strong><br />
+<p>144. <strong>edge2vec: Representation learning using edge semantics for biomedical knowledge discovery</strong><br />
 Zheng Gao, Gang Fu, Chunping Ouyang, Satoshi Tsutsui, Xiaozhong Liu, Jeremy Yang, Christopher Gessner, Brian Foote, David Wild, Qi Yu, Ying Ding<br />
 <em>arXiv</em> (2018-09-07) <a href="https://arxiv.org/abs/1809.02269v3">https://arxiv.org/abs/1809.02269v3</a></p>
 </div>
 <div id="ref-eSGflyQ5">
-<p>143. <strong>Learning Graph Embeddings from WordNet-based Similarity Measures</strong><br />
+<p>145. <strong>Learning Graph Embeddings from WordNet-based Similarity Measures</strong><br />
 Andrey Kutuzov, Mohammad Dorgham, Oleksiy Oliynyk, Chris Biemann, Alexander Panchenko<br />
 <em>arXiv</em> (2018-08-16) <a href="https://arxiv.org/abs/1808.05611v4">https://arxiv.org/abs/1808.05611v4</a></p>
 </div>
 <div id="ref-bt1KIf4U">
-<p>144. <strong>Learning to Make Predictions on Graphs with Autoencoders</strong><br />
+<p>146. <strong>Learning to Make Predictions on Graphs with Autoencoders</strong><br />
 Phi Vu Tran<br />
 <em>arXiv</em> (2018-02-23) <a href="https://arxiv.org/abs/1802.08352v2">https://arxiv.org/abs/1802.08352v2</a><br />
 DOI: <a href="https://doi.org/10.1109/DSAA.2018.00034">10.1109/dsaa.2018.00034</a></p>
 </div>
 <div id="ref-hjIIetVM">
-<p>145. <strong>Variational Graph Auto-Encoders</strong><br />
+<p>147. <strong>Variational Graph Auto-Encoders</strong><br />
 Thomas N. Kipf, Max Welling<br />
 <em>arXiv</em> (2016-11-21) <a href="https://arxiv.org/abs/1611.07308v1">https://arxiv.org/abs/1611.07308v1</a></p>
 </div>
 <div id="ref-1A6Dhbwkr">
-<p>146. <strong>Adversarially Regularized Graph Autoencoder for Graph Embedding</strong><br />
+<p>148. <strong>Adversarially Regularized Graph Autoencoder for Graph Embedding</strong><br />
 Shirui Pan, Ruiqi Hu, Guodong Long, Jing Jiang, Lina Yao, Chengqi Zhang<br />
 <em>arXiv</em> (2018-02-13) <a href="https://arxiv.org/abs/1802.04407v2">https://arxiv.org/abs/1802.04407v2</a></p>
 </div>
 <div id="ref-DZT65ZRY">
-<p>147. <strong>Deep Learning in Neural Networks: An Overview</strong><br />
+<p>149. <strong>Deep Learning in Neural Networks: An Overview</strong><br />
 Juergen Schmidhuber<br />
 <em>arXiv</em> (2014-04-30) <a href="https://arxiv.org/abs/1404.7828v4">https://arxiv.org/abs/1404.7828v4</a><br />
 DOI: <a href="https://doi.org/10.1016/j.neunet.2014.09.003">10.1016/j.neunet.2014.09.003</a></p>
 </div>
 <div id="ref-1ErNQZjBt">
-<p>148. <strong>Autoencoders, unsupervised learning and deep architectures</strong><br />
+<p>150. <strong>Autoencoders, unsupervised learning and deep architectures</strong><br />
 Pierre Baldi<br />
 <em>Proceedings of the 2011 international conference on unsupervised and transfer learning workshop - volume 27</em> (2011)</p>
 </div>
 <div id="ref-YVOAlp8C">
-<p>149. <strong>A Comparative Study for Unsupervised Network Representation Learning</strong><br />
+<p>151. <strong>A Comparative Study for Unsupervised Network Representation Learning</strong><br />
 Megha Khosla, Vinay Setty, Avishek Anand<br />
 <em>arXiv</em> (2019-03-19) <a href="https://arxiv.org/abs/1903.07902v5">https://arxiv.org/abs/1903.07902v5</a><br />
 DOI: <a href="https://doi.org/10.1109/TKDE.2019.2951398">10.1109/tkde.2019.2951398</a></p>
 </div>
 <div id="ref-1EP2NrAhl">
-<p>150. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
+<p>152. <strong>Neural networks for link prediction in realistic biomedical graphs: a multi-dimensional evaluation of graph embedding-based approaches</strong><br />
 Gamal Crichton, Yufan Guo, Sampo Pyysalo, Anna Korhonen<br />
 <em>BMC Bioinformatics</em> (2018-05-21) <a href="https://doi.org/ggkm7q">https://doi.org/ggkm7q</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-018-2163-9">10.1186/s12859-018-2163-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29783926">29783926</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5963080">PMC5963080</a></p>
 </div>
 <div id="ref-17R6q0KTd">
-<p>151. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
+<p>153. <strong>Network-based integration of multi-omics data for prioritizing cancer genes</strong><br />
 Christos Dimitrakopoulos, Sravanth Kumar Hindupur, Luca Häfliger, Jonas Behr, Hesam Montazeri, Michael N Hall, Niko Beerenwinkel<br />
 <em>Bioinformatics</em> (2018-03-14) <a href="https://doi.org/gc6953">https://doi.org/gc6953</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/bty148">10.1093/bioinformatics/bty148</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29547932">29547932</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6041755">PMC6041755</a></p>
 </div>
 <div id="ref-aLsdEzlV">
-<p>152. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
+<p>154. <strong>Safe Medicine Recommendation via Medical Knowledge Graph Embedding</strong><br />
 Meng Wang, Mengyue Liu, Jun Liu, Sen Wang, Guodong Long, Buyue Qian<br />
 <em>arXiv</em> (2017-10-16) <a href="https://arxiv.org/abs/1710.05980v2">https://arxiv.org/abs/1710.05980v2</a></p>
 </div>
 <div id="ref-8vj5v8un">
-<p>153. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
+<p>155. <strong>GAMENet: Graph Augmented MEmory Networks for Recommending Medication Combination</strong><br />
 Junyuan Shang, Cao Xiao, Tengfei Ma, Hongyan Li, Jimeng Sun<br />
 <em>Proceedings of the AAAI Conference on Artificial Intelligence</em> (2019-07-17) <a href="https://doi.org/ggkm7r">https://doi.org/ggkm7r</a><br />
 DOI: <a href="https://doi.org/10.1609/aaai.v33i01.33011126">10.1609/aaai.v33i01.33011126</a></p>
 </div>
 <div id="ref-otY29wFV">
-<p>154. <strong>Heterogeneous network embedding for identifying symptom candidate genes</strong><br />
+<p>156. <strong>Heterogeneous network embedding for identifying symptom candidate genes</strong><br />
 Kuo Yang, Ning Wang, Guangming Liu, Ruyu Wang, Jian Yu, Runshun Zhang, Jianxin Chen, Xuezhong Zhou<br />
 <em>Journal of the American Medical Informatics Association</em> (2018-10-23) <a href="https://doi.org/gfg6nr">https://doi.org/gfg6nr</a><br />
 DOI: <a href="https://doi.org/10.1093/jamia/ocy117">10.1093/jamia/ocy117</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30357378">30357378</a></p>
 </div>
 <div id="ref-6O3BO6WO">
-<p>155. <strong>Predicting Protein–Protein Interactions from Multimodal Biological Data Sources via Nonnegative Matrix Tri-Factorization</strong><br />
+<p>157. <strong>Predicting Protein–Protein Interactions from Multimodal Biological Data Sources via Nonnegative Matrix Tri-Factorization</strong><br />
 Hua Wang, Heng Huang, Chris Ding, Feiping Nie<br />
 <em>Journal of Computational Biology</em> (2013-04) <a href="https://doi.org/f4thrx">https://doi.org/f4thrx</a><br />
 DOI: <a href="https://doi.org/10.1089/cmb.2012.0273">10.1089/cmb.2012.0273</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/23509857">23509857</a></p>
 </div>
-<div id="ref-YyPaovQ0">
-<p>156. <strong>miRNA-Disease Association Prediction with Collaborative Matrix Factorization</strong><br />
-Zhen Shen, You-Hua Zhang, Kyungsook Han, Asoke K. Nandi, Barry Honig, De-Shuang Huang<br />
-<em>Complexity</em> (2017) <a href="https://doi.org/ggmrpm">https://doi.org/ggmrpm</a><br />
-DOI: <a href="https://doi.org/10.1155/2017/2498957">10.1155/2017/2498957</a></p>
+<div id="ref-Y2RTnbCe">
+<p>158. <strong>Protein functional properties prediction in sparsely-label PPI networks through regularized non-negative matrix factorization</strong><br />
+Qingyao Wu, Zhenyu Wang, Chunshan Li, Yunming Ye, Yueping Li, Ning Sun<br />
+<em>BMC Systems Biology</em> (2015) <a href="https://doi.org/gb5tvr">https://doi.org/gb5tvr</a><br />
+DOI: <a href="https://doi.org/10.1186/1752-0509-9-s1-s9">10.1186/1752-0509-9-s1-s9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25708164">25708164</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331684">PMC4331684</a></p>
 </div>
 <div id="ref-1F18ycwfS">
-<p>157. <strong>HMDD v3.0: a database for experimentally supported human microRNA–disease associations</strong><br />
+<p>159. <strong>HMDD v3.0: a database for experimentally supported human microRNA–disease associations</strong><br />
 Zhou Huang, Jiangcheng Shi, Yuanxu Gao, Chunmei Cui, Shan Zhang, Jianwei Li, Yuan Zhou, Qinghua Cui<br />
 <em>Nucleic Acids Research</em> (2018-10-26) <a href="https://doi.org/ggmrph">https://doi.org/ggmrph</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gky1010">10.1093/nar/gky1010</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30364956">30364956</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6323994">PMC6323994</a></p>
 </div>
 <div id="ref-1DjgsuPV2">
-<p>158. <strong>Predicting MiRNA-Disease Association by Latent Feature Extraction with Positive Samples</strong><br />
+<p>160. <strong>Predicting MiRNA-Disease Association by Latent Feature Extraction with Positive Samples</strong><br />
 Kai Che, Maozu Guo, Chunyu Wang, Xiaoyan Liu, Xi Chen<br />
 <em>Genes</em> (2019-01-24) <a href="https://doi.org/ggmrpr">https://doi.org/ggmrpr</a><br />
 DOI: <a href="https://doi.org/10.3390/genes10020080">10.3390/genes10020080</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30682853">30682853</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6410147">PMC6410147</a></p>
 </div>
 <div id="ref-hZ2R5BRj">
-<p>159. <strong>NPCMF: Nearest Profile-based Collaborative Matrix Factorization method for predicting miRNA-disease associations</strong><br />
+<p>161. <strong>NPCMF: Nearest Profile-based Collaborative Matrix Factorization method for predicting miRNA-disease associations</strong><br />
 Ying-Lian Gao, Zhen Cui, Jin-Xing Liu, Juan Wang, Chun-Hou Zheng<br />
 <em>BMC Bioinformatics</em> (2019-06-24) <a href="https://doi.org/ggmrpn">https://doi.org/ggmrpn</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-019-2956-5">10.1186/s12859-019-2956-5</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31234797">31234797</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6591872">PMC6591872</a></p>
 </div>
 <div id="ref-4xcJzyPc">
-<p>160. <strong>RCMF: a robust collaborative matrix factorization method to predict miRNA-disease associations</strong><br />
+<p>162. <strong>RCMF: a robust collaborative matrix factorization method to predict miRNA-disease associations</strong><br />
 Zhen Cui, Jin-Xing Liu, Ying-Lian Gao, Chun-Hou Zheng, Juan Wang<br />
 <em>BMC Bioinformatics</em> (2019-12) <a href="https://doi.org/ggmrpp">https://doi.org/ggmrpp</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-019-3260-0">10.1186/s12859-019-3260-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31874608">31874608</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6929455">PMC6929455</a></p>
 </div>
 <div id="ref-icSe8Yyw">
-<p>161. <strong>LWPCMF: Logistic Weighted Profile-based Collaborative Matrix Factorization for Predicting MiRNA-Disease Associations</strong><br />
+<p>163. <strong>LWPCMF: Logistic Weighted Profile-based Collaborative Matrix Factorization for Predicting MiRNA-Disease Associations</strong><br />
 Meng-Meng Yin, Zhen Cui, Ming-Ming Gao, Jin-Xing Liu, Ying-Lian Gao<br />
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2019) <a href="https://doi.org/ggmrpk">https://doi.org/ggmrpk</a><br />
 DOI: <a href="https://doi.org/10.1109/tcbb.2019.2937774">10.1109/tcbb.2019.2937774</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31478868">31478868</a></p>
 </div>
 <div id="ref-6FrpIkNZ">
-<p>162. <strong>Protein-protein interaction prediction via Collective Matrix Factorization</strong><br />
+<p>164. <strong>Protein-protein interaction prediction via Collective Matrix Factorization</strong><br />
 Qian Xu, Evan Wei Xiang, Qiang Yang<br />
 <em>2010 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</em> (2010-12) <a href="https://doi.org/csnv5m">https://doi.org/csnv5m</a><br />
 DOI: <a href="https://doi.org/10.1109/bibm.2010.5706537">10.1109/bibm.2010.5706537</a></p>
 </div>
-<div id="ref-Y2RTnbCe">
-<p>163. <strong>Protein functional properties prediction in sparsely-label PPI networks through regularized non-negative matrix factorization</strong><br />
-Qingyao Wu, Zhenyu Wang, Chunshan Li, Yunming Ye, Yueping Li, Ning Sun<br />
-<em>BMC Systems Biology</em> (2015) <a href="https://doi.org/gb5tvr">https://doi.org/gb5tvr</a><br />
-DOI: <a href="https://doi.org/10.1186/1752-0509-9-s1-s9">10.1186/1752-0509-9-s1-s9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25708164">25708164</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4331684">PMC4331684</a></p>
-</div>
 <div id="ref-6PISrkV5">
-<p>164. <strong>A network embedding model for pathogenic genes prediction by multi-path random walking on heterogeneous network</strong><br />
+<p>165. <strong>A network embedding model for pathogenic genes prediction by multi-path random walking on heterogeneous network</strong><br />
 Bo Xu, Yu Liu, Shuo Yu, Lei Wang, Jie Dong, Hongfei Lin, Zhihao Yang, Jian Wang, Feng Xia<br />
 <em>BMC Medical Genomics</em> (2019-12) <a href="https://doi.org/ggmrpq">https://doi.org/ggmrpq</a><br />
 DOI: <a href="https://doi.org/10.1186/s12920-019-0627-z">10.1186/s12920-019-0627-z</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31865919">31865919</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6927107">PMC6927107</a></p>
 </div>
 <div id="ref-taI1UUAE">
-<p>165. <strong>Predicting gene-disease associations from the heterogeneous network using graph embedding</strong><br />
+<p>166. <strong>Predicting gene-disease associations from the heterogeneous network using graph embedding</strong><br />
 Xiaochan Wang, Yuchong Gong, Jing Yi, Wen Zhang<br />
 <em>2019 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</em> (2019-11) <a href="https://doi.org/ggmrpj">https://doi.org/ggmrpj</a><br />
 DOI: <a href="https://doi.org/10.1109/bibm47256.2019.8983134">10.1109/bibm47256.2019.8983134</a></p>
 </div>
 <div id="ref-qbHGtxhA">
-<p>166. <strong>Network embedding-based representation learning for single cell RNA-seq data</strong><br />
+<p>167. <strong>Network embedding-based representation learning for single cell RNA-seq data</strong><br />
 Xiangyu Li, Weizheng Chen, Yang Chen, Xuegong Zhang, Jin Gu, Michael Q. Zhang<br />
 <em>Nucleic Acids Research</em> (2017-08-28) <a href="https://doi.org/ggmrpg">https://doi.org/ggmrpg</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gkx750">10.1093/nar/gkx750</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28977434">28977434</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5737094">PMC5737094</a></p>
 </div>
 <div id="ref-QQtRw08H">
-<p>167. <strong>Neuro-symbolic representation learning on biological knowledge graphs</strong><br />
+<p>168. <strong>Neuro-symbolic representation learning on biological knowledge graphs</strong><br />
 Mona Alshahrani, Mohammad Asif Khan, Omar Maddouri, Akira R Kinjo, Núria Queralt-Rosinach, Robert Hoehndorf<br />
 <em>Bioinformatics</em> (2017-04-25) <a href="https://doi.org/gbv6vm">https://doi.org/gbv6vm</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/btx275">10.1093/bioinformatics/btx275</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28449114">28449114</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5860058">PMC5860058</a></p>
 </div>
 <div id="ref-8qB2oCgy">
-<p>168. <strong>Deep Learning the Protein Function in Protein Interaction Networks</strong><br />
+<p>169. <strong>Deep Learning the Protein Function in Protein Interaction Networks</strong><br />
 Kire Trivodaliev, Martin Josifoski, Slobodan Kalajdziski<br />
 <em>Communications in Computer and Information Science</em> (2018) <a href="https://doi.org/ggmrpd">https://doi.org/ggmrpd</a><br />
 DOI: <a href="https://doi.org/10.1007/978-3-030-00825-3_16">10.1007/978-3-030-00825-3_16</a></p>
 </div>
 <div id="ref-RYW74Wvh">
-<p>169. <strong>Detection of protein complexes from multiple protein interaction networks using graph embedding</strong><br />
+<p>170. <strong>Detection of protein complexes from multiple protein interaction networks using graph embedding</strong><br />
 Xiaoxia Liu, Zhihao Yang, Shengtian Sang, Hongfei Lin, Jian Wang, Bo Xu<br />
 <em>Artificial Intelligence in Medicine</em> (2019-05) <a href="https://doi.org/ggmrpf">https://doi.org/ggmrpf</a><br />
 DOI: <a href="https://doi.org/10.1016/j.artmed.2019.04.001">10.1016/j.artmed.2019.04.001</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31164203">31164203</a></p>
 </div>
 <div id="ref-NnOS86ev">
-<p>170. <strong>Large-scale structural and textual similarity-based mining of knowledge graph to predict drug–drug interactions</strong><br />
+<p>171. <strong>Large-scale structural and textual similarity-based mining of knowledge graph to predict drug–drug interactions</strong><br />
 Ibrahim Abdelaziz, Achille Fokoue, Oktie Hassanzadeh, Ping Zhang, Mohammad Sadoghi<br />
 <em>Journal of Web Semantics</em> (2017-05) <a href="https://doi.org/gcrwk3">https://doi.org/gcrwk3</a><br />
 DOI: <a href="https://doi.org/10.1016/j.websem.2017.06.002">10.1016/j.websem.2017.06.002</a></p>
 </div>
 <div id="ref-11ua4nEkY">
-<p>171. <strong>Matrix Factorization-Based Prediction of Novel Drug Indications by Integrating Genomic Space</strong><br />
+<p>172. <strong>Matrix Factorization-Based Prediction of Novel Drug Indications by Integrating Genomic Space</strong><br />
 Wen Dai, Xi Liu, Yibo Gao, Lin Chen, Jianglong Song, Di Chen, Kuo Gao, Yongshi Jiang, Yiping Yang, Jianxin Chen, Peng Lu<br />
 <em>Computational and Mathematical Methods in Medicine</em> (2015) <a href="https://doi.org/gb58g8">https://doi.org/gb58g8</a><br />
 DOI: <a href="https://doi.org/10.1155/2015/275045">10.1155/2015/275045</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26078775">26078775</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4452507">PMC4452507</a></p>
 </div>
 <div id="ref-sj2fr8fp">
-<p>172. <strong>Abstract</strong><br />
+<p>173. <strong>Abstract</strong><br />
 eLife Sciences Publications, Ltd<br />
 <a href="https://doi.org/gf4fdb">https://doi.org/gf4fdb</a><br />
 DOI: <a href="https://doi.org/10.7554/elife.26726.001">10.7554/elife.26726.001</a></p>
 </div>
 <div id="ref-S0MrOfj0">
-<p>173. <strong>Drug-Target Interaction Prediction with Graph Regularized Matrix Factorization</strong><br />
+<p>174. <strong>Drug-Target Interaction Prediction with Graph Regularized Matrix Factorization</strong><br />
 Ali Ezzat, Peilin Zhao, Min Wu, Xiao-Li Li, Chee-Keong Kwoh<br />
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2017-05-01) <a href="https://doi.org/ggmrrp">https://doi.org/ggmrrp</a><br />
 DOI: <a href="https://doi.org/10.1109/tcbb.2016.2530062">10.1109/tcbb.2016.2530062</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26890921">26890921</a></p>
 </div>
 <div id="ref-HOrwJFzW">
-<p>174. <strong>Predicting Drug-Target Interaction Using Deep Matrix Factorization</strong><br />
+<p>175. <strong>Predicting Drug-Target Interaction Using Deep Matrix Factorization</strong><br />
 Hafez Eslami Manoochehri, Mehrdad Nourani<br />
 <em>2018 IEEE Biomedical Circuits and Systems Conference (BioCAS)</em> (2018-10) <a href="https://doi.org/ggmrrn">https://doi.org/ggmrrn</a><br />
 DOI: <a href="https://doi.org/10.1109/biocas.2018.8584817">10.1109/biocas.2018.8584817</a></p>
 </div>
 <div id="ref-Z391qdG0">
-<p>175. <strong>Network-based prediction of drug–target interactions using an arbitrary-order proximity embedded deep forest</strong><br />
+<p>176. <strong>Network-based prediction of drug–target interactions using an arbitrary-order proximity embedded deep forest</strong><br />
 Xiangxiang Zeng, Siyi Zhu, Yuan Hou, Pengyue Zhang, Lang Li, Jing Li, L Frank Huang, Stephen J Lewis, Ruth Nussinov, Feixiong Cheng<br />
 <em>Bioinformatics</em> (2020-01-23) <a href="https://doi.org/ggmrrk">https://doi.org/ggmrrk</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/btaa010">10.1093/bioinformatics/btaa010</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31971579">31971579</a></p>
 </div>
 <div id="ref-dbgPwLaZ">
-<p>176. <strong>DrPOCS: Drug Repositioning Based on Projection Onto Convex Sets</strong><br />
+<p>177. <strong>DrPOCS: Drug Repositioning Based on Projection Onto Convex Sets</strong><br />
 Yin-Ying Wang, Chunfeng Cui, Liqun Qi, Hong Yan, Xing-Ming Zhao<br />
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (2019-01-01) <a href="https://doi.org/ggmrrq">https://doi.org/ggmrrq</a><br />
 DOI: <a href="https://doi.org/10.1109/tcbb.2018.2830384">10.1109/tcbb.2018.2830384</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29993698">29993698</a></p>
 </div>
 <div id="ref-94kKAy9w">
-<p>177. <strong>Neighborhood Regularized Logistic Matrix Factorization for Drug-Target Interaction Prediction</strong><br />
+<p>178. <strong>Neighborhood Regularized Logistic Matrix Factorization for Drug-Target Interaction Prediction</strong><br />
 Yong Liu, Min Wu, Chunyan Miao, Peilin Zhao, Xiao-Li Li<br />
 <em>PLOS Computational Biology</em> (2016-02-12) <a href="https://doi.org/ggmrrw">https://doi.org/ggmrrw</a><br />
 DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004760">10.1371/journal.pcbi.1004760</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26872142">26872142</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4752318">PMC4752318</a></p>
 </div>
 <div id="ref-oKdMo9U9">
-<p>178. <strong>Predicting drug-target interactions by dual-network integrated logistic matrix factorization</strong><br />
+<p>179. <strong>Predicting drug-target interactions by dual-network integrated logistic matrix factorization</strong><br />
 Ming Hao, Stephen H. Bryant, Yanli Wang<br />
 <em>Scientific Reports</em> (2017-01-12) <a href="https://doi.org/ggmrrj">https://doi.org/ggmrrj</a><br />
 DOI: <a href="https://doi.org/10.1038/srep40376">10.1038/srep40376</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28079135">28079135</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5227688">PMC5227688</a></p>
 </div>
 <div id="ref-16FEYidu2">
-<p>179. <strong>Drug–Disease Association and Drug-Repositioning Predictions in Complex Diseases Using Causal Inference–Probabilistic Matrix Factorization</strong><br />
+<p>180. <strong>Drug–Disease Association and Drug-Repositioning Predictions in Complex Diseases Using Causal Inference–Probabilistic Matrix Factorization</strong><br />
 Jihong Yang, Zheng Li, Xiaohui Fan, Yiyu Cheng<br />
 <em>Journal of Chemical Information and Modeling</em> (2014-08-22) <a href="https://doi.org/f6hpb4">https://doi.org/f6hpb4</a><br />
 DOI: <a href="https://doi.org/10.1021/ci500340n">10.1021/ci500340n</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25116798">25116798</a></p>
 </div>
 <div id="ref-18YRZaX7n">
-<p>180. <strong>Predicting drug-disease associations by using similarity constrained matrix factorization</strong><br />
+<p>181. <strong>Predicting drug-disease associations by using similarity constrained matrix factorization</strong><br />
 Wen Zhang, Xiang Yue, Weiran Lin, Wenjian Wu, Ruoqi Liu, Feng Huang, Feng Liu<br />
 <em>BMC Bioinformatics</em> (2018-06-19) <a href="https://doi.org/ggmrrt">https://doi.org/ggmrrt</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-018-2220-4">10.1186/s12859-018-2220-4</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29914348">29914348</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6006580">PMC6006580</a></p>
 </div>
 <div id="ref-19E33rJiu">
-<p>181. <strong>Deep mining heterogeneous networks of biomedical linked data to predict novel drug–target associations</strong><br />
+<p>182. <strong>Deep mining heterogeneous networks of biomedical linked data to predict novel drug–target associations</strong><br />
 Nansu Zong, Hyeoneui Kim, Victoria Ngo, Olivier Harismendy<br />
 <em>Bioinformatics</em> (2017-04-18) <a href="https://doi.org/gbqjgx">https://doi.org/gbqjgx</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/btx160">10.1093/bioinformatics/btx160</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28430977">28430977</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5860112">PMC5860112</a></p>
 </div>
 <div id="ref-dR3gjJXP">
-<p>182. <strong>Scalable and Accurate Drug–target Prediction Based on Heterogeneous Bio-linked Network Mining</strong><br />
+<p>183. <strong>Scalable and Accurate Drug–target Prediction Based on Heterogeneous Bio-linked Network Mining</strong><br />
 Nansu Zong, Rachael Sze Nga Wong, Victoria Ngo, Yue Yu, Ning Li<br />
 <em>Cold Spring Harbor Laboratory</em> (2019-02-03) <a href="https://doi.org/ggmrrm">https://doi.org/ggmrrm</a><br />
 DOI: <a href="https://doi.org/10.1101/539643">10.1101/539643</a></p>
 </div>
 <div id="ref-za8DCIPS">
-<p>183. <strong>Drug Similarity Integration Through Attentive Multi-view Graph Auto-Encoders</strong><br />
+<p>184. <strong>Drug Similarity Integration Through Attentive Multi-view Graph Auto-Encoders</strong><br />
 Tengfei Ma, Cao Xiao, Jiayu Zhou, Fei Wang<br />
 <em>arXiv</em> (2018-04-28) <a href="https://arxiv.org/abs/1804.10850v1">https://arxiv.org/abs/1804.10850v1</a></p>
 </div>
 <div id="ref-1BT2OTuxL">
-<p>184. <strong>Modeling polypharmacy side effects with graph convolutional networks</strong><br />
+<p>185. <strong>Modeling polypharmacy side effects with graph convolutional networks</strong><br />
 Marinka Zitnik, Monica Agrawal, Jure Leskovec<br />
 <em>arXiv</em> (2018-02-02) <a href="https://arxiv.org/abs/1802.00543v2">https://arxiv.org/abs/1802.00543v2</a><br />
 DOI: <a href="https://doi.org/10.1093/bioinformatics/bty294">10.1093/bioinformatics/bty294</a></p>
 </div>
 <div id="ref-111FgvD8J">
-<p>185. <strong>DrugBank: a knowledgebase for drugs, drug actions and drug targets</strong><br />
+<p>186. <strong>DrugBank: a knowledgebase for drugs, drug actions and drug targets</strong><br />
 David S. Wishart, Craig Knox, An Chi Guo, Dean Cheng, Savita Shrivastava, Dan Tzur, Bijaya Gautam, Murtaza Hassanali<br />
 <em>Nucleic Acids Research</em> (2007-11-29) <a href="https://doi.org/d3qqpj">https://doi.org/d3qqpj</a><br />
 DOI: <a href="https://doi.org/10.1093/nar/gkm958">10.1093/nar/gkm958</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/18048412">18048412</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2238889">PMC2238889</a></p>
 </div>
 <div id="ref-14fs7pzn0">
-<p>186. <strong>The human disease network</strong><br />
+<p>187. <strong>The human disease network</strong><br />
 K.-I. Goh, M. E. Cusick, D. Valle, B. Childs, M. Vidal, A.-L. Barabasi<br />
 <em>Proceedings of the National Academy of Sciences</em> (2007-05-14) <a href="https://doi.org/bt6qvc">https://doi.org/bt6qvc</a><br />
 DOI: <a href="https://doi.org/10.1073/pnas.0701361104">10.1073/pnas.0701361104</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17502601">17502601</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1885563">PMC1885563</a></p>
 </div>
 <div id="ref-245Px4P3">
-<p>187. <strong>Evaluation of knowledge graph embedding approaches for drug-drug interaction prediction in realistic settings</strong><br />
+<p>188. <strong>Evaluation of knowledge graph embedding approaches for drug-drug interaction prediction in realistic settings</strong><br />
 Remzi Celebi, Huseyin Uyar, Erkan Yasar, Ozgur Gumus, Oguz Dikenelli, Michel Dumontier<br />
 <em>BMC Bioinformatics</em> (2019-12) <a href="https://doi.org/ggmrrv">https://doi.org/ggmrrv</a><br />
 DOI: <a href="https://doi.org/10.1186/s12859-019-3284-5">10.1186/s12859-019-3284-5</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31852427">31852427</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6921491">PMC6921491</a></p>
 </div>
 <div id="ref-WMEox1CM">
-<p>188. <strong>Drug-Drug Interaction Prediction Based on Knowledge Graph Embeddings and Convolutional-LSTM Network</strong><br />
+<p>189. <strong>Drug-Drug Interaction Prediction Based on Knowledge Graph Embeddings and Convolutional-LSTM Network</strong><br />
 Md. Rezaul Karim, Michael Cochez, Joao Bosco Jares, Mamtaz Uddin, Oya Beyan, Stefan Decker<br />
 <em>Proceedings of the 10th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics - BCB ’19</em> (2019) <a href="https://doi.org/ggmrrs">https://doi.org/ggmrrs</a><br />
 DOI: <a href="https://doi.org/10.1145/3307339.3342161">10.1145/3307339.3342161</a></p>
 </div>
 <div id="ref-xNv4Rkif">
-<p>189. <strong>Mining Electronic Health Records using Linked Data.</strong><br />
+<p>190. <strong>Mining Electronic Health Records using Linked Data.</strong><br />
 David J Odgers, Michel Dumontier<br />
 <em>AMIA Joint Summits on Translational Science proceedings. AMIA Joint Summits on Translational Science</em> (2015-03-23) <a href="https://www.ncbi.nlm.nih.gov/pubmed/26306276">https://www.ncbi.nlm.nih.gov/pubmed/26306276</a><br />
 PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/26306276">26306276</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4525267">PMC4525267</a></p>
 </div>
 <div id="ref-mrfQbq3g">
-<p>190. <strong>Applying linked data principles to represent patient’s electronic health records at Mayo clinic</strong><br />
+<p>191. <strong>Applying linked data principles to represent patient’s electronic health records at Mayo clinic</strong><br />
 Jyotishman Pathak, Richard C. Kiefer, Christopher G. Chute<br />
 <em>Proceedings of the 2nd ACM SIGHIT symposium on International health informatics - IHI ’12</em> (2012) <a href="https://doi.org/fzm2p7">https://doi.org/fzm2p7</a><br />
 DOI: <a href="https://doi.org/10.1145/2110363.2110415">10.1145/2110363.2110415</a></p>
 </div>
 <div id="ref-xU6Ims3W">
-<p>191. <strong>PDD Graph: Bridging Electronic Medical Records and Biomedical Knowledge Graphs via Entity Linking</strong><br />
+<p>192. <strong>PDD Graph: Bridging Electronic Medical Records and Biomedical Knowledge Graphs via Entity Linking</strong><br />
 Meng Wang, Jiaheng Zhang, Jun Liu, Wei Hu, Sen Wang, Xue Li, Wenqiang Liu<br />
 <em>arXiv</em> (2017-07-17) <a href="https://arxiv.org/abs/1707.05340v2">https://arxiv.org/abs/1707.05340v2</a></p>
 </div>
 <div id="ref-UuF5A9Pu">
-<p>192. <strong>Diagnosis Code Assignment Using Sparsity-Based Disease Correlation Embedding</strong><br />
+<p>193. <strong>Diagnosis Code Assignment Using Sparsity-Based Disease Correlation Embedding</strong><br />
 Sen Wang, Xiaojun Chang, Xue Li, Guodong Long, Lina Yao, Quan Z. Sheng<br />
 <em>IEEE Transactions on Knowledge and Data Engineering</em> (2016-12-01) <a href="https://doi.org/f9cgtv">https://doi.org/f9cgtv</a><br />
 DOI: <a href="https://doi.org/10.1109/tkde.2016.2605687">10.1109/tkde.2016.2605687</a></p>
 </div>
 <div id="ref-OCnhKscH">
-<p>193. <strong>EMR-based medical knowledge representation and inference via Markov random fields and distributed representation learning</strong><br />
+<p>194. <strong>EMR-based medical knowledge representation and inference via Markov random fields and distributed representation learning</strong><br />
 Chao Zhao, Jingchi Jiang, Yi Guan<br />
 <em>arXiv</em> (2017-09-20) <a href="https://arxiv.org/abs/1709.06908v1">https://arxiv.org/abs/1709.06908v1</a></p>
 </div>
 <div id="ref-Exfv0f4l">
-<p>194. <strong>Attention Is All You Need</strong><br />
+<p>195. <strong>Attention Is All You Need</strong><br />
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin<br />
 <em>arXiv</em> (2017-06-12) <a href="https://arxiv.org/abs/1706.03762v5">https://arxiv.org/abs/1706.03762v5</a></p>
 </div>
 <div id="ref-haHzVaaz">
-<p>195. <strong>Neural Machine Translation by Jointly Learning to Align and Translate</strong><br />
+<p>196. <strong>Neural Machine Translation by Jointly Learning to Align and Translate</strong><br />
 Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio<br />
 <em>arXiv</em> (2014-09-01) <a href="https://arxiv.org/abs/1409.0473v7">https://arxiv.org/abs/1409.0473v7</a></p>
-</div>
-<div id="ref-10nDTiETi">
-<p>196. <strong>GRAM: Graph-based Attention Model for Healthcare Representation Learning</strong><br />
-Edward Choi, Mohammad Taha Bahadori, Le Song, Walter F. Stewart, Jimeng Sun<br />
-<em>arXiv</em> (2016-11-21) <a href="https://arxiv.org/abs/1611.07012v3">https://arxiv.org/abs/1611.07012v3</a></p>
 </div>
 <div id="ref-QNJ3b5bY">
 <p>197. <strong>Learning the Graphical Structure of Electronic Health Records with Graph Convolutional Transformer</strong><br />

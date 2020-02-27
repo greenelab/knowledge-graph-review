@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/f0313654623fdcab77dce1ffbbf31745e3a7989b/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/95501de78c6c221bfefe2e6d1e0eb6402a049416/))
 was automatically generated
-from [greenelab/knowledge-graph-review@f031365](https://github.com/greenelab/knowledge-graph-review/tree/f0313654623fdcab77dce1ffbbf31745e3a7989b)
+from [greenelab/knowledge-graph-review@95501de](https://github.com/greenelab/knowledge-graph-review/tree/95501de78c6c221bfefe2e6d1e0eb6402a049416)
 on February 27, 2020.
 </em></small>
 
@@ -249,13 +249,13 @@ Future methods can improve detection power by considering the use of  methods th
 
 | Study | Relationship of Interest | 
 | --- | --- | 
-| [@IGXdryzB] | Protein-Protein Interactions, Disease-Gene and Tissue-Gene Associations |
-| [@ETC6lm7S] | Drug Disease Treatments |
-| [@AdKPf5EO] | Drug, Gene and Disease interactions |
-| [@DGlWGDEt]| Protein-Protein Interactions |
-| [@5gG8hwv7] | Disease-Gene associations|
-| [@q9Fhy8eq]| Protein-Protein Interactions |
-| [@10tWTMIaV] | Genotype-Phenotype Relationships |
+| CoCoScore [@IGXdryzB] | Protein-Protein Interactions, Disease-Gene and Tissue-Gene Associations |
+| Rastegar-Mojarad et al. [@ETC6lm7S] | Drug Disease Treatments |
+| CoPub Discovery [@AdKPf5EO] | Drug, Gene and Disease interactions |
+| Westergaard et al. [@DGlWGDEt]| Protein-Protein Interactions |
+| DISEASES [@5gG8hwv7] | Disease-Gene associations|
+| STRING [@q9Fhy8eq]| Protein-Protein Interactions |
+| Singhal et al. [@10tWTMIaV] | Genotype-Phenotype Relationships |
 
 Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupervised-methods-text-mining}
 
@@ -330,9 +330,10 @@ Table: A set of publicly available datasets for supervised text mining. {#tbl:su
 
 ## Applying Knowledge Graphs to Biomedical Challenges
 
-1. Mention that these graphs can be used for discovery
-2. Mention representation learning (aka representing a graph as dense vectors for nodes and/or edges)
-3. 
+Knowledge graphs can help researchers tackle many biomedical tasks such as finding new treatments for existing drugs [@O21tn8vf], aiding efforts to diagnose patients [@10nDTiETi] and predicting associations between diseases and biomolecules [@YyPaovQ0].
+In many cases, solutions rely on representing knowledges graphs in a low dimensional space, which is a process called representation learning.
+This space preserves a knowledge graph's local and/or global structure and can support efforts to apply machine learning methods to make predictions.
+We discuss the unifying techniques to construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
 
 ### Unifying Techniques
 
@@ -430,8 +431,7 @@ Future approaches should consider creating hybrid models that use both node2vec 
 ### Unifying Applications
 
 Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un] (Figure {@fig:unifying_applications}).
-In this section we discuss how knowledge graphs are being applied in biomedical settings. 
-We put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.
+In this section we discuss how knowledge graphs are being applied in biomedical settings and put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.
 
 ![
 Overview of biomedical applications that make use of knowledge graphs.
@@ -442,7 +442,7 @@ Categories consist of: (a) Multi-Omic applications, (b) Pharmaceutical Applicati
 
 Multi-omic applications for knowledge graphs include efforts to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome.
 Approaches in this category use knowledge graphs to establish connections between -omic entities as well as diseases.
-Such tasks include gene-symptom prioritization [@otY29wFV], protein-protein interaction prediction [@6O3BO6WO;10.1186/1752-0509-9-S1-S9], and detecting miRNA-disease associations [@YyPaovQ0].
+Such tasks include gene-symptom prioritization [@otY29wFV], protein-protein interaction prediction [@6O3BO6WO; @Y2RTnbCe], and detecting miRNA-disease associations [@YyPaovQ0].
 We focus specifically on multi-omic applications of algorithms that project knowledge graphs into a low dimensional space to make connections.
 
 Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins.
