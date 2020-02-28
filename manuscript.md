@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-02-27'
+date-meta: '2020-02-28'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/95501de78c6c221bfefe2e6d1e0eb6402a049416/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/2d27e32212ca7ae016787cf000d22c777565cb16/))
 was automatically generated
-from [greenelab/knowledge-graph-review@95501de](https://github.com/greenelab/knowledge-graph-review/tree/95501de78c6c221bfefe2e6d1e0eb6402a049416)
-on February 27, 2020.
+from [greenelab/knowledge-graph-review@2d27e32](https://github.com/greenelab/knowledge-graph-review/tree/2d27e32212ca7ae016787cf000d22c777565cb16)
+on February 28, 2020.
 </em></small>
 
 ## Authors
@@ -57,7 +57,15 @@ on February 27, 2020.
 
 ## Abstract {.page_break_before}
 
-1. Give high level description of review as it pertains to knowledge graphs (creation and application)
+Knowledge graphs can support many biomedical applications.
+These graphs represent biomedical concepts and relationships in the form of nodes and edges.
+In this review we discuss how these graphs are constructed and applied with a particular focus on the ways machine learning approaches are changing these processes.
+In many examples in the literature, biomedical knowledge graphs have been constructed from pre-existing databases that are populated by experts via manual curation, but we are now also seeing a more robust use of automatic systems.
+A number of techniques are used to represent knowledge graphs, but often machine learning methods are used to learn a low-dimensional representation that can support many different applications.
+This representation is designed to preserve a knowledge graph’s local and/or global structure.
+Additional machine learning methods can be applied to this representation to make predictions within genomic, pharmaceutical, and clinical domains.
+We frame our discussion first around knowledge graph construction then around unifying techniques and unifying applications separately.
+Advances in machine learning for biomedicine are creating new opportunities across many domains, and we note potential avenues for future work with knowledge graphs that appear particularly fruitful.
 
 
 ## Introduction
