@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/2d27e32212ca7ae016787cf000d22c777565cb16/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/965da09c200ffa7ca76a8b669ea72dd4b87d775f/))
 was automatically generated
-from [greenelab/knowledge-graph-review@2d27e32](https://github.com/greenelab/knowledge-graph-review/tree/2d27e32212ca7ae016787cf000d22c777565cb16)
+from [greenelab/knowledge-graph-review@965da09](https://github.com/greenelab/knowledge-graph-review/tree/965da09c200ffa7ca76a8b669ea72dd4b87d775f)
 on February 28, 2020.
 </em></small>
 
@@ -105,46 +105,34 @@ The nodes (circles) represent entities and edges (lines) depict  relational info
 
 ## Building Biomedical Knowledge Graphs
 
-Knowledge graphs can be constructed in many ways using resources such as text or pre-existing databases. 
-Usually, knowledge graphs are constructed using pre-existing databases.
-These databases are constructed by domain experts using approaches ranging from manual curation to automated techniques, such as text mining systems.
-Manual curation is a process that involves extensive use of domain experts to read papers and detect sentences that assert a relationship.
-Automated approaches involve the use of machine learning or natural language processing techniques to rapidly detect sentences of interest.
-We categorize these automated approaches into the following groups: rule-based extraction, unsupervised machine learning, and supervised machine learning.
-We discuss examples of each type of approach and synthesize the strengths and weaknesses of each.
+Knowledge graphs can be constructed in many ways using resources such as pre-exisitng databases or text.
+Usually, knowledge graphs are constructed using pre-existing databases and these databases are constructed by domain experts using approaches ranging from manual curation to automated techniques, such as text mining.
+Manual curation is a time consuming process that requires domain experts to read papers and annotate sentences that assert a relationship.
+Automated approaches rely on machine learning or natural language processing techniques to rapidly detect sentences of interest.
+We categorize these automated approaches into the following groups: rule-based extraction, unsupervised machine learning, and supervised machine learning and discuss examples of each type of approach while synthesizing their strengths and weaknesses.
 
 ### Constructing Databases and Manual Curation
 
 Database construction can date back all the way to 1956 where the first database contained a protein sequence of the insulin molecule [@GjM2NbnC].
-This process involves gathering relevant text such as journal articles, abstracts, or web-based text.
-At this point curators can read gathered text and detect relationship asserting sentences (i.e. relationship extraction).
-An alternative to use a text mining system to filter out extraneous sentences, then incorporate curators to perfect the system's findings. 
-This semi-automatic approach is way to augment curators throughout the curation process.
-We discuss the pros and cons of using manual curation for relationship extraction and mention databases that use this method to populate their fields.
+This process involves gathering relevant text such as journal articles, abstracts, or web-based text and having curators read the gathered text to detect sentences that implicate a relationship (i.e. relationship extraction).
+Notable databases constructed by this process can be in found in Table {@tbl:manual-curated-databases}.
+An example database, COSMIC [@pfquADl5] was constructed via a group of domain experts scanning the literature for key cancer related genes.
+This database contained approximately 35M entries in 2016 [@pfquADl5] and by 2019 had grown to 45M entries [@1E72FZcIm].
+Studies have shown that databases constructed in this fashion contain relatively precise data, but in low quantifies [@5TLcy6Yl; @1BnoByjXH; @OELNNm08; @yjdNa04s; @d3rG3TXb; @16P0HRKom; @UdzvLgBM].
+This happens because the publication rate is too high for curators to keep up [@vYYWSlK2].
+This bottleneck highlights a critical need for future approaches to scale fast enough to compete with the increasing publication rate.
 
-Notable databases have been constructed via manual curation (Table {@tbl:manual-curated-databases}).
-For example, COSMIC [@pfquADl5] was constructed via a group of domain experts scanning the literature for key cancer related genes.
-This database has reached close to 35M entries in 2016 [@pfquADl5] and grew to a total of 45M entiries in 2019 [@1E72FZcIm].
-Studies have shown that these databases contain relatively precise data, but in low quantities [@5TLcy6Yl; @1BnoByjXH; @OELNNm08; @yjdNa04s; @d3rG3TXb; @16P0HRKom; @UdzvLgBM].
-This happens because the high publication rate is too much for curators to keep up [@vYYWSlK2].
-This findings highlight a critical need for future approaches to be fast enough to compete with an increasing publication rate.
+Semi-automatic methods are a way to accelerate the curation process [@17LLVYRDg; @iJxqfYog; @us6gXxVp; @kHKmKy23; @17KVV4Pum; @d3rG3TXb; @SHPz84Z7].
+The first step of these methods is to use an automated system to initially extract sentences from text.
+This process removes irrelevant sentences, which dramatically decreases the amount of text that curators must sift through.
+Following the pre-filtering step, curators then approve or reject the remaining sentences.
+This approach saved curators an average of 2-2.8 hours compared to manual efforts [@17LLVYRDg; @KX7N360G]. 
+Despite automated systems excelling in identifying sentences for commonly occurring relationships, they tend to miss lessor known relationships [@17LLVYRDg].
+These systems also have a hard time parsing ambiguous sentences that naturally occur in text, which makes correcting them a challenging task [@17LLVYRDg].
+Given these caveats, future approaches should look into using techniques that simplify sentences to solve the ambiguity issue [@umenx8Nh; @aJL1tPyy].
 
-Semi-automatic methods are a way to augment curators during the curation process [@17LLVYRDg; @iJxqfYog; @us6gXxVp; @kHKmKy23; @17KVV4Pum; @d3rG3TXb; @SHPz84Z7].
-First step in this context is to use an automatic system to initally extract sentences from text.
-This process filters out irrelevant sentences, which means less text for  curators to sift through.
-After the pre-filtering step curators can approve or remove the identified sentences.
-This semi-automatic process was found to speed up the curation process compared to manual approach [@17LLVYRDg; @KX7N360G]. 
-Curators in [@KX7N360G] saved an average of 2.8 hours of overall time while curators in [@17LLVYRDg] saved about the same amount of time (2 hours). 
-Despite the speed up, this process is prone to produce bias results.
-As automated systems excel in identifying sentences for commonly occurring relationships, they miss out on lessor known relationships [@17LLVYRDg].
-Plus, these systems have a hard time parsing ambiguous sentences that naturally occur in text.
-This complication results in curators have a difficult time correcting these systems [@17LLVYRDg].
-Given these caveats, a future direction would be using or creating approaches that can mitigate the relationship bias.
-Furthermore, future approaches should look into using techniques that simplify sentences to solve the ambiguity issue [@umenx8Nh; @aJL1tPyy].
-
-Despite the negatives of manual curation, it is still an essential process for relationship extraction approaches.
-This process can be used to generate gold standard datasets that automated systems use for validation [@Y2DcwTrA; @YWh6tPj].
-Furthermore, manual curation can be used during the training process of  automated systems (i.e. active learning) [@MTIt6gSA].
+Despite the negatives of manual curation, it is still an essential process for extracting relationships from text.
+This process can be used to generate gold standard datasets that automated systems use for validation [@Y2DcwTrA; @YWh6tPj] and can be used during the training process of these systems (i.e. active learning) [@MTIt6gSA].
 It is important to remember that manual curation alone is precise, but results in low recall rates [@UdzvLgBM].
 Future databases should consider initially relying on automated methods to obtain sentences at an acceptable recall level, then incorporate manual curation as a way to fix or remove irrelevant results.
 
@@ -158,7 +146,8 @@ Future databases should consider initially relying on automated methods to obtai
 | Comparative Toxicogenomics Database [@axd6eJec] | A database that contains manually curated chemical-gene-disease interactions and  relationships. | 2,429,689 | Chemicals (Drugs), Genes, Diseases | Drug-Genes, Drug-Disease, Disease-Gene mappings | Manual curation and Automated systems |
 | Comprehensive Antibiotic Resistance Database [@1ByMfX8Y1] | Manually curated database that contains information about the molecular basis of antimicrobial resistance. | 174,443 | Drugs, Genes, Variants | Drug-Gene, Drug-Variant mappings | Manual curation |
 | OMIM [@1FZWpEoss] | A database that contains phenotype and genotype information | 25,153 | Genes, Phenotypes | Gene-Phenotype mappings | Manual Curation |
-Table. A table of databases that used a form of manual curation to populate entries. 
+Table:
+A table of databases that used a form of manual curation to populate entries. 
 Reported number of entities and relationships are relative to time of publication.
 {#tbl:manual-curated-databases}
 
@@ -166,59 +155,54 @@ Reported number of entities and relationships are relative to time of publicatio
 
 #### Rule-Based Relationship Extraction
 
-Rule-based extraction consists of identifying sentences that contain important keywords or grammatical patterns that allude to relationships of interest. 
-Keywords are established via expert knowledge or though the use of pre-existing ontologies.
-Grammatical patterns are constructed via experts curating parse trees, which are tree data structures that depict a sentence's grammatical structure.
-Parse trees come into two forms a constituency parse tree and a dependency parse trees.
-Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc, for construction.
-A constituency parse trees breaks a sentence down into a subphrases (Figure {@fig:constituency-parse-tree-example}) while dependency path trees analyzes the grammatical structure of a sentence (Figure {@fig:dependency-parse-tree-example}).
-Many text mining approaches [@i7KpvzCo; @3j1T67vB; @iiQkIqUX] use such trees to generate features for machine learning algorithms.
-These approaches are discussed in later sections.
-For this section we focus on approaches that mainly use rule based extraction to detect sentences that assert a relationship.
+Rule based-extraction consists of identifying essential keywords and grammatical patterns to detect relationships of interest. 
+Keywords are established via expert knowledge or though the use of pre-existing ontologies, while grammatical patterns are constructed via experts curating parse trees. 
+Parse trees are tree data structures that depict a sentence's grammatical structure and come into two forms: a constituency parse tree (Figure {@fig:constituency-parse-tree-example}) and a dependency parse tree (Figure {@fig:dependency-parse-tree-example}).
+Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc, for construction, but represent the information in two different forms.
+Constituency parse trees breaks a sentence down into a subphrases (Figure {@fig:constituency-parse-tree-example}) while dependency path trees analyzes the grammatical structure of a sentence (Figure {@fig:dependency-parse-tree-example}).
+Many text mining approaches [@i7KpvzCo; @3j1T67vB; @iiQkIqUX] use such trees to generate features for machine learning algorithms and these approaches are discussed in later sections.
+In this section we focus on approaches that use rule based extraction as a primary strategy to detect sentences that allude to a relationship.
 
 Grammatical patterns can simplify sentences for easy extraction [@aJL1tPyy; @66vfJAIo].
-Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions [@aJL1tPyy].
-These simplified versions were manually curated to determine the presence of a relationship.
-By simplyfing sentences this approach achieved high recall, but had low precision [@aJL1tPyy].
+Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions [@aJL1tPyy] and these simplified versions were manually curated to determine the presence of a relationship.
+By simplifying sentences this approach achieved high recall, but had low precision [@aJL1tPyy].
 Other approach used simplification techniques to make extraction easier [@15I4QE3J; @7PCrlbDi; @J0VF6x1n; @1HnOwZ1Xq].
 Tudor et al., simplified sentences to detect protein phosphorylation events [@J0VF6x1n].
-The sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event.
-By breaking these sentences down the authors were able to increase their recall.
-However, sentences that contained ambigious directionality or multiple phosphroylation events were too complex for the simplifier.
-As a consequence the simplifier produced errors in recall [@J0VF6x1n].
+Their sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event.
+By breaking these sentences down the authors were able to increase their recall; however, sentences that contained ambiguous directionality or multiple phosphorylation events were too complex for the simplifier.
+As a consequence the simplifier missed some relevant sentences [@J0VF6x1n].
 These errors highlight a crucial need for future algorithms to be generalizable enough to handle various forms of complex sentences.
 
 Pattern matching is a fundamental approach used to detect relationship asserting sentences.
-In this context patterns can consist of phrases from constituency trees, a set of keywords or some combination of both to detect sentences [@OnvaFHG9; @d3rG3TXb; @dRQuIwpJ; @23i6gRBE; @1avvFjJ9; @KEkjqdB0].
-Xu et al. designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments [@1avvFjJ9].
-This system matched drug-disease pairs from clinicaltrails.gov to drug-disease pairs mentioned in abstracts.
-This matching process aided the authors in identifying sentences that were used to create simple patterns, such as "Drug in the treatment of Disease" [@1avvFjJ9], to match sentences in a wide variety of abstracts.
-The authors hand curated two datasets for evalution and achieved a high precision score of 0.904 and a low recall score of 0.131 [@1avvFjJ9].
-This low recall score was based on constructed patterns being very specific to top occurring drug paris.
-This flaw resulted in rarely occurring pairs having a high likelihood of being missed.
-Following approaches using constituency trees, some approaches used dependency trees to construct patterns [@jg0TGCov; @i7KpvzCo].
-Depending upon the nature of the algorithm, dependency trees could be more appropiate than constituency trees and vise versa.
-The performance difference between the two approaches still remains as an open question for future exploration.
+These patterns can consist of phrases from constituency trees, a set of keywords or some combination of both [@OnvaFHG9; @d3rG3TXb; @dRQuIwpJ; @23i6gRBE; @1avvFjJ9; @KEkjqdB0].
+Xu et al., designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments [@1avvFjJ9].
+This system matched drug-disease pairs from ClinicalTrials.gov to drug-disease pairs mentioned in abstracts.
+This matching process aided the authors in identifying sentences that can be used to create simple patterns, such as "Drug in the treatment of Disease" [@1avvFjJ9], to match other sentences in a wide variety of abstracts.
+The authors hand curated two datasets for evaluation and achieved a high precision score of 0.904 and a low recall score of 0.131 [@1avvFjJ9].
+This low recall score was based on constructed patterns being too specific to detect infrequent drug pairs.
+Besides constituency trees, some approaches used dependency trees to construct patterns [@jg0TGCov; @i7KpvzCo].
+Depending upon the nature of the algorithm and text, dependency trees could be more appropriate than constituency trees and vise versa.
+The performance difference between the two trees remains as an open question for future exploration.
 
 Rules based methods provide a basis for many relationship extraction systems.
-Approaches in this category range from simplifing sentences for easy extraction to identifing sentences based on matched key phrases or grammatical patterns.
+Approaches in this category range from simplifying sentences for easy extraction to identifying sentences based on matched key phrases or grammatical patterns.
 Both require a significant amount of manual effort and expert knowledge to perform well.
-A future direction is to develop ways to automatically construct these hand-crafted patterns, which would accelerate the process of creating new rule-based systems.
-
-![
-A visualization of a dependency parse tree using the following sentence as in example: "BRCA1 is associated with breast cancer" [@10i1qMFbL].
-For these type of trees the root begins at the main verb of a sentence.
-Each arrows depicts the dependency shared between two words.
-For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject.
-This means that BRCA1 is the subject of the sentneces and it is being referred to by the word associated.
-](images/figures/dependency_parse_example.png){#fig:dependency-parse-tree-example}
+A future direction is to develop ways to automatically construct these hand-crafted patterns, which would accelerate the process of creating these rule-based systems.
 
 ![
 A visualization of a constituency parse tree using the following sentence: "BRCA1 is associated with breast cancer" [@1EvoylLWK].
-This type of tree has the root beginning at the start of the sentence.
-Each word is grouped into subphrases depending on the part of speech tags of a word.
-For example, the word "associated" is a past particple verb (VBN) that belongs to the verb phrase (VP) subgroup.
+This type of tree has the root start at the beginning of the sentence.
+Each word is grouped into subphrases depending its correlating part of speech tag.
+For example, the word "associated" is a past participle verb (VBN) that belongs to the verb phrase (VP) subgroup.
 ](images/figures/constituency_parse_tree_example.png){#fig:constituency-parse-tree-example}
+
+![
+A visualization of a dependency parse tree using the following sentence: "BRCA1 is associated with breast cancer" [@10i1qMFbL].
+For these type of trees the root begins with the main verb of the sentence.
+Each arrows represents the dependency shared between two words.
+For example, the dependency between BRCA1 and associated is nsubjpass, which stands for passive nominal subject.
+This means that "BRCA1" is the subject of the sentence and it is being referred to by the word "associated".
+](images/figures/dependency_parse_example.png){#fig:dependency-parse-tree-example}
 
 #### Extracting Relationships Without Labels
 
