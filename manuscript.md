@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/df161ec7ff36387655082fd45b81e9422e89f327/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/668578fb45c7c6eddb1252bb31c7d88f8947b078/))
 was automatically generated
-from [greenelab/knowledge-graph-review@df161ec](https://github.com/greenelab/knowledge-graph-review/tree/df161ec7ff36387655082fd45b81e9422e89f327)
+from [greenelab/knowledge-graph-review@668578f](https://github.com/greenelab/knowledge-graph-review/tree/668578fb45c7c6eddb1252bb31c7d88f8947b078)
 on February 28, 2020.
 </em></small>
 
@@ -206,38 +206,33 @@ This means that "BRCA1" is the subject of the sentence and it is being referred 
 
 #### Extracting Relationships Without Labels
 
-Unsupervised methods of extraction involve drawing inferences from data without the use of labels.
+Unsupervised extractors draw inferences from textual data without the use of annotated labels.
 These methods involve some form of clustering or statistical calculations.
-In this section we discuss methods that use unsupervised learning to detect relationship asserting sentences from text.
+In this section we focus on methods that use unsupervised learning to extract relationships from text. 
 
-An unsupervised method to extract relationships exploits the fact that two entities can appear together in text. 
-This kind of event is called co-occurrence and studies that use this phenomenon can be found in table {@tbl:unsupervised-methods-text-mining}.
-Two databases DISEASES [@5gG8hwv7] and STRING [@iihNCsNX] were populated using a co-occurrence scoring method on PubMed abstracts.
-Both databases used the same scoring method that measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves.
-This method assumes independence between each individual occurrence.
-Under this assumption mention pairs that occur more than expected were presumed to indicate the presence of an association or interaction.
+An unsupervised extractor can exploit the fact that two entities may appear together in text.
+This event is referred to as co-occurrence and studies that use this phenomenon can be found in Table {@tbl:unsupervised-methods-text-mining}.
+Two databases DISEASES [@5gG8hwv7] and STRING [@iihNCsNX] were populated using a co-occurrence scoring method on PubMed abstracts, which measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves.
+This technique assumes that each individual co-occurring pair is independent from one another.
+Under this assumption mention pairs that occur more than expected were presumed to implicate the presence of an association or interaction.
 This approach was able to identify 543,405 disease gene associations [@5gG8hwv7] and 792,730 high confidence protein protein interactions [@iihNCsNX], but is limited to only using PubMed abstracts.
 
-Full text articles are able to drastically amplify text mining power to detect relationships [@DGlWGDEt; @pLAIFXqP].
-Westergaard et al. used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
-The authors discovered that full text provided better prediction power than using abstracts alone.
-This improvement suggests that future text mining approaches should consider using full text to increase detection power.
+Full text articles are able to dramatically enhance relationship detection [@DGlWGDEt; @pLAIFXqP].
+Westergaard et al., used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
+The authors discovered that full text provided better prediction power than using abstracts alone, which suggests that future text mining approaches should consider using full text to increase detection power.
 
-Unsupervised methods have been focused on treating multiple biomedical relationships as multiple isolated problems.
-These methods repeatedly use the same model for each biomedical relationship type.
-An alternative to this persepctive is to capture all different relationship types at once.
+Unsupervised extractors often treat different biomedical relationships as multiple isolated problems.
+An alternative to this perspective is to capture all different types at once.
 Clustering is an approach that accomplish this concept of simultaneous extraction.
-Percha et al. used a biclustering algorithm on generated dependency parse trees to group PubMed abstract sentences [@CSiMoOrI].
-Each cluster was manually curated to determine which relationship they represented.
+Percha et al., used a biclustering algorithm on generated dependency parse trees to group sentences within PubMed abstract [@CSiMoOrI].
+Each cluster was manually curated to determine which relationship each group represented.
 This approach captured 4,451,661 dependency paths for 36 different groups [@CSiMoOrI].
 Despite the success, this approach suffered from technical issues such as dependency tree parsing errors.
-This type of error resulted in sentences not being grouped by the clustering algorithm [@CSiMoOrI].
-Future clustering approaches should consider simplifying sentences to prevent this type of issue.
+These errors resulted in some sentences not being captured by the clustering algorithm [@CSiMoOrI] and future clustering approaches should consider simplifying sentences to prevent this type of issue.
 
-Overall unsupervised methods provide a means to rapidly find relationship asserting sentences without the need of annotated text.
-Approaches in this category range from using co-occurrence scores to clustering sentences.
-These methods provide a generalizable framework that can be used on large repositories of text.
-Future methods can improve detection power by considering the use of  methods that simplify sentences and use datasets that include full text articles.
+Overall unsupervised methods provide a means to rapidly extract relationship asserting sentences without the need of annotated text.
+Approaches in this category range from calculating co-occurrence scores to clustering sentences and provide a generalizable framework that can be used on large repositories of text.
+Future unsupervised approaches should consider to simplifying sentences as a first step and use datasets that include full text articles.
 
 | Study | Relationship of Interest | 
 | --- | --- | 
@@ -253,55 +248,54 @@ Table: Table of approaches that mainly use a form of co-occurrence. {#tbl:unsupe
 
 #### Supervised Relationship Extraction
 
-Supervised extraction uses labeled relationships to learn text patterns that correspond to positively labeled relationships instead of negative ones.
+Supervised extractors use labeled sentences to construct generalized patterns that bisect positive examples (sentences that allude to a relationship) from negative ones (sentences that do not allude to a relationship).
 Most of these approaches have flourished due to pre-labelled publicly available datasets (Table {@tbl:supervised-text-datasets}).
 These datasets were constructed by curators for shared open tasks [@16As8893j; @6wNuLZWb] or as a means to provide the scientific community with a gold standard [@L9IIm3Zd; @6wNuLZWb; @luGt8luc].
-Approaches that use these available datasets range from using support vector machines (SVMs) with custom kernels to deep learning with algorithms that can construct their own features.
-In the rest of this section we discuss approaches that use supervised methods to detect relationship-asserting sentences.
+Approaches that use these available datasets range from using linear classifiers such as support vector machines (SVMs) to non-linear classifiers such as deep learning techniques.
+The rest of this section discuss approaches that use supervised extractors to detect relationship asserting sentences.
 
-Extracting relationships in a supervised setting can involve mapping textual input onto a high dimensional space.
+Some supervised extractors involve mapping textual input onto a high dimensional space.
 Support vector machines are a type of classifier that can accomplish this task with a mapping function called a kernel [@iiQkIqUX; @1B0lnkj35].
 These kernels take information such as a sentence's dependency tree [@i7KpvzCo; @3j1T67vB], part of speech tags [@iiQkIqUX] or even word counts [@1B0lnkj35] and map them onto a dense feature space.
-Within this space, the methods learn a hyperplane that separates sentences in the positive class (mentions a relationship) from the negative class (does not mention a relationship). 
-Kernels can be manually constructed or selected to cater to the relationship being extracted [@iiQkIqUX; @3j1T67vB;@1B0lnkj35; @1B0lnkj35].
-Determining the correct kernel requires expert knowledge to be successful and is a nontrivial task depending on the relationship.
+Within this space, these methods construct a hyperplane that separates sentences in the positive class (illustrates a relationship) from the negative class (does not illustrate a relationship). 
+Kernels can be manually constructed or selected to cater to the relationship of interest [@iiQkIqUX; @3j1T67vB;@1B0lnkj35; @1B0lnkj35].
+Determining the correct kernel is a nontrivial task that requires expert knowledge to be successful.
 In addition to single kernel methods, a recent study used an ensemble of SVMs to extract disease-gene associations [@GeCe9qfW].
-The ensemble outperformed notable disease-gene association extractors [@jg0TGCov; @hbAqN08A] in terms of precision, recall and F1 score.
-Overall, SVMs have been shown to be beneficial in terms of relationship mining; however, major focus have shifted to utilizing deep learning techniques to extract relationships as these approaches can perform non-linear mappings of high dimensional data.
+This ensemble outperformed notable disease-gene association extractors [@jg0TGCov; @hbAqN08A] in terms of precision, recall and F1 score.
+Overall, SVMs have been shown to be beneficial in terms of relationship mining; however, major focus have shifted to utilizing deep learning techniques as these approaches can perform non-linear mappings of high dimensional data.
 
 Deep learning is an increasingly popular class of techniques that can construct their own features within a high dimensional space [@vDFZcSf9; @BeijBSRE].
-These methods use different forms of neural networks, such as recurrent or convolutional neural networks, to perform classification.
+These methods amount to different forms of neural networks, such as recurrent or convolutional neural networks, to perform classification.
 
-Recurrent neural networks (RNN) are designed for sequential analysis that consist of using a repeatedly updating hidden state to make predictions.
+Recurrent neural networks (RNN) are designed for sequential analysis and use a repeatedly updating hidden state to make predictions.
 An example of a recurrent neural network is a long short term memory (LSTM) network [@x4dbEYer].
-Cocos et al [@kCSge2o8] used a LSTM to extract drug side effects from de-identified twitter posts, while Yadav et al. [@hEblZ1j5] used an LSTM to extract protein-protein interactions.
-Other works have used LSTMs to perform relationship extraction [@8lfvAUz7; @8NrcroGt; @k4sSP5gN; @1F5aZYjOB; @kCSge2o8]. 
+Cocos et al. [@kCSge2o8] used a LSTM to extract drug side effects from de-identified twitter posts, while Yadav et al. [@hEblZ1j5] used an LSTM to extract protein-protein interactions.
+Others have also embraced LSTMs to perform relationship extraction [@8lfvAUz7; @8NrcroGt; @k4sSP5gN; @1F5aZYjOB; @kCSge2o8]. 
 Despite the success of these networks, training can be difficult as these networks are highly susceptible to vanishing and exploding gradients [@YYBiIF26; @6PiFh6Y2].
-One solution to this problem is to clip the gradients while the neural network trains [@FoztezBR].
-Besides the gradient problem, these approaches peak in performance when the dataset reaches at least a tens of thousand of data points [@anpoBunY].
+One proposed solution to this problem is to clip the gradients while the neural network trains [@FoztezBR].
+Besides the gradient problem, these approaches only peak in performance when the datasets reach at least a tens of thousand of data points [@anpoBunY].
 
 Convolutional neural networks (CNNs), which are widely applied for image analysis, use multiple kernel filters to capture small subsets of an overall image [@BeijBSRE].
 In the context of text mining an image is replaced with words within a sentence mapped to dense vectors (i.e., word embeddings) [@1GhHIDxuW; @u5iJzbp9].
-Peng et al. [@TNHJioqT] used a CNN to extract sentences that mentioned protein-protein interactions and Zhou et al. [@HS4ARwmZ] used a CNN to extract chemical-disease relations.
-Other approaches have used CNNs and variants of CNNs to extract relationship-asserting sentences [@1H4LpFrU0; @5LOkzCNK; @19fr9ZRrA].
-Just like RNNs, these networks perform well when millions of labeled examples are present [@anpoBunY]. 
+Peng et al.  used a CNN to extract sentences that mentioned protein-protein interactions [@TNHJioqT] and Zhou et al. used a CNN to extract chemical-disease relations [@HS4ARwmZ].
+Others have used CNNs and variants of CNNs to extract relationships from text [@1H4LpFrU0; @5LOkzCNK; @19fr9ZRrA].
+Just like RNNs, these networks perform well when millions of labeled examples are present [@anpoBunY]; however, obtaining these large datasets is a non-trivial task.
 Future approaches that use CNNs or RNNs should consider solutions to obtaining these large quantities of data through means such as weak supervision [@EHeTvZht], semi-supervised learning [@xWET58su] or using pre-trained networks via transfer learning [@12JtL2o6T; @YRDXK4f4].
 
-Semi-supervised learning [@xWET58su] and weak supervision [@EHeTvZht] are techniques that can construct large datasets for machine learning classifiers. 
-Semi-supervised learning consists of combining labeled data with unlabeled data to extract relationships.
-For example, one study used a variational auto encoder with a LSTM network to extract protein-protein interactions from pubmed abstracts and full text [@hNMqMImK].
-This is an elegant solution to handle the small dataset problem, but requires labeled data to start. 
-The dependency on labeled data makes finding under-studied relationships difficult as one would need to find or construct examples of the missing relationships in the beginning.
+Semi-supervised learning [@xWET58su] and weak supervision [@EHeTvZht] are techniques that can rapidly construct large datasets for machine learning classifiers. 
+Semi-supervised learning trains classifiers by combining labeled data with unlabeled data.
+For example, one study used a variational auto encoder with a LSTM network to extract protein-protein interactions from PubMed abstracts and full text [@hNMqMImK].
+This is an elegant solution for the small dataset problem, but requires labeled data to start. 
+This dependency makes finding under-studied relationships difficult as one would need to find or construct examples of the missing relationships at the start.
 
 Weak or distant supervision takes a different approach that uses noisy or even erroneous labels to train classifiers [@EHeTvZht; @WYud0jQT; @vzoBuh4l; @9Jo1af7Z].
-Under this paradigm sentences are labeled based on their mention pair being present (positive) or absent (negative) in a database.
-Once these labels are obtained a machine learning classifier can now be trained to predict sentences [@EHeTvZht].
-For example, Thomas et al. [@kvlZD1mv] used distant supervision to train a support vector machine to extract sentences mentioning protein-protein interactions (ppi). 
+Under this paradigm sentences are labeled based on their mention pair being present (positive) or absent (negative) in a database and, once labeled, machine learning classifier can now be trained to extract relationships from text [@EHeTvZht].
+For example, Thomas et al., [@kvlZD1mv] used distant supervision to train a SVM to extract sentences mentioning protein-protein interactions (ppi). 
 Their SVM model achieved comparable performance against a baseline model; however, the noise generated via distant supervision was difficult to eradicate [@kvlZD1mv].
-A number of efforts have focused on combining distant supervision with other types of labeling strategies to reduce the negative impacts of noisy knowledge bases [@Kry87kzn; @M5UWoN93; @xy08BzDf].
-Nicholson et al. [@19fr9ZRrA] found that, in some circumstances, these strategies and rules can be reused across different types of biomedical edges to learn a heterogeneous knowledge graph if those edges describe similar physical concepts.
-This remains an active area of investigation with numerous associated challenges and opportunities.
-Overall, semi-supervised learning and weak supervision provide promising results in terms of relation extraction and future approaches should consider using those paradigms to train machine learning classifiers.
+A number of efforts have focused on combining distant supervision with other types of labeling strategies to mitigate the negative impacts of noisy knowledge bases [@Kry87kzn; @M5UWoN93; @xy08BzDf].
+Nicholson et al. [@19fr9ZRrA] found that, in some circumstances, these strategies can be reused across different types of biomedical relationships to learn a heterogeneous knowledge graph in cases where those relationships describe similar physical concepts.
+Combining distant supervision with other types of labeling strategies remains an active area of investigation with numerous associated challenges and opportunities.
+Overall, semi-supervised learning and weak supervision provide promising results in terms of relationship extraction and future approaches should consider using these paradigms to train machine learning classifiers.
 
 | Dataset | Type of Sentences |
 | --- | --- |
