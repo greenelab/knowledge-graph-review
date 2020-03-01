@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/46f906db319b4f54a771cd2d6a3d6e6e3744f15c/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/9e51f440e27d2782716d81f44dce205f08b65c22/))
 was automatically generated
-from [greenelab/knowledge-graph-review@46f906d](https://github.com/greenelab/knowledge-graph-review/tree/46f906db319b4f54a771cd2d6a3d6e6e3744f15c)
+from [greenelab/knowledge-graph-review@9e51f44](https://github.com/greenelab/knowledge-graph-review/tree/9e51f440e27d2782716d81f44dce205f08b65c22)
 on March 1, 2020.
 </em></small>
 
@@ -414,8 +414,8 @@ Future work should include hybrid models that use both node2vec and autoencoders
 
 ### Unifying Applications
 
-Knowledge graphs have been used in many biomedical applications ranging from identifying protein functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un] (Figure {@fig:unifying_applications}).
-In this section we discuss how knowledge graphs are being applied in biomedical settings and put particular emphasis on an emerging set of techniques: those that project knowledge graphs into a low dimensional space.
+Knowledge graphs have been applied to many biomedical challenges ranging from identifying proteins' functions [@1EP2NrAhl] to prioritizing cancer genes [@17R6q0KTd] to recommending safer drugs to patients [@aLsdEzlV; @8vj5v8un] (Figure {@fig:unifying_applications}).
+In this section we review how knowledge graphs are applied in biomedical settings and put particular emphasis on an emerging set of techniques that represent knowledge graphs in a low dimensional space.
 
 ![
 Overview of biomedical applications that make use of knowledge graphs.
@@ -424,87 +424,87 @@ Categories consist of: (a) Multi-Omic applications, (b) Pharmaceutical Applicati
 
 #### Multi-Omic Applications
 
-Multi-omic applications for knowledge graphs include efforts to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome.
-Approaches in this category use knowledge graphs to establish connections between -omic entities as well as diseases.
-Such tasks include gene-symptom prioritization [@otY29wFV], protein-protein interaction prediction [@6O3BO6WO; @Y2RTnbCe], and detecting miRNA-disease associations [@YyPaovQ0].
-We focus specifically on multi-omic applications of algorithms that project knowledge graphs into a low dimensional space to make connections.
+Multi-omic applications employ knowledge graphs to study the genome, how genes are expressed in the transcriptome, and how the products of those transcripts interact in the proteome.
+These graphs are used to establish connections between -omic entities as well as diseases.
+Tasks in this context include gene-symptom prioritization [@otY29wFV], protein-protein interaction prediction [@6O3BO6WO; @Y2RTnbCe], and detecting miRNA-disease associations [@YyPaovQ0].
+We focus specifically on multi-omic applications that represent knowledge graphs in a low dimensional space to make connections.
 
-Knowledge graphs have been used as recommendation systems to establish links between RNA with disease and proteins with other proteins.
-Shen et al. [@YyPaovQ0] used an algorithm called collaborative filtering to establish an association between miRNA and diseases.
-The authors constructed an miRNA-Disease network using the HMDDD database [@1F18ycwfS] and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases.
-This adjacency matrix was decomposed into small rectangular matrices using SVD, then these matricies were used to calculate similarity scores between the miRNA and diseases.
+Recommendation systems make use of knowledge graphs to establish links between RNA with disease and proteins with other proteins.
+Shen et al. used an algorithm called collaborative filtering to establish an association between miRNA and diseases [@YyPaovQ0].
+The authors constructed an miRNA-Disease network using the Human MicroRNA Disease database (HMDD) [@1F18ycwfS] and generated an adjacency matrix with the rows representing miRNA and the columns representing diseases.
+This matrix was decomposed into small rectangular matrices using SVD, then these small matrices were used to calculate similarity scores between miRNAs and diseases.
 High scores implied a high likelihood that a given miRNA had an association with a given disease [@YyPaovQ0].
-Other approaches have built off of Shen et al.'s [@YyPaovQ0] work by incorpoating novel ways to perform matrix factorization [@1DjgsuPV2; @hZ2R5BRj;@4xcJzyPc] or by integrating machine learning models in conjunction with matrix factorization [@icSe8Yyw].
-These methods provided high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best [@YyPaovQ0].
+Other approaches have built off of Shen et al.'s work by incorporating novel ways to perform matrix factorization [@1DjgsuPV2; @hZ2R5BRj;@4xcJzyPc] or by integrating machine learning models in conjunction with matrix factorization [@icSe8Yyw].
+These approaches achieved high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best [@YyPaovQ0].
 Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions [@6FrpIkNZ; @6O3BO6WO; @Y2RTnbCe].
-Though extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation of such approaches.
+Although extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation pipeline.
 
-Approaches that use deep learning have mainly used the node2vec model [@PD4udqRe] or variants of that model.
-Yang et al. [@otY29wFV] used node2vec to create a recommendation system to infer associations between genes and disease symptoms.
-The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes-diseases and diseases-disease symptoms.
-The generated knowledge graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph.
-High scores implicated high chance for an association [@otY29wFV].
+Applications of deep learning techniques have mainly used the node2vec model [@PD4udqRe] or variants of it.
+Yang et al. used node2vec to create a recommendation system to infer associations between genes and disease symptoms [@otY29wFV].
+The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes with diseases and diseases with disease symptoms.
+The generated graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph.
+High scores implied a high likelihood of an association [@otY29wFV].
 This approach outperformed methods that didn't use a knowledge graph; however, validation was difficult as it involved manual curation of the literature @otY29wFV].
-Similar approaches used variants of the node2vec algorithm to predict gene-disease associations
+Similar approaches used variants of node2vec to predict gene-disease associations
 [@1D9FTzRBg; doi:10.3389/fgene.2019.00226 @6PISrkV5; @taI1UUAE] analyze RNA-seq data [@qbHGtxhA] and infer novel protein information [@QQtRw08H; @8qB2oCgy; @RYW74Wvh; @1EP2NrAhl].
-Future extensions of these applications should consider incorporating more sources of data such as compounds, anatomic locations or even gene pathways to improve prediciton performance.
 
-Knowledge graphs have aided the multi-omics field by generating novel discoveries.
-Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, and translational models may be an untapped resource that could aid future efforts.
-Another area of exploration could be the incorporation of multiple sources of information such as anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).
+Knowledge graphs benefited the multi-omics field as a resource for generating novel discoveries.
+Most approaches to date use matrix factorization and node2vec to project knowledge graph into a low dimensional space, while translational models may be an untapped resource that could aid future efforts.
+Another area of exploration could be incorporating multiple sources of information such as compounds, anatomic locations or genetic pathways to improve the specificity of findings (i.e., to predict that a protein-protein interaction happens in a specific cell type or tissue).
 
 #### Pharmaceutical Applications
 
-There are many examples of how knowledge graphs are applied to identify new properties of drugs.
-Tasks in this context involve prediction drugs interacting with other drugs [@NnOS86ev], identifying molecular targets a drug might interact with [@11ua4nEkY] and identifying new disease treatments for previously established drugs [@sj2fr8fp].
-As with other applications, we focus on those that use low-dimensional representations.
+There are a multitude of examples where knowledge graphs have been applied to identify new properties of drugs.
+Tasks in this field involve predicting drugs interacting with other drugs [@NnOS86ev], identifying molecular targets a drug might interact with [@11ua4nEkY] and identifying new disease treatments for previously established drugs [@sj2fr8fp].
+In this section we concentrate on applications that apply these graphs to discover new properties of drugs and focus on approaches that use these graphs in a low-dimensional space.
 
-Similar to multi-omic applications knowledge graphs have been used in recommendation systems to infer novel links between drugs and diseases.
-Dai et al. [@11ua4nEkY] used collaborative filtering to infer drug-disease associations.
+Similar to multi-omic applications recommendation systems have utilized knowledge graphs to infer novel links between drugs and diseases.
+Dai et al. used collaborative filtering to infer drug-disease associations [@11ua4nEkY].
 The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network.
 They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. 
-Then the authors generated an adjacency matrix where rows represent drugs and columns represent diseases and decomposed this matrix into two small rectangular matrices. 
-These matrices were used to calculate similarity scores between all drugs and all diseases where high values implicate an association [@11ua4nEkY].
-Related approaches have been used to infer drug-target interactions [@S0MrOfj0; @HOrwJFzW; @Z391qdG0] and drug-disease treatments [@dbgPwLaZ; @94kKAy9w; @oKdMo9U9; @16FEYidu2; @18YRZaX7n]
-In spite of reported success, these approaches are limited to the drugs and diseases contained in the network.
+Following construction, the authors generated an adjacency matrix where rows represent drugs and columns represent diseases.
+This matrix was decomposed into two small rectangular matrices and these matrices were used to calculate similarity scores between all drugs and all diseases.
+High values implied a high chance of an association [@11ua4nEkY].
+Related approaches used this technique to infer drug-target interactions [@S0MrOfj0; @HOrwJFzW; @Z391qdG0] and drug-disease treatments [@dbgPwLaZ; @94kKAy9w; @oKdMo9U9; @16FEYidu2; @18YRZaX7n].
+In spite of reported success, these approaches are limited to the drugs and diseases contained in the graph.
 Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.
 
-Deep learning applications have used node2vec [@19E33rJiu; @dR3gjJXP] and auto-encoder [@za8DCIPS; @1BT2OTuxL] approaches to project knowledge graphs into a low dimensional space.
-Zong et al. [@19E33rJiu] used a node2vec-like model to predict drug-target associations.
+Applications that use deep learning techniques have used node2vec [@19E33rJiu; @dR3gjJXP] and autoencoders [@za8DCIPS; @1BT2OTuxL] approaches to represent knowledge graphs in a low dimensional space.
+Zong et al. used a node2vec-like model to predict drug-target associations [@19E33rJiu].
 The authors constructed a disease-target-disease network using drug centered databases: Drugbank [@111FgvD8J] and Diseasome [@14fs7pzn0].
-Next, the authors applied a random walk to the network and trained a skip-gram model to generate node embeddings.
-Lastly, the authors constructed a similarity metric to rank how similar drugs are to their targets [@19E33rJiu].
-A limitation to this method is that their network is missing information such as pharmacological class or drug chemical structure that may help in prediction performance.
-Overall, deep learning provides a robust set of techniques that has been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
+Next, the authors applied a random walk to the graph and trained a skip-gram model to generate a low dimensional representation of the graph.
+Lastly, the authors construct a similarity metric that used this space to rank how similar drugs are to their targets [@19E33rJiu].
+A limitation to this approach is that their graph is missing information such as pharmacological class or drug chemical structure that could improve prediction performance.
+Overall, deep learning provides a robust set of techniques that have been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
 
-Knowledge graphs can support drug discovery efforts by predicting drug information such as drug side effects and new disease treatments.
+Applications that discover new properties of drugs have benefited from using knowledge graphs as a resource.
 Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation.
-Due to the success of deep learning [@245Px4P3; @WMEox1CM] the focus of the field has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance.
-Plus, another area of exploration is to incorporate information such as phamaceutical classes for drugs or chemical structure to improve knowledge graph detection power.
+Due to the success of deep learning [@245Px4P3; @WMEox1CM] much of the field's focus has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance.
+Plus, another area of exploration is to incorporate information such as pharmaceutical classes for drugs or chemical structure to improve detection power.
 
 #### Clinical applications
 
-Using knowledge graphs for clinical applications is in early stages of development, but the long-term goal is to use analyses of knowledge graphs to aid patient care.
-Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases and edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease [@xNv4Rkif; @mrfQbq3g; @xU6Ims3W; @gddb9uXr].
-Tasks range from improving patient diagnoses [@UuF5A9Pu;@OCnhKscH] to recommending safer drugs for patients [@aLsdEzlV; @OCnhKscH].
+Clinical applications that use knowledge graphs are in early stages of development, but the long-term goal is to use analyses of these graphs to aid patient care.
+Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases while edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease [@xNv4Rkif; @mrfQbq3g; @xU6Ims3W; @gddb9uXr].
+Tasks within this field range from improving patient diagnoses [@UuF5A9Pu;@OCnhKscH] to recommending safer drugs for patients [@aLsdEzlV; @OCnhKscH] and we briefly discuss efforts that use knowledge graphs to accomplish such tasks.
 
-Early work in this field applied translational models (Figure {@fig:unifying_techniques_overview} (b)) to knowledge graphs to recommend safe drugs.
-Wang et al. [@aLsdEzlV] used a variant of the TransH [@nprR5cVj] model to create such a system for patients.
+Early work in this field applied translational models (Figure {@fig:unifying_techniques_overview} (b)) to knowledge graphs with the goal of recommend safe drugs.
+Wang et al. used a variant of the TransH [@nprR5cVj] model to create such a system for patients [@aLsdEzlV].
 They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network.
-Every node in the graph was embedded while satisfying the following equation: $\textbf{h} - r \approx \textbf{t}$.
+Together with all translational models every node in the graph was embedded while satisfying the following equation: $\textbf{h} - \textbf{r} \approx \textbf{t}$.
 Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions [@aLsdEzlV].
 Researchers in [@BRGxlTb9] applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.
 
-In contrast with other applications where node2vec and auto-encoder models have become established, deep learning methods in this area often use graph attention models [@Exfv0f4l].
-These models mimic machine translation models [@haHzVaaz] and aim to simultaneously embed knowledge graphs into a low dimensional space and perform the task at hand.
-Choi et al. [@10nDTiETi] used a graph attention model to predict patient diagnoses.
+In contrast with most applications where node2vec and autoencoder models have become established, deep learning methods in this field have focused on using graph attention models [@Exfv0f4l].
+These models mimic machine translation models [@haHzVaaz] and aim to simultaneously represent knowledge graphs in a low dimensional space and perform the task at hand.
+Choi et al. used a graph attention model to predict patient diagnoses [@10nDTiETi].
 The authors constructed a directed graph using medical concepts from patient EHR data.
 This directed graph was fed into a graph attention network and then used to predict a patient's likelihood of heart failure [@10nDTiETi].
 Other approaches have used graph attention models to perform clinical tasks such as drug safety recommendations [@8vj5v8un] and patient diagnoses [@QNJ3b5bY].
 
 Knowledge graphs have shown promising results when used for clinical applications; however, there is still room for improvement.
-Most approaches have run into the common problem with missing data from EHR [@10nDTiETi; @aLsdEzlV; @8vj5v8un].
-Future directions consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.
+Most approaches have run into the common problem of missing data within EHR [@10nDTiETi; @aLsdEzlV; @8vj5v8un].
+Future directions for the field consist of designing algorithms that can fill in this missing data gap or construct models that can take missing data into account.
 
 
 ## Conclusion
