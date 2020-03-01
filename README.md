@@ -10,8 +10,7 @@
 
 <!-- usage note: edit this section. -->
 
-This repository is a template manuscript (a.k.a. rootstock).
-Actual manuscript instances will clone this repository (see [`SETUP.md`](SETUP.md)) and replace this paragraph with a description of their manuscript.
+This repository contains the literature review: "Constructing Knowledge Graphs and Their Biomedical Applications".
 
 ## Manubot
 
