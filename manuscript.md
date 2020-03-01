@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-02-28'
+date-meta: '2020-03-01'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/668578fb45c7c6eddb1252bb31c7d88f8947b078/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/46f906db319b4f54a771cd2d6a3d6e6e3744f15c/))
 was automatically generated
-from [greenelab/knowledge-graph-review@668578f](https://github.com/greenelab/knowledge-graph-review/tree/668578fb45c7c6eddb1252bb31c7d88f8947b078)
-on February 28, 2020.
+from [greenelab/knowledge-graph-review@46f906d](https://github.com/greenelab/knowledge-graph-review/tree/46f906db319b4f54a771cd2d6a3d6e6e3744f15c)
+on March 1, 2020.
 </em></small>
 
 ## Authors
@@ -319,100 +319,98 @@ Table: A set of publicly available datasets for supervised text mining. {#tbl:su
 Knowledge graphs can help researchers tackle many biomedical tasks such as finding new treatments for existing drugs [@O21tn8vf], aiding efforts to diagnose patients [@10nDTiETi] and predicting associations between diseases and biomolecules [@YyPaovQ0].
 In many cases, solutions rely on representing knowledges graphs in a low dimensional space, which is a process called representation learning.
 This space preserves a knowledge graph's local and/or global structure and can support efforts to apply machine learning methods to make predictions.
-We discuss the unifying techniques to construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
+In the next sections we review the unifying techniques that construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
 
 ### Unifying Techniques
 
-Mapping high dimensional data into a low dimensional space has greatly improved modeling performance in fields such as natural language processing [@1GhHIDxuW; @u5iJzbp9] and image analysis [@j7KrVyi8].
-The success of these approaches provides rationale for projecting knowledge graphs into a low dimensional space as well [@DSiHGDz9].
-Techniques that perform this projection often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
-We group methods for producing low-dimensional representations of knowledge graphs into the following three categories: matrix factorization, translational methods, and deep learning (Figure {@fig:unifying_techniques_overview}).
+Mapping high dimensional data into a low dimensional space greatly improves modeling performance in fields such as natural language processing [@1GhHIDxuW; @u5iJzbp9] and image analysis [@j7KrVyi8].
+The success of these approaches provides rationale for representing knowledge graphs into a low dimensional space [@DSiHGDz9].
+Techniques that construct this representation often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
+We group these methods into the following three categories: matrix factorization, translational methods, and deep learning (Figure {@fig:unifying_techniques_overview}).
 
 ![
-Pipeline for embedding knowledge graphs into a low dimensional space.
-Starting with a knowledge graph, embeddings can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c).
+Pipeline for representing knowledge graphs in a low dimensional space.
+Starting with a knowledge graph, this space can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c).
 The output of this pipeline is an embedding space that clusters similar node types together.
 ](images/figures/unifying_techniques_overview.png){#fig:unifying_techniques_overview}
 
 #### Matrix Factorization
 
-Matrix factorization is a technique that uses linear algebra to map high dimensional data into a low dimensional space.
+Matrix factorization is a technique that uses linear algebra to map high dimensional data onto a low dimensional space.
 This projection is accomplished by decomposing a matrix into a set of small rectangular matrices (Figure {@fig:unifying_techniques_overview} (a)).
 Notable methods for matrix decomposition include Isomap [@13cvwdrYY], Laplacian eigenmaps [@MxPEnWF1] and Principal Component Analysis (PCA) [@sSbTaHau]/Singular Vector Decomposition (SVD) [@H0ez30Pz].
-These methods were designed to be used on many different types of data; however, we discuss their use in the context of projecting knowledge graphs into a low dimensional space.	
+These methods were designed to be used on many different types of data; however, we discuss their use in the context of representing a knowledge graphs in a low dimensional space.	
 
-SVD [@H0ez30Pz] is an algorithm that uses matrix factorization to represent knowledge graphs in a low dimensional space.
+SVD [@H0ez30Pz] is an algorithm that uses matrix factorization to portray knowledge graphs in a low dimensional space.
 The input for this algorithm is an adjacency matrix ($A$), which is a square matrix where rows and columns represent nodes and each entry represents the presence of an edge between two nodes. 
-This adjacency matrix ($A$) gets decomposed into three parts: a square matrix $Σ$ and a set of two small rectangular matrices $U$ and $V^{T}$.
-This values within $Σ$ are called singular values, which akin to eigenvalues [@H0ez30Pz].
-Each row in $U$ and each column in $V^{T}$ represents nodes projected onto a low dimensional space [@H0ez30Pz; @sSbTaHau].
+This matrix ($A$) gets decomposed into three parts: a square matrix $Σ$ and a set of two small rectangular matrices $U$ and $V^{T}$.
+This values within $Σ$ are called singular values, which are akin to eigenvalues [@H0ez30Pz].
+Each row in $U$ and each column in $V^{T}$ represents nodes within a low dimensional space [@H0ez30Pz; @sSbTaHau].
 In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [@H0ez30Pz; @TFsQrgwM].
-Typically, SVD appears in recommendation systems via collaborative filtering [@Z5VAJJmP]; however, this technique can also be used as a standalone baseline to compare to other approaches [@OJXYxm8W].
+Typically, SVD appears in recommendation systems via collaborative filtering [@Z5VAJJmP]; however, this technique can also be used as a standalone baseline to compare to other methods [@OJXYxm8W].
 
-Laplacian eigenmaps assume there is low dimensional structure in a high dimensional space [@MxPEnWF1].
+Laplacian eigenmaps is a technique that assumes there is low dimensional structure in a high dimensional space [@MxPEnWF1].
 This algorithm preserves this structure while projecting data into a low dimensional space. 
-Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been constructed.
+Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been defined.
 The next step in this algorithm is to obtain both an adjacency matrix ($A$) and a degree matrix ($D$) from the knowledge graph.
 A degree matrix is a diagonal matrix where each entry represents the number of edges connected to a node.
 The adjacency and degree matrices are converted into a laplacian matrix ($L$), which is a matrix that shares the same properties as the adjacency matrix.
-The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix ($L=D-A$) and, once constructed, the algorithm uses linear algebra to calculate eigenvalues and eigenvectors from the matrix ($Lx = \lambda Dx$).
-The generated eigenvectors represent the knowledge graph's nodes projected onto a low dimensional space [@MxPEnWF1].
-A number of approaches have used variants of this algorithm to perform their own node projection [@18ZTxo1gJ; @u6NlpEUq; @KzDGRrSP].
+The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix ($L=D-A$) and, once constructed, the algorithm uses linear algebra to calculate the laplacian's eigenvalues and eigenvectors ($Lx = \lambda Dx$).
+The generated eigenvectors represent the knowledge graph's nodes represented in a low dimensional space [@MxPEnWF1].
+Other efforts have used variants of this algorithm to construct their own low dimensional representations of knowledge graphs [@18ZTxo1gJ; @u6NlpEUq; @KzDGRrSP].
 Typically, eigenmaps work well when knowledge graphs have a sparse number of edges between nodes but struggle when presented with denser networks [@OJXYxm8W; @FE8pyO0l; @KzDGRrSP].
-A future direction is to adapt these methods to scale to knowledge graphs that have a large number of edges.
+An open area of exploration is to adapt these methods to accommodate knowledge graphs that have a large number of edges.
 
 Matrix factorization is a powerful technique that uses a matrices such as  an adjacency matrix as input.
-Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to perform embeddings.
-Despite reported success, the dependence on matrices like an adjacency matrix creates an issue of scalability as matrices of large networks would take too much memory for a regular computer to handle.
-Furthermore, these methods treat all edge types the same, but a possible extension for future approaches that use matrix factorization would be to incorporate node and edge types as sources of input.
+Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to construct low dimensional representations.
+Despite reported success, the dependence on matrices like an adjacency matrix creates an issue of scalability as matrices of large networks would take too much memory for a regular computer to operate well.
+Furthermore, these methods treat all edge types the same, but a possible extension is to incorporate node and edge types as sources of input.
 
 #### Translational Distance Models
 
 Translational distance models treat edges in a knowledge graph as linear transformations.
-As an example, one such algorithm, TransE [@mGBbZq62], treats every node-edge pair as a triplet with head nodes represented as $\textbf{h}$, edges represented as $\textbf{r}$, and tail nodes represented as $\textbf{t}$.
-These representations are combined into an equation that mimics the iconic word vectors translations ($\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}$) from the Word2vec model [@u5iJzbp9].
-The equation is shown as follows: $\textbf{h} + \textbf{r} \approx \textbf{t}$.
+For example, one such algorithm, TransE [@mGBbZq62], treats every node-edge pair as a triplet with head nodes represented as $\textbf{h}$, edges represented as $\textbf{r}$, and tail nodes represented as $\textbf{t}$.
+These representations are combined into an equation that mimics the iconic word vectors translations ($\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}$) from the word2vec model [@u5iJzbp9].
+The described equation is shown as follows: $\textbf{h} + \textbf{r} \approx \textbf{t}$.
 Starting at the head node ($\textbf{h}$), add the edge vector ($\textbf{r}$) and the result should be the tail node ($\textbf{t}$).
-TransE optimizes embeddings for $\textbf{h}$, $\textbf{r}$, $\textbf{t}$, while guaranteeing the global equation ($\textbf{h} + \textbf{r} \approx \textbf{t}$) is satisfied [@mGBbZq62].
-A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all types of relationships.
+TransE optimizes vectors for $\textbf{h}$, $\textbf{r}$, $\textbf{t}$, while guaranteeing the global equation ($\textbf{h} + \textbf{r} \approx \textbf{t}$) is satisfied [@mGBbZq62].
+A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all relationship types.
 
-Wang et al. [@nprR5cVj] attempted to resolve the one to one mapping issue by developing the TransH model.
-TransH treats relations as hyperplanes rather than a regular vector and projects the head ($\textbf{h}$) and tail ($\textbf{t}$) nodes onto the hyperplane.
+Wang et al. attempted to resolve the one to one mapping issue by developing the TransH model [@nprR5cVj].
+TransH treats relations as hyperplanes rather than a regular vector and projects the head ($\textbf{h}$) and tail ($\textbf{t}$) nodes onto this hyperplane.
 Following this projection, a distance vector ($\textbf{d}_{r}$) is calculated between the projected head and tail nodes.
-Finally, each vector is optimized while preserving the global equation ($\textbf{h} + \textbf{d}_{r} \approx \textbf{t}$) [@nprR5cVj].
-Other approaches [@R8kotaKY, @E5xHFo4P; @BRGxlTb9] have built off of the TransE and TransH models. 
-In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these embeddings.
+Finally, each vector is optimized while preserving the global equation: $\textbf{h} + \textbf{d}_{r} \approx \textbf{t}$ [@nprR5cVj].
+Other effots have built off of the TransE and TransH models [@R8kotaKY, @E5xHFo4P; @BRGxlTb9]. 
+In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these vectors.
 
 #### Deep Learning
 
 Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space.
-Many techniques that use deep learning for knowledge graphs are based on word2vec [@u5iJzbp9; @1GhHIDxuW], a set of approaches that are widely used for natural language processing.
-The goal of word2vec is to project words into a low dimensional space that preserves their semantic meaning.
+Many techniques that use deep learning on knowledge graphs are based on word2vec [@u5iJzbp9; @1GhHIDxuW], a set of approaches that are widely used for natural language processing.
+The goal of word2vec is to project words onto a low dimensional space that preserves their semantic meaning.
 Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW).
-Both models are feed-forward neural networks, but CBOW models are trained to predict a word given it's context while skip-gram models are trained to predict the context given a word [@u5iJzbp9; @1GhHIDxuW].
+Both models are feed-forward neural networks, but CBOW models are trained to predict a word given its context while skip-gram models are trained to predict the context given a word [@u5iJzbp9; @1GhHIDxuW].
 Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.
 
-Deepwalk [@7BUncUx3] is an early method designed to project a knowledge graph into a low dimensional space. 
+Deepwalk is an early method that represents knowledge graphs in a low dimensional space [@7BUncUx3]. 
 The first step of this method is to perform a random walk along a knowledge graph.
-During the random walk, every generated sequence of nodes is recorded and treated like a sentence in word2vec [@u5iJzbp9; @1GhHIDxuW].
-After every node has been processed, a skip-gram model is trained to predict the context of each node thereby projecting a knowledge graph into a low dimensional space [@7BUncUx3].
-A limitation of this method is that the random walk cannot be controlled, so every node has an equal chance to be reached.
-Grover and Leskovec [@PD4udqRe] demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result.
-Node2vec [@PD4udqRe] operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes.
-A caveat to both deepwalk and node2vec is that both algorithms ignore information such as edge type and node type.
-Various approaches have evolved to fix this limitation by incorporating  node, edge and even path types when projecting nodes into a low dimensional space [@BatC4UOA; @1AeZs6xaT; @1G1nukcFt; @eSGflyQ5].
-These approaches primarily capture a network's local structure. 
-An emerging area of work is to develop approaches that capture both the local and global structure of a network when projecting knowledge graphs into a low dimensional space.
+During the random walk, every generated sequence of nodes is recorded and treated as a sentence in word2vec [@u5iJzbp9; @1GhHIDxuW].
+After every node has been processed, a skip-gram model is trained to predict the context of each node thereby constructing a low dimensional representation of a knowledge graph [@7BUncUx3].
+A limitation for deepwalk is that the random walk cannot be controlled, so every node has an equal chance to be reached.
+Grover and Leskovec demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result [@PD4udqRe].
+Node2vec operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes [@PD4udqRe].
+A caveat to both deepwalk and node2vec is that they ignore information such as edge type and node type.
+Various approaches have evolved to fix this limitation by incorporating  node, edge and even path types when representing knowledge graphs in a low dimensional space [@BatC4UOA; @1AeZs6xaT; @1G1nukcFt; @eSGflyQ5].
+An emerging area of work is to develop approaches that capture both the local and global structure of a graph when constructing this low dimensional space.
 
-Some deep learning approaches use an adjacency matrix as input [@u5iJzbp9; @1GhHIDxuW] instead of using the word2vec framing.
-Algorithms such as auto-encoders can also generate network embeddings [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
-Autoencoders [@DZT65ZRY; @1ErNQZjBt] are neural networks that map input such as an adjacency matrices into a low dimensional space and then learns how to construct this space by reconstructing the same input.
-The generated low dimensional space captures the node connectivity structure of the knowledge graph and every node is mapped onto this space [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
-Despite the high potential of this approach, this method relies on an adjacency matrix for input.
-If a knowledge graph asymptotically increases in size, these approaches could run into scalability issues as discovered by Khosla et al. [@YVOAlp8C].
-Plus, Khosla et al.[@YVOAlp8C] discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification.
-Overall, the performance of these models largely depends upon the structure of nodes and edges within a knowledge graph [@YVOAlp8C].
-Future approaches should consider creating hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
+Instead of using the word2vec framework, some deep learning approaches use an adjacency matrix as input [@u5iJzbp9; @1GhHIDxuW].
+These approaches use neural networks called autoencoders to generate this low dimensional space [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
+Autoencoders map input such as an adjacency matrices into a low dimensional space and then determines how to construct this space via reconstructing the same input [@DZT65ZRY; @1ErNQZjBt].
+This generated space represents the nodes and their connectivity structure within a knowledge graph [@bt1KIf4U; @hjIIetVM; @1A6Dhbwkr].
+Despite the high potential of this approach, this method relies on an adjacency matrix for input which can run into scalability issues as a knowledge graph asymptotically increases in size [@YVOAlp8C].
+Plus, Khosla et al., discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification [@YVOAlp8C].
+Overall, the performance of deep learning techniques largely depends upon the structure of nodes and edges within a knowledge graph [@YVOAlp8C].
+Future work should include hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
 
 ### Unifying Applications
 
