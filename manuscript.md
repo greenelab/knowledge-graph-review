@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-03-01'
+date-meta: '2020-03-02'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/9e035d739a18773455def8bd9f949278ea0e7985/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/3099a019d93598aef7ab050a4d960d5830cd7a2b/))
 was automatically generated
-from [greenelab/knowledge-graph-review@9e035d7](https://github.com/greenelab/knowledge-graph-review/tree/9e035d739a18773455def8bd9f949278ea0e7985)
-on March 1, 2020.
+from [greenelab/knowledge-graph-review@3099a01](https://github.com/greenelab/knowledge-graph-review/tree/3099a019d93598aef7ab050a4d960d5830cd7a2b)
+on March 2, 2020.
 </em></small>
 
 ## Authors
@@ -86,7 +86,7 @@ Although these resources contain essential information, they do not represent th
 Knowledge graphs are often constructed from manually curated databases [@O21tn8vf; 10.1371/journal.pcbi.1002574; @kBHNhSma; @tIGJl1ES;  @BTEcMH0X].
 These databases provide previously established information that can be incorporated into a graph.
 For example, a graph using DISEASES [@5gG8hwv7] as a resource would have genes and diseases as nodes, while edges added between nodes would represent an association between a gene and a disease.
-This example shows a single type of relationship; however, there are graphs that use databases with multiple relationships [@6Vifn4pu; @O21tn8vf].
+This example shows a single type of relationship; however, there are graphs that use databases with multiple relationships [@O21tn8vf; @6Vifn4pu].
 In addition to manual curation other approaches have used natural language processing techniques to construct knowledge graphs [@gddb9uXr; @rxaBUglG].
 One example used a text mining system to extract sentences that illustrate a protein interacts with another protein [@ibJfUvEe].
 Once identified, these sentences can be incorporated as evidence to establish an edge in a knowledge graph.
@@ -167,7 +167,7 @@ Grammatical patterns can simplify sentences for easy extraction [@aJL1tPyy; @66v
 Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions [@aJL1tPyy] and these simplified versions were manually curated to determine the presence of a relationship.
 By simplifying sentences this approach achieved high recall, but had low precision [@aJL1tPyy].
 Other approach used simplification techniques to make extraction easier [@15I4QE3J; @7PCrlbDi; @J0VF6x1n; @1HnOwZ1Xq].
-Tudor et al., simplified sentences to detect protein phosphorylation events [@J0VF6x1n].
+Tudor et al. simplified sentences to detect protein phosphorylation events [@J0VF6x1n].
 Their sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event.
 By breaking these sentences down the authors were able to increase their recall; however, sentences that contained ambiguous directionality or multiple phosphorylation events were too complex for the simplifier.
 As a consequence the simplifier missed some relevant sentences [@J0VF6x1n].
@@ -175,7 +175,7 @@ These errors highlight a crucial need for future algorithms to be generalizable 
 
 Pattern matching is a fundamental approach used to detect relationship asserting sentences.
 These patterns can consist of phrases from constituency trees, a set of keywords or some combination of both [@OnvaFHG9; @d3rG3TXb; @dRQuIwpJ; @23i6gRBE; @1avvFjJ9; @KEkjqdB0].
-Xu et al., designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments [@1avvFjJ9].
+Xu et al. designed a pattern matcher system to detect sentences in PubMed abstracts that indicate drug-disease treatments [@1avvFjJ9].
 This system matched drug-disease pairs from ClinicalTrials.gov to drug-disease pairs mentioned in abstracts.
 This matching process aided the authors in identifying sentences that can be used to create simple patterns, such as "Drug in the treatment of Disease" [@1avvFjJ9], to match other sentences in a wide variety of abstracts.
 The authors hand curated two datasets for evaluation and achieved a high precision score of 0.904 and a low recall score of 0.131 [@1avvFjJ9].
@@ -218,13 +218,13 @@ Under this assumption mention pairs that occur more than expected were presumed 
 This approach was able to identify 543,405 disease gene associations [@5gG8hwv7] and 792,730 high confidence protein protein interactions [@iihNCsNX], but is limited to only using PubMed abstracts.
 
 Full text articles are able to dramatically enhance relationship detection [@DGlWGDEt; @pLAIFXqP].
-Westergaard et al., used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
+Westergaard et al. used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
 The authors discovered that full text provided better prediction power than using abstracts alone, which suggests that future text mining approaches should consider using full text to increase detection power.
 
 Unsupervised extractors often treat different biomedical relationships as multiple isolated problems.
 An alternative to this perspective is to capture all different types at once.
 Clustering is an approach that accomplish this concept of simultaneous extraction.
-Percha et al., used a biclustering algorithm on generated dependency parse trees to group sentences within PubMed abstract [@CSiMoOrI].
+Percha et al. used a biclustering algorithm on generated dependency parse trees to group sentences within PubMed abstract [@CSiMoOrI].
 Each cluster was manually curated to determine which relationship each group represented.
 This approach captured 4,451,661 dependency paths for 36 different groups [@CSiMoOrI].
 Despite the success, this approach suffered from technical issues such as dependency tree parsing errors.
@@ -256,7 +256,7 @@ Approaches that use these available datasets range from using linear classifiers
 The rest of this section discuss approaches that use supervised extractors to detect relationship asserting sentences.
 
 Some supervised extractors involve mapping textual input onto a high dimensional space.
-Support vector machines are a type of classifier that can accomplish this task with a mapping function called a kernel [@iiQkIqUX; @1B0lnkj35].
+SVMs are a type of classifier that can accomplish this task with a mapping function called a kernel [@iiQkIqUX; @1B0lnkj35].
 These kernels take information such as a sentence's dependency tree [@i7KpvzCo; @3j1T67vB], part of speech tags [@iiQkIqUX] or even word counts [@1B0lnkj35] and map them onto a dense feature space.
 Within this space, these methods construct a hyperplane that separates sentences in the positive class (illustrates a relationship) from the negative class (does not illustrate a relationship). 
 Kernels can be manually constructed or selected to cater to the relationship of interest [@iiQkIqUX; @3j1T67vB;@1B0lnkj35; @1B0lnkj35].
@@ -278,7 +278,7 @@ Besides the gradient problem, these approaches only peak in performance when the
 
 Convolutional neural networks (CNNs), which are widely applied for image analysis, use multiple kernel filters to capture small subsets of an overall image [@BeijBSRE].
 In the context of text mining an image is replaced with words within a sentence mapped to dense vectors (i.e., word embeddings) [@1GhHIDxuW; @u5iJzbp9].
-Peng et al.  used a CNN to extract sentences that mentioned protein-protein interactions [@TNHJioqT] and Zhou et al. used a CNN to extract chemical-disease relations [@HS4ARwmZ].
+Peng et al. used a CNN to extract sentences that mentioned protein-protein interactions [@TNHJioqT] and Zhou et al. used a CNN to extract chemical-disease relations [@HS4ARwmZ].
 Others have used CNNs and variants of CNNs to extract relationships from text [@1H4LpFrU0; @5LOkzCNK; @19fr9ZRrA].
 Just like RNNs, these networks perform well when millions of labeled examples are present [@anpoBunY]; however, obtaining these large datasets is a non-trivial task.
 Future approaches that use CNNs or RNNs should consider solutions to obtaining these large quantities of data through means such as weak supervision [@EHeTvZht], semi-supervised learning [@xWET58su] or using pre-trained networks via transfer learning [@12JtL2o6T; @YRDXK4f4].
@@ -291,7 +291,7 @@ This dependency makes finding under-studied relationships difficult as one would
 
 Weak or distant supervision takes a different approach that uses noisy or even erroneous labels to train classifiers [@EHeTvZht; @WYud0jQT; @vzoBuh4l; @9Jo1af7Z].
 Under this paradigm sentences are labeled based on their mention pair being present (positive) or absent (negative) in a database and, once labeled, machine learning classifier can now be trained to extract relationships from text [@EHeTvZht].
-For example, Thomas et al., [@kvlZD1mv] used distant supervision to train a SVM to extract sentences mentioning protein-protein interactions (ppi). 
+For example, Thomas et al. [@kvlZD1mv] used distant supervision to train a SVM to extract sentences mentioning protein-protein interactions (ppi). 
 Their SVM model achieved comparable performance against a baseline model; however, the noise generated via distant supervision was difficult to eradicate [@kvlZD1mv].
 A number of efforts have focused on combining distant supervision with other types of labeling strategies to mitigate the negative impacts of noisy knowledge bases [@Kry87kzn; @M5UWoN93; @xy08BzDf].
 Nicholson et al. [@19fr9ZRrA] found that, in some circumstances, these strategies can be reused across different types of biomedical relationships to learn a heterogeneous knowledge graph in cases where those relationships describe similar physical concepts.
@@ -409,7 +409,7 @@ These approaches use neural networks called autoencoders to generate this low di
 Autoencoders map input such as an adjacency matrices into a low dimensional space and then determines how to construct this space via reconstructing the same input [@BQS8ClV0; @1ErNQZjBt].
 This generated space represents the nodes and their connectivity structure within a knowledge graph [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
 Despite the high potential of this approach, this method relies on an adjacency matrix for input which can run into scalability issues as a knowledge graph asymptotically increases in size [@RjwcaMhj].
-Plus, Khosla et al., discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification [@RjwcaMhj].
+Plus, Khosla et al. discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification [@RjwcaMhj].
 Overall, the performance of deep learning techniques largely depends upon the structure of nodes and edges within a knowledge graph [@RjwcaMhj].
 Future work should include hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
 
@@ -436,7 +436,7 @@ The authors constructed an miRNA-Disease network using the Human MicroRNA Diseas
 This matrix was decomposed into small rectangular matrices using SVD, then these small matrices were used to calculate similarity scores between miRNAs and diseases.
 High scores implied a high likelihood that a given miRNA had an association with a given disease [@YyPaovQ0].
 Other approaches have built off of Shen et al.'s work by incorporating novel ways to perform matrix factorization [@1DjgsuPV2; @hZ2R5BRj;@4xcJzyPc] or by integrating machine learning models in conjunction with matrix factorization [@icSe8Yyw].
-These approaches achieved high AUROCs, but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best [@YyPaovQ0].
+These approaches achieved high area under the receiver operating curve (AUROC), but new discoveries have been hard to validate as experiments in this space are costly and time consuming at best [@YyPaovQ0].
 Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions [@6FrpIkNZ; @6O3BO6WO; @Y2RTnbCe].
 Although extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation pipeline.
 
@@ -445,7 +445,7 @@ Yang et al. used node2vec to create a recommendation system to infer association
 The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes with diseases and diseases with disease symptoms.
 The generated graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph.
 High scores implied a high likelihood of an association [@otY29wFV].
-This approach outperformed methods that didn't use a knowledge graph; however, validation was difficult as it involved manual curation of the literature @otY29wFV].
+This approach outperformed methods that didn't use a knowledge graph; however, validation was difficult as it involved manual curation of the literature [@otY29wFV].
 Similar approaches used variants of node2vec to predict gene-disease associations
 [@1D9FTzRBg; doi:10.3389/fgene.2019.00226 @6PISrkV5; @taI1UUAE] analyze RNA-seq data [@qbHGtxhA] and infer novel protein information [@QQtRw08H; @8qB2oCgy; @RYW74Wvh; @1EP2NrAhl].
 

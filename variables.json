@@ -1,5 +1,5 @@
 {
-  "date": "March 1, 2020",
+  "date": "March 2, 2020",
   "authors": [
     {
       "github": "danich1",
@@ -51,7 +51,7 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "9e035d739a18773455def8bd9f949278ea0e7985"
+    "commit": "3099a019d93598aef7ab050a4d960d5830cd7a2b"
   },
   "manuscript_stats": {
     "reference_counts": {
@@ -62,6 +62,6 @@
       "url": 1,
       "total": 199
     },
-    "word_count": 7589
+    "word_count": 7593
   }
 }
