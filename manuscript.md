@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/86df61da084560686b64bcd481c3be916cc36d8d/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/2b0daf8f953680808a777dcdbf67f74057355c30/))
 was automatically generated
-from [greenelab/knowledge-graph-review@86df61d](https://github.com/greenelab/knowledge-graph-review/tree/86df61da084560686b64bcd481c3be916cc36d8d)
+from [greenelab/knowledge-graph-review@2b0daf8](https://github.com/greenelab/knowledge-graph-review/tree/2b0daf8f953680808a777dcdbf67f74057355c30)
 on March 12, 2020.
 </em></small>
 
