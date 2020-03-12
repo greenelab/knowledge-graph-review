@@ -13,6 +13,10 @@ script:
 cache:
   directories:
     - ci/cache
+
+env:
+  - BUILD_DOCX=true
+  
 deploy:
   provider: script
   script: bash -o xtrace ci/deploy.sh
