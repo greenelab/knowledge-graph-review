@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-03-02'
+date-meta: '2020-03-12'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/3099a019d93598aef7ab050a4d960d5830cd7a2b/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/86df61da084560686b64bcd481c3be916cc36d8d/))
 was automatically generated
-from [greenelab/knowledge-graph-review@3099a01](https://github.com/greenelab/knowledge-graph-review/tree/3099a019d93598aef7ab050a4d960d5830cd7a2b)
-on March 2, 2020.
+from [greenelab/knowledge-graph-review@86df61d](https://github.com/greenelab/knowledge-graph-review/tree/86df61da084560686b64bcd481c3be916cc36d8d)
+on March 12, 2020.
 </em></small>
 
 ## Authors
@@ -39,7 +39,7 @@ on March 2, 2020.
     [danich1](https://github.com/danich1)<br>
   <small>
      Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
-     · Funded by GBMF4552 and T32 HG000046
+     · Funded by The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (T32 HG000046)
   </small>
 
 + **Casey S. Greene**<br>
@@ -51,6 +51,7 @@ on March 2, 2020.
     [greenescientist](https://twitter.com/greenescientist)<br>
   <small>
      Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania; Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation
+     · Funded by The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (R01 HG010067)
   </small>
 
 

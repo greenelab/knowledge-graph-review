@@ -9134,8 +9134,10 @@
   },
   {
     "id": "17QDcGqUi",
-    "type": "webpage",
+    "type": "report",
     "title": "The probability of edge existence due to node degree: a baseline for network-based predictions",
+    "publisher": "Manubot",
+    "source": "greenelab.github.io",
     "URL": "https://greenelab.github.io/xswap-manuscript/",
     "shortTitle": "The probability of edge existence due to node degree",
     "language": "en-US",
@@ -9173,8 +9175,8 @@
       "date-parts": [
         [
           "2020",
-          2,
-          19
+          3,
+          5
         ]
       ]
     },
@@ -9183,7 +9185,7 @@
         [
           "2020",
           3,
-          2
+          12
         ]
       ]
     },

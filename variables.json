@@ -1,5 +1,5 @@
 {
-  "date": "March 2, 2020",
+  "date": "March 12, 2020",
   "authors": [
     {
       "github": "danich1",
@@ -11,7 +11,7 @@
       "affiliations": [
         "Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania"
       ],
-      "funders": "GBMF4552 and T32 HG000046",
+      "funders": "The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (T32 HG000046)",
       "affiliation_numbers": [
         1
       ]
@@ -27,6 +27,7 @@
         "Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania",
         "Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation"
       ],
+      "funders": "The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (R01 HG010067)",
       "affiliation_numbers": [
         2,
         3
@@ -51,7 +52,7 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "3099a019d93598aef7ab050a4d960d5830cd7a2b"
+    "commit": "86df61da084560686b64bcd481c3be916cc36d8d"
   },
   "manuscript_stats": {
     "reference_counts": {
