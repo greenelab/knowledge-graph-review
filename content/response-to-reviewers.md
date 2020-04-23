@@ -39,7 +39,7 @@ In this revision we will clarify text to highlight this association and be disti
 
 >**at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
-We acknowledge that these references use general methods for knowledge graphs; however, in the text we use these references to exemplify the fact that the graphs used are considered knowledge graphs.
+We acknowledge that these references use general methods for knowledge graphs; however, we use these references to exemplify the fact that the graphs used are considered knowledge graphs.
 
 >**Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
 >Ideally, a knowledge graph should show that. 
@@ -66,7 +66,7 @@ The quantifies is a typo and should be quantities and will be fixed when the rev
 We agree that the title for that section is a bit broad and we updated the text to accommodate the suggestion.
 You are correct in stating that these methods are not knowledge graph specific; however, they can be used on knowledge graphs to associate nodes to dense vectors (low dimensional space).
 We provided a reference that used SVD and other matrix factorization methods to perform this association for link prediction tasks and node classification tasks.
-In this review we will update text to be more explicit on how these class of methods can be used on knowledge graphs.
+In this revision we will update text to be more explicit on how these class of methods can be used on knowledge graphs.
 
 >**word2vec is a shallow neural network (one layer for projection, no activation or non-linearity is used in this layer), therefore it is deep learning, nor any of the methods which use similar techniques.
 
