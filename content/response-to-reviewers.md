@@ -17,7 +17,7 @@
 > - Figure 5b: Font too small
 > - "goal of recommend safe drugs"
 
-We acknowledge identified typos and they will be fixed once the revision process has completed.
+We would like to thank the reviewer for noticing these. We have fixed the typos.
 
 ## Reviewer 2
 
