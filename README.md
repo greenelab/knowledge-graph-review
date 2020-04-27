@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/greenelab/knowledge-graph-review/tree/gh-pages) branch hosts the contents of this directory at https://greenelab.github.io/knowledge-graph-review/.
-The permalink for this webpage version is https://greenelab.github.io/knowledge-graph-review/v/6f20fc1cdcfa1f65ccf623fffd0565805ab19813/.
+The permalink for this webpage version is https://greenelab.github.io/knowledge-graph-review/v/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c/.
 To redirect to the permalink for the latest manuscript version at anytime, use the link https://greenelab.github.io/knowledge-graph-review/v/freeze/.
 
 ## Files
@@ -36,4 +36,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`6f20fc1cdcfa1f65ccf623fffd0565805ab19813`](https://github.com/greenelab/knowledge-graph-review/commit/6f20fc1cdcfa1f65ccf623fffd0565805ab19813).
+[`0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c`](https://github.com/greenelab/knowledge-graph-review/commit/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c).
