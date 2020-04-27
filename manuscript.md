@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/6f20fc1cdcfa1f65ccf623fffd0565805ab19813/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c/))
 was automatically generated
-from [greenelab/knowledge-graph-review@6f20fc1](https://github.com/greenelab/knowledge-graph-review/tree/6f20fc1cdcfa1f65ccf623fffd0565805ab19813)
+from [greenelab/knowledge-graph-review@0ca9bf5](https://github.com/greenelab/knowledge-graph-review/tree/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c)
 on April 27, 2020.
 </em></small>
 
@@ -157,22 +157,22 @@ Reported number of entities and relationships are relative to time of publicatio
 
 #### Rule-Based Relationship Extraction
 
-Rule based-extraction consists of identifying essential keywords and grammatical patterns to detect relationships of interest. 
-Keywords are established via expert knowledge or though the use of pre-existing ontologies, while grammatical patterns are constructed via experts curating parse trees. 
-Parse trees are tree data structures that depict a sentence's grammatical structure and come into two forms: a constituency parse tree (Figure {@fig:constituency-parse-tree-example}) and a dependency parse tree (Figure {@fig:dependency-parse-tree-example}).
-Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc, for construction, but represent the information in two different forms.
-Constituency parse trees breaks a sentence down into a subphrases (Figure {@fig:constituency-parse-tree-example}) while dependency path trees analyzes the grammatical structure of a sentence (Figure {@fig:dependency-parse-tree-example}).
+Rule-based extraction consists of identifying essential keywords and grammatical patterns to detect relationships of interest. 
+Keywords are established via expert knowledge or through the use of pre-existing ontologies, while grammatical patterns are constructed via experts curating parse trees. 
+Parse trees are tree data structures that depict a sentence's grammatical structure and come in two forms: a constituency parse tree (Figure {@fig:constituency-parse-tree-example}) and a dependency parse tree (Figure {@fig:dependency-parse-tree-example}).
+Both trees use part of speech tags, labels that dictate the grammatical role of a word such as noun, verb, adjective, etc., for construction, but represent the information in two different forms.
+Constituency parse trees break a sentence into subphrases (Figure {@fig:constituency-parse-tree-example}) while dependency path trees analyze the grammatical structure of a sentence (Figure {@fig:dependency-parse-tree-example}).
 Many text mining approaches [@i7KpvzCo; @3j1T67vB; @iiQkIqUX] use such trees to generate features for machine learning algorithms and these approaches are discussed in later sections.
-In this section we focus on approaches that use rule based extraction as a primary strategy to detect sentences that allude to a relationship.
+In this section we focus on approaches that use rule-based extraction as a primary strategy to detect sentences that allude to a relationship.
 
 Grammatical patterns can simplify sentences for easy extraction [@aJL1tPyy; @66vfJAIo].
 Jonnalagadda et al. used a set of grammar rules inspired by constituency trees to reshape complex sentences with simpler versions [@aJL1tPyy] and these simplified versions were manually curated to determine the presence of a relationship.
-By simplifying sentences this approach achieved high recall, but had low precision [@aJL1tPyy].
-Other approach used simplification techniques to make extraction easier [@15I4QE3J; @7PCrlbDi; @J0VF6x1n; @1HnOwZ1Xq].
+By simplifying sentences, this approach achieved high recall, but had low precision [@aJL1tPyy].
+Other approaches used simplification techniques to make extraction easier [@15I4QE3J; @7PCrlbDi; @J0VF6x1n; @1HnOwZ1Xq].
 Tudor et al. simplified sentences to detect protein phosphorylation events [@J0VF6x1n].
 Their sentence simplifier broke complex sentences that contain multiple protein events into smaller sentences that contain only one distinct event.
 By breaking these sentences down the authors were able to increase their recall; however, sentences that contained ambiguous directionality or multiple phosphorylation events were too complex for the simplifier.
-As a consequence the simplifier missed some relevant sentences [@J0VF6x1n].
+As a consequence, the simplifier missed some relevant sentences [@J0VF6x1n].
 These errors highlight a crucial need for future algorithms to be generalizable enough to handle various forms of complex sentences.
 
 Pattern matching is a fundamental approach used to detect relationship asserting sentences.
@@ -183,10 +183,10 @@ This matching process aided the authors in identifying sentences that can be use
 The authors hand curated two datasets for evaluation and achieved a high precision score of 0.904 and a low recall score of 0.131 [@1avvFjJ9].
 This low recall score was based on constructed patterns being too specific to detect infrequent drug pairs.
 Besides constituency trees, some approaches used dependency trees to construct patterns [@jg0TGCov; @i7KpvzCo].
-Depending upon the nature of the algorithm and text, dependency trees could be more appropriate than constituency trees and vise versa.
+Depending upon the nature of the algorithm and text, dependency trees could be more appropriate than constituency trees and vice versa.
 The performance difference between the two trees remains as an open question for future exploration.
 
-Rules based methods provide a basis for many relationship extraction systems.
+Rule-based methods provide a basis for many relationship extraction systems.
 Approaches in this category range from simplifying sentences for easy extraction to identifying sentences based on matched key phrases or grammatical patterns.
 Both require a significant amount of manual effort and expert knowledge to perform well.
 A future direction is to develop ways to automatically construct these hand-crafted patterns, which would accelerate the process of creating these rule-based systems.
@@ -194,7 +194,7 @@ A future direction is to develop ways to automatically construct these hand-craf
 ![
 A visualization of a constituency parse tree using the following sentence: "BRCA1 is associated with breast cancer" [@1EvoylLWK].
 This type of tree has the root start at the beginning of the sentence.
-Each word is grouped into subphrases depending its correlating part of speech tag.
+Each word is grouped into subphrases depending on its correlating part of speech tag.
 For example, the word "associated" is a past participle verb (VBN) that belongs to the verb phrase (VP) subgroup.
 ](images/figures/constituency_parse_tree_example.png){#fig:constituency-parse-tree-example}
 
@@ -217,7 +217,7 @@ This event is referred to as co-occurrence and studies that use this phenomenon 
 Two databases DISEASES [@5gG8hwv7] and STRING [@iihNCsNX] were populated using a co-occurrence scoring method on PubMed abstracts, which measured the frequency of co-mention pairs within individual sentences as well as the abstracts themselves.
 This technique assumes that each individual co-occurring pair is independent from one another.
 Under this assumption mention pairs that occur more than expected were presumed to implicate the presence of an association or interaction.
-This approach was able to identify 543,405 disease gene associations [@5gG8hwv7] and 792,730 high confidence protein protein interactions [@iihNCsNX], but is limited to only using PubMed abstracts.
+This approach identified 543,405 disease gene associations [@5gG8hwv7] and 792,730 high confidence protein-protein interactions [@iihNCsNX] but is limited to only using PubMed abstracts.
 
 Full text articles are able to dramatically enhance relationship detection [@DGlWGDEt; @pLAIFXqP].
 Westergaard et al. used a co-occurrence approach, similar to DISEASES [@5gG8hwv7] and STRING [@iihNCsNX], to mine full articles for protein-protein interactions and other protein related information [@DGlWGDEt].
@@ -225,17 +225,18 @@ The authors discovered that full text provided better prediction power than usin
 
 Unsupervised extractors often treat different biomedical relationships as multiple isolated problems.
 An alternative to this perspective is to capture all different types at once.
-Clustering is an approach that accomplish this concept of simultaneous extraction.
-Percha et al. used a biclustering algorithm on generated dependency parse trees to group sentences within PubMed abstract [@CSiMoOrI].
+Clustering is an approach that performs simultaneous extraction.
+Percha et al. used a biclustering algorithm on generated dependency parse trees to group sentences within PubMed abstracts [@CSiMoOrI].
 Each cluster was manually curated to determine which relationship each group represented.
 This approach captured 4,451,661 dependency paths for 36 different groups [@CSiMoOrI].
 Despite the success, this approach suffered from technical issues such as dependency tree parsing errors.
-These errors resulted in some sentences not being captured by the clustering algorithm [@CSiMoOrI] and future clustering approaches should consider simplifying sentences to prevent this type of issue.
+These errors resulted in some sentences not being captured by the clustering algorithm [@CSiMoOrI].
+Future clustering approaches should consider simplifying sentences to prevent this type of issue.
 
 Overall unsupervised methods provide a means to rapidly extract relationship asserting sentences without the need of annotated text.
 Approaches in this category range from calculating co-occurrence scores to clustering sentences and provide a generalizable framework that can be used on large repositories of text.
-Full text has already been show to meaningfully improve the performance of methods that aim to infer relationships using cooccurrences [@DGlWGDEt], and we should expect similar benefits for machine learning approaches.
-Furthermore, we expect that simplifying sentences would improve unsupervised methods and should considered as an initial preprocessing step.
+Full text has already been shown to meaningfully improve the performance of methods that aim to infer relationships using cooccurrences [@DGlWGDEt], and we should expect similar benefits for machine learning approaches.
+Furthermore, we expect that simplifying sentences would improve unsupervised methods and should be considered as an initial preprocessing step.
 
 | Study | Relationship of Interest | 
 | --- | --- | 
