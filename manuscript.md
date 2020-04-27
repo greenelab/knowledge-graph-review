@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/0b2b026bfafcd7a68116d859c2cc93895c036ecf/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/9a58c58084702f3ddf822f224275adce28a13364/))
 was automatically generated
-from [greenelab/knowledge-graph-review@0b2b026](https://github.com/greenelab/knowledge-graph-review/tree/0b2b026bfafcd7a68116d859c2cc93895c036ecf)
+from [greenelab/knowledge-graph-review@9a58c58](https://github.com/greenelab/knowledge-graph-review/tree/9a58c58084702f3ddf822f224275adce28a13364)
 on April 27, 2020.
 </em></small>
 
@@ -387,14 +387,16 @@ Finally, each vector is optimized while preserving the global equation: $\textbf
 Other effots have built off of the TransE and TransH models [@R8kotaKY, @E5xHFo4P; @BRGxlTb9]. 
 In the future, it may be beneficial for these models to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these distance models.
 
-#### Deep Learning
+#### Neural Networks
 
-Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space.
-Many techniques that use deep learning on knowledge graphs are based on word2vec [@u5iJzbp9; @1GhHIDxuW], a set of approaches that are widely used for natural language processing.
+Neural networks are a class of machine learning models inspired by the concept of biological neural networks [@18qlYaJ7r].
+These networks are reputable for making non-linear transformations of high dimensional data to solve classification and regression problems [@18qlYaJ7r].
+In the context of knowledge graphs, the most commonly used structures are based on word2vec [@u5iJzbp9; @1GhHIDxuW].
+The word2vec term applies to a set of conceptually related approaches that are widely used in the natural language processing field.
 The goal of word2vec is to project words onto a low dimensional space that preserves their semantic meaning.
 Strategies for training word2vec models use one of two neural network architectures: skip-gram and continuous bag of words (CBOW).
 Both models are feed-forward neural networks, but CBOW models are trained to predict a word given its context while skip-gram models are trained to predict the context given a word [@u5iJzbp9; @1GhHIDxuW].
-Once training has finished, words are now associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.
+Once training is completed, words will be associated with dense vectors that downstream models, such as feed forward networks or recurrent networks, can use for input.
 
 Deepwalk is an early method that represents knowledge graphs in a low dimensional space [@ViMmBmL6]. 
 The first step of this method is to perform a random walk along a knowledge graph.
@@ -402,15 +404,16 @@ During the random walk, every generated sequence of nodes is recorded and treate
 After every node has been processed, a skip-gram model is trained to predict the context of each node thereby constructing a low dimensional representation of a knowledge graph [@ViMmBmL6].
 A limitation for deepwalk is that the random walk cannot be controlled, so every node has an equal chance to be reached.
 Grover and Leskovec demonstrated that this limitation can hurt performance when classifying edges between nodes and developed node2vec as a result [@PD4udqRe].
-Node2vec operates the in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes [@PD4udqRe].
+Node2vec operates in the same fashion as deepwalk; however, this algorithm specifies a parameter that lets the random walk be biased when traversing nodes [@PD4udqRe].
 A caveat to both deepwalk and node2vec is that they ignore information such as edge type and node type.
 Various approaches have evolved to fix this limitation by incorporating  node, edge and even path types when representing knowledge graphs in a low dimensional space [@12mzC63eD; @1AeZs6xaT; @1G1nukcFt; @eSGflyQ5].
 An emerging area of work is to develop approaches that capture both the local and global structure of a graph when constructing this low dimensional space.
 
-Instead of using the word2vec framework, some deep learning approaches use an adjacency matrix as input [@u5iJzbp9; @1GhHIDxuW].
-These approaches use neural networks called autoencoders to generate this low dimensional space [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
-Autoencoders map input such as an adjacency matrices into a low dimensional space and then determines how to construct this space via reconstructing the same input [@BQS8ClV0; @1ErNQZjBt].
-This generated space represents the nodes and their connectivity structure within a knowledge graph [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
+Though word2vec is the most common framework used to represent graphs, neural networks are sometimes designed to use the adjacency matrix as input [@u5iJzbp9; @1GhHIDxuW].
+These approaches use models called autoencoders [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
+Autoencoders are designed to map input into a low dimensional space and then back to a reconstruction of the same input [@BQS8ClV0; @1ErNQZjBt].
+It is possible to layer on additional objectives by modifying the loss function to take into account criteria above and beyond reconstruction loss [@NLVTJ9Lj; @U3BlgY7x].
+In the context of knowledge graphs the generated space correlates nodes with dense vectors that capture a graph's connectivity structure [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
 Despite the high potential of this approach, this method relies on an adjacency matrix for input which can run into scalability issues as a knowledge graph asymptotically increases in size [@RjwcaMhj].
 Plus, Khosla et al. discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification [@RjwcaMhj].
 Overall, the performance of deep learning techniques largely depends upon the structure of nodes and edges within a knowledge graph [@RjwcaMhj].
