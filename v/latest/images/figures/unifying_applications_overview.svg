@@ -285,7 +285,7 @@
 		stroke="black"
 		marker-end="url('#arrowhead')"
 		/>
-		<text x="34" y="-2" class="label_font">
+		<text x="34" y="-2" class="label_font" style="font-size:30px">
 			<textPath href="#treats1">
 				Treats?
 			</textPath>
@@ -299,7 +299,7 @@
 		stroke="black"
 		marker-end="url('#arrowhead')"
 		/>
-		<text x="34" y="-2" class="label_font">
+		<text x="34" y="-2" class="label_font" style="font-size:30px">
 			<textPath href="#treats2">
 				Treats
 			</textPath>
