@@ -5967,7 +5967,7 @@
     "id": "9F3iyg8e"
   },
   {
-    "publisher": "ACM Press",
+    "publisher": "International World Wide Web Conferences Steering Committee",
     "DOI": "10.1145/3038912.3052675",
     "type": "paper-conference",
     "source": "Crossref",
@@ -5990,12 +5990,14 @@
         "family": "Auer"
       }
     ],
-    "event": "the 26th International Conference",
-    "container-title": "Proceedings of the 26th International Conference on World Wide Web - WWW '17",
+    "event": "WWW '17: 26th International World Wide Web Conference",
+    "container-title": "Proceedings of the 26th International Conference on World Wide Web",
     "issued": {
       "date-parts": [
         [
-          2017
+          2017,
+          4,
+          3
         ]
       ]
     },
@@ -6150,7 +6152,7 @@
     "id": "9Jo1af7Z"
   },
   {
-    "publisher": "ACM Press",
+    "publisher": "ACM",
     "DOI": "10.1145/3269206.3269229",
     "type": "paper-conference",
     "source": "Crossref",
@@ -6173,12 +6175,14 @@
         "family": "Feldmann"
       }
     ],
-    "event": "the 27th ACM International Conference",
-    "container-title": "Proceedings of the 27th ACM International Conference on Information and Knowledge Management  - CIKM '18",
+    "event": "CIKM '18: The 27th ACM International Conference on Information and Knowledge Management",
+    "container-title": "Proceedings of the 27th ACM International Conference on Information and Knowledge Management",
     "issued": {
       "date-parts": [
         [
-          2018
+          2018,
+          10,
+          17
         ]
       ]
     },
@@ -9185,8 +9189,8 @@
       "date-parts": [
         [
           "2020",
-          3,
-          12
+          4,
+          27
         ]
       ]
     },

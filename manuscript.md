@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-03-12'
+date-meta: '2020-04-27'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/2b0daf8f953680808a777dcdbf67f74057355c30/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/c3ac92c5317e1631ec8b724c4fc907fa33f6a859/))
 was automatically generated
-from [greenelab/knowledge-graph-review@2b0daf8](https://github.com/greenelab/knowledge-graph-review/tree/2b0daf8f953680808a777dcdbf67f74057355c30)
-on March 12, 2020.
+from [greenelab/knowledge-graph-review@c3ac92c](https://github.com/greenelab/knowledge-graph-review/tree/c3ac92c5317e1631ec8b724c4fc907fa33f6a859)
+on April 27, 2020.
 </em></small>
 
 ## Authors
@@ -60,13 +60,13 @@ on March 12, 2020.
 
 Knowledge graphs can support many biomedical applications.
 These graphs represent biomedical concepts and relationships in the form of nodes and edges.
-In this review we discuss how these graphs are constructed and applied with a particular focus on the ways machine learning approaches are changing these processes.
-In many examples in the literature, biomedical knowledge graphs have been constructed from pre-existing databases that are populated by experts via manual curation, but we are now also seeing a more robust use of automatic systems.
-A number of techniques are used to represent knowledge graphs, but often machine learning methods are used to learn a low-dimensional representation that can support many different applications.
+In this review, we discuss how these graphs are constructed and applied with a particular focus on how machine learning approaches are changing these processes.
+Biomedical knowledge graphs have often been constructed by integrating databases that were populated by experts via manual curation, but we are now seeing a more robust use of automated systems.
+A number of techniques are used to represent knowledge graphs, but often machine learning methods are used to construct a low-dimensional representation that can support many different applications.
 This representation is designed to preserve a knowledge graph’s local and/or global structure.
 Additional machine learning methods can be applied to this representation to make predictions within genomic, pharmaceutical, and clinical domains.
-We frame our discussion first around knowledge graph construction then around unifying techniques and unifying applications separately.
-Advances in machine learning for biomedicine are creating new opportunities across many domains, and we note potential avenues for future work with knowledge graphs that appear particularly fruitful.
+We frame our discussion first around knowledge graph construction and then around unifying relational learning techniques and unifying applications.
+Advances in machine learning for biomedicine are creating new opportunities across many domains, and we note potential avenues for future work with knowledge graphs that appear particularly promising.
 
 
 ## Introduction
@@ -107,19 +107,20 @@ The nodes (circles) represent entities and edges (lines) depict relational infor
 ## Building Biomedical Knowledge Graphs
 
 Knowledge graphs can be constructed in many ways using resources such as pre-exisitng databases or text.
-Usually, knowledge graphs are constructed using pre-existing databases and these databases are constructed by domain experts using approaches ranging from manual curation to automated techniques, such as text mining.
+Usually, knowledge graphs are constructed using pre-existing databases. 
+These databases are constructed by domain experts using approaches ranging from manual curation to automated techniques, such as text mining.
 Manual curation is a time consuming process that requires domain experts to read papers and annotate sentences that assert a relationship.
 Automated approaches rely on machine learning or natural language processing techniques to rapidly detect sentences of interest.
 We categorize these automated approaches into the following groups: rule-based extraction, unsupervised machine learning, and supervised machine learning and discuss examples of each type of approach while synthesizing their strengths and weaknesses.
 
 ### Constructing Databases and Manual Curation
 
-Database construction can date back all the way to 1956 where the first database contained a protein sequence of the insulin molecule [@GjM2NbnC].
-This process involves gathering relevant text such as journal articles, abstracts, or web-based text and having curators read the gathered text to detect sentences that implicate a relationship (i.e. relationship extraction).
+Database construction dates back all the way to 1956 where the first database contained a protein sequence of the insulin molecule [@GjM2NbnC].
+The process of database construction involves gathering relevant text such as journal articles, abstracts, or web-based text and having curators read the gathered text to detect sentences that implicate a relationship (i.e., relationship extraction).
 Notable databases constructed by this process can be in found in Table {@tbl:manual-curated-databases}.
-An example database, COSMIC [@pfquADl5] was constructed via a group of domain experts scanning the literature for key cancer related genes.
-This database contained approximately 35M entries in 2016 [@pfquADl5] and by 2019 had grown to 45M entries [@1E72FZcIm].
-Studies have shown that databases constructed in this fashion contain relatively precise data, but in low quantifies [@5TLcy6Yl; @1BnoByjXH; @OELNNm08; @yjdNa04s; @d3rG3TXb; @16P0HRKom; @UdzvLgBM].
+An example database, COSMIC [@pfquADl5] was constructed by a group of domain experts scanning the literature for key cancer related genes.
+This database contained approximately 35M entries in 2016 [@pfquADl5] and by 2018 had grown to 45M entries [@1E72FZcIm].
+Studies have shown that databases constructed in this fashion contain relatively precise data but the recall is low [@5TLcy6Yl; @1BnoByjXH; @OELNNm08; @yjdNa04s; @d3rG3TXb; @16P0HRKom; @UdzvLgBM].
 This happens because the publication rate is too high for curators to keep up [@vYYWSlK2].
 This bottleneck highlights a critical need for future approaches to scale fast enough to compete with the increasing publication rate.
 
@@ -128,27 +129,27 @@ The first step of these methods is to use an automated system to initially extra
 This process removes irrelevant sentences, which dramatically decreases the amount of text that curators must sift through.
 Following the pre-filtering step, curators then approve or reject the remaining sentences.
 This approach saved curators an average of 2-2.8 hours compared to manual efforts [@17LLVYRDg; @KX7N360G]. 
-Despite automated systems excelling in identifying sentences for commonly occurring relationships, they tend to miss lessor known relationships [@17LLVYRDg].
+Despite automated systems excelling in identifying sentences for commonly occurring relationships, they tend to miss lesser-known relationships [@17LLVYRDg].
 These systems also have a hard time parsing ambiguous sentences that naturally occur in text, which makes correcting them a challenging task [@17LLVYRDg].
 Given these caveats, future approaches should look into using techniques that simplify sentences to solve the ambiguity issue [@umenx8Nh; @aJL1tPyy].
 
 Despite the negatives of manual curation, it is still an essential process for extracting relationships from text.
-This process can be used to generate gold standard datasets that automated systems use for validation [@Y2DcwTrA; @YWh6tPj] and can be used during the training process of these systems (i.e. active learning) [@MTIt6gSA].
+This process can be used to generate gold standard datasets that automated systems use for validation [@Y2DcwTrA; @YWh6tPj] and can be used during the training process of these systems (i.e., active learning) [@MTIt6gSA].
 It is important to remember that manual curation alone is precise, but results in low recall rates [@UdzvLgBM].
 Future databases should consider initially relying on automated methods to obtain sentences at an acceptable recall level, then incorporate manual curation as a way to fix or remove irrelevant results.
 
 | Database [Reference] | Short Description | Number of Entries | Entity  Types | Relationship Types | Method of Population |
 | --- | --- | --- | --- | --- | --- |
-| Entrez-Gene [@u7vVtngU] | NCBI's Gene annotation database that contains information pertaining to genes, gene's organism source, phenotypes etc. | 7,883,114 | Genes, Species and Phenotypes | Gene-Phenotypes and Genes-Species mappings | Semi-automated curation |
-| UniProt [@1ZE22clL] | A protein protein interaction database that contains proteomic information. | 560,823 | Proteins, Protein sequences | Protein-Protein interactions | Manual and Automated Curation | 
-| PharmGKB [@qbo1ouMs] | A database that contains genetic, phenotypic, and clinical information related to pharmacogenomic studies. | 43,112 | Drugs, Genes, Phenotypes, Variants, Pathways | Gene-Phenotypes, Pathway-Drugs, Gene-Variants, Gene-Pathways | Manual Curation and Automated Methods |
-| COSMIC [@pfquADl5] | A database that contains high resolution human cancer genetic information. | 35,946,704 | Genes, Variants, Tumor Types| Gene-Variant Mappings | Manual Curation | 
 | BioGrid [@kFAyvOpe] | A database for major model organisms. It contains genetic and proteomic information.| 572,084 | Genes, Proteins| Protein-Protein interactions | Semi-automatic methods |
 | Comparative Toxicogenomics Database [@axd6eJec] | A database that contains manually curated chemical-gene-disease interactions and  relationships. | 2,429,689 | Chemicals (Drugs), Genes, Diseases | Drug-Genes, Drug-Disease, Disease-Gene mappings | Manual curation and Automated systems |
 | Comprehensive Antibiotic Resistance Database [@1ByMfX8Y1] | Manually curated database that contains information about the molecular basis of antimicrobial resistance. | 174,443 | Drugs, Genes, Variants | Drug-Gene, Drug-Variant mappings | Manual curation |
+| COSMIC [@pfquADl5] | A database that contains high resolution human cancer genetic information. | 35,946,704 | Genes, Variants, Tumor Types| Gene-Variant Mappings | Manual Curation |
+| Entrez-Gene [@u7vVtngU] | NCBI's Gene annotation database that contains information pertaining to genes, gene's organism source, phenotypes etc. | 7,883,114 | Genes, Species and Phenotypes | Gene-Phenotypes and Genes-Species mappings | Semi-automated curation |
 | OMIM [@1FZWpEoss] | A database that contains phenotype and genotype information | 25,153 | Genes, Phenotypes | Gene-Phenotype mappings | Manual Curation |
-Table:
-A table of databases that used a form of manual curation to populate entries. 
+| PharmGKB [@qbo1ouMs] | A database that contains genetic, phenotypic, and clinical information related to pharmacogenomic studies. | 43,112 | Drugs, Genes, Phenotypes, Variants, Pathways | Gene-Phenotypes, Pathway-Drugs, Gene-Variants, Gene-Pathways | Manual Curation and Automated Methods |
+| UniProt [@1ZE22clL] | A protein protein interaction database that contains proteomic information. | 560,823 | Proteins, Protein sequences | Protein-Protein interactions | Manual and Automated Curation |
+
+Table: A table of databases that used a form of manual curation to populate entries. 
 Reported number of entities and relationships are relative to time of publication.
 {#tbl:manual-curated-databases}
 
