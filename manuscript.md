@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/f2486248a483de118a943dd8a5841bc9c9056924/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/6f20fc1cdcfa1f65ccf623fffd0565805ab19813/))
 was automatically generated
-from [greenelab/knowledge-graph-review@f248624](https://github.com/greenelab/knowledge-graph-review/tree/f2486248a483de118a943dd8a5841bc9c9056924)
+from [greenelab/knowledge-graph-review@6f20fc1](https://github.com/greenelab/knowledge-graph-review/tree/6f20fc1cdcfa1f65ccf623fffd0565805ab19813)
 on April 27, 2020.
 </em></small>
 
@@ -461,7 +461,7 @@ There are a multitude of examples where knowledge graphs have been applied to id
 Tasks in this field involve predicting drugs interacting with other drugs [@NnOS86ev], identifying molecular targets a drug might interact with [@11ua4nEkY] and identifying new disease treatments for previously established drugs [@sj2fr8fp].
 In this section we concentrate on applications that apply these graphs to discover new properties of drugs and focus on approaches that use these graphs in a low-dimensional space.
 
-Similar to multi-omic applications recommendation systems have utilized knowledge graphs to infer novel links between drugs and diseases.
+Similar to multi-omic applications, recommendation systems have utilized knowledge graphs to infer novel links between drugs and diseases.
 Dai et al. used collaborative filtering to infer drug-disease associations [@11ua4nEkY].
 The authors constructed a drug-disease network by integrating two bipartite networks: a drug-gene interaction network and a disease-gene interaction network.
 They integrated both networks under the assumption that drugs associated with a disease interact with the same gene of interest. 
@@ -476,25 +476,26 @@ Applications that use deep learning techniques have used node2vec [@19E33rJiu; @
 Zong et al. used a node2vec-like model to predict drug-target associations [@19E33rJiu].
 The authors constructed a disease-target-disease network using drug centered databases: Drugbank [@111FgvD8J] and Diseasome [@14fs7pzn0].
 Next, the authors applied a random walk to the graph and trained a skip-gram model to generate a low dimensional representation of the graph.
-Lastly, the authors construct a similarity metric that used this space to rank how similar drugs are to their targets [@19E33rJiu].
+Lastly, the authors constructed a similarity metric that used this space to rank how similar drugs are to their targets [@19E33rJiu].
 A limitation to this approach is that their graph is missing information such as pharmacological class or drug chemical structure that could improve prediction performance.
 Overall, deep learning provides a robust set of techniques that have been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
 
 Applications that discover new properties of drugs have benefited from using knowledge graphs as a resource.
 Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation.
-Due to the success of deep learning [@245Px4P3; @WMEox1CM] much of the field's focus has shifted to these techniques; however, a possible extension is to use an ensemble of deep learning techniques and linear methods to improve performance.
-Plus, another area of exploration is to incorporate information such as pharmaceutical classes for drugs or chemical structure to improve detection power.
+Due to the success of deep learning [@245Px4P3; @WMEox1CM] much of the field's focus has shifted to these techniques; however, a possible improvement is to use an ensemble of deep learning techniques and linear methods to improve performance.
+Another potential avenue for future work would be to incorporate entity-specific hierarchical information or similarity information to improve detection power.
+For drugs, this could include pharmaceutical classes or chemical structure similarities.
 
 #### Clinical applications
 
 Clinical applications that use knowledge graphs are in early stages of development, but the long-term goal is to use analyses of these graphs to aid patient care.
-Typically, graphs for these applications are constructed from electronic health records (EHR) and nodes represent patients, drugs and diseases while edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease [@xNv4Rkif; @mrfQbq3g; @xU6Ims3W; @gddb9uXr].
+Typically, graphs for these applications are constructed from electronic health records (EHR): nodes represent patients, drugs and diseases while edges represent relationships such as a patient being prescribed a treatment or a patient being diagnosed with a disease [@xNv4Rkif; @mrfQbq3g; @xU6Ims3W; @gddb9uXr].
 Tasks within this field range from improving patient diagnoses [@UuF5A9Pu;@OCnhKscH] to recommending safer drugs for patients [@aLsdEzlV; @OCnhKscH] and we briefly discuss efforts that use knowledge graphs to accomplish such tasks.
 
-Early work in this field applied translational models (Figure {@fig:unifying_techniques_overview} (b)) to knowledge graphs with the goal of recommend safe drugs.
+Early work in this field applied translational models (Figure {@fig:unifying_techniques_overview} (b)) to knowledge graphs with the goal of recommending safe drugs.
 Wang et al. used a variant of the TransH [@nprR5cVj] model to create such a system for patients [@aLsdEzlV].
 They constructed a disease-patient-drug network by integrating a patient-disease bipartite network with a patient-drug bipartite network.
-Together with all translational models every node in the graph was embedded while satisfying the following equation: $\textbf{h} - \textbf{r} \approx \textbf{t}$.
+Every node in the newly constructed graph was embedded while satisfying the following equation: $\textbf{h} - \textbf{r} \approx \textbf{t}$.
 Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions [@aLsdEzlV].
 Researchers in [@BRGxlTb9] applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.
 
