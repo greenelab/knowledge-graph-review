@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/01e2d0664fbc150c5a64a15c039d17a45d02a5cf/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/6751229e250b63e5aca87468ca6d7f8fa04f1942/))
 was automatically generated
-from [greenelab/knowledge-graph-review@01e2d06](https://github.com/greenelab/knowledge-graph-review/tree/01e2d0664fbc150c5a64a15c039d17a45d02a5cf)
+from [greenelab/knowledge-graph-review@6751229](https://github.com/greenelab/knowledge-graph-review/tree/6751229e250b63e5aca87468ca6d7f8fa04f1942)
 on April 27, 2020.
 </em></small>
 
@@ -375,16 +375,16 @@ Translational distance models treat edges in a knowledge graph as linear transfo
 For example, one such algorithm, TransE [@mGBbZq62], treats every node-edge pair as a triplet with head nodes represented as $\textbf{h}$, edges represented as $\textbf{r}$, and tail nodes represented as $\textbf{t}$.
 These representations are combined into an equation that mimics the iconic word vectors translations ($\textbf{king} - \textbf{man} + \textbf{woman} \approx \textbf{queen}$) from the word2vec model [@u5iJzbp9].
 The described equation is shown as follows: $\textbf{h} + \textbf{r} \approx \textbf{t}$.
-Starting at the head node ($\textbf{h}$), add the edge vector ($\textbf{r}$) and the result should be the tail node ($\textbf{t}$).
+Starting at the head node ($\textbf{h}$), one adds the edge vector ($\textbf{r}$) and the result should be the tail node ($\textbf{t}$).
 TransE optimizes vectors for $\textbf{h}$, $\textbf{r}$, $\textbf{t}$, while guaranteeing the global equation ($\textbf{h} + \textbf{r} \approx \textbf{t}$) is satisfied [@mGBbZq62].
-A caveat to the TransE approach is that it the training steps force relationships to have a one to one mapping, which may not be appropriate for all relationship types.
+A caveat to the TransE approach is that it forces relationships to have a one to one mapping, which may not be appropriate for all relationship types.
 
 Wang et al. attempted to resolve the one to one mapping issue by developing the TransH model [@nprR5cVj].
-TransH treats relations as hyperplanes rather than a regular vector and projects the head ($\textbf{h}$) and tail ($\textbf{t}$) nodes onto this hyperplane.
+TransH treats relations as hyperplanes rather than a regular vector and projects the head ($\textbf{h}$) and tail ($\textbf{t}$) nodes onto a hyperplane.
 Following this projection, a distance vector ($\textbf{d}_{r}$) is calculated between the projected head and tail nodes.
 Finally, each vector is optimized while preserving the global equation: $\textbf{h} + \textbf{d}_{r} \approx \textbf{t}$ [@nprR5cVj].
 Other effots have built off of the TransE and TransH models [@R8kotaKY, @E5xHFo4P; @BRGxlTb9]. 
-In the future, it may be beneficial for these models is to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these vectors.
+In the future, it may be beneficial for these models to incorporate other types of information such as edge confidence scores, textual information, or edge type information when optimizing these distance models.
 
 #### Deep Learning
 
