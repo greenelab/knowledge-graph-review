@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/0b2b026bfafcd7a68116d859c2cc93895c036ecf/))
 was automatically generated
-from [greenelab/knowledge-graph-review@0ca9bf5](https://github.com/greenelab/knowledge-graph-review/tree/0ca9bf5d932c0ea9d5434647b49cbaf19ab4b43c)
+from [greenelab/knowledge-graph-review@0b2b026](https://github.com/greenelab/knowledge-graph-review/tree/0b2b026bfafcd7a68116d859c2cc93895c036ecf)
 on April 27, 2020.
 </em></small>
 
@@ -516,22 +516,22 @@ Future directions for the field consist of designing algorithms that can fill in
 
 Knowledge graphs are becoming widely used in biomedicine, and we expect their use to continue to grow.
 At the moment, most are constructed from databases derived from manual curation or from co-occurrences in text.
-However, we expect that machine learning approaches will play a key role in quickly bringing new findings into these graphs.
+We expect that machine learning approaches will play a key role in quickly deriving new findings from these graphs.
 Representing these knowledge graphs in a low dimensional space that captures a graph's local and global structure can enable many downstream machine learning analyses, and methods to capture this structure are an active area of research.
 
 As with any field, rigorous evaluation that can identify key factors that drive success is critical to moving the field forward.
-In regard to knowledge graphs, evaluation remains hard.
+In regard to knowledge graphs, evaluation remains difficult.
 Experiments in this context require a significant amount of time and consequently resources [@otY29wFV; @YyPaovQ0].
 Moving from open ended and uncontrolled evaluations that consist of describing findings that are consistent with the literature to blinded evaluations of the literature that corroborate predictions and non-predictions would be a valuable first step.
 There are also well-documented biases related to node degree and degree distribution that must be considered for accurate evaluation [@17QDcGqUi].
 Furthermore, the diversity of applications hinders the development of a standardized set of expected evaluations.
 
-We anticipate that a fruitful avenue of research will be techniques that can produce low dimensional representations of knowledge graphs that distinguish between multple node and edge types.
-There are also many different sources of bias that lead to spurious edges or incompleteness, and modeling these may support better representations.
+We anticipate that a fruitful avenue of research will be techniques that can produce low dimensional representations of knowledge graphs which distinguish between multiple node and edge types.
+There are many different sources of bias that lead to spurious edges or incompleteness, and modeling these biases may support better representations of knowledge graphs.
 It is a promising time for research into the construction and application of knowledge graphs.
 The peer reviewed literature is growing at an increasing rate and maintaining a complete understanding is becoming increasingly challenging for scientists.
-One path that scientists can take to maintain complete awareness is to become hyper-focused on specific areas of knowledge graph literature.
-If advances in how these graphs are constructed, represented, and applied can enable the linking of fields, we may be able to savor the benefits of this detailed knowledge without losing the broader contextual links.
+One path that scientists can take to maintain awareness is to become hyper-focused on specific areas of knowledge graph literature.
+If advances in how these graphs are constructed, represented and applied can enable the linking of fields, we may be able to savor the benefits of this detailed knowledge without losing the broader contextual links.
 
 
 ## References {.page_break_before}
