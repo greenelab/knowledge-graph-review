@@ -17,7 +17,7 @@
 > - Figure 5b: Font too small
 > - "goal of recommend safe drugs"
 
-We would like to thank the reviewer for noticing these. We have fixed the typos.
+**We would like to thank the reviewer for noticing these. We have fixed the typos.**
 
 ## Reviewer 2
 
@@ -28,47 +28,108 @@ We would like to thank the reviewer for noticing these. We have fixed the typos.
 >Almost all of the discussions in this manuscript deals with methods that don't model relations. 
 >The only part that correctly refers to a class knowledge graph methods is translational distance methods.  
 
+**We appreciate the reviewers perspective; however, we believe the scope of this review is within reason.
+The focus of this review is to discuss the pros and cons of building knowledge graphs and representing them in a low dimensional space.
+This space is constructed based on the edges that are shared between nodes, which means relational information is implicitly captured by techniques mentioned in this review.
+We note that some techniques collapses edges into a single entity, which results in some relational information being lost.**
+
 >The following are some comments: 
 
->**What specifically do you mean by techniques that represent KGs and machine learning methods that are used to learn low-dimensional vectors?
+>What specifically do you mean by techniques that represent KGs and machine learning methods that are used to learn low-dimensional vectors?
 
-We implicate that techniques represent knowledge graphs by associating nodes and possibly edges to dense vectors.
-These dense vectors can be utilized to perform task such as link predictions, node classification, node similarity calculations etc.
-Machine learning methods be used to either make the association between nodes and these vectors or be used to make classification calls using these vectors as input.
-In this revision we will clarify text to highlight this association and be distinct on the difference between machine learning methods that make the association and methods that are used to perform tasks.
+**When we say "techniques that represet knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to list of numbers (i.e., dense vectors).
+As previously mentioned these dense vectors implicitly capture relational information from the knowledge graph itself.
+We also discuss in this review that these dense vectors can be used as input to machine learning methods for biomedical applications.**
 
->**at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
+>at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
-We acknowledge that these references use general methods for knowledge graphs; however, we use these references to exemplify the fact that the graphs used are considered knowledge graphs.
+**We define knowledge graphs as the following: "a resource that integrates single or multiple sources of information into the form a graph where nodes repesent entities and edges represent relationships that are shared between two entities".
+Based on our definition, the graphs in these resources are considered knowledge graphs.
+The methods described in these resources collapse edges into a single entity, which means some relational information is lost; however, we highlight this flaw in our review.**
 
->**Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
+>Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
 >Ideally, a knowledge graph should show that. 
 >Please have a look at some knowledge graphs reviews in literature. 
 >For example, https://arxiv.org/pdf/1503.00759.pdf 
 
-Figure one uses the same network schema as used in Project Rephetio (https://elifesciences.org/articles/26726).
-The authors on that project intentionally kept the edges as undirected; however,
-we agree that some relationships can have ambiguous directionality (e.g. upregulates/downregulates can infer gene upregulates disease or disease upregulates a gene).
-For this revision, we plan to update the text to state that our example knowledge graph can have bidirectionality.
+**We appreciate the reviewer pointing out this fact.
+We updated our figure to reflect edge directionality and updated the text to note that some edges can be considered bidirectional.**
 
->**"relatively precise data, but in low quantifies"?
+```diff
+- A metagraph (schema) of the heterogeneous network used in the Rephetio project [..].
+- This undirected network depicts pharmacological and biomedical information.
+- The nodes (circles) represent entities and edges (lines) depict relational information between two entities.
 
-This statement means the quality of curated data is of high grade, but the amount of data inserted into databases is quite small. 
-In other words, manual curation provides results that have high precision but low recall.
-The quantifies is a typo and should be quantities and will be fixed when the revision processed is finished.
++ The metagraph (i.e., schema) of the knowledge graph used in the Rephetio project [..].
++ The authors of this project refer to their resource as a heterogenous network (i.e., hetnet); however, we consider a hetnet to be synonymous to our definition of a knowledge graph.
++ This resources depicts pharmacological and biomedical information in the form of nodes and edges. 
++ The nodes (circles) represent entities and edges (lines) represent relationships that are shared between two entities.
++ Majority of edges in this metagraph are depicted as unidirectional, but some relationships can be considered bidirectional.
+```
 
->**what you refer to as "unifying techniques" is relational learning, I don't see why you refer to it in such an ambiguous way. 
+>"relatively precise data, but in low quantifies"?
+
+**We like to thank the reviewer for pointing out this typo.
+"Quantifies" should be "quantities" and this statement was designed to convey that manual curation results in high precision but suffers from low recall.
+We updated the text to fix this issue.**
+
+```diff
+- Studies have shown that databases constructed in this fashion contain relatively precise data, but in low quantifies 
++ Studies have shown that databases constructed in this fashion contain relatively precise data but the recall is low
+```
+
+>what you refer to as "unifying techniques" is relational learning, I don't see why you refer to it in such an ambiguous way. 
 >Furthermore, grouping the techniques into three is so broad and doesn't correctly represent knowledge graphs methods. 
 >For example, matrix factorization and deep learning. 
 >Matrix factorizations such as isomap, PCA, SVD and others are not knowledge graph representation techniques, but dimensionality reduction techniques.
+
+**We appreciate the reviewer's perspective; however, given the scope of this review, we believe our technique groups are within reason.
+We agree that the title for this section is a bit ambigious and we have changed our title to the following: "representational learning techniques" (diff provided below).
+Given our defintion of knowledge graphs, we view that the methods we disucss can be applied to knowledge graphs.**
+
+```diff
+- In the next sections we review the unifying techniques that construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
+
+- Unifying Techniques
+
++ In the following sections we review methods that construct this low dimensional space (Unifying Representational Learning Techniques) and discuss applications that use this space to solve biomedical problems (Unifying Applications).
+
++ Unifying Representational Learning Techniques
+```
+
 > More importantly, you don't show how they can be applied or used in the context of knowledge graphs as claimed?
 
-We agree that the title for that section is a bit broad and we updated the text to accommodate the suggestion.
-You are correct in stating that these methods are not knowledge graph specific; however, they can be used on knowledge graphs to associate nodes to dense vectors (low dimensional space).
-We provided a reference that used SVD and other matrix factorization methods to perform this association for link prediction tasks and node classification tasks.
-In this revision we will update text to be more explicit on how these class of methods can be used on knowledge graphs.
+**We agree that the text wasn't explicit enough on definiting how some techniques apply to knoweledge graphs. 
+We have updated our text to emphasize this point.**
 
->**word2vec is a shallow neural network (one layer for projection, no activation or non-linearity is used in this layer), therefore it is deep learning, nor any of the methods which use similar techniques.
+```diff
+- In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [..;..].
 
-We agree that word2vec, node2vec and similar methods use a shallow neural network.
-We have decided to update the title and text to refer to these models as "neural network models".
++In practice $U$ is usually used to represent nodes in a knowledge graph and can be used as input for machine learning classifiers to perform tasks such as link prediction or node classification [@doi:10.1093/bioinformatics/btz718]; however,$V^{T}$ can also be used [..;..].
+```
+
+```diff
+- Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to construct low dimensional representations.
+
++ Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to decompose matrices into smaller rectangular forms.
++ Regarding knowledge graphs, the adjacency matrix ($A$) is the typical matrix that gets decomposed, but the laplacian matrix ($L=D-A$) can be used as well.
+```
+
+>word2vec is a shallow neural network (one layer for projection, no activation or non-linearity is used in this layer), therefore it is deep learning, nor any of the methods which use similar techniques.
+
+**We agree that word2vec, node2vec and similar methods use a shallow neural network, which means these models aren't considered deep learning.
+We updated the title to be "Neural networks" and replaced instances of deep learning with neural networks.**
+
+```diff
+- Deep Learning
+
+- Deep learning is a paradigm that uses multiple non-linear transformations to map high dimensional data into a low dimensional space.
+- Many techniques that use deep learning on knowledge graphs are based on word2vec [..;..], a set of approaches that are widely used for natural language processing.
+
++ Neural Networks
+
++ Neural networks are a class of machine learning models inspired by the concept of biological neural networks [..].
++ These networks are reputable for making non-linear transformations of high dimensional data to solve classification and regression problems [..].
+
++ In the context of knowledge graphs, the most commonly used structures are based on word2vec [..;..].
+```
