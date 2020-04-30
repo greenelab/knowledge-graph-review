@@ -28,23 +28,25 @@
 >Almost all of the discussions in this manuscript deals with methods that don't model relations. 
 >The only part that correctly refers to a class knowledge graph methods is translational distance methods.  
 
-**We appreciate the reviewers perspective; however, we believe the scope of this review is within reason.
+**We appreciate the reviewers perspective; however, we believe the scope of this review suffices for publication.
 The focus of this review is to discuss the pros and cons of building knowledge graphs and representing them in a low dimensional space.
-This space is constructed based on the edges that are shared between nodes, which means relational information is implicitly captured by techniques mentioned in this review.
-We note that some techniques collapses edges into a single entity, which results in some relational information being lost.**
+This space captures the essence of a knowledge graph; however, once a knowledge graphs is represented in this space, they are no longer considered "true" knowledge graphs. 
+Methods discussed in this review are focused on how this space is constructed, which is sensitive to edges (relations) in a knowledge graph; albeit some methods collapse edges into a single entity.
+We updated text to be more explicit on how knowledge graphs are used as input for mentioned methods.
+**
 
 >The following are some comments: 
 
 >What specifically do you mean by techniques that represent KGs and machine learning methods that are used to learn low-dimensional vectors?
 
-**When we say "techniques that represet knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to list of numbers (i.e., dense vectors).
-As previously mentioned these dense vectors implicitly capture relational information from the knowledge graph itself.
-We also discuss in this review that these dense vectors can be used as input to machine learning methods for biomedical applications.**
+**When we say "techniques that represet knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to dense vectors.
+These vectors implicitly capture the essence of a knowledge graph itself and machine learning methods can utilize these vectors to perform tasks such as classification for biomedical applications.**
 
 >at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
 **We define knowledge graphs as the following: "a resource that integrates single or multiple sources of information into the form a graph where nodes repesent entities and edges represent relationships that are shared between two entities".
-Based on our definition, the graphs in these resources are considered knowledge graphs.
+We note in our text that this definition is consistent with other definitions found in the literature.
+Based on our definition, we consider graphs mentioned in these resources as knowledge graphs.
 The methods described in these resources collapse edges into a single entity, which means some relational information is lost; however, we highlight this flaw in our review.**
 
 >Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
@@ -53,7 +55,7 @@ The methods described in these resources collapse edges into a single entity, wh
 >For example, https://arxiv.org/pdf/1503.00759.pdf 
 
 **We appreciate the reviewer pointing out this fact.
-We updated our figure to reflect edge directionality and updated the text to note that some edges can be considered bidirectional.**
+We updated our figure to reflect edge directionality and updated the text to discuss edge direcitonality.**
 
 ```diff
 - A metagraph (schema) of the heterogeneous network used in the Rephetio project [..].
@@ -83,9 +85,9 @@ We updated the text to fix this issue.**
 >For example, matrix factorization and deep learning. 
 >Matrix factorizations such as isomap, PCA, SVD and others are not knowledge graph representation techniques, but dimensionality reduction techniques.
 
-**We appreciate the reviewer's perspective; however, given the scope of this review, we believe our technique groups are within reason.
+**We grouped techniques based on their functionality.
 We agree that the title for this section is a bit ambigious and we have changed our title to the following: "representational learning techniques" (diff provided below).
-Given our defintion of knowledge graphs, we view that the methods we disucss can be applied to knowledge graphs.**
+We take the viewpoint that these methods can be applied to knowledge graphs and have updated text to be more explicit on this point.**
 
 ```diff
 - In the next sections we review the unifying techniques that construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
@@ -99,8 +101,7 @@ Given our defintion of knowledge graphs, we view that the methods we disucss can
 
 > More importantly, you don't show how they can be applied or used in the context of knowledge graphs as claimed?
 
-**We agree that the text wasn't explicit enough on definiting how some techniques apply to knoweledge graphs. 
-We have updated our text to emphasize this point.**
+**We agree that the text wasn't explicit enough on how  knoweledge graphs are applied as input and have updated our text to fix this issue.**
 
 ```diff
 - In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [..;..].
@@ -117,7 +118,7 @@ We have updated our text to emphasize this point.**
 
 >word2vec is a shallow neural network (one layer for projection, no activation or non-linearity is used in this layer), therefore it is deep learning, nor any of the methods which use similar techniques.
 
-**We agree that word2vec, node2vec and similar methods use a shallow neural network, which means these models aren't considered deep learning.
+**We agree that word2vec, node2vec and similar methods use a shallow neural network, which means these models aren't considered "deep learning".
 We updated the title to be "Neural networks" and replaced instances of deep learning with neural networks.**
 
 ```diff
