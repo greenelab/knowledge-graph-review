@@ -22,9 +22,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/2bfe5f90ee70deed70fcdea0d25b827d684eff97/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/511a5b381d8680edbffa1f834bdae9b4d0294ff1/))
 was automatically generated
-from [greenelab/knowledge-graph-review@2bfe5f9](https://github.com/greenelab/knowledge-graph-review/tree/2bfe5f90ee70deed70fcdea0d25b827d684eff97)
+from [greenelab/knowledge-graph-review@511a5b3](https://github.com/greenelab/knowledge-graph-review/tree/511a5b381d8680edbffa1f834bdae9b4d0294ff1)
 on May 1, 2020.
 </em></small>
 
@@ -320,17 +320,20 @@ Table: A set of publicly available datasets for supervised text mining. {#tbl:su
 
 ## Applying Knowledge Graphs to Biomedical Challenges
 
-Knowledge graphs can help researchers tackle many biomedical tasks such as finding new treatments for existing drugs [@O21tn8vf], aiding efforts to diagnose patients [@10nDTiETi] and predicting associations between diseases and biomolecules [@YyPaovQ0].
-In many cases, solutions rely on representing knowledges graphs in a low dimensional space, which is a process called representation learning.
-This space preserves a knowledge graph's local and/or global structure and can support efforts to apply machine learning methods to make predictions.
-In the next sections we review the unifying techniques that construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
+Knowledge graphs can help researchers tackle many biomedical problems such as finding new treatments for existing drugs [@O21tn8vf], aiding efforts to diagnose patients [@10nDTiETi] and identfying associations between diseases and biomolecules [@YyPaovQ0].
+In many cases, solutions rely on representing knowledge graphs in a low dimensional space, which is a process called representational learning.
+This goal of this process is to retain and encode the local and/or global structure of a knowledge graph that are relevant to the problem while transforming the graph into a representation that can be readily used with machine learning methods to build predictors.
+In the following sections we review methods that construct this low dimensional space (Unifying Representational Learning Techniques) and discuss applications that use this space to solve biomedical problems (Unifying Applications).
 
-### Unifying Techniques
+### Unifying Representational Learning Techniques
 
 Mapping high dimensional data into a low dimensional space greatly improves modeling performance in fields such as natural language processing [@1GhHIDxuW; @u5iJzbp9] and image analysis [@j7KrVyi8].
-The success of these approaches provides rationale for representing knowledge graphs into a low dimensional space [@DSiHGDz9].
-Techniques that construct this representation often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
-We group these methods into the following three categories: matrix factorization, translational methods, and deep learning (Figure {@fig:unifying_techniques_overview}).
+The success of these approaches served as rationale for a sharper focus on representing knowledge graphs in a low dimensional space [@DSiHGDz9].
+Methods of this class are designed to capture the essence of a knowledge graph in the form of dense vectors [@H0ez30Pz; @MxPEnWF1].
+These vectors are often assigned to nodes in a graph [@PD4udqRe], but edges can be assigned as well [@mGBbZq62].
+Techniques that construct this low dimensional space often require information on how nodes are connected with one another [@18ZTxo1gJ; @u6NlpEUq; @dylXYFm6; @9F3iyg8e], while other approaches can work directly with the edges themselves [@E5xHFo4P].
+Once this space has been constructed, machine learning techniques can utilize this space for downstream analyses such as classification or clustering.
+We group techniques that construct this space into the following three categories: matrix factorization, translational distance models, and neural network models (Figure {@fig:unifying_techniques_overview}).
 
 ![
 Pipeline for representing knowledge graphs in a low dimensional space.

@@ -52,7 +52,7 @@
     "repo_slug": "greenelab/knowledge-graph-review",
     "repo_owner": "greenelab",
     "repo_name": "knowledge-graph-review",
-    "commit": "2bfe5f90ee70deed70fcdea0d25b827d684eff97"
+    "commit": "511a5b381d8680edbffa1f834bdae9b4d0294ff1"
   },
   "manuscript_stats": {
     "reference_counts": {
@@ -63,6 +63,6 @@
       "url": 1,
       "total": 202
     },
-    "word_count": 7728
+    "word_count": 7830
   }
 }
