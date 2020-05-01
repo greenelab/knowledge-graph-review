@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-04-27'
+date-meta: '2020-05-01'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/9a58c58084702f3ddf822f224275adce28a13364/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/2bfe5f90ee70deed70fcdea0d25b827d684eff97/))
 was automatically generated
-from [greenelab/knowledge-graph-review@9a58c58](https://github.com/greenelab/knowledge-graph-review/tree/9a58c58084702f3ddf822f224275adce28a13364)
-on April 27, 2020.
+from [greenelab/knowledge-graph-review@2bfe5f9](https://github.com/greenelab/knowledge-graph-review/tree/2bfe5f90ee70deed70fcdea0d25b827d684eff97)
+on May 1, 2020.
 </em></small>
 
 ## Authors
@@ -340,23 +340,24 @@ The output of this pipeline is an embedding space that clusters similar node typ
 
 #### Matrix Factorization
 
-Matrix factorization is a technique that uses linear algebra to map high dimensional data onto a low dimensional space.
+Matrix factorization is a class of techniques that use linear algebra to map high dimensional data into a low dimensional space.
 This projection is accomplished by decomposing a matrix into a set of small rectangular matrices (Figure {@fig:unifying_techniques_overview} (a)).
 Notable methods for matrix decomposition include Isomap [@13cvwdrYY], Laplacian eigenmaps [@MxPEnWF1] and Principal Component Analysis (PCA) [@sSbTaHau]/Singular Vector Decomposition (SVD) [@H0ez30Pz].
-These methods were designed to be used on many different types of data; however, we discuss their use in the context of representing a knowledge graphs in a low dimensional space.	
+These methods were designed to be used on many different types of data; however, we discuss their use in the context of representing knowledge graphs in a low dimensional space and focus particularly on SVD and laplacian eigenmaps.  
 
 SVD [@H0ez30Pz] is an algorithm that uses matrix factorization to portray knowledge graphs in a low dimensional space.
-The input for this algorithm is an adjacency matrix ($A$), which is a square matrix where rows and columns represent nodes and each entry represents the presence of an edge between two nodes. 
-This matrix ($A$) gets decomposed into three parts: a square matrix $Σ$ and a set of two small rectangular matrices $U$ and $V^{T}$.
-This values within $Σ$ are called singular values, which are akin to eigenvalues [@H0ez30Pz].
+The input for this algorithm is an adjacency matrix ($A$), which is a square matrix where rows and columns represent nodes and each entry is a binary representation of the presence of an edge between two nodes. 
+$A$ is constructed based on the knowledge graph's structure itself and collapses all edges between two nodes into one unique entity.
+Following construction, $A$ is decomposed into the following three parts: a square matrix $Σ$ and a set of two small rectangular matrices $U$ and $V^{T}$.
+Values within $Σ$ are called singular values, which are akin to eigenvalues [@H0ez30Pz].
 Each row in $U$ and each column in $V^{T}$ represents nodes within a low dimensional space [@H0ez30Pz; @sSbTaHau].
-In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [@H0ez30Pz; @TFsQrgwM].
-Typically, SVD appears in recommendation systems via collaborative filtering [@Z5VAJJmP]; however, this technique can also be used as a standalone baseline to compare to other approaches [@QcVYdxZu].
+In practice $U$ is usually used to represent nodes in a knowledge graph and can be used as input for machine learning classifiers to perform tasks such as link prediction or node classification [@QcVYdxZu]; however,$V^{T}$ has also been used [@H0ez30Pz; @TFsQrgwM].
+Typically, matrix factorization algorithms such as SVD are used for recommendation systems via collaborative filtering [@Z5VAJJmP]; however, this technique can also provide a standalone baseline for other relational learning approaches [@QcVYdxZu].
 
-Laplacian eigenmaps is a technique that assumes there is low dimensional structure in a high dimensional space [@MxPEnWF1].
-This algorithm preserves this structure while projecting data into a low dimensional space. 
-Typically, the first step of this algorithm is to construct a figurative knowledge graph where nodes represent datapoints and edges are constructed based on similarity of two datapoints; however, in this context, the knowledge graph has already been defined.
-The next step in this algorithm is to obtain both an adjacency matrix ($A$) and a degree matrix ($D$) from the knowledge graph.
+Laplacian eigenmaps assume there is low dimensional structure in a high dimensional space and preserves this structure when projecting data into a low dimensional space [@MxPEnWF1].
+The first step of this technique is to preserve this low dimensional structure by representing data in the form of a graph where nodes are datapoints and edges are the distance between two points.
+Knowledge graphs already provide this representation, so no additional processing is necessary at this stage.
+The second step of this technique is to obtain both an adjacency matrix ($A$) and a degree matrix ($D$) from the graph representation.
 A degree matrix is a diagonal matrix where each entry represents the number of edges connected to a node.
 The adjacency and degree matrices are converted into a laplacian matrix ($L$), which is a matrix that shares the same properties as the adjacency matrix.
 The laplacian matrix is generated by subtracting the adjacency matrix from the degree matrix ($L=D-A$) and, once constructed, the algorithm uses linear algebra to calculate the laplacian's eigenvalues and eigenvectors ($Lx = \lambda Dx$).
@@ -365,10 +366,12 @@ Other efforts have used variants of this algorithm to construct their own low di
 Typically, eigenmaps work well when knowledge graphs have a sparse number of edges between nodes but struggle when presented with denser networks [@QcVYdxZu; @FE8pyO0l; @KzDGRrSP].
 An open area of exploration is to adapt these methods to accommodate knowledge graphs that have a large number of edges.
 
-Matrix factorization is a powerful technique that uses a matrices such as  an adjacency matrix as input.
-Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to construct low dimensional representations.
-Despite reported success, the dependence on matrices like an adjacency matrix creates an issue of scalability as matrices of large networks would take too much memory for a regular computer to operate well.
-Furthermore, these methods treat all edge types the same, but a possible extension is to incorporate node and edge types as sources of input.
+Matrix factorization is a powerful technique that represents high dimensional data in a low dimensional space.
+Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to decompose matrices into smaller rectangular forms.
+Regarding knowledge graphs, the adjacency matrix ($A$) is the typical matrix that gets decomposed, but the laplacian matrix ($L=D-A$) can be used as well. 
+Despite reported success, the dependence on matrices creates an issue of scalability as matrices of large networks may reach memory limitations.
+Furthermore, the approaches we discussed consider all edge types as equivalent.
+This limitations could be mitigated by new approaches designed to accommodate multiple node and edge types separately.
 
 #### Translational Distance Models
 
