@@ -403,10 +403,10 @@
 	(a) Matrix Factorization
 </text>
 <text x="305" y="300" class="label_font">
-	(b) Translational Models
+	(b) Translational Distance Models
 </text>
 <text x="305" y="450" class="label_font">
-	(c) Deep Learning
+	(c) Neural Network Models
 </text>
 <text x="800" y="240" font-size="15px">
 	Node Embedding Space
