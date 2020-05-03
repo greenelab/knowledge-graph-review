@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-05-01'
+date-meta: '2020-05-03'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/511a5b381d8680edbffa1f834bdae9b4d0294ff1/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/e2e14b9ed080162400dd7d408753dfc586b6743c/))
 was automatically generated
-from [greenelab/knowledge-graph-review@511a5b3](https://github.com/greenelab/knowledge-graph-review/tree/511a5b381d8680edbffa1f834bdae9b4d0294ff1)
-on May 1, 2020.
+from [greenelab/knowledge-graph-review@e2e14b9](https://github.com/greenelab/knowledge-graph-review/tree/e2e14b9ed080162400dd7d408753dfc586b6743c)
+on May 3, 2020.
 </em></small>
 
 ## Authors
@@ -71,25 +71,26 @@ Advances in machine learning for biomedicine are creating new opportunities acro
 
 ## Introduction
 
-Knowledge graphs are a practical resource for many real world applications.
-They have been used in social media mining to classify nodes [@DjhSdWbc] and create recommendation systems [@Eqbsazq5].
+Knowledge graphs are a practical resource for many real-world applications.
+They have been used in social network mining to classify nodes [@DjhSdWbc] and create recommendation systems [@Eqbsazq5].
 These graphs have also been used in natural language processing to interpret simple questions and use relational information to provide answers [@N0gUhlt9; @s8ydThMc].
-In a biomedical setting these graphs have been used to prioritize genes relevant to disease [@GI2y7kMc; @Oi5yRd0v; @15k4Xz0i3; @1D9FTzRBg], perform drug repurposing [@O21tn8vf] and identify drug-target interactions [@15GxqZyO8].
+In a biomedical setting, these graphs have been used to prioritize genes relevant to disease [@GI2y7kMc; @Oi5yRd0v; @15k4Xz0i3; @1D9FTzRBg], perform drug repurposing [@O21tn8vf] and identify drug-target interactions [@15GxqZyO8].
 
 Despite their utility, precisely defining a knowledge graph is a difficult task because there are multiple conflicting definitions [@V9M93in].
-For this review, we define a knowledge graph as the following: a resource that integrates single or multiple sources of information into the form of a graph.
-This graph allows for the capacity to make semantic interpretation, continuously incorporate new information and uncover novel hidden knowledge through computational techniques and algorithms.
-Based on this definition resources like Hetionet [@O21tn8vf] would be considered a knowledge graph as Hetionet integrates multiple sources of information into the form of a graph (example shown in Figure {@fig:hetionet_schema}).
-Hetionet was used to derive novel information concerning unique drug treatments [@O21tn8vf].
+For this review, we define a biomedical knowledge graph as the following: a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.
+This definition is consistent with other definitions found in the literature [@tTin0vq6;@40RgfG4W;@N0FNpMpT;@cskgFLqz;@1BADC6sf5;@kUyUTRND;@nnJGY1Jn].
+Often relationships are considered unidirectional (e.g., a compound treats a disease but a disease cannot treat a compound); however, there are cases where relationships can be considered bidirectional (e.g., a compound resembles another compound or a gene interacts with another gene).
+A subset of graphs that meet our definition of a knowledge graph would be unsuitable for applications such as symbolic reasoning [@174vTl1QR]; however, we chose a more liberal definition because it has been demonstrated that these broadly defined graphs have numerous uses throughout the literature.
+For example, Hetionet (Figure {@fig:hetionet_schema}) [@O21tn8vf] would be considered a biomedical knowledge graph by this definition, and it has been used to identify drug repurposing opportunities [@O21tn8vf].
 We do not consider databases like DISEASES [@5gG8hwv7] and DrugBank [@1FI8iuYiQ] to be knowledge graphs.
 Although these resources contain essential information, they do not represent their data in the form of a graph.
 
-Knowledge graphs are often constructed from manually curated databases [@O21tn8vf; 10.1371/journal.pcbi.1002574; @kBHNhSma; @tIGJl1ES;  @BTEcMH0X].
+Biomedical knowledge graphs are often constructed from manually curated databases [@O21tn8vf; @15GxqZyO8; @kBHNhSma; @tIGJl1ES; @BTEcMH0X].
 These databases provide previously established information that can be incorporated into a graph.
 For example, a graph using DISEASES [@5gG8hwv7] as a resource would have genes and diseases as nodes, while edges added between nodes would represent an association between a gene and a disease.
 This example shows a single type of relationship; however, there are graphs that use databases with multiple relationships [@O21tn8vf; @6Vifn4pu].
-In addition to manual curation other approaches have used natural language processing techniques to construct knowledge graphs [@gddb9uXr; @rxaBUglG].
-One example used a text mining system to extract sentences that illustrate a protein interacts with another protein [@ibJfUvEe].
+In addition to manual curation, other approaches have used natural language processing techniques to construct knowledge graphs [@gddb9uXr; @rxaBUglG].
+One example used a text mining system to extract sentences that illustrate a protein's interaction with another protein [@ibJfUvEe].
 Once identified, these sentences can be incorporated as evidence to establish an edge in a knowledge graph.
 
 In this review we describe various approaches for constructing and applying knowledge graphs in a biomedical setting.
@@ -98,10 +99,12 @@ We also compare assorted approaches for applying knowledge graphs to solve biome
 Lastly, we conclude on the practicality of knowledge graphs and point out future applications that have yet to be explored.
 
 ![
-A metagraph (schema) of the heterogeneous network used in the Rephetio project [@O21tn8vf].
-This undirected network depicts pharmacological and biomedical information.
-The nodes (circles) represent entities and edges (lines) depict relational information between two entities.
-](https://raw.githubusercontent.com/dhimmel/rephetio/f02d44fde7eeef0ffdca0800e0b43c48d800c86d/figure/metagraph.png){#fig:hetionet_schema}
+The metagraph (i.e., schema) of the knowledge graph used in the Rephetio project [@O21tn8vf].
+The authors of this project refer to their resource as a heterogenous network (i.e., hetnet), and this network meets our definition of a knowledge graph.
+This resources depicts pharmacological and biomedical information in the form of nodes and edges. 
+The nodes (circles) represent entities and edges (lines) represent relationships that are shared between two entities.
+Majority of edges in this metagraph are depicted as unidirectional, but some relationships can be considered bidirectional.
+](https://raw.githubusercontent.com/hetio/het.io/e1ca4fd591e0aa01a3767bbf5597a910528f6f86/about/metagraph.png){#fig:hetionet_schema}
 
 
 ## Building Biomedical Knowledge Graphs
