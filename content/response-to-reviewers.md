@@ -17,7 +17,7 @@
 > - Figure 5b: Font too small
 > - "goal of recommend safe drugs"
 
-**We would like to thank the reviewer for noticing these. We have fixed the typos.**
+**We would like to thank the reviewer for noticing these typos and we have fixed them in this new revision.**
 
 ## Reviewer 2
 
@@ -28,26 +28,24 @@
 >Almost all of the discussions in this manuscript deals with methods that don't model relations. 
 >The only part that correctly refers to a class knowledge graph methods is translational distance methods.  
 
-**We appreciate the reviewers perspective; however, we believe the scope of this review suffices for publication.
-The focus of this review is to discuss the pros and cons of building knowledge graphs and representing them in a low dimensional space.
-This space captures the essence of a knowledge graph; however, once a knowledge graphs is represented in this space, they are no longer considered "true" knowledge graphs. 
-Methods discussed in this review are focused on how this space is constructed, which is sensitive to edges (relations) in a knowledge graph; albeit some methods collapse edges into a single entity.
-We updated text to be more explicit on how knowledge graphs are used as input for mentioned methods.
+**We appreciate the reviewer's perspective; however, we emphasize that the focus of this review is to discuss the pros and cons of building knowledge graphs and representing them in a low dimensional space.
+This space is intended to capture the essence of a knowledge graph and is dependent on the node and edge structure of a graph.
+Once knowledge graphs are represented in this space, they can no longer be considered "true" knowledge graphs. 
+The methods discussed in our review are focused on how this low dimensional space is constructed and we updated our text to be more explicit on how knowledge graphs are used as input.
 **
 
 >The following are some comments: 
 
 >What specifically do you mean by techniques that represent KGs and machine learning methods that are used to learn low-dimensional vectors?
 
-**When we say "techniques that represet knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to dense vectors.
-These vectors implicitly capture the essence of a knowledge graph itself and machine learning methods can utilize these vectors to perform tasks such as classification for biomedical applications.**
+**When we say, "techniques that represent knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to dense vectors.
+These vectors implicitly capture the essence of a knowledge graph itself and machine learning methods can utilize these vectors to perform tasks such as link prediction for biomedical applications.**
 
 >at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
-**We define knowledge graphs as the following: "a resource that integrates single or multiple sources of information into the form a graph where nodes repesent entities and edges represent relationships that are shared between two entities".
-We note in our text that this definition is consistent with other definitions found in the literature.
-Based on our definition, we consider graphs mentioned in these resources as knowledge graphs.
-The methods described in these resources collapse edges into a single entity, which means some relational information is lost; however, we highlight this flaw in our review.**
+**We define biomedical knowledge graphs as the following: "a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.".
+We note in our text that this definition is consistent with other definitions found in the literature and discuss a limitation to our definition as well.
+We consider the graphs mentioned in those resources as knowledge graphs per our definition and note the limitations of those methods within our review.**
 
 >Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
 >Ideally, a knowledge graph should show that. 
@@ -55,7 +53,7 @@ The methods described in these resources collapse edges into a single entity, wh
 >For example, https://arxiv.org/pdf/1503.00759.pdf 
 
 **We appreciate the reviewer pointing out this fact.
-We updated our figure to reflect edge directionality and updated the text to discuss edge direcitonality.**
+We updated our figure to reflect edge directionality and updated the text to discuss edge directionality.**
 
 ```diff
 - A metagraph (schema) of the heterogeneous network used in the Rephetio project [..].
@@ -63,21 +61,21 @@ We updated our figure to reflect edge directionality and updated the text to dis
 - The nodes (circles) represent entities and edges (lines) depict relational information between two entities.
 
 + The metagraph (i.e., schema) of the knowledge graph used in the Rephetio project [..].
-+ The authors of this project refer to their resource as a heterogenous network (i.e., hetnet); however, we consider a hetnet to be synonymous to our definition of a knowledge graph.
-+ This resources depicts pharmacological and biomedical information in the form of nodes and edges. 
++ The authors of this project refer to their resource as a heterogenous network (i.e., hetnet), and this network meets our definition of a knowledge graph.
++ This resources depicts pharmacological and biomedical information in the form of nodes and edges.
 + The nodes (circles) represent entities and edges (lines) represent relationships that are shared between two entities.
-+ Majority of edges in this metagraph are depicted as unidirectional, but some relationships can be considered bidirectional.
++ The majority of edges in this metagraph are depicted as unidirectional, but some relationships can be considered bidirectional.
 ```
 
 >"relatively precise data, but in low quantifies"?
 
 **We like to thank the reviewer for pointing out this typo.
-"Quantifies" should be "quantities" and this statement was designed to convey that manual curation results in high precision but suffers from low recall.
-We updated the text to fix this issue.**
+"Quantifies" should be "quantities" and this statement was designed to convey that manual curation results in high precision but low recall.
+We updated the text to remedy this issue.**
 
 ```diff
 - Studies have shown that databases constructed in this fashion contain relatively precise data, but in low quantifies 
-+ Studies have shown that databases constructed in this fashion contain relatively precise data but the recall is low
++ Studies have shown that databases constructed in this fashion contain relatively precise data but the recall is low 
 ```
 
 >what you refer to as "unifying techniques" is relational learning, I don't see why you refer to it in such an ambiguous way. 
@@ -86,7 +84,7 @@ We updated the text to fix this issue.**
 >Matrix factorizations such as isomap, PCA, SVD and others are not knowledge graph representation techniques, but dimensionality reduction techniques.
 
 **We grouped techniques based on their functionality.
-We agree that the title for this section is a bit ambigious and we have changed our title to the following: "representational learning techniques" (diff provided below).
+We agree that the title for this section is a bit ambiguous and we have changed our title to the following: "unifying representational learning techniques" (diff provided below).
 We take the viewpoint that these methods can be applied to knowledge graphs and have updated text to be more explicit on this point.**
 
 ```diff
@@ -101,7 +99,7 @@ We take the viewpoint that these methods can be applied to knowledge graphs and 
 
 > More importantly, you don't show how they can be applied or used in the context of knowledge graphs as claimed?
 
-**We agree that the text wasn't explicit enough on how  knoweledge graphs are applied as input and have updated our text to fix this issue.**
+**We agree that the text wasn't explicit enough on how knowledge graphs are applied as input and have updated our text to fix this issue.**
 
 ```diff
 - In practice $U$ is usually used to represent nodes in a knowledge graph, but $V^{T}$ can also be used [..;..].
