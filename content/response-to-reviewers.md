@@ -4,6 +4,8 @@
 
 >The authors review how knowledge graphs can be applied in the context of biomedical applications. I found the review to be well-written, highly organized and informative. I have no substantial suggestions and recommend acceptance.
 
+**Thank you. We appreciate the positive feedback on our manuscript.
+
 >Minor suggestions which can be fixed by authors in the editorial process:
 
 > - Table 1: What is the organizing principle behind the order of the databases? Would it be better to order them alphabetically?
@@ -17,7 +19,8 @@
 > - Figure 5b: Font too small
 > - "goal of recommend safe drugs"
 
-**We would like to thank the reviewer for noticing these typos and we have fixed them in this new revision.**
+**We would like to thank you for noticing these typos. We have fixed each of these during our revision process.**
+
 
 ## Reviewer 2
 
@@ -28,31 +31,41 @@
 >Almost all of the discussions in this manuscript deals with methods that don't model relations. 
 >The only part that correctly refers to a class knowledge graph methods is translational distance methods.  
 
-**We appreciate the reviewer's perspective; however, we emphasize that the focus of this review is to discuss the pros and cons of building knowledge graphs and representing them in a low dimensional space.
+**This point from the reviewer helped us to identify a series of substantial revisions that we needed to make to the manuscript for clarity.
+We agree with the reviewer that there is not a single, well-established definition of a knowledge graph in the literature.
+Therefore, we should clearly specify a definition and refer to consistent framings in the literature.
+We now do this.
+For the purposes of this review, we defined a knowledge graph as:
+> a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.
+This is a broader definition than some.
+For example, knowledge graphs that aren't suitable for symbolic reasoning would qualify under this definition.
+However, selecting this broader definition allows us to discuss a growing set of methods (including SVD, PCA, node2vec, and other strategies) for producing reduced representations that are then used for prediction.
 This space is intended to capture the essence of a knowledge graph and is dependent on the node and edge structure of a graph.
-Once knowledge graphs are represented in this space, they can no longer be considered "true" knowledge graphs. 
-The methods discussed in our review are focused on how this low dimensional space is constructed and we updated our text to be more explicit on how knowledge graphs are used as input.
-**
+We took the reviewer's concerns to heart and now, throughout the manuscript, we clearly specify when transformations produce a representation that is no longer a knowledge graph (e.g., the SVD decomposition or node2vec embeddings) for the purposes of an application.**
 
 >The following are some comments: 
 
 >What specifically do you mean by techniques that represent KGs and machine learning methods that are used to learn low-dimensional vectors?
 
-**When we say, "techniques that represent knowledge graphs in a low dimensional space", we allude to methods such as node2vec and translational distance models that associate nodes and possibly edges to dense vectors.
-These vectors implicitly capture the essence of a knowledge graph itself and machine learning methods can utilize these vectors to perform tasks such as link prediction for biomedical applications.**
+**For "techniques that represent knowledge graphs in a low dimensional space", we include methods such as node2vec and translational distance models that associate nodes and possibly edges to dense vectors.
+For these techniques, the idea is that these vectors capture the predominant features of a knowledge graph.
+This representation can make it easier to apply machine learning and other methods to perform tasks such as link prediction for biomedical applications.
+We now clearly specify that these reduced representations are not, themselves, knowledge graphs.**
 
 >at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
-**We define biomedical knowledge graphs as the following: "a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.".
-We note in our text that this definition is consistent with other definitions found in the literature and discuss a limitation to our definition as well.
-We consider the graphs mentioned in those resources as knowledge graphs per our definition and note the limitations of those methods within our review.**
+**As there was no single, well-accepted definition of a knowledge graph we had to select one from the literature.
+We selected a relatively permissive definition because we felt that many recent methodological advances had been demonstrated primarily on more general graphs of biomedical entities extracted from biomedical knowledge bases.
+We specifically defined a biomedical knowledge graphs as: "a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities."
+We agree that not all of these references were about biomedical knowledge graphs.
+We have now clarified the first paragraph to discuss _graphs_, before diving into our definition of biomedical knowledge graphs in the second paragraph.**
 
 >Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
 >Ideally, a knowledge graph should show that. 
 >Please have a look at some knowledge graphs reviews in literature. 
 >For example, https://arxiv.org/pdf/1503.00759.pdf 
 
-**We appreciate the reviewer pointing out this fact.
+**We appreciate the reviewer noticing this.
 We updated our figure to reflect edge directionality and updated the text to discuss edge directionality.**
 
 ```diff
@@ -70,8 +83,8 @@ We updated our figure to reflect edge directionality and updated the text to dis
 >"relatively precise data, but in low quantifies"?
 
 **We like to thank the reviewer for pointing out this typo.
-"Quantifies" should be "quantities" and this statement was designed to convey that manual curation results in high precision but low recall.
-We updated the text to remedy this issue.**
+As we were fixing this typo, we realized that the sentence itself was unclear and could be improved.
+We updated the text to clarify the point that we intended to make.**
 
 ```diff
 - Studies have shown that databases constructed in this fashion contain relatively precise data, but in low quantifies 
@@ -83,9 +96,10 @@ We updated the text to remedy this issue.**
 >For example, matrix factorization and deep learning. 
 >Matrix factorizations such as isomap, PCA, SVD and others are not knowledge graph representation techniques, but dimensionality reduction techniques.
 
-**We grouped techniques based on their functionality.
-We agree that the title for this section is a bit ambiguous and we have changed our title to the following: "unifying representational learning techniques" (diff provided below).
-We take the viewpoint that these methods can be applied to knowledge graphs and have updated text to be more explicit on this point.**
+**We grouped techniques based on the methods that underlie them.
+We agree that the title for this section was overly broad.
+We have changed our title to refer to these as representational learning techniques, as this is a term used in the machine learning methods literature for techniques that aim to capture a low-dimensional representation with certain properties.
+Though the output of these methods is not, in and of itself, a knowledge graph, we expect that these methods can be applied to knowledge graphs and have updated text to be more explicit on this point.**
 
 ```diff
 - In the next sections we review the unifying techniques that construct this low dimensional space and unifying applications that use this space to solve biomedical problems.
