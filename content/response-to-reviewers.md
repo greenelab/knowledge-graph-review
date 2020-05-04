@@ -4,7 +4,7 @@
 
 >The authors review how knowledge graphs can be applied in the context of biomedical applications. I found the review to be well-written, highly organized and informative. I have no substantial suggestions and recommend acceptance.
 
-**Thank you. We appreciate the positive feedback on our manuscript.
+**Thank you. We appreciate the positive feedback on our manuscript.**
 
 >Minor suggestions which can be fixed by authors in the editorial process:
 
@@ -35,12 +35,13 @@
 We agree with the reviewer that there is not a single, well-established definition of a knowledge graph in the literature.
 Therefore, we should clearly specify a definition and refer to consistent framings in the literature.
 We now do this.
-For the purposes of this review, we defined a knowledge graph as:
+For the purposes of this review, we defined a knowledge graph as:**
+
 > a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.
-This is a broader definition than some.
+
+**This is a broader definition than some.
 For example, knowledge graphs that aren't suitable for symbolic reasoning would qualify under this definition.
 However, selecting this broader definition allows us to discuss a growing set of methods (including SVD, PCA, node2vec, and other strategies) for producing reduced representations that are then used for prediction.
-This space is intended to capture the essence of a knowledge graph and is dependent on the node and edge structure of a graph.
 We took the reviewer's concerns to heart and now, throughout the manuscript, we clearly specify when transformations produce a representation that is no longer a knowledge graph (e.g., the SVD decomposition or node2vec embeddings) for the purposes of an application.**
 
 >The following are some comments: 
