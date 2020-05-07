@@ -31,10 +31,9 @@
 >Almost all of the discussions in this manuscript deals with methods that don't model relations. 
 >The only part that correctly refers to a class knowledge graph methods is translational distance methods.  
 
-**This point from the reviewer helped us to identify a series of substantial revisions that we needed to make to the manuscript for clarity.
-We agree with the reviewer that there is not a single, well-established definition of a knowledge graph in the literature.
-Therefore, we should clearly specify a definition and refer to consistent framings in the literature.
-We now do this.
+**We agree with the reviewer that there is not a single, well-established definition of a knowledge graph in the literature.
+We identified a series of substantial revisions that we needed to make to the manuscript for clarity.
+We have made revisions to clearly specify a definition and refer to consistent definitions in the prior literature.
 For the purposes of this review, we defined a knowledge graph as:**
 
 > a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.
@@ -55,10 +54,7 @@ We now clearly specify that these reduced representations are not, themselves, k
 
 >at least references 1, 2, 5,6 and 2 are concerned with methods for graphs not necessarily knowledge graphs, in which the edge label (i.e., relation is essential to its definition).
 
-**As there was no single, well-accepted definition of a knowledge graph we had to select one from the literature.
-We selected a relatively permissive definition because we felt that many recent methodological advances had been demonstrated primarily on more general graphs of biomedical entities extracted from biomedical knowledge bases.
-We specifically defined a biomedical knowledge graphs as: "a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities."
-We agree that not all of these references were about biomedical knowledge graphs.
+**We agree that not all of these references were about biomedical knowledge graphs.
 We have now clarified the first paragraph to discuss _graphs_, before diving into our definition of biomedical knowledge graphs in the second paragraph.**
 
 >Figure 1 doesn't show the relationship direction, For example, "causes", "binds" and other relations don't clearly specify the source and destination nodes which can be confusing.
