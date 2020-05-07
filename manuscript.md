@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-05-04'
+date-meta: '2020-05-07'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/8f61664f7361a85f6b1055c6ec3c5961eeebe64c/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/c5520e7d9d4fdd97454081a1751cfd7c0618fffb/))
 was automatically generated
-from [greenelab/knowledge-graph-review@8f61664](https://github.com/greenelab/knowledge-graph-review/tree/8f61664f7361a85f6b1055c6ec3c5961eeebe64c)
-on May 4, 2020.
+from [greenelab/knowledge-graph-review@c5520e7](https://github.com/greenelab/knowledge-graph-review/tree/c5520e7d9d4fdd97454081a1751cfd7c0618fffb)
+on May 7, 2020.
 </em></small>
 
 ## Authors
@@ -71,12 +71,12 @@ Advances in machine learning for biomedicine are creating new opportunities acro
 
 ## Introduction
 
-Knowledge graphs are a practical resource for many real-world applications.
+Graphs are practical resources for many real-world applications.
 They have been used in social network mining to classify nodes [@DjhSdWbc] and create recommendation systems [@Eqbsazq5].
-These graphs have also been used in natural language processing to interpret simple questions and use relational information to provide answers [@N0gUhlt9; @s8ydThMc].
-In a biomedical setting, these graphs have been used to prioritize genes relevant to disease [@GI2y7kMc; @Oi5yRd0v; @15k4Xz0i3; @1D9FTzRBg], perform drug repurposing [@O21tn8vf] and identify drug-target interactions [@15GxqZyO8].
+They have also been used in natural language processing to interpret simple questions and use relational information to provide answers [@N0gUhlt9; @s8ydThMc].
+In a biomedical setting, graphs have been used to prioritize genes relevant to disease [@GI2y7kMc; @Oi5yRd0v; @15k4Xz0i3; @1D9FTzRBg], perform drug repurposing [@O21tn8vf] and identify drug-target interactions [@15GxqZyO8].
 
-Despite their utility, precisely defining a knowledge graph is a difficult task because there are multiple conflicting definitions [@V9M93in].
+Within a biomedical setting, some graphs can be considered knowledge graphs; although, precisely defining a knowledge graph is difficult because there are multiple conflicting definitions [@V9M93in].
 For this review, we define a biomedical knowledge graph as the following: a resource that integrates one or more expert-derived sources of information into a graph where nodes represent biomedical entities and edges represent relationships between two entities.
 This definition is consistent with other definitions found in the literature [@tTin0vq6;@40RgfG4W;@N0FNpMpT;@cskgFLqz;@1BADC6sf5;@kUyUTRND;@nnJGY1Jn].
 Often relationships are considered unidirectional (e.g., a compound treats a disease, but a disease cannot treat a compound); however, there are cases where relationships can be considered bidirectional (e.g., a compound resembles another compound, or a gene interacts with another gene).
@@ -340,7 +340,7 @@ We group techniques that construct this space into the following three categorie
 
 ![
 Pipeline for representing knowledge graphs in a low dimensional space.
-Starting with a knowledge graph, this space can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Deep Learning (c).
+Starting with a knowledge graph, this space can be generated using one of the following options: Matrix Factorization (a), Translational Models (b) or Neural Network Models (c).
 The output of this pipeline is an embedding space that clusters similar node types together.
 ](images/figures/unifying_techniques_overview.png){#fig:unifying_techniques_overview}
 
@@ -373,7 +373,8 @@ Typically, eigenmaps work well when knowledge graphs have a sparse number of edg
 An open area of exploration is to adapt these methods to accommodate knowledge graphs that have a large number of edges.
 
 Matrix factorization is a powerful technique that represents high dimensional data in a low dimensional space.
-Common approaches involve using SVD, Laplacian eigenmaps or variants of the two to decompose matrices into smaller rectangular forms.
+The representation of a knowledge graph in this reduced space does not meet our definition of a knowledge graph; however, this representation supports many use cases including similarity-based (e.g., cosine similarity [@M426c5kn]) and machine learning applications.
+Common matrix factorization approaches involve using SVD, Laplacian eigenmaps or variants of the two to decompose matrices into smaller rectangular forms.
 Regarding knowledge graphs, the adjacency matrix ($A$) is the typical matrix that gets decomposed, but the laplacian matrix ($L=D-A$) can be used as well. 
 Despite reported success, the dependence on matrices creates an issue of scalability as matrices of large networks may reach memory limitations.
 Furthermore, the approaches we discussed consider all edge types as equivalent.
@@ -425,8 +426,11 @@ It is possible to layer on additional objectives by modifying the loss function 
 In the context of knowledge graphs, the generated space correlates nodes with dense vectors that capture a graph's connectivity structure [@1H8Rd6pHW; @hjIIetVM; @1A6Dhbwkr].
 Despite the high potential of autoencoders, this method relies on an adjacency matrix for input which can run into scalability issues as a knowledge graph asymptotically increases in size [@RjwcaMhj].
 Plus, Khosla et al. discovered that approaches akin to node2vec outperformed algorithms using autoencoders when undergoing link prediction and node classification [@RjwcaMhj].
-Overall, the performance of deep learning techniques largely depends upon the structure of nodes and edges within a knowledge graph [@RjwcaMhj].
-Future work should include hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
+
+Overall, the performance of neural network models largely depends upon the structure of nodes and edges within a knowledge graph [@RjwcaMhj].
+Furthermore, when these approaches are used only nodes are explicitly represented by these vectors.
+This means a represented knowledge graph no longer meets our definition of a knowledge graph; however, this representation can make it more suitable for many biomedical applications.
+Future areas of exploration should include hybrid models that use both node2vec and autoencoders to construct complementary low dimensional representations of knowledge graphs.
 
 ### Unifying Applications
 
@@ -455,7 +459,7 @@ These approaches achieved high area under the receiver operating curve (AUROC), 
 Apart from miRNA, collaborative filtering has been used to predict protein-protein interactions [@6FrpIkNZ; @6O3BO6WO; @Y2RTnbCe].
 Although extensive validation of newly generated candidates may be impractical, it would be helpful to see future efforts in this space include a blinded literature search for prioritized and randomly selected candidates as part of the standard evaluation pipeline.
 
-Applications of deep learning techniques have mainly used the node2vec model [@PD4udqRe] or variants of it.
+Applications of neural network models have mainly used the node2vec model [@PD4udqRe] or variants of it.
 Yang et al. used node2vec to create a recommendation system to infer associations between genes and disease symptoms [@otY29wFV].
 The authors constructed a gene-disease symptom knowledge graph by combining two bipartite graphs: genes with diseases and diseases with disease symptoms.
 The generated graph was embedded via node2vec and similarity scores were calculated for every gene-symptom pair in the graph.
@@ -485,17 +489,17 @@ Related approaches used this technique to infer drug-target interactions [@S0MrO
 In spite of reported success, these approaches are limited to the drugs and diseases contained in the graph.
 Combining these approaches with representations of chemical structures might make it possible to one day make predictions about novel compounds.
 
-Applications that use deep learning techniques have used node2vec [@19E33rJiu; @dR3gjJXP] and autoencoders [@za8DCIPS; @PYqNAHh7] approaches to represent knowledge graphs in a low dimensional space.
+Applications that use neural network models have used node2vec [@19E33rJiu; @dR3gjJXP] and autoencoders [@za8DCIPS; @PYqNAHh7] approaches to represent knowledge graphs in a low dimensional space.
 Zong et al. used a node2vec-like model to predict drug-target associations [@19E33rJiu].
 The authors constructed a disease-target-disease network using drug centered databases: Drugbank [@111FgvD8J] and Diseasome [@14fs7pzn0].
 Next, the authors applied a random walk to the graph and trained a skip-gram model to generate a low dimensional representation of the graph.
 Lastly, the authors constructed a similarity metric that used this space to rank how similar drugs are to their targets [@19E33rJiu].
 A limitation to this approach is that their graph is missing information such as pharmacological class or drug chemical structure that could improve prediction performance.
-Overall, deep learning provides a robust set of techniques that have been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
+Overall, neural networks provide a robust set of techniques that have been shown to outperform most linear approaches in this context [@245Px4P3; @WMEox1CM].
 
 Applications that discover new properties of drugs have benefited from using knowledge graphs as a resource.
-Most methods to date use matrix factorization and deep learning techniques to produce a low-dimensional representation.
-Due to the success of deep learning [@245Px4P3; @WMEox1CM] much of the field's focus has shifted to these techniques; however, a possible improvement is to use an ensemble of deep learning techniques and linear methods to improve performance.
+Most methods to date use matrix factorization and neural network models to produce a low-dimensional representation.
+Due to the success of neural networks [@245Px4P3; @WMEox1CM] much of the field's focus has shifted to these techniques; however, a possible improvement is to use an ensemble of neural network models and linear methods to improve performance.
 Another potential avenue for future work would be to incorporate entity-specific hierarchical information or similarity information to improve detection power.
 For drugs, this could include pharmaceutical classes or chemical structure similarities.
 
@@ -513,7 +517,7 @@ Every node in the newly constructed graph was embedded while satisfying the foll
 Following the embedding step, the authors formulated their own similarity metric that selected drug combinations with a low number of interactions [@aLsdEzlV].
 Researchers in [@BRGxlTb9] applied a similar variant of the TransH model to a medical knowledge graph and evaluated their model for link prediction rather than patient recommendation.
 
-In contrast with most applications where node2vec and autoencoder models have become established, deep learning methods in this field have focused on using graph attention models [@Exfv0f4l].
+In contrast with most applications where node2vec and autoencoder models have become established, this field have focused on using graph attention models [@Exfv0f4l].
 These models mimic machine translation models [@haHzVaaz] and aim to simultaneously represent knowledge graphs in a low dimensional space and perform the task at hand.
 Choi et al. used a graph attention model to predict patient diagnoses [@10nDTiETi].
 The authors constructed a directed graph using medical concepts from patient EHR data.
