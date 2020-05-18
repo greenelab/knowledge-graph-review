@@ -2,7 +2,7 @@
 author-meta:
 - David Nicholson
 - Casey S. Greene
-date-meta: '2020-05-07'
+date-meta: '2020-05-18'
 keywords:
 - knowledge-graphs
 - network-embeddings
@@ -22,10 +22,10 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/64033e15c2c204e19835d86b393ef4dabb1ad5f5/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/a2bf43003b84fc975ab4c03fef25752ba04ae8e9/))
 was automatically generated
-from [greenelab/knowledge-graph-review@64033e1](https://github.com/greenelab/knowledge-graph-review/tree/64033e15c2c204e19835d86b393ef4dabb1ad5f5)
-on May 7, 2020.
+from [greenelab/knowledge-graph-review@a2bf430](https://github.com/greenelab/knowledge-graph-review/tree/a2bf43003b84fc975ab4c03fef25752ba04ae8e9)
+on May 18, 2020.
 </em></small>
 
 ## Authors
