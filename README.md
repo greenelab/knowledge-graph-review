@@ -1,4 +1,4 @@
-# Automated scholarly manuscripts on GitHub
+# Constructing Knowledge Graphs and Their Biomedical Applications
 
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 
@@ -10,7 +10,7 @@
 
 <!-- usage note: edit this section. -->
 
-This repository contains the literature review: "Constructing Knowledge Graphs and Their Biomedical Applications".
+Knowledge graphs can support many biomedical applications. These graphs represent biomedical concepts and relationships in the form of nodes and edges. In this review, we discuss how these graphs are constructed and applied with a particular focus on how machine learning approaches are changing these processes.
 
 ## Manubot
 
