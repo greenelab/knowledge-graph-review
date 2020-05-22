@@ -1,6 +1,6 @@
 ---
 author-meta:
-- David Nicholson
+- David N. Nicholson
 - Casey S. Greene
 bibliography:
 - content/manual-references.json
@@ -39,7 +39,7 @@ header-includes: '<!--
 
   <meta name="citation_technical_report_institution" content="Manubot" />
 
-  <meta name="citation_author" content="David Nicholson" />
+  <meta name="citation_author" content="David N. Nicholson" />
 
   <meta name="citation_author_institution" content="Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania" />
 
@@ -69,11 +69,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/knowledge-graph-review/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/knowledge-graph-review/v/a09e874f90328073f260b072c47889648046d0f7/" />
 
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/a09e874f90328073f260b072c47889648046d0f7/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/a09e874f90328073f260b072c47889648046d0f7/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -109,9 +109,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/a09e874f90328073f260b072c47889648046d0f7/))
 was automatically generated
-from [greenelab/knowledge-graph-review@4f899f2](https://github.com/greenelab/knowledge-graph-review/tree/4f899f2717c0ff6815d9c477a1c095035cef86f3)
+from [greenelab/knowledge-graph-review@a09e874](https://github.com/greenelab/knowledge-graph-review/tree/a09e874f90328073f260b072c47889648046d0f7)
 on May 22, 2020.
 </em></small>
 
@@ -119,7 +119,7 @@ on May 22, 2020.
 
 
 
-+ **David Nicholson**<br>
++ **David N. Nicholson**<br>
     ![ORCID icon](images/orcid.svg){.inline_icon}
     [0000-0003-0002-5761](https://orcid.org/0000-0003-0002-5761)
     · ![GitHub icon](images/github.svg){.inline_icon}

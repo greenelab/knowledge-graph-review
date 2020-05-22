@@ -30,11 +30,11 @@ danich
 datapoints
 dataset
 datasets
-deepwalk
+Deepwalk
 directionality
 Diseasome
 dnf
-DrugBank
+Drugbank
 EHR
 eigenmaps
 eigenvectors
@@ -43,7 +43,7 @@ Entrez
 GBMF
 generalizable
 genomic
-Genotype
+genotype
 greenescientist
 hanreplearn
 heterogenous
