@@ -2,7 +2,7 @@ ADR
 arxiv
 AUROC
 autoencoder
-Autoencoders
+autoencoders
 Baldi
 BeFree
 biclustering
@@ -30,7 +30,7 @@ danich
 datapoints
 dataset
 datasets
-Deepwalk
+deepwalk
 directionality
 Diseasome
 dnf
@@ -47,7 +47,7 @@ Genotype
 greenescientist
 hanreplearn
 heterogenous
-hetionet
+Hetionet
 hetnet
 HMDD
 HPRD
@@ -59,7 +59,7 @@ Jiezhon
 Jonnalagadda
 Khosla
 labelled
-laplacian
+Laplacian
 laplacian’s
 Leskovec
 LLL
@@ -73,7 +73,7 @@ miRNAs
 Mojarad
 NCBI’s
 nsubjpass
-omic
+Omic
 omics
 OMIM
 ontologies
@@ -82,7 +82,7 @@ Peng
 Percha
 pharmacogenomic
 PharmGKB
-phenotypes
+Phenotypes
 phenotypic
 PPI
 pre

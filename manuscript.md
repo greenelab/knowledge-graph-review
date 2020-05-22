@@ -69,11 +69,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/knowledge-graph-review/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/knowledge-graph-review/v/a35fa6b9aab0f9ec2fd899175248313ccdf0b7d7/" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/" />
 
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/a35fa6b9aab0f9ec2fd899175248313ccdf0b7d7/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/a35fa6b9aab0f9ec2fd899175248313ccdf0b7d7/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -109,9 +109,9 @@ title: Constructing Knowledge Graphs and Their Biomedical Applications
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/knowledge-graph-review/v/a35fa6b9aab0f9ec2fd899175248313ccdf0b7d7/))
+([permalink](https://greenelab.github.io/knowledge-graph-review/v/4f899f2717c0ff6815d9c477a1c095035cef86f3/))
 was automatically generated
-from [greenelab/knowledge-graph-review@a35fa6b](https://github.com/greenelab/knowledge-graph-review/tree/a35fa6b9aab0f9ec2fd899175248313ccdf0b7d7)
+from [greenelab/knowledge-graph-review@4f899f2](https://github.com/greenelab/knowledge-graph-review/tree/4f899f2717c0ff6815d9c477a1c095035cef86f3)
 on May 22, 2020.
 </em></small>
 
