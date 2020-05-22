@@ -4,7 +4,7 @@
 
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://greenelab.github.io/knowledge-graph-review/)
 [![PDF Manuscript](https://img.shields.io/badge/manuscript-PDF-blue.svg)](https://greenelab.github.io/knowledge-graph-review/manuscript.pdf)
-[![Build Status](https://travis-ci.com/greenelab/knowledge-graph-review.svg?branch=master)](https://travis-ci.com/greenelab/knowledge-graph-review)
+[![GitHub Actions Status](https://github.com/greenelab/knowledge-graph-review/workflows/Manubot/badge.svg)](https://github.com/greenelab/knowledge-graph-review/actions)
 
 ## Manuscript description
 
@@ -35,7 +35,6 @@ The directories are as follows:
 + [`webpage`](webpage) is a directory meant to be rendered as a static webpage for viewing the HTML manuscript.
 + [`build`](build) contains commands and tools for building the manuscript.
 + [`ci`](ci) contains files necessary for deployment via continuous integration.
-  For the CI configuration, see [`.travis.yml`](.travis.yml).
 
 ### Local execution
 
@@ -55,7 +54,7 @@ bash build/build.sh
 # This is required to view local images in the HTML output.
 
 # Configure the webpage directory
-python build/webpage.py
+manubot webpage
 
 # You can now open the manuscript webpage/index.html in a web browser.
 # Alternatively, open a local webserver at http://localhost:8000/ with the
@@ -65,7 +64,7 @@ python -m http.server
 ```
 
 Sometimes it's helpful to monitor the content directory and automatically rebuild the manuscript when a change is detected.
-The following command, while running, will trigger both the `build.sh` and `webpage.py` scripts upon content changes:
+The following command, while running, will trigger both the `build.sh` script and `manubot webpage` command upon content changes:
 
 ```sh
 bash build/autobuild.sh
@@ -73,19 +72,27 @@ bash build/autobuild.sh
 
 ### Continuous Integration
 
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.com/greenelab/knowledge-graph-review.svg?branch=master)](https://travis-ci.com/greenelab/knowledge-graph-review)
 
 Whenever a pull request is opened, Travis CI will test whether the changes break the build process to generate a formatted manuscript.
+=======
+Whenever a pull request is opened, CI (continuous integration) will test whether the changes break the build process to generate a formatted manuscript.
+>>>>>>> 8b9b5ced2c7c963bf3ea5afb8f31f9a4a54ab697
 The build process aims to detect common errors, such as invalid citations.
-If your pull request build fails, see the Travis CI logs for the cause of failure and revise your pull request accordingly.
+If your pull request build fails, see the CI logs for the cause of failure and revise your pull request accordingly.
 
+<<<<<<< HEAD
 When a commit to the `master` branch occurs (for example, when a pull request is merged), Travis CI builds the manuscript and writes the results to the [`gh-pages`](https://github.com/greenelab/knowledge-graph-review/tree/gh-pages) and [`output`](https://github.com/greenelab/knowledge-graph-review/tree/output) branches.
+=======
+When a commit to the `master` branch occurs (for example, when a pull request is merged), CI builds the manuscript and writes the results to the [`gh-pages`](https://github.com/manubot/rootstock/tree/gh-pages) and [`output`](https://github.com/manubot/rootstock/tree/output) branches.
+>>>>>>> 8b9b5ced2c7c963bf3ea5afb8f31f9a4a54ab697
 The `gh-pages` branch uses [GitHub Pages](https://pages.github.com/) to host the following URLs:
 
 + **HTML manuscript** at https://greenelab.github.io/knowledge-graph-review/
 + **PDF manuscript** at https://greenelab.github.io/knowledge-graph-review/manuscript.pdf
 
-For continuous integration configuration details, see [`.travis.yml`](.travis.yml).
+For continuous integration configuration details, see [`.github/workflows/manubot.yaml`](.github/workflows/manubot.yaml) if using GitHub Actions or [`.travis.yml`](.travis.yml) if using Travis CI.
 
 ## License
 
