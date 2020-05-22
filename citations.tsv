@@ -1,4 +1,4 @@
-manuscript_id	detagged_id	standard_id	short_id
+manuscript_citekey	detagged_citekey	standard_citekey	short_citekey
 arxiv:1211.5063	arxiv:1211.5063	arxiv:1211.5063	FoztezBR
 arxiv:1301.3781	arxiv:1301.3781	arxiv:1301.3781	1GhHIDxuW
 arxiv:1310.4546	arxiv:1310.4546	arxiv:1310.4546	u5iJzbp9
@@ -209,4 +209,4 @@ raw:hanreplearn	raw:hanreplearn	raw:hanreplearn	dylXYFm6
 raw:honnibal2017spacy	raw:honnibal2017spacy	raw:honnibal2017spacy	10i1qMFbL
 raw:lintransR	raw:lintransR	raw:lintransR	R8kotaKY
 raw:wangtransH	raw:wangtransH	raw:wangtransH	nprR5cVj
-url:https://greenelab.github.io/xswap-manuscript/	url:https://greenelab.github.io/xswap-manuscript/	url:https://greenelab.github.io/xswap-manuscript/	17QDcGqUi
+url:https://greenelab.github.io/xswap-manuscript	url:https://greenelab.github.io/xswap-manuscript	url:https://greenelab.github.io/xswap-manuscript	fx486doV
