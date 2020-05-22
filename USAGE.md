@@ -12,6 +12,9 @@ Markdown files are identified by their `.md` extension and ordered according to 
 For basic formatting, check out the [CommonMark Help](https://commonmark.org/help/) page for an introduction to the formatting options provided by standard markdown.
 In addition, Manubot supports an extended version of markdown, tailored for scholarly writing, which includes [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) and the extensions discussed below.
 
+The `content/02.delete-me.md` file in the Rootstock repository shows many of the elements and formatting options supported by Manubot.
+See the [raw markdown](https://gitlab.com/manubot/rootstock/blob/master/content/02.delete-me.md#L) in this file and compare it to the [rendered manuscript](https://manubot.github.io/rootstock/).
+
 Within a paragraph in markdown, single newlines are interpreted as whitespace (same as a space).
 A paragraph's source does not need to contain newlines.
 However, "one paragraph per line" makes the git diff less precise, leading to less granular review commenting, and makes conflicts more likely.
@@ -73,9 +76,15 @@ We recommend always specifying the width of SVG images (even if just `width="100
 
 ### Citations
 
-Manubot supports Pandoc [citations](https://pandoc.org/MANUAL.html#citations) via `pandoc-citeproc`.
-However, Manubot performs automated citation processing and metadata retrieval on in-text citations.
-Therefore, citations must be of the following form: `@source:identifier`, where `source` is one of the options described below.
+Manubot supports Pandoc [citations](https://pandoc.org/MANUAL.html#citations).
+Citations are processed in 3 stages:
+
+1. Pandoc parses the input Markdown to locate citation keys.
+2. The [`pandoc-manubot-cite`](https://github.com/manubot/manubot#pandoc-filter) filter automatically retreives the bibliographic metadata for citation keys.
+3. The [`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md) filter renders in-text citations and generates styled references.
+
+When using Manubot, citation keys should be formatted like `@source:identifier`,
+where `source` is one of the options described below.
 When choosing which source to use for a citation, we recommend the following order:
 
 1. DOI (Digital Object Identifier), cite like `@doi:10.15363/thinklab.4`.
@@ -88,6 +97,9 @@ When choosing which source to use for a citation, we recommend the following ord
 4. _arXiv_ ID, cite like `@arxiv:1508.06576v2`.
 5. ISBN (International Standard Book Number), cite like `@isbn:9781339919881`.
 6. URL / webpage, cite like `@url:https://nyti.ms/1QUgAt1`.
+   URL citations can be helpful if the above methods return incorrect metadata.
+   For example, `@doi:10.1038/ng.3834` [incorrectly handles](https://github.com/manubot/manubot/issues/158) the consortium name resulting in a blank author, while `@url:https://doi.org/10.1038/ng.3834` succeeds.
+   Similarly, `@url:https://doi.org/10.1101/142760` is a [workaround](https://github.com/manubot/manubot/issues/16) to set the journal name of bioRxiv preprints to _bioRxiv_.
 7. Wikidata Items, cite like `@wikidata:Q50051684`.
    Note that anyone can edit or add records on [Wikidata](https://www.wikidata.org), so users are encouraged to contribute metadata for hard-to-cite works to Wikidata as an alternative to using a `raw` citation.
 8. For references that do not have any of the persistent identifiers above, use a raw citation like `@raw:old-manuscript`.
@@ -103,17 +115,60 @@ Note that multiple citations must be semicolon separated.
 Be careful not to cite the same study using identifiers from multiple sources.
 For example, the following citations all refer to the same study, but will be treated as separate references: `[@doi:10.7717/peerj.705; @pmcid:PMC4304851; @pmid:25648772]`.
 
+Citation keys must adhere to the syntax described in the [Pandoc manual](https://pandoc.org/MANUAL.html#citations):
+
+> The citation key must begin with a letter, digit, or `_`, and may contain alphanumerics, `_`, and internal punctuation characters (`:.#$%&-+?<>~/`).
+
+To evaluate whether a citation key fully matches this syntax, try [this online regex](https://regex101.com/r/mXZyY2/latest).
+If the citation key is not valid, use the [citation tag](#citation-tag) workaround below.
+This is required for citation keys that contain forbidden characters such as `;` or `=` or end with a non-alphanumeric character such as `/`.
+<!-- See [jgm/pandoc#6026](https://github.com/jgm/pandoc/issues/6026) for progress on a more flexible Markdown citation key syntax. -->
+
+Prior to Rootstock commit [`6636b91`](https://github.com/manubot/rootstock/commit/6636b912c6b41593acd2041d34cd4158c1b317fb) on 2020-01-14, Manubot processed citations separately from Pandoc.
+Switching to a Pandoc filter improved reliability on complex documents, but restricted the syntax of citation keys slightly.
+Therefore, users upgrading Rootstock may find some citations become invalid.
+By default, `pandoc-manubot-cite` does not fail upon invalid citations, although this can be changed by adding the following to `metadata.yaml`:
+
+```yaml
+pandoc:
+  manubot-fail-on-errors: True
+```
+
 #### Citation tags
 
-The system also supports citation tags, which are recommended for the following applications:
+The system also supports citation tags, which map from one citation key (an alias) to another.
+Tags are recommended for the following applications:
 
-1. A citation's identifier contains forbidden characters, such as `;` or `=`, or ends with a non-alphanumeric character other than `/`.
-   In these instances, you must use a tag.
+1. A citation's identifier contains forbidden characters, you must use a tag.
 2. A single reference is cited many times.
    Therefore, it might make sense to define a tag, so if the citation updates (e.g. a newer version becomes available), only a single change is required.
 
-Tags should be defined in [`content/citation-tags.tsv`](content/citation-tags.tsv).
+Tags can be defined using Markdown's [link reference syntax](https://spec.commonmark.org/0.29/#link-reference-definitions) as follows:
+
+```markdown
+Citing a URL containing a `?` character [@tag:my-url].
+Citing a DOI containing parentheses [@doi:my-doi].
+
+[@tag:my-url]: url:https://openreview.net/forum?id=HkwoSDPgg
+[@tag:my-doi]: doi:10.1016/S0022-2836(05)80360-2
+```
+
+This syntax is also used by [`pandoc-url2cite`](https://github.com/phiresky/pandoc-url2cite).
+Make sure to place these link reference definitions in their own paragraphs.
+These paragraphs can be in any of the content Markdown files.
+
+Another method for defining tags is to define `pandoc.citekey-aliases` in `metadata.yaml`:
+
+```yaml
+pandoc:
+  citekey-aliases:
+    tag:my-url: url:https://openreview.net/forum?id=HkwoSDPgg
+    tag:my-doi: doi:10.1016/S0022-2836(05)80360-2
+```
+
+For backwards compatibility, tags can also be defined in `content/citation-tags.tsv`.
 If `citation-tags.tsv` defines the tag `study-x`, then this study can be cited like `@tag:study-x`.
+This method is deprecated.
 
 ## Reference metadata
 
@@ -176,17 +231,40 @@ The following YAML shows the supported key–value pairs for an author:
 ```yaml
 github: dhimmel  # strongly suggested
 name: Daniel S. Himmelstein  # mandatory
-initials: DSH  # strongly suggested
+initials: DSH  # optional
 orcid: 0000-0002-3012-7446  # mandatory
 twitter: dhimmel  # optional
 email: daniel.himmelstein@gmail.com  # suggested
 affiliations:  # as a list, strongly suggested
   - Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
   - Department of Biological & Medical Informatics, University of California, San Francisco
-funders: GBMF4552  # optional
+funders:
+  - GBMF4552  # optional list of author's funding
 ```
 
 Note that `affiliations` should be a list to allow for multiple affiliations per author.
+
+### Thumbnail
+
+A thumbnail is an image used to visually represent the manuscript,
+such as when a manuscript is shared on social media or added to the [Manubot catalog](https://manubot.org/catalog/).
+Specify a thumbnail in any of the following ways:
+
+1. placing an image named `thumbnail.png` anywhere in the manuscript repository (for example, in the root directory).
+2. setting `thumbnail` in `metadata.yaml` to a path, relative to the repository root, where the image file is located.
+    Example:
+    ```yaml
+    thumbnail: build/assets/thumbnail-1000x1000.png
+    ```
+3. setting `thumbnail` in `metadata.yaml` to an absolute URL where the image is located.
+    Example:
+    ```yaml
+    thumbnail: https://github.com/greenelab/meta-review/raw/master/thumbnail.png
+    ```
+
+Methods 2 and 3 take precedence over method 1.
+View the [guidelines here](https://github.com/manubot/catalog#thumbnail-guidelines) for suggestions on how to create a good thumbnail.
+Key points are that thumbnails should be 1000 × 1000 pixels, PNG formatted, and striking.
 
 ## Custom formatting
 
@@ -194,9 +272,28 @@ Modifying the manuscript formatting requires modifying the CSS in the file [`bui
 Common formatting changes, such as [font size](https://github.com/manubot/rootstock/issues/239) and [double spacing](https://github.com/manubot/rootstock/issues/244), can be found by searching the [Rootstock issues](https://github.com/manubot/rootstock/issues).
 Open a [new issue](https://github.com/manubot/rootstock/issues/new) if you have a new formatting question.
 
-Changing the citation style or which interactive HTML plugins are loaded requires editing the build script [`build/build.sh`](build/build.sh).
-The citation style is determined by the Citation Style Language file specified by `CSL_PATH`.
-It can be changed to use other existing styles as [described here](https://github.com/manubot/rootstock/issues/242#issuecomment-507688339).
+Changing the citation style or which interactive HTML plugins are loaded requires editing the options specified by Pandoc defaults files in [`build/pandoc/defaults`](build/pandoc/defaults).
+The citation style is determined by the Citation Style Language file specified in [`common.yaml`](build/pandoc/defaults/common.yaml):
+
+```yaml
+metadata:
+  csl: build/assets/style.csl
+```
+
+The value for `metadata.csl` can be a URL, allowing access to thousands of existing styles hosted by [Zotero](https://www.zotero.org/styles) or the [CSL GitHub](https://github.com/citation-style-language/styles).
+For example, the following options replace the Manubot citation style with the _PeerJ_ style:
+
+```yaml
+metadata:
+  csl: https://github.com/citation-style-language/styles/raw/906cd6d43d0c136190ecfbb12f6af0ca794e3c5b/peerj.csl
+```
+
+## Spellchecking
+
+When the `SPELLCHECK` environment variable is `true`, the pandoc [spellcheck filter](https://github.com/pandoc/lua-filters/tree/master/spellcheck) is run.
+Potential spelling errors will be printed in the continuous integration log along with the files and line numbers in which they appeared.
+Words in `build/assets/custom-dictionary.txt` are ignored during spellchecking.
+Spellchecking is currently only supported for English language manuscripts.
 
 ## Manubot feedback
 

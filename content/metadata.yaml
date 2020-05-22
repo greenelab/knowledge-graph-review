@@ -19,7 +19,9 @@ author_info:
     email: dnicholson329@gmail.com
     affiliations:
       - Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
-    funders: The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (T32 HG000046)
+    funders:
+      - The Gordon and Betty Moore Foundation (GBMF4552)
+      - The National Institutes of Health (T32 HG000046)
   -
     github: cgreene
     name: Casey S. Greene
@@ -30,4 +32,6 @@ author_info:
     affiliations:
       - Department of Systems Pharmacology and Translational Therapeutics, Perelman School of Medicine, University of Pennsylvania
       - Childhood Cancer Data Lab, Alex's Lemonade Stand Foundation
-    funders: The Gordon and Betty Moore Foundation (GBMF4552) and the National Institutes of Health (R01 HG010067)
+    funders:
+      - The Gordon and Betty Moore Foundation (GBMF4552)
+      - The National Institutes of Health (R01 HG010067)
