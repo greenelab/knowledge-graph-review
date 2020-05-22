@@ -22,6 +22,12 @@ author_info:
     funders:
       - The Gordon and Betty Moore Foundation (GBMF4552)
       - The National Institutes of Health (T32 HG000046)
+    contributions:
+      - Conceptualization
+      - Funding Acquisition
+      - Investigation
+      - Writing - Original Draft
+      - Visualization
   -
     github: cgreene
     name: Casey S. Greene
@@ -35,3 +41,8 @@ author_info:
     funders:
       - The Gordon and Betty Moore Foundation (GBMF4552)
       - The National Institutes of Health (R01 HG010067)
+    contributions:
+      - Conceptualization
+      - Funding Acquisition
+      - Investigation
+      - Writing - Review & Editing
